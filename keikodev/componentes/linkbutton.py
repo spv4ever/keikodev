@@ -2,7 +2,7 @@ import reflex as rx
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 
-def linkbutton(title: str, body: str, image: str, url: str)->rx.Component:
+def linkbutton(title: str, body: str, image: str, url: str, is_external=True)->rx.Component:
     return rx.link(
                 rx.button(
                     rx.hstack(
@@ -26,7 +26,7 @@ def linkbutton(title: str, body: str, image: str, url: str)->rx.Component:
                 ),  
                 href=url,
                 button=True,
-                is_external=True,
+                is_external=is_external,
                 width="100%",
                 text_decoration="none",
 

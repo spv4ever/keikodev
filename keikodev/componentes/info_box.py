@@ -11,13 +11,11 @@ def info_box(title: str)->rx.Component:
                 title,
                 style=styles.infobox_body_style,
                 width = "100%",
-                
                 padding = Size.SMALL.value,
                 text_align = "center",
-                
                 ),
         display="flex",
         align_items = "center",
         bg = Color.CONTENT.value,
-        border_radius=Size.VERY_SMALL.value,
+        border_radius=Size.SMALL.value,
     )

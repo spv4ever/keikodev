@@ -2,7 +2,7 @@
 
 #Recursos de programación
 MOUREDEV_URL = "http://moure.dev"
-FOTOR_URL = 'https://www.fotor.com/images/create'
+FOTOR_URL = 'https://www.fotor.com/referrer/jfketyu3    '
 GITHUB_URL = 'https://github.com/spv4ever'
 REFLEX_URL = 'https://reflex.dev'
 W3SCHOOLS_URL = "https://www.w3schools.com/css/"
