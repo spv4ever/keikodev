@@ -6,6 +6,8 @@ FOTOR_URL = 'https://www.fotor.com/referrer/jfketyu3    '
 GITHUB_URL = 'https://github.com/spv4ever'
 REFLEX_URL = 'https://reflex.dev'
 W3SCHOOLS_URL = "https://www.w3schools.com/css/"
+MDM_URL = "https://developer.mozilla.org/es/"
+RADIX_URL = "https://www.radix-ui.com/"
 
 #Default
 DEFAULT_URL = "http://localhost:3000/"
