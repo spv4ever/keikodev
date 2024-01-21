@@ -1,7 +1,7 @@
 # chatapp.py
 import reflex as rx
 
-
+import keikodev.views.constants as const
 from keikodev.componentes.navbar import navbar
 from keikodev.views.header import header
 from keikodev.views.links import links
@@ -31,6 +31,18 @@ def index() -> rx.Component:
 app = rx.App(
     style = styles.BASE_STYLE,
     stylesheets=["fonts/Fonts.css"],
+        head_components=[
+        rx.script(
+            src=f"https://www.googletagmanager.com/gtag/js?id={const.G_TAG}"),
+        rx.script(
+            f"""
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){{dataLayer.push(arguments);}}
+                gtag('js', new Date());
+                gtag('config', '{const.G_TAG}');
+            """
+        ),
+    ],
 
 )
 app.add_page(

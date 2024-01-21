@@ -30,6 +30,9 @@ FLICKR_URL = "https://www.flickr.com/photos/30144404@N05/"
 #SPOTIFY_URL = "https://open.spotify.com/show/4iKXt5k2zCbAQOrMePh7qh"
 LINKEDIN_URL = "https://www.linkedin.com/in/albert-garc%C3%ADa-sabadell-0899ab49/"
 
+#Google Analitics
+G_TAG = "G-SMVVY1YF0J"
+
 
 
 
