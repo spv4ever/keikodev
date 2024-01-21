@@ -36,7 +36,7 @@ def links()-> rx.Component:
                    constants.DEFAULT_URL),
 
         linkbutton('Mundo de la emulación', 
-                   "Todo lo relativo al mundo de la emulación Consola / Arcade", 
+                   "Todo lo relativo al mundo de la emulación Consola", 
                    "icons/dev.svg",
                    constants.DEFAULT_URL),
 
