@@ -38,7 +38,7 @@ def links()-> rx.Component:
 
         linkbutton('Biblioteca WOW', 
                    "Enlaces para fanáticos del WOW que no te puedes perder.", 
-                   "icons/WoW.png",
+                   "icons/wow-icon.svg",
                    constants.WOW_URL),
         
         linkbutton('Cyber Seguridad', 
