@@ -35,6 +35,11 @@ def links()-> rx.Component:
                    "icons/dev.svg",
                    constants.DEFAULT_URL),
 
+        linkbutton('Mundo de la emulación', 
+                   "Todo lo relativo al mundo de la emulación Consola / Arcade", 
+                   "icons/dev.svg",
+                   constants.DEFAULT_URL),
+
         linkbutton('Biblioteca WOW', 
                    "Enlaces para fanáticos del WOW que no te puedes perder.", 
                    "icons/dev.svg",

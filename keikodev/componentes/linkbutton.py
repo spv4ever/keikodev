@@ -17,7 +17,8 @@ def linkbutton(title: str, body: str, image: str, url: str)->rx.Component:
                             rx.text(body,style=styles.button_body_style),
                             align_items="start",
                             spacing=Size.ZERO.value,
-                            margin=Size.ZERO.value,
+                            padding_y = Size.SMALL.value,
+                            padding_right = Size.SMALL.value,
                             
                         )
                     ),
