@@ -2,6 +2,7 @@ import reflex as rx
 import keikodev.utils as utils
 import keikodev.views.constants as const
 from keikodev.componentes.navbar import navbar
+from keikodev.componentes.construccion import construccion
 from keikodev.views.header import header
 from keikodev.views.dev_links import dev_links
 from keikodev.views.footer import footer
@@ -24,6 +25,7 @@ def constr() -> rx.Component:
         rx.center(
             rx.vstack(
                 header(False),
+                construccion(),
                 #dev_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",

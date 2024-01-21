@@ -70,8 +70,7 @@ title_style = dict(
     size="lg",
     width="100%",
     padding_top=Size.DEFAULT.value,
-    padding_x = Size.MEDIUM.value
-    
+    padding_x = Size.MEDIUM.value    
 )
 
 navbar_title_style = dict(
@@ -79,3 +78,9 @@ navbar_title_style = dict(
     font_size = Size.LARGE.value,
 )
 
+title_center_style = dict(
+    width="100%",
+    padding_top=Size.DEFAULT.value,
+    padding_x = Size.MEDIUM.value,
+    text_align = "center",    
+)

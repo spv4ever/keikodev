@@ -39,6 +39,11 @@ def dev_links()-> rx.Component:
                    "/icons/dev.svg",
                    constants.ITTOOLS_URL,
                    ),
+        linkbutton("Google Fonts",
+                   "Todas las fuentes que puedas necesitar",
+                   "/icons/dev.svg",
+                   constants.FONTS_URL,
+                   ),
         width = "100%",
         spacing=Size.MEDIUM.value,
     )
