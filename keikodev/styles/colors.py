@@ -2,7 +2,7 @@ import reflex as rx
 from enum import Enum
 
 class Color(Enum):
-    PRIMARY = "#DF013A"
+    PRIMARY = "#F781D8"
     SECONDARY = "#FF0040"
     BACKGROUND = "#2F0B3A"
     CONTENT = "#220A29"

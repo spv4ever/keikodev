@@ -1,10 +1,11 @@
 import reflex as rx
-import keikodev.styles.styles as styles
+from keikodev.styles.styles import Size as Size
 
-def linkicon(url: str)->rx.Component:
+def linkicon(image: str, url: str)->rx.Component:
     return rx.link(
-        rx.icon(
-            tag="link"
+        rx.image(
+            src=image,
+            width = Size.DEFAULT.value,
         ),
         is_external=True,
         href=url,

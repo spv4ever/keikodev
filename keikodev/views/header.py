@@ -27,9 +27,19 @@ def header()-> rx.Component:
                         color = TextColor.BODY.value,
                         ),
                     rx.hstack(
-                    linkicon("https://x.com"),
-                    linkicon("https://x.com"),
-                    linkicon("https://x.com"),
+                        linkicon(
+                            "icons/dev.svg",
+                            "https://x.com",
+                            ),
+                        linkicon(
+                            "icons/dev.svg",
+                            "https://x.com"
+                            ),
+                        linkicon(
+                            "icons/dev.svg",
+                            "https://x.com"
+                            ),
+                    spacing=Size.DEFAULT.value,
                     ),
                     
                     align_items="start",
@@ -41,7 +51,7 @@ def header()-> rx.Component:
             rx.spacer(),
             info_text("5","lenguajes de programación"),
             rx.spacer(),
-            info_text("+500","informes de resultados"),
+            info_text("+1000","informes de resultados"),
             width = "100%"
 
         ),
@@ -51,10 +61,13 @@ def header()-> rx.Component:
                 principalmente rutinas y procesos en python que llevarían horas de trabajo y enormes
                 tablas dinámicas en excel. Entre mis últimos aprendizajes ha sido generar una app para
                 subir de forma masiva diferentes excels a una base de datos SQL.""",
+                font_size = Size.MEDIUM.value,
                 color = TextColor.BODY.value,
+                
                 ),
         font_family = Fuentes.DEFAULT.value,
         spacing=Size.BIG.value,
         align_items="start",
+        padding_x=Size.MEDIUM.value
         )
     

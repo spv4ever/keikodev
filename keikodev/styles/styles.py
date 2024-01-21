@@ -11,6 +11,7 @@ MAX_WIDTH = "560px"
 class Size(Enum):
     ZERO = '0px !important'
     SMALL = "0.5em"
+    SMALL_LARGE = "0.7em"
     MEDIUM = "0.8em"
     DEFAULT = "1em"
     LARGE = "1.5em"
@@ -27,11 +28,12 @@ BASE_STYLE = {
     rx.Button:{
         "width" : "100%",
         "height" : "100%",
-        "display" : "block",
+        "display":"block",
         "padding" : Size.SMALL.value,
         "border_radius" : Size.DEFAULT.value,
         "color" : TextColor.HEADER.value,
         "background_color" : Color.CONTENT.value,
+        "white_space" : "normal",
         "_hover" : {
             "background_color" : Color.SECONDARY.value,
             }
@@ -51,14 +53,16 @@ button_title_style = dict(
 
 button_body_style = dict(
     font_family=Fuentes.DEFAULT.value,
-    font_size = Size.MEDIUM.value,
-    color=TextColor.BODY.value
+    font_size = Size.SMALL_LARGE.value,
+    color=TextColor.BODY.value,
+    text_align = "start"
 )
 
 title_style = dict(
     size="lg",
     width="100%",
     padding_top=Size.DEFAULT.value,
+    padding_x = Size.MEDIUM.value
     
 )
 

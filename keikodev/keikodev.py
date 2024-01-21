@@ -32,5 +32,11 @@ def index() -> rx.Component:
 app = rx.App(
     style = styles.BASE_STYLE,
     stylesheets=["fonts/Fonts.css"],
+
 )
-app.add_page(index)
+app.add_page(
+    index,
+    title="KeikoDev. Primera página completamente en python",
+    description="Soy técnico informático con más de 30 años de experiencia, fanático de la gestión de datos y Bigdata.",
+    image='avatar3.png',
+    )

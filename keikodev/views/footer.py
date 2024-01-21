@@ -21,13 +21,7 @@ def footer()-> rx.Component:
                 font_size = Size.MEDIUM.value),
                 rx.hstack(
                     rx.text(
-                        "Aprendiendo desarrollo web desde Catalunya. Gracias",
-                        font_size = Size.MEDIUM.value,
-                        ),
-                    rx.link(
-                        "@mouredev",
-                        href="https://mouredev.com/",
-                        is_external=True,
+                        "Aprendiendo desarrollo web desde Catalunya.",
                         font_size = Size.MEDIUM.value,
                         ),
                     margin_top=Size.ZERO.value,
