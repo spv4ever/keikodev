@@ -34,7 +34,11 @@ def dev_links()-> rx.Component:
                    "/icons/dev.svg",
                    constants.RADIX_URL,
                    ),
-
+        linkbutton("IT Tools",
+                   "Web de herramientas para programación",
+                   "/icons/dev.svg",
+                   constants.ITTOOLS_URL,
+                   ),
         width = "100%",
         spacing=Size.MEDIUM.value,
     )

@@ -10,21 +10,21 @@ from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
 
 @rx.page(
-    route=Route.DEV.value,
-    title=utils.dev_title,
-    description=utils.dev_description,
+    route=Route.CONSTR.value,
+    title=utils.constr_title,
+    description=utils.constr_description,
     image= utils.preview,
     meta=utils.dev_meta,
 )
 
-def dev() -> rx.Component:
+def constr() -> rx.Component:
     return rx.box(
         utils.lang(),
         navbar(),
         rx.center(
             rx.vstack(
                 header(False),
-                dev_links(),
+                #dev_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value

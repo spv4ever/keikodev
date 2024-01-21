@@ -23,7 +23,8 @@ def index_links()-> rx.Component:
         linkbutton('Tips e instrucciones más usadas', 
                    "Como tengo memoria de pez, este será mi bloc de notas para", 
                    "/icons/tag-solid.svg",
-                   constants.DEFAULT_URL),
+                   Route.CONSTR.value,
+                   is_external=False),
         
         title("Otras ideas"),
         linkbutton("Configuración de kodi",

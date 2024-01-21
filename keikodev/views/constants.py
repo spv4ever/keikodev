@@ -8,6 +8,7 @@ REFLEX_URL = 'https://reflex.dev'
 W3SCHOOLS_URL = "https://www.w3schools.com/css/"
 MDM_URL = "https://developer.mozilla.org/es/"
 RADIX_URL = "https://www.radix-ui.com/"
+ITTOOLS_URL = "https://it-tools.tech/"
 
 #Default
 DEFAULT_URL = "http://localhost:3000/"

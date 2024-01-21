@@ -4,6 +4,7 @@ import keikodev.views.constants as const
 import keikodev.styles.styles as styles
 from keikodev.pages.index import index
 from keikodev.pages.dev import dev
+from keikodev.pages.constr import constr
 
 
 
