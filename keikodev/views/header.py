@@ -1,10 +1,16 @@
 import reflex as rx 
 from keikodev.componentes.linkicon import linkicon
 from keikodev.componentes.info_text import info_text
+from keikodev.componentes.info_box import info_box
 from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import Color as Color
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.fonts import Fuentes as Fuentes
+
+
+
+import keikodev.views.constants as const
+
 
 def header()-> rx.Component:
     return rx.vstack(
@@ -28,17 +34,30 @@ def header()-> rx.Component:
                         ),
                     rx.hstack(
                         linkicon(
-                            "icons/dev.svg",
-                            "https://x.com",
+                            "icons/email.svg",
+                            f"mailto:{const.EMAIL}",
                             ),
                         linkicon(
-                            "icons/dev.svg",
-                            "https://x.com"
+                            "icons/github.svg",
+                            const.GITHUB_URL,
                             ),
                         linkicon(
-                            "icons/dev.svg",
-                            "https://x.com"
+                            "icons/x.svg",
+                            const.TWITTER_X_URL,
                             ),
+                        linkicon(
+                            "icons/instagram.svg",
+                            const.INSTAGRAM_URL,
+                            ),
+                        linkicon(
+                            "icons/flickr.svg",
+                            const.FLICKR_URL,
+                            ),
+                        linkicon(
+                            "icons/linkedin.svg",
+                            const.LINKEDIN_URL,
+                            ),
+                        
                     spacing=Size.DEFAULT.value,
                     ),
                     
@@ -51,8 +70,17 @@ def header()-> rx.Component:
             rx.spacer(),
             info_text("5","lenguajes de programación"),
             rx.spacer(),
-            info_text("+1000","informes de resultados"),
+            info_text("+1000","informes"),
             width = "100%"
+        ),
+        rx.responsive_grid(
+            info_box('PowerBI'),
+            info_box('Bussines Objects'),
+            info_box('Excel'),
+            info_box('Python'),
+            columns = [1,2,3,4],
+            spacing= "4",
+            width = "100%",
 
         ),
         rx.text("""Soy técnico informático con más de 30 años de experiencia, 

@@ -10,6 +10,7 @@ MAX_WIDTH = "560px"
 # Sizes
 class Size(Enum):
     ZERO = '0px !important'
+    VERY_SMALL = "0.2em"
     SMALL = "0.5em"
     SMALL_LARGE = "0.7em"
     MEDIUM = "0.8em"
@@ -48,12 +49,19 @@ BASE_STYLE = {
 button_title_style = dict(
     font_family=Fuentes.TITLE.value,
     font_size = Size.DEFAULT.value,
-    color=TextColor.HEADER.value
+    color=TextColor.HEADER.value,
 )
 
 button_body_style = dict(
     font_family=Fuentes.DEFAULT.value,
     font_size = Size.SMALL_LARGE.value,
+    color=TextColor.BODY.value,
+    text_align = "start"
+)
+
+infobox_body_style = dict(
+    font_family=Fuentes.TITLE.value,
+    font_size = Size.DEFAULT.value,
     color=TextColor.BODY.value,
     text_align = "start"
 )

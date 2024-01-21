@@ -7,7 +7,7 @@ def info_text(title: str, body: str)->rx.Component:
     return rx.box(
             rx.span(
                 title,
-                font_weight = "blod",
+                font_weight = "bold",
                 color = Color.PRIMARY.value
                 ),
             f" {body}",
