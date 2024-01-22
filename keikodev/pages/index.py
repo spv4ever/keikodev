@@ -33,3 +33,4 @@ def index() -> rx.Component:
             ),
         footer(),
     )
+

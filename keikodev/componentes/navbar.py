@@ -3,7 +3,9 @@ from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import Color as Color
 from keikodev.styles.colors import TextColor as TextColor
 import keikodev.styles.styles as styles
+import keikodev.views.constants as const
 from keikodev.routes import Route
+from keikodev.componentes.ant_components import Float_Button
 
 
 def navbar():
@@ -26,6 +28,11 @@ def navbar():
                 ), 
                 href=Route.INDEX.value,
             ),
+        Float_Button(
+                icon = rx.Image (src="icons/bmc-logo.svg"),
+                href = const.DONACIONES_URL,
+
+        ),
         position="sticky",
 
         bg=Color.CONTENT.value,

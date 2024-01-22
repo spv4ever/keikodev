@@ -15,3 +15,11 @@ G-SMVVY1YF0J
 https://www.mamedev.org/
 
 
+https://es.react.dev/
+https://chakra-ui.com/
+https://ant.design/
+
+
+
+
+
