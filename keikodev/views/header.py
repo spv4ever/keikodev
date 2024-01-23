@@ -15,7 +15,7 @@ import keikodev.views.constants as const
 def header(details=True)-> rx.Component:
     return rx.vstack(
             rx.hstack(
-                rx.avatar(name="Albert García",
+                rx.avatar(name="Albert García Sabadell",
                           size="xl", 
                           src = "/avatar3.png",
                           padding="2px",
@@ -83,9 +83,14 @@ def header(details=True)-> rx.Component:
                 rx.responsive_grid(
                     info_box('PowerBI'),
                     info_box('Bussines Objects'),
+                    columns = [1,2],
+                    spacing= "4",
+                    width = "100%",
+                    ),
+                rx.responsive_grid(
                     info_box('Excel'),
                     info_box('Python'),
-                    columns = [1,2,3,4],
+                    columns = [1,2],
                     spacing= "4",
                     width = "100%",
                     ),
@@ -97,8 +102,10 @@ def header(details=True)-> rx.Component:
                         subir de forma masiva diferentes excels a una base de datos SQL.""",
                         font_size = Size.MEDIUM.value,
                         color = TextColor.BODY.value,
+                        padding_top = Size.DEFAULT.value,
+                        
                 ),
-            spacing=Size.BIG.value,
+            #spacing=Size.BIG.value,
             padding_x=Size.MEDIUM.value,
             width="100%",
             ),

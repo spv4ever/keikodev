@@ -16,9 +16,11 @@ def index_links()-> rx.Component:
                    is_external=False),
 
         linkbutton("Herramientas gráficas",
-                   "Herramientas gráficas para Desarrollos",
-                   "/icons/image-solid.svg",
-                   constants.FOTOR_URL),
+                "Herramientas gráficas y retoque fotográfico online",
+                "/icons/image-solid.svg",
+                Route.UTILS_IMAGES.value,
+                is_external=False,
+                ),
 
         linkbutton('Tips e instrucciones más usadas', 
                    "Como tengo memoria de pez, este será mi bloc de notas para", 

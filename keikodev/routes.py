@@ -4,3 +4,4 @@ class Route(Enum):
     INDEX = "/"
     DEV = "/dev"
     CONSTR = "/construccion"
+    UTILS_IMAGES = "/retoque"

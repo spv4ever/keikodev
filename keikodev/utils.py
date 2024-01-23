@@ -10,14 +10,20 @@ index_title = "KeikoDev. Primera página completamente en python"
 index_description = "Soy técnico informático con más de 30 años de experiencia, fanático de la gestión de datos y Bigdata."
 preview = 'avatar3.png'
 
-# Otras descripciones
+# Links utiles para desarrollo
 dev_title = "Página con recursos para desarrolladores"
 dev_description = "Relación de links que más uso para desarrollar, web, scrips, python, SQL Server..."
 
 
-# Otras descripciones
+# Página en construcción
 constr_title = "Página con recursos para desarrolladores"
-constr_description = "Relación de links que más uso para desarrollar, web, scrips, python, SQL Server..."
+constr_description = "Página en construcción en breve estaremos disponible."
+
+# Tools retoque fotográfico
+utils_images_title = "Recursos fotográficos Online"
+utils_images_description = "Relación de links para retoques fotográficos online, AI, ..."
+
+
 
 _meta = [
     {"name": "og:type", "content": "website"},
@@ -37,14 +43,21 @@ index_meta.extend(_meta)
 # dev
 dev_meta = [
     {"name": "og:title", "content": dev_title},
-    {"name": "og:description", "content": dev_title},
+    {"name": "og:description", "content": dev_description},
 ]
 dev_meta.extend(_meta)
 
 # constr
 constr_meta = [
     {"name": "og:title", "content": constr_title},
-    {"name": "og:description", "content": constr_title},
+    {"name": "og:description", "content": constr_description},
 ]
 constr_meta.extend(_meta)
+
+# constr
+utils_images_meta = [
+    {"name": "og:title", "content": utils_images_title},
+    {"name": "og:description", "content": utils_images_description},
+]
+utils_images_meta.extend(_meta)
 

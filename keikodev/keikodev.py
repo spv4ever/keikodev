@@ -5,8 +5,7 @@ import keikodev.styles.styles as styles
 from keikodev.pages.index import index
 from keikodev.pages.dev import dev
 from keikodev.pages.constr import constr
-
-
+from keikodev.pages.utils_images import utils_images
 
 app = rx.App(
     style = styles.BASE_STYLE,

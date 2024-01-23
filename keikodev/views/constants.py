@@ -1,8 +1,17 @@
 # Definición de links
+# Recursos gráficos
+PICWISH_URL = "https://picwish.com/es/referral?invite_people=76289056&invite_name=user120245"
+FOTOR_URL = 'https://www.fotor.com/referrer/jfketyu3'
+BEFUNKEY_URL = "https://www.befunky.com/"
+VANCEAI_URL = "https://vanceai.com/es/"
+IMAGEENLARGER_URL = "https://imglarger.com/"
+PIXLR_URL = "https://pixlr.com/es/"
+ICONOS_URL = "https://fontawesome.com/icons"
+
+
 
 #Recursos de programación
 MOUREDEV_URL = "http://moure.dev"
-FOTOR_URL = 'https://www.fotor.com/referrer/jfketyu3'
 GITHUB_URL = 'https://github.com/spv4ever'
 REFLEX_URL = 'https://reflex.dev'
 W3SCHOOLS_URL = "https://www.w3schools.com/css/"
@@ -33,8 +42,6 @@ GITHUB_URL = "https://github.com/spv4ever"
 TWITTER_X_URL = "https://twitter.com/Albert_gasa"
 INSTAGRAM_URL = "https://www.instagram.com/iron_4_ever/"
 FLICKR_URL = "https://www.flickr.com/photos/30144404@N05/"
-#TIKTOK_URL = "https://tiktok.com/@mouredev"
-#SPOTIFY_URL = "https://open.spotify.com/show/4iKXt5k2zCbAQOrMePh7qh"
 LINKEDIN_URL = "https://www.linkedin.com/in/albert-garc%C3%ADa-sabadell-0899ab49/"
 
 #Google Analitics
