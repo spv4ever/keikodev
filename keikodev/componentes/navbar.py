@@ -28,11 +28,11 @@ def navbar():
                 ), 
                 href=Route.INDEX.value,
             ),
-        Float_Button(
-                icon = rx.Image (src="icons/bmc-logo.svg"),
-                href = const.DONACIONES_URL,
+        # Float_Button(
+        #         icon = rx.Image (src="icons/bmc-logo.svg"),
+        #         href = const.DONACIONES_URL,
 
-        ),
+        # ),
         position="sticky",
 
         bg=Color.CONTENT.value,

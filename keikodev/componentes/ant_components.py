@@ -6,7 +6,8 @@ class FloatButton(rx.Component):
         tag = "FloatButton"
         icon: rx.Var[rx.Image]
         href:  rx.Var[str]
-        target = "_blank"
+        #disabled: rx.Var[bool]
+        target: rx.Var[str]
         badge = {"dot": True, "color": Color.PRIMARY.value }
 
 Float_Button = FloatButton.create

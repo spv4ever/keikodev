@@ -8,6 +8,8 @@ from keikodev.views.footer import footer
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
+from keikodev.componentes.ant_components import Float_Button
+from keikodev.componentes.ant_components import FloatButton
 
 @rx.page(
     route=Route.DEV.value,
@@ -21,6 +23,13 @@ def dev() -> rx.Component:
     return rx.box(
         utils.lang(),
         navbar(),
+        #Float_Button(disabled=False),
+         Float_Button(
+                  icon = rx.Image(src="/avatar.png"),
+                  href = Route.INDEX.value,
+                  target = "_top",
+                  #disabled = True,
+         ),
         rx.center(
             rx.vstack(
                 header(False),
@@ -30,5 +39,5 @@ def dev() -> rx.Component:
                 margin_y=Size.BIG.value
                 )
             ),
-        footer(),
+        #footer(),
     )

@@ -4,6 +4,8 @@ from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import Color as Color
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.fonts import Fuentes as Fuentes
+from keikodev.componentes.ant_components import Float_Button 
+import keikodev.views.constants as const
 
 def footer()-> rx.Component:
     return rx.vstack(
@@ -26,6 +28,12 @@ def footer()-> rx.Component:
                         ),
                     margin_top=Size.ZERO.value,
                     ),
+                    Float_Button(
+                         icon = rx.Image (src="/icons/bmc-logo.svg"),
+                         href = const.DONACIONES_URL,
+                         target='_blank',
+                        #disabled = False,
+                         ),
                 margin_bottom=Size.BIG.value,
                 padding_bottom = Size.BIG.value,
                 color = TextColor.FOOTER.value,
