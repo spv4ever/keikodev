@@ -66,6 +66,14 @@ infobox_body_style = dict(
     text_align = "start"
 )
 
+Tooltip_style = dict(
+    font_family=Fuentes.TITLE.value,
+    font_size = Size.MEDIUM.value,
+    color=TextColor.BODY.value,
+    text_align = "start"
+)
+
+
 title_style = dict(
     size="lg",
     width="100%",

@@ -35,5 +35,6 @@ def linkbutton(title: str, body: str, image: str, url: str, tooltip="", is_exter
                     delay = 10000,
                     open_delay = 1000,
                     should_wrap_children = False,
-                    placement = "right"
+                    placement = "right",
+                    style=styles.Tooltip_style,
                     )

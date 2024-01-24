@@ -21,6 +21,7 @@ def index_links()-> rx.Component:
             "Herramientas gráficas y retoque fotográfico online",
             "/img/image-solid.svg",
             Route.UTILS_IMAGES.value,
+            "Retoca tus fotos con resultados expectaculares",
             is_external=False,
             ),
 
@@ -35,6 +36,7 @@ def index_links()-> rx.Component:
             "Toda la actualidad de los intentos de fraude que recibamos", 
             "/img/user-secret-solid.svg",
             Route.CONSTR.value,
+            "Noticias sobre intentos de estafa en internet",
             is_external=False),
 
         linkbutton("Configuración de kodi",
