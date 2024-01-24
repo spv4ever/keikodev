@@ -29,7 +29,7 @@ def footer()-> rx.Component:
                     margin_top=Size.ZERO.value,
                     ),
                     Float_Button(
-                         icon = rx.Image (src="/icons/bmc-logo.svg"),
+                         icon = rx.Image (src="/img/bmc-logo.svg"),
                          href = const.DONACIONES_URL,
                          target='_blank',
                         #disabled = False,

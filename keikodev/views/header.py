@@ -34,27 +34,27 @@ def header(details=True)-> rx.Component:
                         ),
                     rx.hstack(
                         linkicon(
-                            "/icons/email.svg",
+                            "/img/email.svg",
                             f"mailto:{const.EMAIL}",
                             ),
                         linkicon(
-                            "/icons/github.svg",
+                            "/img/github.svg",
                             const.GITHUB_URL,
                             ),
                         linkicon(
-                            "/icons/x.svg",
+                            "/img/x.svg",
                             const.TWITTER_X_URL,
                             ),
                         linkicon(
-                            "/icons/instagram.svg",
+                            "/img/instagram.svg",
                             const.INSTAGRAM_URL,
                             ),
                         linkicon(
-                            "/icons/flickr.svg",
+                            "/img/flickr.svg",
                             const.FLICKR_URL,
                             ),
                         linkicon(
-                            "/icons/linkedin.svg",
+                            "/img/linkedin.svg",
                             const.LINKEDIN_URL,
                             ),
                         
