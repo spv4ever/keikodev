@@ -1,4 +1,5 @@
 # Definición de links
+
 # Recursos gráficos
 PICWISH_URL = "https://picwish.com/es/referral?invite_people=76289056&invite_name=user120245"
 FOTOR_URL = 'https://www.fotor.com/referrer/jfketyu3'
@@ -7,6 +8,7 @@ VANCEAI_URL = "https://vanceai.com/es/"
 IMAGEENLARGER_URL = "https://imglarger.com/"
 PIXLR_URL = "https://pixlr.com/es/"
 ICONOS_URL = "https://fontawesome.com/icons"
+CURSO_LRPS_URL = "https://go.hotmart.com/R90266873D?dp=1"
 
 
 
@@ -28,7 +30,7 @@ DEFAULT_URL = "http://localhost:3000/"
 GOOGLE_URL = 'http://www.google.es'
 
 #Contactos
-EMAIL = "spv4ever@gmail.com"
+EMAIL = "info@keikodev.es"
 
 #Links Otros proyectos
 WOW_URL = "https://www.wowhead.com/es"
@@ -49,6 +51,9 @@ G_TAG = "G-SMVVY1YF0J"
 
 #Donaciones
 DONACIONES_URL = "https://www.buymeacoffee.com/keikodev?l=es"
+
+#Cursos
+CURSO_PSEIN_URL = "https://go.hotmart.com/Y90265742M?dp=1"
 
 
 

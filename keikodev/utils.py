@@ -6,22 +6,22 @@ def lang() -> rx.Component:
 
 
 # Index information
-index_title = "KeikoDev. Primera página completamente en python"
+index_title = "KeikoDev. Python, Recursos, formación, cyber estafas, utilidades"
 index_description = "Soy técnico informático con más de 30 años de experiencia, fanático de la gestión de datos y Bigdata."
 preview = 'avatar3.png'
 
 # Links utiles para desarrollo
 dev_title = "Página con recursos para desarrolladores"
-dev_description = "Relación de links que más uso para desarrollar, web, scrips, python, SQL Server..."
+dev_description = "Links que más uso para desarrollar, web, scrips, python, SQL Server..."
 
 
 # Página en construcción
-constr_title = "Página con recursos para desarrolladores"
-constr_description = "Página en construcción en breve estaremos disponible."
+constr_title = "En construcción"
+constr_description = "Estamos de obras, iremos informando..."
 
 # Tools retoque fotográfico
 utils_images_title = "Recursos fotográficos Online"
-utils_images_description = "Relación de links para retoques fotográficos online, AI, ..."
+utils_images_description = "Links para retoques fotográficos online, AI, ..."
 
 
 

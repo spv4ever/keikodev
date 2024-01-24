@@ -28,7 +28,7 @@ def header(details=True)-> rx.Component:
                         size = "lg"
                         ),
                     rx.text(
-                        "@spv4ever",
+                        "info@keikodev.es",
                         margin_top=Size.ZERO.value,
                         color = TextColor.BODY.value,
                         ),
