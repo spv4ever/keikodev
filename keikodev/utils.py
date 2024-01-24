@@ -6,7 +6,7 @@ def lang() -> rx.Component:
 
 
 # Index information
-index_title = "KeikoDev. Python, Recursos, formación, cyber estafas, utilidades"
+index_title = "KeikoDev. Links esenciales para Python, Recursos, formación, cyber estafas, utilidades"
 index_description = "Soy técnico informático con más de 30 años de experiencia, fanático de la gestión de datos y Bigdata."
 preview = 'avatar3.png'
 
@@ -60,4 +60,6 @@ utils_images_meta = [
     {"name": "og:description", "content": utils_images_description},
 ]
 utils_images_meta.extend(_meta)
+
+
 

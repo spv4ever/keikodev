@@ -13,6 +13,7 @@ def index_links()-> rx.Component:
             "Páginas relacionadas con el desarrollo de aplicaciones web, python, SQL",
             "/img/dev.svg",
             Route.DEV.value,
+            "Aprende a programar",
             is_external=False
             ),
 
