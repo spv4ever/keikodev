@@ -23,6 +23,10 @@ constr_description = "Estamos de obras, iremos informando..."
 utils_images_title = "Recursos fotográficos Online"
 utils_images_description = "Links para retoques fotográficos online, AI, ..."
 
+# Tools retoque fotográfico
+kodi_title = "Manual de instalación y gestión de KODI"
+kodi_description = "Instalación, mejores addons, tools, repositorios..."
+
 
 
 _meta = [
@@ -61,5 +65,9 @@ utils_images_meta = [
 ]
 utils_images_meta.extend(_meta)
 
-
-CONTADOR_HTML='<div id="sfcs3y2g7nur8hz9qzua44apmta7l4m1z8c"></div><script type="text/javascript" src="https://counter7.optistats.ovh/private/counter.js?c=s3y2g7nur8hz9qzua44apmta7l4m1z8c&down=async" async></script><br><a href="https://www.contadorvisitasgratis.com">contador de visitas</a><noscript><a href="https://www.contadorvisitasgratis.com" title="contador de visitas"><img src="https://counter7.optistats.ovh/private/contadorvisitasgratis.php?c=s3y2g7nur8hz9qzua44apmta7l4m1z8c" border="0" title="contador de visitas" alt="contador de visitas"></a></noscript>'
+# kodi
+kodi_meta = [
+    {"name": "og:title", "content": kodi_title},
+    {"name": "og:description", "content": kodi_description},
+]
+kodi_meta.extend(_meta)

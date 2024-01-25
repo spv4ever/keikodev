@@ -99,7 +99,13 @@ main_menu_style = dict(
     font_family=Fuentes.LOGO.value,
     bg=Color.CONTENT.value,
     font_size = Size.LARGE_SMALL.value,
+    #border_color = Color.PRIMARY.value,
     _hover = {
             "color" : Color.PRIMARY.value}
+)
 
+main_menu_list_style = dict(
+    font_size = Size.DEFAULT.value,
+    bg=Color.CONTENT.value,
+    border_color = Color.PRIMARY.value,
 )

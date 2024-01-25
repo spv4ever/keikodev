@@ -42,7 +42,7 @@ def index_links()-> rx.Component:
         linkbutton("Configuración de kodi",
             "Apartado destinado a mantener la configuración de kodi",
             "/img/tv-solid.svg",
-            Route.CONSTR.value,
+            Route.KODI.value,
             is_external=False),
 
         linkbutton("Biblioteca de imágenes",
