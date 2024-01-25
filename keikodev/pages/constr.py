@@ -21,8 +21,6 @@ from keikodev.routes import Route
 def constr() -> rx.Component:
     return rx.box(
         utils.lang(),
-        rx.script("document.documentElement.lang='es'"),
-        rx.script(src="/js/fondo.js"),
         navbar(),
         rx.center(
             rx.vstack(

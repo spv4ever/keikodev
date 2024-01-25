@@ -6,35 +6,35 @@ import keikodev.styles.styles as styles
 import keikodev.views.constants as const
 from keikodev.routes import Route
 from keikodev.componentes.ant_components import Float_Button
+from keikodev.componentes.main_menu import main_menu as main_menu
 
 
 def navbar():
     return rx.hstack(
-            rx.image(src="/avatar.png",
+                rx.box(
+                main_menu(),
+                heigth = "3em",
+                ),
+                rx.image(src="/avatar.png",
                         width="50px",
                         height="auto",
                         border_radius="15px 50px",
                         border="5px solid #555",
                         box_shadow="lg"),
-            rx.link(
-                rx.box(
-                        rx.span("Keiko",
-                                color=Color.PRIMARY.value,
+                rx.link(
+                        rx.box(
+                                rx.span("Keiko",
+                                        color=Color.PRIMARY.value,
+                                        ),
+                                rx.span("Dev",
+                                        color=Color.SECONDARY.value
                                 ),
-                        rx.span("Dev",
-                                color=Color.SECONDARY.value
-                        )       ,
-                        style=styles.navbar_title_style
-                ), 
-                href=Route.INDEX.value,
-            ),
-        # Float_Button(
-        #         icon = rx.Image (src="icons/bmc-logo.svg"),
-        #         href = const.DONACIONES_URL,
-
-        # ),
-        position="sticky",
-
+                                style=styles.navbar_title_style
+                        ), 
+                        href=Route.INDEX.value,
+                ),
+        spacing = Size.LARGE.value,
+        #position="sticky",
         bg=Color.CONTENT.value,
         padding_x=Size.DEFAULT.value,
         padding_y=Size.SMALL.value,

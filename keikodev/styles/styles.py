@@ -15,6 +15,7 @@ class Size(Enum):
     SMALL_LARGE = "0.7em"
     MEDIUM = "0.8em"
     DEFAULT = "1em"
+    LARGE_SMALL = "1.2em"
     LARGE = "1.5em"
     BIG = "2em"
 
@@ -91,4 +92,14 @@ title_center_style = dict(
     padding_top=Size.DEFAULT.value,
     padding_x = Size.MEDIUM.value,
     text_align = "center",    
+)
+
+main_menu_style = dict(
+    color = Color.SECONDARY.value,
+    font_family=Fuentes.LOGO.value,
+    bg=Color.CONTENT.value,
+    font_size = Size.LARGE_SMALL.value,
+    _hover = {
+            "color" : Color.PRIMARY.value}
+
 )
