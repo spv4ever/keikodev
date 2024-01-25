@@ -34,7 +34,7 @@ def navbar():
                         href=Route.INDEX.value,
                 ),
         spacing = Size.LARGE.value,
-        #position="sticky",
+        position="sticky", #Deja la barra arriba y se mueve el head y footer
         bg=Color.CONTENT.value,
         padding_x=Size.DEFAULT.value,
         padding_y=Size.SMALL.value,
