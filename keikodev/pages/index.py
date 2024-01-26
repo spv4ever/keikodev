@@ -8,6 +8,7 @@ from keikodev.views.footer import footer
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
+from keikodev.utils import alertdialog_example
 
 @rx.page(
     route=Route.INDEX.value,
@@ -24,6 +25,7 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
+                alertdialog_example(),
                 header(),
                 index_links(),
                 max_width=styles.MAX_WIDTH,
