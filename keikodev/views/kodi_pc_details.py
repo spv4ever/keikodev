@@ -13,6 +13,7 @@ def kodi_pc_details()->rx.Component:
             title(
                 rx.center('Tutorial instalación PC'),
                 ),
+            margin_bottom = Size.BIG.value,
             ),
             steps(
                 rx.span("En primer lugar podemos descargar el software desde el site oficial ",
@@ -62,17 +63,20 @@ def kodi_pc_details()->rx.Component:
                     border_color = Color.PRIMARY.value,
                     ),
                 columns = [1,2,3],
+                padding = Size.SMALL_LARGE.value,
+                margin = Size.ZERO.value
             ),
             steps(
                 rx.span("Si la descarga se ha hecho por defecto, tendremos el fichero ejecutable en la carpeta ",
                 rx.span("descargas",
-                        font_weight="bold",
-                                color=Color.PRIMARY.value),
+                        font_weight="bold",),
+                rx.span(" de nuestro ordenador."),
                     ),
                 ),
-
-
-            steps("Et expedita sapiente ut perspiciatis ullam ad quas perspiciatis ut distinctio rerum. Ut doloribus rerum et officia rerum aut accusamus debitis aut enim error eum nihil doloremque ea galisum dolores et voluptatem delectus."),
-        spacing=Size.DEFAULT.value,
+            steps("Ejecutamos el fichero descargado, dejando todas las opciones por defecto y esperamos a que acabe la instalación."),
+            steps("Al arrancar Kodi por primera vez, deberemos hacer unos ajustes antes de poder empezar a añadir los addons"),
+            steps('Lo primero que suelo hacer, por comodidad y para todos los públicos es cambiar el idioma.'),
+            rx.image(src="/img/kodi_images/kodi_tutorial3.png"),
+        spacing=Size.VERY_SMALL.value,
         width="100%",  
     )
