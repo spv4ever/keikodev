@@ -12,12 +12,14 @@ def kodi_links()-> rx.Component:
                 linkbutton("Instalación en Windows",
                 "Primeros pasos para la instalación de kodi en Windows.",
                 "/img/windows.svg",
-                Route.CONSTR.value,
+                Route.KODI_PC.value,
+                is_external=False
                 ),
                 linkbutton("Instalación en Android TV",
                 "Primeros pasos para la instalación de kodi en Android TV.",
                 "/img/android.svg",
                 Route.CONSTR.value,
+                is_external=False
                 ),
 
 

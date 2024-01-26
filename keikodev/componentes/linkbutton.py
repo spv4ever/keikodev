@@ -12,7 +12,6 @@ def linkbutton(title: str, body: str, image: str, url: str, tooltip="", is_exter
                                     width=styles.Size.LARGE.value,
                                     height=styles.Size.LARGE.value,
                                     margin=Size.MEDIUM.value,
-                                    tooltil="Test",
                                     ),
                                 rx.vstack(
                                     rx.text(title,style=styles.button_title_style),

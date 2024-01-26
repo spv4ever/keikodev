@@ -6,3 +6,4 @@ class Route(Enum):
     CONSTR = "/construccion"
     UTILS_IMAGES = "/retoque"
     KODI = "/kodi"
+    KODI_PC = "kodi_pc"

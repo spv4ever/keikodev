@@ -23,9 +23,14 @@ constr_description = "Estamos de obras, iremos informando..."
 utils_images_title = "Recursos fotográficos Online"
 utils_images_description = "Links para retoques fotográficos online, AI, ..."
 
-# Tools retoque fotográfico
+# Tools Kodi
 kodi_title = "Manual de instalación y gestión de KODI"
 kodi_description = "Instalación, mejores addons, tools, repositorios..."
+
+# Tools Kodi_pc
+kodi_pc_title = "Manual de instalación de Kodi para PC"
+kodi_pc_description = "Pasos a seguir para preparar este genial centro multimedia"
+
 
 
 
@@ -69,5 +74,12 @@ utils_images_meta.extend(_meta)
 kodi_meta = [
     {"name": "og:title", "content": kodi_title},
     {"name": "og:description", "content": kodi_description},
+]
+kodi_meta.extend(_meta)
+
+# kodi
+kodi_pc_meta = [
+    {"name": "og:title", "content": kodi_pc_title},
+    {"name": "og:description", "content": kodi_pc_description},
 ]
 kodi_meta.extend(_meta)
