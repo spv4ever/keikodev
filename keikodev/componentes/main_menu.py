@@ -43,7 +43,9 @@ def main_menu()-> rx.Component:
                                                 href = Route.KODI.value,
                                                 ),
                                         style=styles.main_menu_style,
+                                        
                                         ),
+
                                 rx.menu_divider(),
                                 rx.menu_item(
                                         rx.link(

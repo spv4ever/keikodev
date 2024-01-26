@@ -9,9 +9,6 @@ from keikodev.pages.kodi import kodi
 from keikodev.pages.kodi_pc import kodi_pc
 from keikodev.pages.utils_images import utils_images
 
-class State(rx.State):
-    """Define your app state here."""
-
 app = rx.App(
     style = styles.BASE_STYLE,
     stylesheets=["fonts/Fonts.css"],
