@@ -55,6 +55,10 @@ DONACIONES_URL = "https://www.buymeacoffee.com/keikodev?l=es"
 #Cursos
 CURSO_PSEIN_URL = "https://go.hotmart.com/Y90265742M?dp=1"
 
+#Enlaces KODI
+KODI_URL = "https://kodi.tv/"
+KODI_DESCARGAS_URL = "https://kodi.tv/download/"
+KODI_WINDOWS_URL = "https://kodi.tv/download/windows/"
 
 
 

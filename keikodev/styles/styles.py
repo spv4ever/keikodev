@@ -109,3 +109,10 @@ main_menu_list_style = dict(
     bg=Color.CONTENT.value,
     border_color = Color.PRIMARY.value,
 )
+
+steps_style = dict(
+    font_family=Fuentes.DEFAULT.value,
+    font_size = Size.DEFAULT.value,
+    color=TextColor.BODY.value,
+    text_align = "start"
+)
