@@ -16,6 +16,6 @@ jobs:
     - name: Install lftp
       run: sudo apt-get install lftp
 
-    - name: Upload folder via FTP
+    - name: Upload ./keikodev/pubic via FTP
       run: |
-        lftp -c "open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ftp://your_ftp_server && mirror -R /ruta/local/a/carpeta/remota"
+        lftp -c "open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ftp://82.194.68.15 && mirror -R /keikodev.es/"
