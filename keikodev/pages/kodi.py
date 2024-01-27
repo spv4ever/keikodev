@@ -16,8 +16,8 @@ from keikodev.views.kodi_links import kodi_links
 
 @rx.page(
     route=Route.KODI.value,
-    title=utils.constr_title,
-    description=utils.constr_description,
+    title=utils.kodi_title,
+    description=utils.kodi_description,
     image= utils.preview,
     meta=utils.dev_meta,
 )

@@ -24,7 +24,7 @@ utils_images_title = "Recursos fotográficos Online"
 utils_images_description = "Links para retoques fotográficos online, AI, ..."
 
 # Tools Kodi
-kodi_title = "Manual de instalación y gestión de KODI"
+kodi_title = "Manuales de instalación y gestión de KODI"
 kodi_description = "Instalación, mejores addons, tools, repositorios..."
 
 # Tools Kodi_pc

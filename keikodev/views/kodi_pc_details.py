@@ -7,6 +7,7 @@ from keikodev.componentes.steps import steps as steps
 import keikodev.styles.styles as styles
 import keikodev.views.constants as const
 from keikodev.styles.fonts import Fuentes as Fuentes
+from keikodev.componentes.dosimagenes import dosimagenes as dimage
 
 def kodi_pc_details()->rx.Component:
     return rx.vstack(
@@ -148,8 +149,6 @@ def kodi_pc_details()->rx.Component:
                             border_color = Color.IMAGE_BOX.value,
                             ),
                 ),
-
-
             columns=[1,2],
             spacing=Size.SMALL.value,
             width = "100%",
@@ -159,6 +158,48 @@ def kodi_pc_details()->rx.Component:
                           rx.span("Origens desconocidos", font_family=Fuentes.TITLE.value,),
                           rx.span(" en nuestro KODI, podemos volver a la ventana de sistema haciendo clic en el ", 
                     rx.span("botón derecho", font_family=Fuentes.TITLE.value,),rx.span(" del ratón.")),
+                ),
+            ),
+            dimage('/img/kodi_images/kodi_tutorial07.png','/img/kodi_images/kodi_tutorial08.png'),
+            # rx.responsive_grid(
+            #     rx.center(
+            #         rx.image(src="/img/kodi_images/kodi_tutorial07.png",
+            #                 width="450px",
+            #                 heigth="auto",
+            #                 border="2px solid",
+            #                 border_radius="10px",
+            #                 border_color = Color.IMAGE_BOX.value,
+            #                 ),
+            #     ),
+            #     rx.center(
+            #         rx.image(src="/img/kodi_images/kodi_tutorial08.png",
+            #                 width="450px",
+            #                 heigth="auto",
+            #                 border="2px solid",
+            #                 border_radius="10px",
+            #                 border_color = Color.IMAGE_BOX.value,
+            #                 ),
+            #     ),
+            # columns=[1,2],
+            # spacing=Size.SMALL.value,
+            # width = "100%",
+            # padding = Size.SMALL_LARGE.value,
+            # ),
+
+
+            steps(rx.span("A continuación seleccionaremos la opción ",
+                    rx.span("Sistema",font_family=Fuentes.TITLE.value), 
+                    rx.span(". Dentro de sistema escogemos la opción del menú de la izquierda "), 
+                    rx.span("Add-ons", font_family=Fuentes.TITLE.value),
+                    rx.span(" y activaremos la opción "),
+                    rx.span("Origenes desconocidos", font_family=Fuentes.TITLE.value),
+                    rx.span(" lo que permitirá cargar add-ons desarrollados fuera de Kodi.")
+                    ),
+                ),
+            steps(rx.span("El siguiente paso recomendable será instalar ",
+                  rx.span("Luar",font_family=Fuentes.TITLE.value),
+                  rx.span(""" que será nuestro primer repositorio donde tendremos las primeras utilidades 
+                          para nuestro Kodi, entra en la sección de instalación de luar para continuar.""")
                 ),
             ),
         spacing=Size.VERY_SMALL.value,
