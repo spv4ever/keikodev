@@ -24,7 +24,7 @@ jobs:
 
       - name: Run build script
         run: 
-          ./remote_build.sh
+          ./build_remote.sh
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
