@@ -18,4 +18,4 @@ jobs:
 
     - name: Upload ./keikodev/pubic via FTP
       run: |
-        lftp -c "open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ftp://82.194.68.15 && mirror -R /keikodev.es/"
+        lftp -c "open -u ${{ secrets.FTP_USERNAME }},${{ secrets.FTP_PASSWORD }} ftp://82.194.68.15 && mirror -R ./keikodev.es/"
