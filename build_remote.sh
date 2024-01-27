@@ -1,7 +1,5 @@
-#chmod +x build.sh
-#./build.sh
-
-#!/bin/bash
+#cd keikodv --> Lo quito porque en principio estamos en la raiz
+python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r requirements.txt
