@@ -39,7 +39,7 @@ def index_links()-> rx.Component:
             "Noticias sobre intentos de estafa en internet",
             is_external=False),
 
-        linkbutton("Configuración de kodi",
+        linkbutton("Todo lo relacionado con Kodi",
             "Apartado destinado a mantener la configuración de kodi",
             "/img/tv-solid.svg",
             Route.KODI.value,

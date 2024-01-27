@@ -5,8 +5,24 @@ from keikodev.styles.colors import Color as Color
 from keikodev.styles.fonts import Fuentes as Fuentes
 
 
+def unaimagen(imagen1: str, tamaño: str)->rx.Component:
+    return rx.box(
+            rx.center(
+                rx.image(src=imagen1,
+                    width=tamaño,
+                    heigth="auto",
+                    border="2px solid",
+                    border_radius="10px",
+                    border_color = Color.IMAGE_BOX.value,
+                    margin_y = Size.MEDIUM.value, 
+                    ),
+            ),
+        width = "100%",
+    )
+
+
 def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
-    return rx.responsive_grid(
+    return rx.box(rx.responsive_grid(
                 rx.center(
                     rx.image(src=imagen1,
                             width="450px",
@@ -14,6 +30,7 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
                             border="2px solid",
                             border_radius="10px",
                             border_color = Color.IMAGE_BOX.value,
+                            margin_y = Size.MEDIUM.value, 
                             ),
                 ),
                 rx.center(
@@ -23,6 +40,7 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
                             border="2px solid",
                             border_radius="10px",
                             border_color = Color.IMAGE_BOX.value,
+                            margin_y = Size.MEDIUM.value, 
                             ),
                 ),
             columns=[1,2],
@@ -30,3 +48,4 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
             width = "100%",
             padding = Size.SMALL_LARGE.value,
             ),
+    )

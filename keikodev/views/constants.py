@@ -24,6 +24,8 @@ FONTS_URL = "https://fonts.google.com"
 REACT_URL = "https://es.react.dev/"
 CHAKRA_URL = "https://chakra-ui.com/"
 ANTDESIGN_URL = "https://ant.design/"
+RAILWAY_URL ="https://railway.app/"
+
 
 #Default
 DEFAULT_URL = "http://localhost:3000/"
