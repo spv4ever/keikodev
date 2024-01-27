@@ -1,4 +1,4 @@
-#cd keikodv --> Lo quito porque en principio estamos en la raiz
+cd keikodev
 python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
