@@ -6,6 +6,7 @@ from .fonts import Fuentes as Fuentes
 
 # Constantes
 MAX_WIDTH = "560px"
+CONTENT_WIDTH = "1000px"
 
 # Sizes
 class Size(Enum):
@@ -99,7 +100,6 @@ main_menu_style = dict(
     font_family=Fuentes.LOGO.value,
     bg=Color.CONTENT.value,
     font_size = Size.LARGE_SMALL.value,
-    #border_color = Color.PRIMARY.value,
     _hover = {
             "color" : Color.PRIMARY.value}
 )
@@ -116,3 +116,10 @@ steps_style = dict(
     color=TextColor.BODY.value,
     text_align = "start"
 )
+
+steps_resaltar_style = dict(
+    font_family=Fuentes.DEFAULT.value,
+    font_size = Size.DEFAULT.value,
+    font_weight="bold",
+    color=Color.PRIMARY.value)
+

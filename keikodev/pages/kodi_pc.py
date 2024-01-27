@@ -24,7 +24,7 @@ def kodi_pc()-> rx.Component:
         navbar(),
         rx.center(
             kodi_pc_details(),
-            max_width=styles.MAX_WIDTH,
+            max_width=styles.CONTENT_WIDTH,
             ),
         footer(),
     )

@@ -6,11 +6,13 @@ class Color(Enum):
     SECONDARY = "#FF0040"
     BACKGROUND = "#2F0B3A"
     CONTENT = "#220A29"
+    IMAGE_BOX = "black"
 
 class TextColor(Enum):
     HEADER = "#F1F2F4"
     BODY = "#C3C7C8"
     FOOTER = "#A3ABB2"
+
 
 #class Color(Enum):
 #    PRIMARY = "#14A1F0"

@@ -10,6 +10,7 @@ def steps(text: str)->rx.Component:
                 padding = Size.VERY_SMALL.value,
                 text_align= "justify",
                 text_justify= "inter-word",
-                )
-
+                width="100%",
+                ),
+            width = "100%"
     )
