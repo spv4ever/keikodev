@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 cd keikodev
-=======
-cd keikodv
->>>>>>> 91bfe5d103c52d1b9edf0e0e4e5ee012ab214506
 python -m venv .venv
 source .venv/bin/activate
 pip install --upgrade pip
