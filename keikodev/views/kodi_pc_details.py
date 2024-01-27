@@ -148,10 +148,18 @@ def kodi_pc_details()->rx.Component:
                             border_color = Color.IMAGE_BOX.value,
                             ),
                 ),
+
+
             columns=[1,2],
             spacing=Size.SMALL.value,
             width = "100%",
             padding = Size.SMALL_LARGE.value,
+            ),
+            steps(rx.span("Lo siguiente que deberemos hacer es autorizar el uso de ",
+                          rx.span("Origens desconocidos", font_family=Fuentes.TITLE.value,),
+                          rx.span(" en nuestro KODI, podemos volver a la ventana de sistema haciendo clic en el ", 
+                    rx.span("botón derecho", font_family=Fuentes.TITLE.value,),rx.span(" del ratón.")),
+                ),
             ),
         spacing=Size.VERY_SMALL.value,
         padding = Size.MEDIUM.value,
