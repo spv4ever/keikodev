@@ -23,9 +23,8 @@ jobs:
           python-version: '3.11'
 
       - name: Run build script
-        run: |
-          chmod +x ./keikodev/build_remote.sh
-          ./keikodev/remote_build.sh
+        run: 
+          ./build_remote.sh
 
       - name: Commit and Push changes
         uses: stefanzweifel/git-auto-commit-action@v5
