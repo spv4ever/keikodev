@@ -123,7 +123,7 @@ def kodi_pc_details()->rx.Component:
                             rx.span("Regional",font_family=Fuentes.TITLE.value,),
                             rx.span(" y "),
                             rx.span("Languaje",font_family=Fuentes.TITLE.value,),
-                            rx.span(". Kodi nos monstrará un desplegable donde podremos cambiar el idioma.")
+                            rx.span(". Kodi nos monstrará un desplegable donde podremos cambiar el idioma. (Aparece como Spanish)")
 
                     ),
             ),
