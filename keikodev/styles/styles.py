@@ -23,7 +23,8 @@ class Size(Enum):
 # Styles
 BASE_STYLE = {
     "font_family": Fuentes.DEFAULT.value,
-    "background_color": Color.BACKGROUND.value + "!important",
+    #"background_color": Color.BACKGROUND.value + "!important",
+    "background_color": Color.BACKGROUND.value,
     rx.Heading:{
         "color" : TextColor.HEADER.value,
         "font_family": Fuentes.TITLE.value

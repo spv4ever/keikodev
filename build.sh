@@ -1,7 +1,6 @@
 #chmod +x build.sh
 #./build.sh
 
-
 #!/bin/bash
 source .venv/bin/activate
 pip install --upgrade pip

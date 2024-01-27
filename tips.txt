@@ -17,12 +17,13 @@ https://www.mamedev.org/
 https://nostalgic-css.github.io/NES.css/
 
 
+Almacenamiento backend.
 https://railway.app/
 Render.com
-
-Play.io // revisar video.
-
+fly.io // revisar video.
 fl0.com
+
+
 
 docker.com
 
