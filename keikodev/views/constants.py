@@ -64,6 +64,9 @@ KODI_URL = "https://kodi.tv/"
 KODI_DESCARGAS_URL = "https://kodi.tv/download/"
 KODI_WINDOWS_URL = "https://kodi.tv/download/windows/"
 
+#Librerías de imagenes.
+KODI_IMAGES = "/img/kodi_images/"
+
 
 
 

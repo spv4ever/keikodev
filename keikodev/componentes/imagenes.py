@@ -5,7 +5,7 @@ from keikodev.styles.colors import Color as Color
 from keikodev.styles.fonts import Fuentes as Fuentes
 
 
-def unaimagen(imagen1: str, tamaño: str)->rx.Component:
+def unaimagen(imagen1: str, tamaño: str, alt="")->rx.Component:
     return rx.box(
             rx.center(
                 rx.image(src=imagen1,
@@ -48,4 +48,33 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
             width = "100%",
             padding = Size.SMALL_LARGE.value,
             ),
+    )
+
+class ModalState(rx.State):
+    show: bool = False
+
+    def change(self):
+        self.show = not (self.show)
+
+
+def modal_example():
+    return rx.vstack(
+        rx.button("Confirm", on_click=ModalState.change),
+        rx.modal(
+            rx.modal_overlay(
+                rx.modal_content(
+                    rx.modal_header("Confirm"),
+                    rx.modal_body(
+                        "Do you want to confirm example?"
+                    ),
+                    rx.modal_footer(
+                        rx.button(
+                            "Close",
+                            on_click=ModalState.change,
+                        )
+                    ),
+                )
+            ),
+            is_open=ModalState.show,
+        ),
     )

@@ -15,10 +15,10 @@ def kodi_links()-> rx.Component:
                 Route.KODI_PC.value,
                 is_external=False
                 ),
-                linkbutton("Instalación de Addons --> Luar",
-                "Instalación de Luar paso a paso como estandar de instalación de addons desde una carpeta de la red",
+                linkbutton("Instalación de Addons",
+                "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
                 "/img/kodi2.png",
-                Route.KODI_LUAR.value, #### Cambiar a Route.KODI_LUAR.value ####
+                Route.KODI_ADDONS.value,
                 is_external=False
                 ),
 

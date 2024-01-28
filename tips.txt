@@ -30,6 +30,9 @@ docker.com
 flet.com
 
 
-
+Renuncia de responsabilidad
+Mundo Kodi no se hace responsable de cualquier daño o pérdida de información. Nuestra intención solo es informar, utilizando contenido de Internet.
+Mundo Kodi y todo el material aquí mencionado no son oficiales, favor de no realizar quejas o reclamos en el foro oficial de Kodi.
+No estamos vinculados con ningún vendedor de dispositivos o servicio IPTV, el contenido mencionado en Mundo Kodi es gratuito a menos que se indique lo contrario
 
 
