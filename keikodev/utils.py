@@ -28,11 +28,12 @@ kodi_title = "Manuales de instalación y gestión de KODI"
 kodi_description = "Instalación, mejores addons, tools, repositorios..."
 
 # Tools Kodi_pc
-kodi_pc_title = "Manual de instalación de Kodi para PC"
+kodi_pc_title = "Manual de instalación de Kodi para PC y Android"
 kodi_pc_description = "Pasos a seguir para preparar este genial centro multimedia"
 
-
-
+# Tools Kodi_pc
+kodi_luar_title = "Instalación de addon Luar en Kodi"
+kodi_luar_description = "Pasos a seguir para preparar este genial centro multimedia, añadiendo Luar"
 
 _meta = [
     {"name": "og:type", "content": "website"},
@@ -82,4 +83,11 @@ kodi_pc_meta = [
     {"name": "og:title", "content": kodi_pc_title},
     {"name": "og:description", "content": kodi_pc_description},
 ]
-kodi_meta.extend(_meta)
+kodi_pc_meta.extend(_meta)
+
+# kodi Luar
+kodi_luar_meta = [
+    {"name": "og:title", "content": kodi_luar_title},
+    {"name": "og:description", "content": kodi_luar_description},
+]
+kodi_luar_meta.extend(_meta)

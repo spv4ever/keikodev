@@ -9,16 +9,16 @@ from keikodev.routes import Route
 def kodi_links()-> rx.Component:
         return rx.vstack(
                 title("Manuales Kodi"),
-                linkbutton("Instalación en Windows",
-                "Primeros pasos para la instalación de kodi en Windows.",
+                linkbutton("Instalación en Windows y Android TV",
+                "Primeros pasos para la instalación de kodi en Windows y Android TV.",
                 "/img/windows.svg",
                 Route.KODI_PC.value,
                 is_external=False
                 ),
-                linkbutton("Instalación en Android TV",
-                "Primeros pasos para la instalación de kodi en Android TV.",
-                "/img/android.svg",
-                Route.CONSTR.value,
+                linkbutton("Instalación de Addons --> Luar",
+                "Instalación de Luar paso a paso como estandar de instalación de addons desde una carpeta de la red",
+                "/img/kodi2.png",
+                Route.KODI_LUAR.value, #### Cambiar a Route.KODI_LUAR.value ####
                 is_external=False
                 ),
 

@@ -3,4 +3,6 @@
 .venv/
 .web
 __pycache__/
+.github
 .github/
+*.yml

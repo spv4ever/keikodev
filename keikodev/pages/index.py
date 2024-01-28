@@ -10,12 +10,15 @@ from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
 
 
+
+
 @rx.page(
     route=Route.INDEX.value,
     title=utils.index_title,
     description=utils.index_description,
     image= utils.preview,
     meta=utils.index_meta,
+
         
         
 )

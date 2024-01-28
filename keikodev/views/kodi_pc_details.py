@@ -7,7 +7,6 @@ from keikodev.componentes.steps import steps as steps
 import keikodev.styles.styles as styles
 import keikodev.views.constants as const
 from keikodev.styles.fonts import Fuentes as Fuentes
-
 from keikodev.componentes.imagenes import dosimagenes as dosimagenes
 from keikodev.componentes.imagenes import unaimagen as unaimagen
 
@@ -15,7 +14,7 @@ def kodi_pc_details()->rx.Component:
     return rx.vstack(
         rx.box(
             title(
-                rx.center('Tutorial instalación Kodi para PC'),
+                rx.center('Tutorial instalación Kodi para PC y Android TV'),
                 ),
             margin_bottom = Size.BIG.value,
             ),
@@ -36,14 +35,14 @@ def kodi_pc_details()->rx.Component:
                                         ),
                                 href=const.KODI_DESCARGAS_URL,
                                 is_external=True),
-                            rx.span(" está la versión para "),
+                            rx.span(" están todas las versiones para "),
                             rx.link(
                                 rx.span("Windows",
                                         font_family=Fuentes.TITLE.value,
                                         color=Color.PRIMARY.value),
                                 href=const.KODI_WINDOWS_URL,
                                 is_external=True
-                            ),),),
+                            ),rx.span(", Android, etc. Aunque las versiones de Android se pueden descargar directamente desde Google Play"),),),
             rx.responsive_grid(
                     rx.link(
                         rx.image(

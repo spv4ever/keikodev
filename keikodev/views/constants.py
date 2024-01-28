@@ -24,7 +24,9 @@ FONTS_URL = "https://fonts.google.com"
 REACT_URL = "https://es.react.dev/"
 CHAKRA_URL = "https://chakra-ui.com/"
 ANTDESIGN_URL = "https://ant.design/"
-RAILWAY_URL ="https://railway.app/"
+RAILWAY_URL ="https://railway.app?referralCode=NK7skT"
+FLET_URL = "https://flet.dev/"
+
 
 
 #Default
