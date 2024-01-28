@@ -14,20 +14,17 @@ from keikodev.styles.fonts import Fuentes as Fuentes
 
 def footer_resp()-> rx.Component:
     return rx.vstack(
-
-        rx.avatar(name="Albert García",
-                          size="xl", 
-                          src = "/keiko_manga.png",
-                          padding="2px",
-                          border="4px",
-                          border_color = Color.PRIMARY.value,
-                          ),
-        rx.link(f'© 1991-{datetime.date.today().year} Blog personal de Albert García.',
-                href="https://github.com/spv4ever",
-                is_external=True,
-                font_size = Size.MEDIUM.value),
-
-                
+                rx.avatar(name="Albert García",
+                        size="xl", 
+                        src = "/keiko_manga.png",
+                        padding="2px",
+                        border="4px",
+                        border_color = Color.PRIMARY.value,
+                        ),
+                rx.link(f'© 1991-{datetime.date.today().year} Blog personal de Albert García.',
+                        href="https://github.com/spv4ever",
+                        is_external=True,
+                        font_size = Size.MEDIUM.value),
                     Float_Button(
                          icon = rx.Image (src="/img/bmc-logo.svg"),
                          href = const.DONACIONES_URL,
@@ -35,7 +32,8 @@ def footer_resp()-> rx.Component:
                         #disabled = False,
                          ),
                                  rx.box(
-                    rx.vstack(
+                        rx.vstack(
+                        
                             rx.text("Renuncia de responsabilidad: ",font_family=Fuentes.TITLE.value, ),
                             rx.text("""Keikodev.es no se hace responsable de cualquier 
                                     daño o pérdida de información. Nuestra intención solo es informar, 
@@ -49,12 +47,13 @@ def footer_resp()-> rx.Component:
                                     los complementos está disponible gratuitamente en Internet y 
                                     de los propios desarrolladores de complementos. No ofrecemos 
                                     soporte para ninguno de los complementos ya que no nos pertenecen."""),
+                        
                         spacing=Size.ZERO.value,
                         font_size = Size.SMALL.value,
                         text_align= "justify",
                         text_justify= "inter-word",
                         align_items="start",
-                        width = "325px",#styles.MAX_WIDTH,
+                        width = "100%",
                         margin_bottom = Size.LARGE.value,
                         padding = Size.MEDIUM.value,
                         ),
