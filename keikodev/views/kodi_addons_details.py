@@ -20,22 +20,43 @@ def kodi_addons_details()->rx.Component:
             margin_bottom = Size.BIG.value,
             ),
         
-        unaimagen("/img/kodi_images/kodi_tutorial11.png","900px"),
-        steps("""La instalación de programas externos o complementos, también llamados 'add ons' en Kodi, 
-            se puede realizar de varias formas: Desde un repositorio ya instalado o desde un archivo comprimido ZIP."""),
-        steps("""Los repositoros son complementos a modo de bibliotecas de programas, que nos permiten instalar add-ons concretos recopilados y listos para ser usados."""),
-        steps("""Existen add-ons para cambiar Kodi a modo visual, añadir características para visualizar videos, bibliotecas de imagenes, sonido y todo
-            lo que puede necesitar nuestro centro multimedia, incluyendo programas de mantenimiento que nos ayudarán con la configuración"""),
-        steps("""Cuando instalamos un complemento desde archivo ZIP, también tendremos varias opciones para cargar el fichero a instalar, aunque normalmente usaremos dos."""),
-        steps("""La primera forma y más cómoda será realizar la instalación desde un fichero ZIP que se encuentre en interntet, 
-            para ello necesitaremos la dirección de internet donde se encuentre la carpeta pública donde está el fichero 
-            o los ficheros necesarios."""),
-        steps("""Además los creadores de este tipo de complementos, siempre van a indicar en los procesos de instalación que es necesario
-            tener instalado para que su complemento funcione, por lo que la instalación suele agregar todas las dependencias 
-            necesarias para el funcionamiento."""),
+        
+        steps(rx.span(
+                "La instalación de programas externos o complementos, también llamados ", 
+                    rx.span("add-ons",font_family=Fuentes.TITLE.value),
+                    rx.span("en Kodi, se puede realizar de varias formas: Desde un "),
+                    rx.span("repositorio",font_family=Fuentes.TITLE.value),
+                    rx.span(" ya instalado o desde un "),
+                    rx.span("archivo",font_family=Fuentes.TITLE.value),
+                    rx.span(" comprimido ZIP."),
+            ),
+        ),
+        unaimagen(f"{const.KODI_IMAGES}kodi_tutorial12.png","900px"),        
+        
+        steps(rx.span("Los repositorios son complementos a modo de ",
+                rx.span("bibliotecas de programas",font_family=Fuentes.TITLE.value),
+                rx.span("que nos permiten instalar add-ons concretos listos para ser usados."),
+            ),
+        ),
+                
+        steps("""Existen add-ons para cambiar Kodi a modo visual, añadir características para visualizar videos, bibliotecas de imagenes, 
+                sonido y todo lo que puede necesitar nuestro centro multimedia, incluyendo programas de mantenimiento que nos ayudarán con la configuración"""),
+        
+        steps("""Kodi instala los complementos desde un archivo .ZIP. Existen dos formas de añadir los archivos La primera forma y más cómoda 
+                será realizar la instalación desde un fichero ZIP que se encuentre en internet, por lo que necesitaremos la dirección donde se encuentre 
+                la carpeta pública con el archivo que necesitamos."""),
+
+        steps("""Además, los creadores de este tipo de complementos, van a indicar en los procesos de instalación, las dependencias o requisitos que sean necesarios
+            para el correcto, por lo que la instalación suele agregar todas las dependencias necesarias."""),
+
         steps("""Es muy importante que dejemos que Kodi complete los procesos de instalación y que no se 
-            haga nada hasta que no veamos que la instalación ha sido un exitosa"""),
-        steps("""Los complementos que se instalen, se podrán encontrar en la opción 'Add-ons' del menú principal."""),
+            haga nada hasta que veamos que la instalación ha sido un exitosa"""),
+
+        steps(rx.span("Los complementos que se instalen, se podrán encontrar en la opción ",
+                rx.span("Add-ons",font_family=Fuentes.TITLE.value),
+                rx.span("del menú principal."),
+            ),
+        ),
 
         steps("""Desde el menú principal deberemos volver a ir al engranaje, para entrar en el menú de sistema y seleccionar el menú explorador de archivos."""),
         dosimagenes("/img/kodi_images/kodi_tutorial4.png","/img/kodi_images/kodi_tutorial13.png"),
