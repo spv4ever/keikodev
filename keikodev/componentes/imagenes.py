@@ -30,8 +30,27 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
                             border="2px solid",
                             border_radius="10px",
                             border_color = Color.IMAGE_BOX.value,
-                            margin_y = Size.MEDIUM.value, 
+                            margin_y = Size.MEDIUM.value,
                             ),
+                    
+                    # rx.modal(
+                    #     rx.modal_overlay(
+                    #         rx.modal_content(
+                    #         rx.modal_header("Confirm"),
+                    #         rx.modal_body(
+                    #             "Do you want to confirm ejemplo?"
+                    #         ),
+                    #         rx.modal_footer(
+                    #             rx.button(
+                    #             "Close",
+                    #             on_click=ModalState.change,
+                    #                 ),
+                    #             ),
+                    #         ),
+                    #     ),
+                    #     is_open=ModalState.show,
+                    # ),
+
                 ),
                 rx.center(
                     rx.image(src=imagen2,
@@ -40,7 +59,7 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
                             border="2px solid",
                             border_radius="10px",
                             border_color = Color.IMAGE_BOX.value,
-                            margin_y = Size.MEDIUM.value, 
+                            margin_y = Size.MEDIUM.value,
                             ),
                 ),
             columns=[1,2],
@@ -48,33 +67,4 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
             width = "100%",
             padding = Size.SMALL_LARGE.value,
             ),
-    )
-
-class ModalState(rx.State):
-    show: bool = False
-
-    def change(self):
-        self.show = not (self.show)
-
-
-def modal_example():
-    return rx.vstack(
-        rx.button("Confirm", on_click=ModalState.change),
-        rx.modal(
-            rx.modal_overlay(
-                rx.modal_content(
-                    rx.modal_header("Confirm"),
-                    rx.modal_body(
-                        "Do you want to confirm example?"
-                    ),
-                    rx.modal_footer(
-                        rx.button(
-                            "Close",
-                            on_click=ModalState.change,
-                        )
-                    ),
-                )
-            ),
-            is_open=ModalState.show,
-        ),
     )

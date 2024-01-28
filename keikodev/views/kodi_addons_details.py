@@ -48,16 +48,47 @@ def kodi_addons_details()->rx.Component:
             y una vez compartidos, podrían ser instalados desde cualquier carpeta. No vamos a entrar en estos detalles por ahora,
             si necesitáis más información, me lo solicitais por email."""),
 
-        steps("""Como ejemplo vamos a instalar un add-on que permite usar la aplicación de Netflix en nuestro Kodi. Para que funcione deberás tener una cuenta activa en Netflix."""),
+        steps("""Como ejemplo vamos a instalar un add-on que permite cargar en Kodi la mayoría de plataformas de video actuales,
+              HBO, Disney+, etc en nuestro Kodi. Para que funcione deberás tener una cuenta activa en la plataforma que desees. También 
+              hay plataformas gratuitas como Pluto.TV."""),
         steps("""Hacemos doble clic en Añadir fuente y en la ventana que nos aparece volvemos a hacer clic. Nos indicará que escribamos la dirección http 
-              donde esté el respositorio: https://castagnait.github.io/repository.castagnait/, aceptamos y le damos un nombre a la fuente para 
+              donde esté el respositorio: https://k.slyguy.xyz/ y nombre slyguy, aceptamos y le damos un nombre a la fuente para 
               para poder después seleccionarla cuando vayamos a instalar, dar a ok Kodi revisará que la carpeta destino es accesible y nos 
               nos la añadirá a la lista de unidades seleccionables."""),
 
-        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial15.png',f'{const.KODI_IMAGES}kodi_tutorial16.png'),
-        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial17.png',f'{const.KODI_IMAGES}kodi_tutorial18.png'),
-        imagenes.modal_example(),
+        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial15.png',f'{const.KODI_IMAGES}kodi_tutorial41.png'),
+        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial29.png',f'{const.KODI_IMAGES}kodi_tutorial42.png'),
+        
+        steps("""Ahora ya tenemos la carpeta origen desde donde vamos a instalar el primer add-on. Si necesitamos editarlo, 
+              con botón derecho de ratón nos aparecería una menú contextual para editar, eliminar, etc.."""),
 
+        steps("""Ahora nos podemos ir al Explorador de add-ons, desde el menú principal add-ons."""),
+        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial12.png',f'{const.KODI_IMAGES}kodi_tutorial19.png'),
+
+        steps("Seleccionamos Instalar desde un archivo .ZIP"),
+
+        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial30.png',f'{const.KODI_IMAGES}kodi_tutorial31.png'),
+
+        steps("""Esperamos a que salga en la pantalla que el add-on ha sido instalado con éxito y ya tendemos un nuevo 
+                repositorio instalado en nuestro Kodi."""),
+        
+        steps("""El siguiente pasó será, volver al Explorador de add-ons y escoger la opción instalación desde repositorio. Veremos que tenemos más repositorios,
+              algunos los instala Kodi de inicio. Elegimos el repositorio Slyguy y seleccionaremos Add-ons de video"""),          
+        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial33.png',f'{const.KODI_IMAGES}kodi_tutorial34.png'),
+        steps("""Nos aparecerá el listado de add-ons que podemos instalar, entre ellos HBO Max, con el que vamos a seguir el ejemplo"""),
+        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial35.png',f'{const.KODI_IMAGES}kodi_tutorial36.png'),
+        steps("Seleccionamos HBO Max, aceptamos la instalación de dependencias y esperamos a que salga el popup de fin de instalación"),
+        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial37.png',f'{const.KODI_IMAGES}kodi_tutorial38.png'),
+            steps("""Ahora ya podemos entrar en el add-on, entrar usuario y contraseña para entrar en HBO Max. Es muy interesante ver otro tipo de 
+              organización más simple del contenido. Sin tanta publicidad."""),
+        dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial39.png',f'{const.KODI_IMAGES}kodi_tutorial40.png'),
+
+
+        
+
+
+
+        
 
 
         
