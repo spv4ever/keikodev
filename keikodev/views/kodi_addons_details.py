@@ -34,7 +34,7 @@ def kodi_addons_details()->rx.Component:
         unaimagen(f"{const.KODI_IMAGES}kodi_tutorial12.png","900px"),        
         
         steps(rx.span("Los repositorios son complementos a modo de ",
-                rx.span("bibliotecas de programas",font_family=Fuentes.TITLE.value),
+                rx.span("bibliotecas de programas ",font_family=Fuentes.TITLE.value),
                 rx.span("que nos permiten instalar add-ons concretos listos para ser usados."),
             ),
         ),
