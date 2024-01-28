@@ -29,10 +29,69 @@ docker.com
 
 flet.com
 
+import reflex as rx
 
-Renuncia de responsabilidad
-Mundo Kodi no se hace responsable de cualquier daño o pérdida de información. Nuestra intención solo es informar, utilizando contenido de Internet.
-Mundo Kodi y todo el material aquí mencionado no son oficiales, favor de no realizar quejas o reclamos en el foro oficial de Kodi.
-No estamos vinculados con ningún vendedor de dispositivos o servicio IPTV, el contenido mencionado en Mundo Kodi es gratuito a menos que se indique lo contrario
+
+class State(rx.State):
+    count: str
+
+    def increment(self, n:str):
+        self.count = n
+
+    def decrement(self, n:str):
+        self.count = n
+
+
+class ModalState(rx.State):
+    show: bool = False
+    count: str
+
+    def change(self, count:str):
+        self.show = not (self.show)
+        self.count = count
+
+
+def index():
+    return rx.hstack(
+        rx.image(
+            src="favicon.ico",
+            bg="#fef2f2",
+            color="#b91c1c",
+            border_radius="lg",
+            on_click=ModalState.change("avatar3.png"),
+        ),
+        rx.image(
+            src="favicon.ico",
+            bg="#ecfdf5",
+            color="#047857",
+            border_radius="lg",
+            on_click=ModalState.change("keiko_manga.png"),
+
+        ),
+        rx.modal(
+            rx.modal_overlay(
+                rx.modal_content(
+                    rx.modal_body(
+                        rx.image(
+                            src=ModalState.count),
+                        rx.button(
+                            "Close",
+                            on_click=ModalState.change(""),
+                        )
+                    ),
+                ),
+            ),
+        is_open=ModalState.show
+        ), 
+
+
+        rx.heading(rx.image(src=State.count), font_size="2em"),
+        spacing="1em",
+
+    )
+
+
+app = rx.App()
+app.add_page(index)
 
 
