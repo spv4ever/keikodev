@@ -1,8 +1,8 @@
 *.db
 *.py[cod]
+*.yml
+.github
+.github/
 .venv/
 .web
 __pycache__/
-.github
-.github/
-*.yml
