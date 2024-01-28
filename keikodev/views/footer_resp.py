@@ -14,24 +14,7 @@ from keikodev.styles.fonts import Fuentes as Fuentes
 
 def footer_resp()-> rx.Component:
     return rx.vstack(
-        rx.box(
-                    rx.vstack(
-                            rx.text("Renuncia de responsabilidad: ",font_family=Fuentes.TITLE.value, ),
-                            rx.text("""Keikodev.es no se hace responsable de cualquier daño o pérdida de información. 
-                                    Nuestra intención solo es informar, utilizando contenido de Internet. Keikodev.es y todo el material aquí mencionado no es oficial."""),
-                            rx.text("""No estamos vinculados con ningún vendedor de servicio IPTV, el contenido mencionado en Keikodev.es es gratuito a menos que se indique lo contrario"""),
-                            rx.text("""Cualquier complemento que elija agregar es bajo su propia responsabilidad. 
-                                    La información que proporcionamos en los complementos está disponible gratuitamente en Internet y 
-                                    de los propios desarrolladores de complementos. No ofrecemos soporte para ninguno de los complementos 
-                                    ya que no nos pertenecen."""),
-                            spacing=Size.ZERO.value,
-                            style=styles.button_body_style,
-                            align_items="start"
-                        ),
-                width = styles.CONTENT_WIDTH,
-                margin_bottom = Size.LARGE.value,
-                padding = Size.MEDIUM.value,
-                ),
+
         rx.avatar(name="Albert García",
                           size="xl", 
                           src = "/keiko_manga.png",
@@ -51,9 +34,34 @@ def footer_resp()-> rx.Component:
                          target='_blank',
                         #disabled = False,
                          ),
+                                 rx.box(
+                    rx.vstack(
+                            rx.text("Renuncia de responsabilidad: ",font_family=Fuentes.TITLE.value, ),
+                            rx.text("""Keikodev.es no se hace responsable de cualquier 
+                                    daño o pérdida de información. Nuestra intención solo es informar, 
+                                    utilizando contenido de Internet. Keikodev.es y todo el 
+                                    material aquí mencionado no es oficial."""),
+                            rx.text("""No estamos vinculados con ningún vendedor de servicio IPTV, 
+                                    el contenido mencionado en Keikodev.es es gratuito a menos 
+                                    que se indique lo contrario"""),
+                            rx.text("""Cualquier complemento que elija agregar es bajo su 
+                                    propia responsabilidad. La información que proporcionamos en 
+                                    los complementos está disponible gratuitamente en Internet y 
+                                    de los propios desarrolladores de complementos. No ofrecemos 
+                                    soporte para ninguno de los complementos ya que no nos pertenecen."""),
+                        spacing=Size.ZERO.value,
+                        font_size = Size.SMALL.value,
+                        text_align= "justify",
+                        text_justify= "inter-word",
+                        align_items="start",
+                        width = "325px",#styles.MAX_WIDTH,
+                        margin_bottom = Size.LARGE.value,
+                        padding = Size.MEDIUM.value,
+                        ),
+                ),
                 margin_bottom=Size.BIG.value,
                 padding_bottom = Size.BIG.value,
                 color = TextColor.FOOTER.value,
                 font_family = Fuentes.DEFAULT.value,
-
+        
     )
