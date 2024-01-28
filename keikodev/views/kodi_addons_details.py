@@ -54,7 +54,7 @@ def kodi_addons_details()->rx.Component:
 
         steps(rx.span("Los complementos que se instalen, se podrán encontrar en la opción ",
                 rx.span("Add-ons",font_family=Fuentes.TITLE.value),
-                rx.span("del menú principal."),
+                rx.span(" del menú principal."),
             ),
         ),
 
