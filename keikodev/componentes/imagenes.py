@@ -22,7 +22,8 @@ def unaimagen(imagen1: str, tamaño: str, alt="")->rx.Component:
                     border="2px solid",
                     border_radius="10px",
                     border_color = Color.IMAGE_BOX.value,
-                    margin_y = Size.MEDIUM.value, 
+                    margin_y = Size.MEDIUM.value,
+                    on_click=ModalState.change(imagen1), 
                     ),
             ),
         width = "100%",
@@ -66,8 +67,8 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
                         rx.box(
                             rx.image(
                                 src=ModalState.count,
-                                #width="900px",
-                                #heigth = "auto"
+                                width="800px",
+                                heigth = "auto"
                                 ),
                         ),
                     rx.modal_footer(

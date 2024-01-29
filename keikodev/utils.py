@@ -39,6 +39,13 @@ kodi_addons_description = "Todo lo necesario para gestionar add-ons en Kodi, ins
 kodi_luar_title = "Instalación de addon Luar en Kodi"
 kodi_luar_description = "Pasos a seguir para preparar este genial centro multimedia, añadiendo Luar"
 
+# Ciberestafas
+estafas_title = "Sección de intentos de ciberestafas"
+estafas_description = "Aquí describiremos los intentos de ciberestafas que vamos recibiendo, mails fraudulentos, avisos por wassap, sms..."
+
+
+
+
 _meta = [
     {"name": "og:type", "content": "website"},
     {"name": "og:image", "content": preview},
@@ -102,3 +109,10 @@ kodi_addons_meta = [
     {"name": "og:description", "content": kodi_addons_description},
 ]
 kodi_addons_meta.extend(_meta)
+
+# kestafas
+estafas_meta = [
+    {"name": "og:title", "content": estafas_title},
+    {"name": "og:description", "content": estafas_description},
+]
+estafas_meta.extend(_meta)

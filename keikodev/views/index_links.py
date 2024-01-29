@@ -32,10 +32,10 @@ def index_links()-> rx.Component:
             is_external=False),
         
         title("Otras recursos de interes"),
-        linkbutton('Cyber Estafas', 
+        linkbutton('Ciberestafas', 
             "Toda la actualidad de los intentos de fraude que recibamos", 
             "/img/user-secret-solid.svg",
-            Route.CONSTR.value,
+            Route.ESTAFAS.value,
             "Noticias sobre intentos de estafa en internet",
             is_external=False),
 

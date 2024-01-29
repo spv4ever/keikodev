@@ -8,6 +8,7 @@ from keikodev.pages.constr import constr
 from keikodev.pages.kodi import kodi
 from keikodev.pages.kodi_addons import kodi_addons
 from keikodev.pages.kodi_pc import kodi_pc
+from keikodev.pages.estafas import estafas
 from keikodev.pages.utils_images import utils_images
 
 ##### Formación de backend
