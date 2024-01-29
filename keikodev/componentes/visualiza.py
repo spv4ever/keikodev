@@ -1,56 +1,33 @@
-pip install --upgrade reflex --> update de reflex
-pip install --upgrade pip --> update de pip
-https://fonts.google.com --> fuentes de texto
-https://fontawesome.com/ --> Miles de iconos.
-
-
-    prueba con Agbalumo-Regular
-reflex export --frontend-only > ejecutar proceso de exportación proyecto a zip
-reflex-first-r6nc-q971smeo6-alberts-projects-4765884a.vercel.app
-
-241,242,244
-
-G-SMVVY1YF0J
-
-https://www.mamedev.org/
-
-https://nostalgic-css.github.io/NES.css/
-
-
-Almacenamiento backend.
-https://railway.app/
-Render.com
-fly.io // revisar video.
-fl0.com
-
-
-
-docker.com
-
-flet.com
-
 import reflex as rx
 
+# class ModalState(rx.State):
+#     show: bool = False
+#     count: str
 
-class State(rx.State):
-    count: str
+#     def change(self, count:str):
+#         self.show = not (self.show)
+#         self.count = count
 
-    def increment(self, n:str):
-        self.count = n
+# def visualiza()->rx.Component:
+#         return 
+#         rx.modal(
+#             rx.modal_overlay(
+#                 rx.modal_content(
+#                     rx.modal_body(
+#                         rx.image(
+#                             src=ModalState.count),
+#                         rx.button(
+#                             "Close",
+#                             on_click=ModalState.change(""),
+#                         )
+#                     ),
+#                 ),
+#             ),
+#         is_open=ModalState.show
+#         ), 
 
-    def decrement(self, n:str):
-        self.count = n
 
-
-class ModalState(rx.State):
-    show: bool = False
-    count: str
-
-    def change(self, count:str):
-        self.show = not (self.show)
-        self.count = count
-
-
+"""
 def index():
     return rx.hstack(
         rx.image(
@@ -89,15 +66,4 @@ def index():
         spacing="1em",
 
     )
-
-
-app = rx.App()
-app.add_page(index)
-
-
-7% cashless
-11% biling
-
-
-
-
+"""
