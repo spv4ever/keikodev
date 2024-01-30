@@ -8,16 +8,12 @@ from keikodev.styles.styles import Size as Size
 
 def noticias()->rx.Component:
     return  rx.hstack(
-                    rx.box(
-                    rx.text("Imagen", color = TextColor.HEADER.value),
-                    width = "300px",
-                    height = "300px"
-                    ),
-                        rx.vstack(
-                            
-                            rx.text("Cabecera", color = TextColor.HEADER.value),
-                            rx.text("Detalle", color = TextColor.HEADER.value),
+                    rx.box("Imagen",bg="blue",
+                           width= "10em",
+                            height="20em",
                             ),
-                        align_content = "up",
-                        width="100%",
-                        ),
+                    rx.box("Texto", bg="white",width = "100%", heigth = "100%"),
+            align_items="start",
+            width="100%",
+            heigth = "auto",
+            )

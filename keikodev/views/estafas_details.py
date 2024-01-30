@@ -20,10 +20,8 @@ def estafas_details()->rx.Component:
             margin_bottom = Size.BIG.value,
         ),
         noticias(),
-        noticias(),
-        noticias(),
-        noticias(),
-        noticias(),
+
+
 
         spacing=Size.VERY_SMALL.value,
         padding = Size.MEDIUM.value,
