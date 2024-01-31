@@ -9,6 +9,7 @@ IMAGEENLARGER_URL = "https://imglarger.com/"
 PIXLR_URL = "https://pixlr.com/es/"
 ICONOS_URL = "https://fontawesome.com/icons"
 CURSO_LRPS_URL = "https://go.hotmart.com/R90266873D?dp=1"
+GIFER_URL = "https://gifer.com/es"
 
 
 

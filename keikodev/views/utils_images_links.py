@@ -36,6 +36,11 @@ def utils_images_links()-> rx.Component:
                         "/img/graduation-cap-solid.svg",
                         constants.CURSO_LRPS_URL,
                         ),
+                linkbutton("Librería de recursos GIFs",
+                        "Fantástica librería de recursos Gifs gratuitos para link y descarga",
+                        "/img/images-regular.svg",
+                        constants.GIFER_URL,
+                        ),                
 
         width = "100%",
         spacing=Size.MEDIUM.value,
