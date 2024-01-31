@@ -12,6 +12,19 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
     return  rx.box(
             rx.grid(
                 rx.grid_item(
+                    rx.image(
+                        src="/img/estafas/DoNc.gif",
+                        object_fit = "scale-down",
+                        width = "100%",
+                        height = "100%",
+                        display = "flex",
+                        align_items = "center",
+                        justify_content = "Start",
+                    ),
+                    row_span=6, 
+                    col_span=1
+                ),
+                rx.grid_item(
                     rx.box(
                         rx.text(
                                 titulo,
@@ -50,7 +63,16 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                     col_span=1,
                     color = Color.SECONDARY.value,
                     ),
-                rx.grid_item(steps(texto), padding = Size.DEFAULT.value, row_span=5, col_span=6),
+                rx.grid_item(rx.box(
+                                rx.text(texto, 
+                                        font_size = Size.MEDIUM.value,
+                                        color = TextColor.BODY.value,
+                                        text_align= "justify",
+                                        text_justify= "inter-word",
+                                        ), 
+                                padding = Size.DEFAULT.value,),
+                            row_span=5,
+                            col_span=6),
                 rx.grid_item("Imágenes, capturas y otros documentos gráficos", 
                             font_family = fuentes.TITLE.value, 
                             color = TextColor.HEADER.value,
@@ -62,7 +84,7 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                             justify_content = "left",
                             bg = Color.CONTENT.value,
                             row_span=2, 
-                            col_span=4,
+                            col_span=5,
                         ),
                 rx.grid_item(f"Fuente: {fuente}", 
                             font_family = fuentes.TITLE.value, 
@@ -132,8 +154,8 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                 
                 
                 template_rows="repeat(21, 1fr)",
-                template_columns="repeat(6, 1fr)",
-                h="500px",
+                template_columns="repeat(7, 1fr)",
+                h="600px",
                 width="100%",
                 gap=0,
             ),

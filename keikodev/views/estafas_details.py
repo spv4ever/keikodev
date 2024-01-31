@@ -28,13 +28,12 @@ def estafas_details()->rx.Component:
             rx.span(" indicando si prefiere permanecer en el anonimato o quiere aparecer como fuente de la noticia."))),
     
         noticias("30/01/2024", 
-                "Estafa del mensaje pidiendo ayuda",
-                """Resulta que un día recibí un mensaje de texto en mi celular que decía: 
-                    Papá, necesito dinero para comprar libros para la universidad. 
-                    Por favor, envíame 100 euros a esta cuenta bancaria: 1234567890. 
-                    Al principio, me sorprendí y me alarmé un poco, pensando en cómo mi hija 
-                    podría necesitar dinero para los libros de la universidad. Pero luego, 
-                    al leer detenidamente el mensaje, me di cuenta de que algo no estaba del todo bien.""",
+                "Recibo dos mensajes de alguien que dice que es mi hija",
+                """Hoy os traigo dos intentos seguidos, con una diferencia de 15 días, donde 
+                alguien que dice que es mi hija me envía mensajes de texto con un enlace y me pide que haga clic.  
+                La excusa, como siempre, es que le ha pasado algo, que se ha quedado sin teléfono, por el motivo que sea. 
+                Los patrones siempre son los mismos, un familiar, un amigo y la urgencia. 'Rápido que es urgente'. No caigais en
+                la trampa, usan la presión emocional para que no pensemos. A saber que hay detrás del enlace.""",
                 "estafa-1-1.png",
                 "estafa-1-2.png",
                 "estafa-1-3.png",
