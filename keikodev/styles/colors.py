@@ -7,6 +7,7 @@ class Color(Enum):
     BACKGROUND = "#2F0B3A"
     CONTENT = "#220A29"
     IMAGE_BOX = "black"
+    PURPLE = "#9146FF"
 
 class TextColor(Enum):
     HEADER = "#F1F2F4"

@@ -10,10 +10,11 @@ from keikodev.pages.kodi_addons import kodi_addons
 from keikodev.pages.kodi_pc import kodi_pc
 from keikodev.pages.estafas import estafas
 from keikodev.pages.utils_images import utils_images
+from keikodev.api.api import repo
+from keikodev.api.api import live
 
 ##### Formación de backend
-class State(rx.State):
-    """Define your app state here."""
+
 
 
 
@@ -34,3 +35,6 @@ app = rx.App(
     ],
 
 )
+
+app.api.add_api_route("/repo",repo)
+app.api.add_api_route("/live/{user}",live)
