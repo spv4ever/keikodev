@@ -8,9 +8,13 @@ from keikodev.views.footer import footer
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
+from keikodev.api.api import live
+from keikodev.state.PageState import PageState as PageState
 
 
 
+
+    
 
 @rx.page(
     route=Route.INDEX.value,
@@ -18,15 +22,15 @@ from keikodev.routes import Route
     description=utils.index_description,
     image= utils.preview,
     meta=utils.index_meta,
+    on_load = PageState.check_live
 
-        
-        
 )
 def index() -> rx.Component:
     return rx.box(
         utils.lang(),
         navbar(),
         rx.center(
+
             rx.vstack(
                 header(),
                 index_links(),

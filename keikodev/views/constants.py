@@ -10,6 +10,8 @@ PIXLR_URL = "https://pixlr.com/es/"
 ICONOS_URL = "https://fontawesome.com/icons"
 CURSO_LRPS_URL = "https://go.hotmart.com/R90266873D?dp=1"
 GIFER_URL = "https://gifer.com/es"
+GIPHY_URL = "https://giphy.com/"
+TENOR_URL = "https://tenor.com/"
 
 
 
@@ -27,6 +29,7 @@ CHAKRA_URL = "https://chakra-ui.com/"
 ANTDESIGN_URL = "https://ant.design/"
 RAILWAY_URL ="https://railway.app?referralCode=NK7skT"
 FLET_URL = "https://flet.dev/"
+FL_URL = "https://www.fl0.com/"
 
 
 
