@@ -12,9 +12,6 @@ from keikodev.pages.estafas import estafas
 from keikodev.pages.utils_images import utils_images
 
 ##### Formación de backend
-class State(rx.State):
-    """Define your app state here."""
-
 
 
 app = rx.App(
