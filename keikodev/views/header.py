@@ -12,16 +12,27 @@ from keikodev.styles.fonts import Fuentes as Fuentes
 import keikodev.views.constants as const
 
 
-def header(details=True)-> rx.Component:
+def header(details=True, live=False)-> rx.Component:
     return rx.vstack(
             rx.hstack(
-                rx.avatar(name="Albert García Sabadell",
-                          size="xl", 
-                          src = "/avatar3.png",
-                          padding="2px",
-                          border="4px",
-                          border_color = Color.PRIMARY.value,
-                          ),
+                rx.avatar(
+                    rx.cond(
+                            live,
+                            rx.avatar_badge(
+                            box_size = Size.MEDIUM.value,
+                            bg = Color.PURPLE.value,
+                            border_color = Color.PURPLE.value,
+                        ),
+                            
+                            
+                        ),
+                        name="Albert García Sabadell",
+                        size="xl", 
+                        src = "/avatar3.png",
+                        padding="2px",
+                        border="4px",
+                        border_color = Color.PRIMARY.value,
+                        ),
                 rx.vstack(
                     rx.heading(
                         'Alberto García',

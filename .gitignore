@@ -1,11 +1,10 @@
 *.db
 *.py[cod]
 *.yml
+.env
+.envi
 .github
 .github/
 .venv/
 .web
 __pycache__/
-.env
-.envi
-

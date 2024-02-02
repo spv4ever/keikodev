@@ -10,6 +10,11 @@ from keikodev.pages.kodi_addons import kodi_addons
 from keikodev.pages.kodi_pc import kodi_pc
 from keikodev.pages.estafas import estafas
 from keikodev.pages.utils_images import utils_images
+from keikodev.api.api import repo as repo
+from keikodev.api.api import live as live
+from keikodev.api.api import hello as hello
+
+
 
 ##### Formación de backend
 
@@ -29,5 +34,10 @@ app = rx.App(
             """
         ),
     ],
-
 )
+
+#app.api.add_api_route("/hello",hello)
+app.api.add_api_route("/repo", repo)
+app.api.add_api_route("/live/{user}", live)
+
+
