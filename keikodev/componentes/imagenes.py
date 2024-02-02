@@ -3,13 +3,9 @@ from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.colors import Color as Color
 from keikodev.styles.fonts import Fuentes as Fuentes
+from keikodev.state.ModalState import ModalState as ModalState
 
-class ModalState(rx.State):
-    show: bool = False
-    count: str
-    def change(self, count:str):
-        self.show = not (self.show)
-        self.count = count
+
 
 
 
@@ -84,4 +80,49 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
         is_open=ModalState.show,
         size="xl",
         ),
+    )
+
+def tresimagenes(imagen1: str, imagen2: str, imagen3: str)->rx.Component:
+    return rx.box(rx.responsive_grid(
+                rx.center(
+                    rx.image(src=imagen1,
+                            width="300px",
+                            heigth="auto",
+                            border="2px solid",
+                            border_radius="10px",
+                            border_color = Color.IMAGE_BOX.value,
+                            margin_y = Size.MEDIUM.value,
+                            on_click=ModalState.change(imagen1)
+                            ),
+
+                ),
+                rx.center(
+                    rx.image(src=imagen2,
+                            width="300px",
+                            heigth="auto",
+                            border="2px solid",
+                            border_radius="10px",
+                            border_color = Color.IMAGE_BOX.value,
+                            margin_y = Size.MEDIUM.value,
+                            on_click=ModalState.change(imagen2)
+                            ),
+                ),
+                rx.center(
+                    rx.image(src=imagen3,
+                            width="300px",
+                            heigth="auto",
+                            border="2px solid",
+                            border_radius="10px",
+                            border_color = Color.IMAGE_BOX.value,
+                            margin_y = Size.MEDIUM.value,
+                            on_click=ModalState.change(imagen3)
+                            ),
+                ),
+                
+
+            columns=[1,2,3],
+            spacing=Size.SMALL.value,
+            width = "100%",
+            padding = Size.SMALL_LARGE.value,
+            ),
     )
