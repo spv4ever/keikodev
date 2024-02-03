@@ -52,10 +52,13 @@ class TwitchAPI:
 
         if response.status_code == 200 and response.json()["data"]:
             data = response.json()["data"]
-            print(data)
-            return True
+            url = data[0]['thumbnail_url']
+            url = url.replace('{width}', '800').replace('{height}', '600')
+            #print(url)
+            #print(data)
+            return True, url
         
-        return False
+        return False, ""
 
 
     

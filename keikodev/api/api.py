@@ -1,8 +1,10 @@
 import keikodev.views.constants as const
 import time
 from .Twitch import TwitchAPI
+from .nasa import nasaApi
 
 TWITCH_API = TwitchAPI()
+NASA_API = nasaApi()
 
 
 def hello() -> str:
@@ -16,6 +18,9 @@ async def repo() -> str:
 async def live(user: str) -> bool:
 
     return TWITCH_API.live(user)
+
+async def foto() -> bool:
+    return NASA_API.tomaFoto()
 
 
 
