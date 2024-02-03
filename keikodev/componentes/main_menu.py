@@ -45,7 +45,14 @@ def main_menu()-> rx.Component:
                                         style=styles.main_menu_style,
                                         
                                         ),
-
+                                rx.menu_item(
+                                        rx.link(
+                                                "Ciberestafas",
+                                                href = Route.ESTAFAS.value,
+                                                ),
+                                        style=styles.main_menu_style,
+                                        
+                                        ),
                                 rx.menu_divider(),
                                 rx.menu_item(
                                         rx.link(

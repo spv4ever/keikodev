@@ -43,6 +43,9 @@ kodi_luar_description = "Pasos a seguir para preparar este genial centro multime
 estafas_title = "Sección de intentos de ciberestafas"
 estafas_description = "Aquí describiremos los intentos de ciberestafas que vamos recibiendo, mails fraudulentos, avisos por wassap, sms..."
 
+# Galeria
+galeria_title = "Recursos y galerías de imagenes"
+galeria_description = "Galerías de imagenes, fotos diarias, conexión directa con NASA con la foto del día"
 
 
 
@@ -110,9 +113,16 @@ kodi_addons_meta = [
 ]
 kodi_addons_meta.extend(_meta)
 
-# kestafas
+# ciberestafas
 estafas_meta = [
     {"name": "og:title", "content": estafas_title},
     {"name": "og:description", "content": estafas_description},
 ]
 estafas_meta.extend(_meta)
+
+# galeria
+galeria_meta = [
+    {"name": "og:title", "content": galeria_title},
+    {"name": "og:description", "content": galeria_description},
+]
+galeria_meta.extend(_meta)

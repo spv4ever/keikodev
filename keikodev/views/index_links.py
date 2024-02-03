@@ -48,7 +48,7 @@ def index_links()-> rx.Component:
         linkbutton("Biblioteca de imágenes",
             "Crear biblioteca de imágenes con fotografía propia",
             "/img/images.svg",
-            constants.FLICKR_URL),
+            Route.GALERIA.value),
 
         linkbutton('Mundo de la emulación', 
             "Todo lo relativo al mundo de la emulación Consola", 

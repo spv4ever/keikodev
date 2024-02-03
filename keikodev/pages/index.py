@@ -55,6 +55,8 @@ def index() -> rx.Component:
                     f"Foto del día: {PageState.url[3]}",
                     color = TextColor.BODY.value),
                 rx.image(src=PageState.url[1]),
+                rx.text(PageState.url[4],
+                        color = TextColor.BODY.value),
                 spacing=Size.DEFAULT.value,
                 max_width=styles.MAX_WIDTH,
                 width="100%",

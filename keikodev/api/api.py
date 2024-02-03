@@ -19,8 +19,8 @@ async def live(user: str) -> bool:
 
     return TWITCH_API.live(user)
 
-async def foto() -> bool:
-    return NASA_API.tomaFoto()
+async def foto(fecha) -> bool:
+    return NASA_API.tomaFoto(fecha)
 
 
 

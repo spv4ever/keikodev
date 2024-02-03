@@ -33,7 +33,7 @@ def dev() -> rx.Component:
                 ),
         rx.center(
             rx.vstack(
-                header(False,PageState.is_live),
+                header(False,live=PageState.is_live[0]),
                 dev_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",

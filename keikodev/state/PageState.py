@@ -2,7 +2,7 @@ import reflex as rx
 from keikodev.api.api import live
 from keikodev.api.api import foto
 
-USER = "Brixoow"
+USER = "gerardromero"
 
 
 class PageState(rx.State):
@@ -11,5 +11,7 @@ class PageState(rx.State):
 
     async def check_live(self):
         self.is_live = await live(USER)
-        self.url = await foto()
+        self.url = await foto("")
         print(self.url)
+        print(self.is_live)
+    
