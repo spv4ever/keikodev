@@ -28,7 +28,7 @@ class nasaApi():
         # print(date)
         # print(url)
         # print(response)
-        return True, url, date, title, explanation
+        return True, url, date, title, explanation, response
     
 
     

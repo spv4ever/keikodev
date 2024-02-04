@@ -5,9 +5,8 @@ from keikodev.styles.colors import TextColor as TextColor
 import keikodev.styles.styles as styles
 from keikodev.state.fotoNasa import Image_Load as Image_Load
 
-
-
 def construccion()->rx.Component:
+
     return rx.vstack(
         rx.heading(
             "Todavía no estamos listos",
@@ -21,6 +20,7 @@ def construccion()->rx.Component:
                   on_click=Image_Load.tomaFoto("2024-01-31")
         
         ),
+        
         rx.image(src=Image_Load.url[1]),
         width = "100%",
     )

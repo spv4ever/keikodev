@@ -26,7 +26,7 @@ def constr() -> rx.Component:
             rx.vstack(
                 header(False),
                 construccion(),
-                max_width=styles.MAX_WIDTH,
+                max_width=styles.CONTENT_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value
                 )
