@@ -6,12 +6,12 @@ import requests
 import keikodev.views.constants as const
 
 
-class nasaApi(rx.State):
+class nasaApi():
     dotenv.load_dotenv()
     NASA_KEY = os.environ.get("NASA_KEY_ID")
 
     def tomaFoto(self, fecha):
-        
+
         if fecha != None:
             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha}').text
         else:
