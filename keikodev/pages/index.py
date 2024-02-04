@@ -15,9 +15,6 @@ from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import  fotoNasa as fotoNasa
 from keikodev.styles.colors import TextColor as TextColor
 
-
-
-
 # class IndexState(rx.State):
     
     
@@ -42,21 +39,8 @@ def index() -> rx.Component:
         navbar(),
         rx.center(
             rx.vstack(
-                #rx.text(IndexState.say_hello),
                 header(live=PageState.is_live[0]),
-                # rx.video(
-                #     url="https://player.twitch.tv/?channel=Brixoow&parent=localhost&muted=true&autoplay=true",
-                #     width="400px",
-                #     height="auto",
-                # ),
                 index_links(),
-                
-                rx.text(
-                    f"Foto del día: {PageState.url[3]}",
-                    color = TextColor.BODY.value),
-                rx.image(src=PageState.url[1]),
-                rx.text(PageState.url[4],
-                        color = TextColor.BODY.value),
                 spacing=Size.DEFAULT.value,
                 max_width=styles.MAX_WIDTH,
                 width="100%",

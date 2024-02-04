@@ -5,13 +5,13 @@ class fotoNasa(rx.State):
     url: tuple
 
     async def tomaFoto(self):
-        self.url = await foto()
-        #print(self.is_live)
+        self.url = foto("")
+
 
 class Image_Load(rx.State):
     url: tuple  
 
-    async def tomaFoto(self,fecha):
-        self.url = await foto(fecha)
-        print(self.url)
+    async def tomaFotoEsp(self,fecha):
+        self.url = foto(fecha)
+        #print(self.url)
 

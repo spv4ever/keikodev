@@ -7,10 +7,13 @@ import keikodev.views.constants as const
 from keikodev.routes import Route
 from keikodev.componentes.ant_components import Float_Button
 from keikodev.componentes.main_menu import main_menu as main_menu
+from keikodev.state.PageState import PageState as PageState
+from keikodev.state.fotoNasa import fotoNasa as fotoNasa
+
 
 
 def navbar():
-    return rx.hstack(
+        return rx.hstack(
                 rx.box(
                 main_menu(),
                 heigth = "3em",
@@ -33,6 +36,26 @@ def navbar():
                         ), 
                         href=Route.INDEX.value,
                 ),
+                rx.box(
+                        rx.text(f"Imagen del día: {PageState.url[2]}" ,
+                                margin=Size.DEFAULT.value,
+                                display = "flex",
+                                align_items = "center",
+                                justify_content = "center",
+                                color = TextColor.BODY.value,
+                                size = Size.SMALL.value,
+                                ),
+                        rx.image(
+                                src=PageState.url[5],
+                                width = "75px",
+                                height = "auto",
+                                
+                                ),
+                        width = "100%",
+                        display = "flex",
+                        align_items = "right",
+                        justify_content = "right",
+                        ),
         spacing = Size.LARGE.value,
         position="sticky", #Deja la barra arriba y se mueve el head y footer
         bg=Color.CONTENT.value,

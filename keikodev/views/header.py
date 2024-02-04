@@ -7,8 +7,6 @@ from keikodev.styles.colors import Color as Color
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.fonts import Fuentes as Fuentes
 
-
-
 import keikodev.views.constants as const
 
 

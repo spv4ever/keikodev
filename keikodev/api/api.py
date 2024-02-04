@@ -1,3 +1,4 @@
+import asyncio
 import keikodev.views.constants as const
 import time
 from .Twitch import TwitchAPI
@@ -19,7 +20,8 @@ async def live(user: str) -> bool:
 
     return TWITCH_API.live(user)
 
-async def foto(fecha) -> bool:
+
+async def foto(fecha):
     return NASA_API.tomaFoto(fecha)
 
 

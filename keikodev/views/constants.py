@@ -31,8 +31,6 @@ RAILWAY_URL ="https://railway.app?referralCode=NK7skT"
 FLET_URL = "https://flet.dev/"
 FL_URL = "https://www.fl0.com/"
 
-
-
 #Default
 DEFAULT_URL = "http://localhost:3000/"
 GOOGLE_URL = 'http://www.google.es'
@@ -70,6 +68,9 @@ KODI_WINDOWS_URL = "https://kodi.tv/download/windows/"
 
 #Librerías de imagenes.
 KODI_IMAGES = "/img/kodi_images/"
+
+#prueba constantes.
+NASA_URL = ""
 
 
 
