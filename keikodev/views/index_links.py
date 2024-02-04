@@ -48,7 +48,8 @@ def index_links()-> rx.Component:
         linkbutton("Biblioteca de imágenes",
             "Crear biblioteca de imágenes con fotografía propia",
             "/img/images.svg",
-            Route.GALERIA.value),
+            Route.GALERIA.value,
+            is_external=False),
 
         linkbutton('Mundo de la emulación', 
             "Todo lo relativo al mundo de la emulación Consola", 
