@@ -4,6 +4,7 @@ from keikodev.styles.colors import Color as Color
 from keikodev.styles.colors import TextColor as TextColor
 import keikodev.styles.styles as styles
 from keikodev.state.fotoNasa import Image_Load as Image_Load
+from keikodev.componentes.card import card as card
 
 def construccion()->rx.Component:
 
@@ -13,6 +14,7 @@ def construccion()->rx.Component:
             size = "lg",
             style=styles.title_center_style,
             ),
+        card("http://meloinvento", "Titulo", "texto", color=TextColor.PRIMARY, badge_text="badge text", featured=False),
         rx.image(
             src="/en-construccion.webp.png",
         ),

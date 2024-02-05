@@ -41,4 +41,5 @@ def dev() -> rx.Component:
                 )
             ),
         footer(),
+        style = styles.background_pattern_style,
     )

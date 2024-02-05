@@ -3,9 +3,11 @@ import keikodev.views.constants as const
 import time
 from .Twitch import TwitchAPI
 from .nasa import nasaApi
+from .db import db
 
 TWITCH_API = TwitchAPI()
 NASA_API = nasaApi()
+DB_API = db()
 
 
 def hello() -> str:

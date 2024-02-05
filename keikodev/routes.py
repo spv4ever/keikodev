@@ -11,4 +11,5 @@ class Route(Enum):
     KODI_ADDONS = "/addons"
     ESTAFAS = "/estafas"
     GALERIA = "/galeria"
+    GALERIA_NASA = "/galeria_nasa"
     

@@ -16,5 +16,5 @@ class Image_Load(rx.State):
         fecha = datetime.today().date() - timedelta(days=1)
         print(fecha)
         self.url = await foto(fecha)
-        #print(self.url)
+        #print(self.url)    
 

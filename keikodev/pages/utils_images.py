@@ -39,4 +39,5 @@ def utils_images() -> rx.Component:
                 )
             ),
         footer(),
+        style = styles.background_pattern_style,
     )

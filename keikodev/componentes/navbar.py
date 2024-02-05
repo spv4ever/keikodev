@@ -5,7 +5,6 @@ from keikodev.styles.colors import TextColor as TextColor
 import keikodev.styles.styles as styles
 import keikodev.views.constants as const
 from keikodev.routes import Route
-from keikodev.componentes.ant_components import Float_Button
 from keikodev.componentes.main_menu import main_menu as main_menu
 from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import fotoNasa as fotoNasa
@@ -36,6 +35,7 @@ def navbar():
                         ), 
                         href=Route.INDEX.value,
                 ),
+
                 rx.box(
                         rx.text(f"Imagen del día: {PageState.url[2]}" ,
                                 margin=Size.DEFAULT.value,

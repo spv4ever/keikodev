@@ -24,6 +24,7 @@ def estafas()-> rx.Component:
             max_width=styles.CONTENT_WIDTH,
             ),
         footer(),
+        style = styles.background_pattern_style,
     )
 
 

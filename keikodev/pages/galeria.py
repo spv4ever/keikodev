@@ -11,15 +11,17 @@ import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 from keikodev.views.galeria_links import galeria_links
 from keikodev.state.ModalState import ModalState
+from keikodev.state.PageState import PageState as PageState
 
 
 
 @rx.page(
     route=Route.GALERIA.value,
-    title=utils.kodi_title,
-    description=utils.kodi_description,
+    title=utils.galeria_title,
+    description=utils.galeria_description,
     image= utils.preview,
     meta=utils.dev_meta,
+    on_load=PageState.check_live,
 )
 
 def galeria() -> rx.Component:
@@ -41,4 +43,5 @@ def galeria() -> rx.Component:
                 )
             ),
         footer(),
+        style = styles.background_pattern_style,
     )

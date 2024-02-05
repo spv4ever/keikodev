@@ -47,6 +47,11 @@ estafas_description = "Aquí describiremos los intentos de ciberestafas que vamo
 galeria_title = "Recursos y galerías de imagenes"
 galeria_description = "Galerías de imagenes, fotos diarias, conexión directa con NASA con la foto del día"
 
+# Galeria Nasa
+galeria_nasa_title = "Últimas fotos publicadas desde la Nasa"
+galeria_nasa_description = "Galería de fotos donde se irán publicando las últimas fotos directas desde La Nasa"
+
+
 
 
 _meta = [
@@ -126,3 +131,11 @@ galeria_meta = [
     {"name": "og:description", "content": galeria_description},
 ]
 galeria_meta.extend(_meta)
+
+# galeria
+galeria_nasa_meta = [
+    {"name": "og:title", "content": galeria_nasa_title},
+    {"name": "og:description", "content": galeria_nasa_description},
+]
+galeria_nasa_meta.extend(_meta)
+

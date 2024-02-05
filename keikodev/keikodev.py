@@ -11,6 +11,8 @@ from keikodev.pages.kodi_pc import kodi_pc
 from keikodev.pages.estafas import estafas
 from keikodev.pages.utils_images import utils_images
 from keikodev.pages.galeria import galeria
+from keikodev.pages.galeria_nasa import galeria_nasa
+
 from keikodev.api.api import repo as repo
 from keikodev.api.api import live as live
 from keikodev.api.api import hello as hello

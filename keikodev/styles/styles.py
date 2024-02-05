@@ -19,6 +19,8 @@ class Size(Enum):
     LARGE_SMALL = "1.2em"
     LARGE = "1.5em"
     BIG = "2em"
+    DEFAULT_BIG = "1.5em"
+    MEDIUM_BIG = "3em"
 
 # Styles
 BASE_STYLE = {
@@ -47,6 +49,31 @@ BASE_STYLE = {
         "_hover" : {}   
     },
 
+}
+
+container_style = {
+    "padding": Size.MEDIUM_BIG.value,
+    "border_radius": "1.5rem",
+    "background": Color.SECONDARY.value,
+    "_hover": {
+        "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value}"
+    }
+}
+
+featured_container_style = {
+    "padding": Size.MEDIUM_BIG.value,
+    "border_radius": "1.5rem",
+    "background": Color.SECONDARY.value,
+    "box-shadow": f"0 0 {Size.DEFAULT.value} {TextColor.PURPLE.value}"
+}
+
+background_gradient_style = {
+    "background": f"linear-gradient(to bottom, rgb(0, 0, 0, 0) 0%, {Color.CONTENT.value} 80%)"
+}
+
+background_pattern_style = {
+    "background": "url('/img/mosaico.png') repeat",
+    "background-size": "120px 120px",
 }
 
 button_title_style = dict(

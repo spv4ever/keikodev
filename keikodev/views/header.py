@@ -6,6 +6,7 @@ from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import Color as Color
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.fonts import Fuentes as Fuentes
+import keikodev.styles.styles as styles
 
 import keikodev.views.constants as const
 
@@ -13,70 +14,73 @@ import keikodev.views.constants as const
 def header(details=True, live=False)-> rx.Component:
     return rx.vstack(
             rx.hstack(
-                rx.avatar(
-                    rx.cond(
-                            live,
-                            rx.avatar_badge(
-                            box_size = Size.MEDIUM.value,
-                            bg = Color.PURPLE.value,
-                            border_color = Color.PURPLE.value,
-                        ),
+                    rx.avatar(
+                        rx.cond(
+                                live,
+                                rx.avatar_badge(
+                                box_size = Size.MEDIUM.value,
+                                bg = Color.PURPLE.value,
+                                border_color = Color.PURPLE.value,
+                            ),
+                                
+                                
+                            ),
+                            name="Albert García Sabadell",
+                            size="xl", 
+                            src = "/avatar3.png",
+                            padding="2px",
+                            border="4px",
+                            border_color = Color.PRIMARY.value,
+                            ),
+                    rx.vstack(
+                        rx.heading(
+                            'Alberto García',
+                            size = "lg"
+                            ),
+                        rx.text(
+                            "info@keikodev.es",
+                            margin_top=Size.ZERO.value,
+                            color = TextColor.BODY.value,
+                            ),
+                        rx.hstack(
+                            linkicon(
+                                "/img/email.svg",
+                                f"mailto:{const.EMAIL}",
+                                ),
+                            linkicon(
+                                "/img/github.svg",
+                                const.GITHUB_URL,
+                                ),
+                            linkicon(
+                                "/img/x.svg",
+                                const.TWITTER_X_URL,
+                                ),
+                            linkicon(
+                                "/img/instagram.svg",
+                                const.INSTAGRAM_URL,
+                                ),
+                            linkicon(
+                                "/img/flickr.svg",
+                                const.FLICKR_URL,
+                                ),
+                            linkicon(
+                                "/img/linkedin.svg",
+                                const.LINKEDIN_URL,
+                                ),
                             
-                            
+                        spacing=Size.DEFAULT.value,
                         ),
-                        name="Albert García Sabadell",
-                        size="xl", 
-                        src = "/avatar3.png",
-                        padding="2px",
-                        border="4px",
-                        border_color = Color.PRIMARY.value,
-                        ),
-                rx.vstack(
-                    rx.heading(
-                        'Alberto García',
-                        size = "lg"
-                        ),
-                    rx.text(
-                        "info@keikodev.es",
-                        margin_top=Size.ZERO.value,
-                        color = TextColor.BODY.value,
-                        ),
-                    rx.hstack(
-                        linkicon(
-                            "/img/email.svg",
-                            f"mailto:{const.EMAIL}",
-                            ),
-                        linkicon(
-                            "/img/github.svg",
-                            const.GITHUB_URL,
-                            ),
-                        linkicon(
-                            "/img/x.svg",
-                            const.TWITTER_X_URL,
-                            ),
-                        linkicon(
-                            "/img/instagram.svg",
-                            const.INSTAGRAM_URL,
-                            ),
-                        linkicon(
-                            "/img/flickr.svg",
-                            const.FLICKR_URL,
-                            ),
-                        linkicon(
-                            "/img/linkedin.svg",
-                            const.LINKEDIN_URL,
-                            ),
                         
-                    spacing=Size.DEFAULT.value,
+                        align_items="start",
                     ),
-                    
+                    width = "100%",
+                    spacing=Size.BIG.value,
+                    font_family = Fuentes.DEFAULT.value,
                     align_items="start",
-                ),
-                width = "100%",
-                spacing=Size.BIG.value,
-                font_family = Fuentes.DEFAULT.value,
-                align_items="start",
-                padding_x=Size.MEDIUM.value
+                    padding_x=Size.MEDIUM.value,
+                    
+                    
+                
             ),
         rx.cond(
             details,
@@ -113,10 +117,12 @@ def header(details=True, live=False)-> rx.Component:
                         color = TextColor.BODY.value,
                         padding_top = Size.DEFAULT.value,
                         
+                        
                 ),
             #spacing=Size.BIG.value,
             padding_x=Size.MEDIUM.value,
             width="100%",
+            
             ),
 
         ),
@@ -124,6 +130,7 @@ def header(details=True, live=False)-> rx.Component:
         font_family = Fuentes.DEFAULT.value,
         spacing=Size.BIG.value,
         align_items="start",
-        padding_x=Size.MEDIUM.value
+        padding_x=Size.MEDIUM.value,
+        #style = styles.background_pattern_style,
         )
     

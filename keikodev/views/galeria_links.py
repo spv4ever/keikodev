@@ -15,6 +15,12 @@ def galeria_links()-> rx.Component:
                 constants.FLICKR_URL,
                 is_external=True
                 ),
+                linkbutton("Fotos diarias de La Nasa",
+                "Últimas fotos en alta resolución desde La Nasa",
+                "/img/shuttle-space-solid.svg",
+                Route.GALERIA_NASA.value,
+                is_external=False,
+                ),
 
 
 

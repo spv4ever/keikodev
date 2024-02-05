@@ -24,6 +24,7 @@ def kodi_addons()-> rx.Component:
             max_width=styles.CONTENT_WIDTH,
             ),
         footer_resp(),
+        style = styles.background_pattern_style,
     )
 
 
