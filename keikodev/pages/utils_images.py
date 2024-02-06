@@ -10,6 +10,7 @@ from keikodev.routes import Route
 from keikodev.componentes.ant_components import Float_Button
 from keikodev.componentes.ant_components import FloatButton
 from keikodev.views.utils_images_links import utils_images_links
+from keikodev.state.PageState import PageState as PageState
 
 
 @rx.page(
@@ -18,6 +19,7 @@ from keikodev.views.utils_images_links import utils_images_links
     description=utils.utils_images_description,
     image= utils.preview,
     meta=utils.utils_images_meta,
+    on_load=PageState.check_live,
 )
 
 def utils_images() -> rx.Component:
@@ -36,7 +38,8 @@ def utils_images() -> rx.Component:
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value
-                )
+                ),
+            style=styles.background_gradient_style,
             ),
         footer(),
         style = styles.background_pattern_style,

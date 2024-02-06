@@ -38,7 +38,8 @@ def dev() -> rx.Component:
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value
-                )
+                ),
+            style=styles.background_gradient_style,
             ),
         footer(),
         style = styles.background_pattern_style,

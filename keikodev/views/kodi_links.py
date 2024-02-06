@@ -21,6 +21,25 @@ def kodi_links()-> rx.Component:
                 Route.KODI_ADDONS.value,
                 is_external=False
                 ),
+                linkbutton("Instalación de Addon Luar",
+                "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
+                "/img/kodi2.png",
+                Route.CONSTR.value,
+                is_external=False
+                ),
+                linkbutton("Instalación de Addon Kodivertido",
+                "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
+                "/img/kodi2.png",
+                Route.CONSTR.value,
+                is_external=False
+                ),
+                linkbutton("Instalación de Addon Cristal Azul",
+                "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
+                "/img/kodi2.png",
+                Route.CONSTR.value,
+                is_external=False
+                ),
+
 
 
         width = "100%",

@@ -43,5 +43,6 @@ def footer()-> rx.Component:
                 
     ),
     bg = Color.IMAGE_BOX.value,
+    #height = "400px"
 
     )

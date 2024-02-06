@@ -13,7 +13,7 @@ import keikodev.views.constants as const
 
 def header(details=True, live=False)-> rx.Component:
     return rx.vstack(
-            rx.hstack(
+                rx.hstack(
                     rx.avatar(
                         rx.cond(
                                 live,
@@ -81,7 +81,7 @@ def header(details=True, live=False)-> rx.Component:
                     
                     
                 
-            ),
+                    ),
         rx.cond(
             details,
             rx.vstack(
@@ -131,6 +131,5 @@ def header(details=True, live=False)-> rx.Component:
         spacing=Size.BIG.value,
         align_items="start",
         padding_x=Size.MEDIUM.value,
-        #style = styles.background_pattern_style,
         )
     

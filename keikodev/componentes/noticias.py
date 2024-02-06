@@ -175,7 +175,7 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
         border_color = Color.CONTENT.value,
         ),
             rx.box(
-                tresimagenes(f"/img/estafas/{imagen1}",f"/img/estafas/{imagen2}",f"/img/estafas/{imagen3}"),
+                #tresimagenes(f"/img/estafas/{imagen1}",f"/img/estafas/{imagen2}",f"/img/estafas/{imagen3}"),
             ),
         columns=[1],
         spacing="4"

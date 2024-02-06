@@ -39,8 +39,10 @@ def galeria() -> rx.Component:
                 galeria_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
-                margin_y=Size.BIG.value
-                )
+                margin_y=Size.BIG.value,
+                min_height = "650px",
+                ),
+                style=styles.background_gradient_style,
             ),
         footer(),
         style = styles.background_pattern_style,

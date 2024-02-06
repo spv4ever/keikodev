@@ -47,8 +47,8 @@ def navbar():
                                 ),
                         rx.image(
                                 src=PageState.url[5],
-                                width = "75px",
-                                height = "auto",
+                                width = "auto",
+                                height = "50px",
                                 
                                 ),
                         width = "100%",

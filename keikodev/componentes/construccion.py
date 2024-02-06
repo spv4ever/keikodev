@@ -14,16 +14,15 @@ def construccion()->rx.Component:
             size = "lg",
             style=styles.title_center_style,
             ),
-        card("http://meloinvento", "Titulo", "texto bastante más largo", color=TextColor.PRIMARY, badge_text="badge text", featured=False),
         rx.image(
             src="/en-construccion.webp.png",
         ),
-        rx.button("clic me",
-                  on_click=Image_Load.tomaFoto("2024-01-01")
+        # rx.button("clic me",
+        #           on_click=Image_Load.tomaFoto("2024-01-01")
         
-        ),
+        # ),
         
-        rx.image(src=Image_Load.url[1]),
+        # rx.image(src=Image_Load.url[1]),
 
         width = "100%",
     )
