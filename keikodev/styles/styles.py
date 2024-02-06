@@ -42,6 +42,7 @@ BASE_STYLE = {
         "white_space" : "normal",
         "_hover" : {
             "background_color" : Color.SECONDARY.value,
+            "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value}",
             }
     },
     rx.Link:{
@@ -54,9 +55,9 @@ BASE_STYLE = {
 container_style = {
     "padding": Size.MEDIUM_BIG.value,
     "border_radius": "1.5rem",
-    "background": Color.SECONDARY.value,
+    "background": Color.CONTENT.value,
     "_hover": {
-        "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value}"
+        "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.CONTENT.value}"
     }
 }
 
@@ -68,7 +69,7 @@ featured_container_style = {
 }
 
 background_gradient_style = {
-    "background": f"linear-gradient(to bottom, rgb(0, 0, 0, 0) 0%, {Color.CONTENT.value} 80%)"
+    "background": f"linear-gradient(to bottom, rgb(0, 0, 0, 0) 60%, {Color.IMAGE_BOX.value} 100%)"
 }
 
 background_pattern_style = {

@@ -9,7 +9,8 @@ import keikodev.utils as utils
 import keikodev.views.constants as const
 
 def footer()-> rx.Component:
-    return rx.vstack(
+    return rx.box(
+        rx.vstack(
 
         rx.avatar(name="Albert García",
                           size="xl", 
@@ -35,9 +36,12 @@ def footer()-> rx.Component:
                          target='_blank',
                         #disabled = False,
                          ),
-                margin_bottom=Size.BIG.value,
-                padding_bottom = Size.BIG.value,
+                #margin_bottom=Size.BIG.value,
+                padding_bottom = Size.MEDIUM_BIG.value,
                 color = TextColor.FOOTER.value,
                 font_family = Fuentes.DEFAULT.value,
+                
+    ),
+    bg = Color.IMAGE_BOX.value,
 
     )

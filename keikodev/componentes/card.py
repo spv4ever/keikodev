@@ -3,6 +3,8 @@ import keikodev.styles.styles as styles
 
 from keikodev.styles.styles import Size
 from keikodev.styles.colors import TextColor
+import keikodev.views.constants as const
+from keikodev.componentes.imagenes import dosimagenes as dosimagenes
 
 from .heading import heading
 from .badge import badge
@@ -37,8 +39,12 @@ def card(url: str, title: str, body="", color=TextColor.PRIMARY, badge_text="", 
                     font_size=Size.DEFAULT_BIG.value,
                     color=TextColor.SECONDARY.value,
                     width="100%"
-                )
+                ),
+            dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial29.png',f'{const.KODI_IMAGES}kodi_tutorial42.png'),
+            
             ),
+            dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial29.png',f'{const.KODI_IMAGES}kodi_tutorial42.png'),
+
             height="100%",
             style=styles.featured_container_style if featured else styles.container_style
         ),

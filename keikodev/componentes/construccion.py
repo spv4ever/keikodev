@@ -14,7 +14,7 @@ def construccion()->rx.Component:
             size = "lg",
             style=styles.title_center_style,
             ),
-        card("http://meloinvento", "Titulo", "texto", color=TextColor.PRIMARY, badge_text="badge text", featured=False),
+        card("http://meloinvento", "Titulo", "texto bastante más largo", color=TextColor.PRIMARY, badge_text="badge text", featured=False),
         rx.image(
             src="/en-construccion.webp.png",
         ),
