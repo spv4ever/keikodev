@@ -41,7 +41,7 @@ class nasaApi():
         date = f"{dia}/{mes}/{ano}"
         return True, hdurl, date, title, explanation, url
     
-async def fotoFTP(self, fecha):
+    def fotoFTP(self, fecha):
         if len(fecha)  > 0:
             print("entrando por fecha función fotoFTP "+fecha)
             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha}').text
