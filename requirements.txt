@@ -1,3 +1,4 @@
 reflex==0.3.10
 python-dotenv
 mysql-connector-python
+paramiko

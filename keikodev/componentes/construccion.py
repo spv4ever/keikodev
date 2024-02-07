@@ -17,12 +17,12 @@ def construccion()->rx.Component:
         rx.image(
             src="/en-construccion.webp.png",
         ),
-        # rx.button("clic me",
-        #           on_click=Image_Load.tomaFoto("2024-01-01")
+        rx.button("clic me",
+                  on_click=Image_Load.tomaFoto("2024-01-31")
         
-        # ),
+        ),
         
-        # rx.image(src=Image_Load.url[1]),
+        rx.image(src=Image_Load.url[1]),
 
         width = "100%",
     )
