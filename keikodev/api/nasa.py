@@ -7,8 +7,12 @@ import keikodev.views.constants as const
 import datetime as datetime
 from ftplib import FTP_TLS, error_perm, error_proto
 import paramiko
+import logging
+from io import BytesIO
 
-
+paramiko.util.log_to_file("paramiko.log")
+paramiko_logger = logging.getLogger("paramiko")
+paramiko_logger.setLevel(logging.DEBUG)
 
 
 class nasaApi():
@@ -54,27 +58,47 @@ class nasaApi():
         ano = date[0:4]
         nombre_fichero = ano+mes+dia
         date = f"{dia}/{mes}/{ano}"
-        contenido = json.dumps(response, indent=4)
+
 
         #def subir_json_a_sftp(nombre_fichero, response, SFTP_HOST, SFTP_USER, SFTP_PASSWORD, SFTP_FOLDER):
         contenido = json.dumps(response, indent=4)
-        
         try:
-            # Establecer la conexión SFTP
-            transport = paramiko.Transport((self.SFTP_HOST, 22))
-            transport.connect(username=self.SFTP_USER, password=self.SFTP_PASSWORD)
-            sftp = paramiko.SFTPClient.from_transport(transport)
-            
-            # Subir el contenido JSON directamente al servidor SFTP
-            with sftp.open(f"{self.SFTP_FOLDER}/{nombre_fichero}.json", "w") as f:
-                f.write(contenido)
-            
-            # Cerrar la conexión SFTP
-            sftp.close()
-            transport.close()
-            print("Archivo JSON subido exitosamente al servidor SFTP")
+            # Establecer conexión FTP
+            with FTP_TLS() as ftp:
+                ftp.connect(self.SFTP_HOST)
+                ftp.login(user=self.SFTP_USER, passwd=self.SFTP_PASSWORD)
+                ftp.prot_p()  # Activar protección de datos
+                ftp.cwd(self.SFTP_FOLDER)
+                
+                with BytesIO(contenido.encode('utf-8')) as file_obj:
+                    ftp.storlines(f"STOR {nombre_fichero}.json", file_obj)
+                    
+                    print("Archivo JSON subido exitosamente al servidor FTP")
         except Exception as e:
-            print("Error al subir el archivo JSON al servidor SFTP:", e)
+            print("Error al subir el archivo JSON al servidor FTP:", e)
+
+
+
+
+
+        # try:
+        #     # Establecer la conexión SFTP
+            
+
+        #     transport = paramiko.Transport((self.SFTP_HOST, 22))
+        #     transport.connect(username=self.SFTP_USER, password=self.SFTP_PASSWORD)
+        #     sftp = paramiko.SFTPClient.from_transport(transport)
+            
+        #     # Subir el contenido JSON directamente al servidor SFTP
+        #     with sftp.open(f"{self.SFTP_FOLDER}/{nombre_fichero}.json", "w") as f:
+        #         f.write(contenido)
+            
+        #     # Cerrar la conexión SFTP
+        #     sftp.close()
+        #     transport.close()
+        #     print("Archivo JSON subido exitosamente al servidor SFTP")
+        # except Exception as e:
+        #     print("Error al subir el archivo JSON al servidor SFTP:", e)
 
 # Uso de la función subir_json_a_sftp -<
 # nombre_fichero = "ejemplo"

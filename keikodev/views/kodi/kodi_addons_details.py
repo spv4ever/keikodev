@@ -9,7 +9,8 @@ import keikodev.views.constants as const
 from keikodev.styles.fonts import Fuentes as Fuentes
 from keikodev.componentes.imagenes import dosimagenes as dosimagenes
 from keikodev.componentes.imagenes import unaimagen as unaimagen
-import keikodev.componentes.imagenes as imagenes
+
+
 
 def kodi_addons_details()->rx.Component:
     return rx.vstack(

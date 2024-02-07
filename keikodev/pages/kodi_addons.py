@@ -4,7 +4,7 @@ import keikodev.utils as utils
 from keikodev.componentes.navbar import navbar
 from keikodev.views.footer_resp import footer_resp
 from keikodev.routes import Route
-from keikodev.views.kodi_addons_details import kodi_addons_details as kodi_addons_details
+from keikodev.views.kodi.kodi_addons_details import kodi_addons_details as kodi_addons_details
 import keikodev.styles.styles as styles
 
 @rx.page(

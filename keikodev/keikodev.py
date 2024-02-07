@@ -8,6 +8,7 @@ from keikodev.pages.constr import constr
 from keikodev.pages.kodi import kodi
 from keikodev.pages.kodi_addons import kodi_addons
 from keikodev.pages.kodi_pc import kodi_pc
+from keikodev.pages.kodi_luar import kodi_luar
 from keikodev.pages.estafas import estafas
 from keikodev.pages.utils_images import utils_images
 from keikodev.pages.galeria import galeria
