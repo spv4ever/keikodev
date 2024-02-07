@@ -41,19 +41,19 @@ class nasaApi():
         date = f"{dia}/{mes}/{ano}"
         contenido = json.dumps(response, indent=4)
 
-        try:
-            with open("{}.txt".format(nombre_fichero), "wb") as f:
-                f.write(contenido.encode("utf-8"))
+        # try:
+        #     with open("{}.txt".format(nombre_fichero), "wb") as f:
+        #         f.write(contenido.encode("utf-8"))
 
-            with FTP_TLS() as ftp:
-                ftp.connect(self.SFTP_HOST)
-                ftp.login(user=self.SFTP_USER, passwd=self.SFTP_PASSWORD)
-                ftp.cwd(self.SFTP_FOLDER)
+        #     with FTP_TLS() as ftp:
+        #         ftp.connect(self.SFTP_HOST)
+        #         ftp.login(user=self.SFTP_USER, passwd=self.SFTP_PASSWORD)
+        #         ftp.cwd(self.SFTP_FOLDER)
                 
-                with open("{}.txt".format(nombre_fichero), "rb") as f:
-                    ftp.storlines("STOR {}.txt".format(nombre_fichero), f)
-        except Exception as e:
-            print("Error al subir el archivo al servidor FTP:", e)
+        #         with open("{}.txt".format(nombre_fichero), "rb") as f:
+        #             ftp.storlines("STOR {}.txt".format(nombre_fichero), f)
+        # except Exception as e:
+        #     print("Error al subir el archivo al servidor FTP:", e)
 
 
         # with FTP("40842798.servicio-online.net") as ftp:
