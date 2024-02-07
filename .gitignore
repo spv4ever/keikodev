@@ -8,3 +8,4 @@
 .venv/
 .web
 __pycache__/
+paramiko.log

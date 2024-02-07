@@ -6,8 +6,8 @@ import keikodev.styles.styles as styles
 from keikodev.state.fotoNasa import Image_Load as Image_Load
 from keikodev.componentes.card import card as card
 
-def construccion()->rx.Component:
 
+def construccion()->rx.Component:
     return rx.vstack(
         rx.heading(
             "Todavía no estamos listos",
@@ -17,6 +17,8 @@ def construccion()->rx.Component:
         rx.image(
             src="/en-construccion.webp.png",
         ),
+       
+
         rx.button("clic me",
                   on_click=Image_Load.tomaFoto("2024-01-31")
         
