@@ -4,9 +4,8 @@ import dotenv
 import os
 import requests
 import keikodev.views.constants as const
-from ftplib import FTP
-from ftplib import FTP_TLS
 import datetime as datetime
+from ftplib import FTP_TLS, error_perm, error_proto
 
 
 
@@ -54,6 +53,7 @@ class nasaApi():
         nombre_fichero = ano+mes+dia
         date = f"{dia}/{mes}/{ano}"
         contenido = json.dumps(response, indent=4)
+
         try:
             with open("{}.txt".format(nombre_fichero), "wb") as f:
                 f.write(contenido.encode("utf-8"))
@@ -62,11 +62,41 @@ class nasaApi():
                 ftp.connect(self.SFTP_HOST)
                 ftp.login(user=self.SFTP_USER, passwd=self.SFTP_PASSWORD)
                 ftp.cwd(self.SFTP_FOLDER)
-                
+
                 with open("{}.txt".format(nombre_fichero), "rb") as f:
-                    ftp.storlines("STOR {}.txt".format(nombre_fichero), f)
+                    try:
+                        ftp.storlines("STOR {}.txt".format(nombre_fichero), f)
+                        print("Archivo subido exitosamente al servidor FTP")
+                    except error_perm as e:
+                        print("Error de permisos al subir el archivo:", e)
+                    except error_proto as e:
+                        print("Error de protocolo al subir el archivo:", e)
+                    except Exception as e:
+                        print("Error desconocido al subir el archivo:", e)
+                        
         except Exception as e:
-            print("Error al subir el archivo al servidor FTP:", e)
+                        print("Error al crear o abrir el archivo:", e)
+        finally:
+            # Elimina el archivo local después de la transferencia exitosa
+            try:
+                os.remove("{}.txt".format(nombre_fichero))
+            except FileNotFoundError:
+                pass  # El archivo puede no existir si ha ocurrido un error antes
+
+
+        # try:
+        #     with open("{}.txt".format(nombre_fichero), "wb") as f:
+        #         f.write(contenido.encode("utf-8"))
+
+        #     with FTP_TLS() as ftp:
+        #         ftp.connect(self.SFTP_HOST)
+        #         ftp.login(user=self.SFTP_USER, passwd=self.SFTP_PASSWORD)
+        #         ftp.cwd(self.SFTP_FOLDER)
+                
+        #         with open("{}.txt".format(nombre_fichero), "rb") as f:
+        #             ftp.storlines("STOR {}.txt".format(nombre_fichero), f)
+        # except Exception as e:
+        #     print("Error al subir el archivo al servidor FTP:", e)
 
 
         # with FTP(self.SFTP_HOST) as ftp:
