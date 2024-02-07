@@ -6,6 +6,8 @@ import requests
 import keikodev.views.constants as const
 import datetime as datetime
 from ftplib import FTP_TLS, error_perm, error_proto
+import paramiko
+
 
 
 
@@ -54,34 +56,64 @@ class nasaApi():
         date = f"{dia}/{mes}/{ano}"
         contenido = json.dumps(response, indent=4)
 
+        #def subir_json_a_sftp(nombre_fichero, response, SFTP_HOST, SFTP_USER, SFTP_PASSWORD, SFTP_FOLDER):
+        contenido = json.dumps(response, indent=4)
+        
         try:
-            with open("{}.txt".format(nombre_fichero), "wb") as f:
-                f.write(contenido.encode("utf-8"))
-
-            with FTP_TLS() as ftp:
-                ftp.connect(self.SFTP_HOST)
-                ftp.login(user=self.SFTP_USER, passwd=self.SFTP_PASSWORD)
-                ftp.cwd(self.SFTP_FOLDER)
-
-                with open("{}.txt".format(nombre_fichero), "rb") as f:
-                    try:
-                        ftp.storlines("STOR {}.txt".format(nombre_fichero), f)
-                        print("Archivo subido exitosamente al servidor FTP")
-                    except error_perm as e:
-                        print("Error de permisos al subir el archivo:", e)
-                    except error_proto as e:
-                        print("Error de protocolo al subir el archivo:", e)
-                    except Exception as e:
-                        print("Error desconocido al subir el archivo:", e)
-                        
+            # Establecer la conexión SFTP
+            transport = paramiko.Transport((self.SFTP_HOST, 22))
+            transport.connect(username=self.SFTP_USER, password=self.SFTP_PASSWORD)
+            sftp = paramiko.SFTPClient.from_transport(transport)
+            
+            # Subir el contenido JSON directamente al servidor SFTP
+            with sftp.open(f"{self.SFTP_FOLDER}/{nombre_fichero}.json", "w") as f:
+                f.write(contenido)
+            
+            # Cerrar la conexión SFTP
+            sftp.close()
+            transport.close()
+            print("Archivo JSON subido exitosamente al servidor SFTP")
         except Exception as e:
-                        print("Error al crear o abrir el archivo:", e)
-        finally:
-            # Elimina el archivo local después de la transferencia exitosa
-            try:
-                os.remove("{}.txt".format(nombre_fichero))
-            except FileNotFoundError:
-                pass  # El archivo puede no existir si ha ocurrido un error antes
+            print("Error al subir el archivo JSON al servidor SFTP:", e)
+
+# Uso de la función subir_json_a_sftp
+# nombre_fichero = "ejemplo"
+# response = {"clave": "valor"}
+# SFTP_HOST = "sftp.example.com"
+# SFTP_USER = "usuario"
+# SFTP_PASSWORD = "contraseña"
+# SFTP_FOLDER = "/ruta/a/carpeta"
+
+#subir_json_a_sftp(nombre_fichero, response, SFTP_HOST, SFTP_USER, SFTP_PASSWORD, SFTP_FOLDER)
+
+        # try:
+        #     with open("{}.txt".format(nombre_fichero), "wb") as f:
+        #         f.write(contenido.encode("utf-8"))
+
+        #     with FTP_TLS() as ftp:
+        #         ftp.connect(self.SFTP_HOST)
+        #         ftp.login(user=self.SFTP_USER, passwd=self.SFTP_PASSWORD)
+        #         ftp.cwd(self.SFTP_FOLDER)
+
+        #         with open("{}.txt".format(nombre_fichero), "rb") as f:
+        #             try:
+        #                 ftp.storlines("STOR {}.txt".format(nombre_fichero), f)
+        #                 print("Archivo subido exitosamente al servidor FTP")
+        #             except error_perm as e:
+        #                 print("Error de permisos al subir el archivo:", e)
+        #             except error_proto as e:
+        #                 print("Error de protocolo al subir el archivo:", e)
+        #             except Exception as e:
+        #                 print("Error desconocido al subir el archivo:", e)
+
+        # except Exception as e:
+        #                 print("Error al crear o abrir el archivo:", e)
+        # finally:
+        #     # Elimina el archivo local después de la transferencia exitosa
+        #     try:
+        #         os.remove("{}.txt".format(nombre_fichero))
+        #     except FileNotFoundError:
+        #         pass  # El archivo puede no existir si ha ocurrido un error antes
 
 
         # try:
