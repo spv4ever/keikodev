@@ -3,11 +3,23 @@ import keikodev.views.constants as const
 import time
 from .Twitch import TwitchAPI
 from .nasa import nasaApi
-from .db import db
+from .db import Database
 
 TWITCH_API = TwitchAPI()
 NASA_API = nasaApi()
-#DB_API = db()
+DB_API = Database()
+
+def ejemploDB():
+    if __name__ == "__main__":
+        db = Database()
+        data = {
+            "column1": "value1",
+            "column2": "value2"
+        }
+        db.insert("nombre_tabla", data)
+        db.delete("nombre_tabla", "condicion")
+        result = db.select("nombre_tabla")
+        print(result)
 
 
 def hello() -> str:

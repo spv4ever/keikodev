@@ -41,7 +41,7 @@ class nasaApi():
         date = f"{dia}/{mes}/{ano}"
         return True, hdurl, date, title, explanation, url
     
-    def fotoFTP(self, fecha):
+async def fotoFTP(self, fecha):
         if len(fecha)  > 0:
             print("entrando por fecha función fotoFTP "+fecha)
             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha}').text
@@ -58,8 +58,6 @@ class nasaApi():
         ano = date[0:4]
         nombre_fichero = ano+mes+dia
         date = f"{dia}/{mes}/{ano}"
-
-
         #def subir_json_a_sftp(nombre_fichero, response, SFTP_HOST, SFTP_USER, SFTP_PASSWORD, SFTP_FOLDER):
         contenido = json.dumps(response, indent=4)
         try:
