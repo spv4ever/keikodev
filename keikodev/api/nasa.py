@@ -10,9 +10,9 @@ import paramiko
 import logging
 from io import BytesIO
 
-paramiko.util.log_to_file("paramiko.log")
-paramiko_logger = logging.getLogger("paramiko")
-paramiko_logger.setLevel(logging.DEBUG)
+# paramiko.util.log_to_file("paramiko.log")
+# paramiko_logger = logging.getLogger("paramiko")
+# paramiko_logger.setLevel(logging.DEBUG)
 
 
 class nasaApi():
