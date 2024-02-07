@@ -76,7 +76,7 @@ class nasaApi():
         except Exception as e:
             print("Error al subir el archivo JSON al servidor SFTP:", e)
 
-# Uso de la función subir_json_a_sftp
+# Uso de la función subir_json_a_sftp -<
 # nombre_fichero = "ejemplo"
 # response = {"clave": "valor"}
 # SFTP_HOST = "sftp.example.com"
