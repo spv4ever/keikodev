@@ -18,6 +18,7 @@ def kodi_addons_details()->rx.Component:
             title(
                 rx.center('Tutorial instalación de complementos en Kodi'),
                 ),
+                
             margin_bottom = Size.BIG.value,
             ),
         
