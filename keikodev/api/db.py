@@ -12,16 +12,16 @@ class db():
     #escaped_username = quote_plus(DBUSER)
     #escaped_password = quote_plus(DBPASS)
 
-    configdb = mysql.connector.connect(
-        host="PMYSQL101.dns-servicio.com",
-        user=DBUSER,
-        password=DBPASS,
-        database="10252826_keikodeves")
+    # configdb = mysql.connector.connect(
+    #     host="PMYSQL101.dns-servicio.com",
+    #     user=DBUSER,
+    #     password=DBPASS,
+    #     database="10252826_keikodeves")
 
-    cursor = configdb.cursor()
-    cursor.execute("SELECT * FROM nasa_imagenes")
-    result = cursor.fetchall()
-    print(result)
+    # cursor = configdb.cursor()
+    # cursor.execute("SELECT * FROM nasa_imagenes")
+    # result = cursor.fetchall()
+    # print(result)
 
-    cursor.close()
-    configdb.close()
+    # cursor.close()
+    # configdb.close()

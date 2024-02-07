@@ -7,7 +7,7 @@ from .db import db
 
 TWITCH_API = TwitchAPI()
 NASA_API = nasaApi()
-DB_API = db()
+#DB_API = db()
 
 
 def hello() -> str:
@@ -25,6 +25,9 @@ async def live(user: str) -> bool:
 
 async def foto(fecha):
     return NASA_API.tomaFoto(fecha)
+
+async def fotoFTP(fecha):
+    return NASA_API.fotoFTP(fecha)
 
 
 

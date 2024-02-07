@@ -1,5 +1,5 @@
 import reflex as rx
-from keikodev.api.api import foto
+from keikodev.api.api import foto, fotoFTP
 from datetime import datetime, timedelta
 
 class fotoNasa(rx.State):
@@ -15,6 +15,6 @@ class Image_Load(rx.State):
     async def tomaFoto(self,fecha):
         #fecha =  datetime.today().date() - timedelta(days=1)
         print(fecha)
-        self.url = await foto(fecha)
+        self.url = await fotoFTP(fecha)
         #print(self.url)    
 
