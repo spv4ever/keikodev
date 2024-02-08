@@ -27,7 +27,7 @@ from keikodev.api.api import foto as foto
 
 app = rx.App(
     style = styles.BASE_STYLE,
-    stylesheets=["fonts/Fonts.css"],
+    stylesheets=styles.STYLESHEETS,
         head_components=[
         rx.script(
             src=f"https://www.googletagmanager.com/gtag/js?id={const.G_TAG}"),

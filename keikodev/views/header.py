@@ -18,9 +18,11 @@ def header(details=True, live=False)-> rx.Component:
                         rx.cond(
                                 live,
                                 rx.avatar_badge(
+                                    rx.image(src="/img/twitch.svg"),
                                 box_size = Size.MEDIUM.value,
                                 bg = Color.PURPLE.value,
                                 border_color = Color.PURPLE.value,
+                                class_name="blink",
                             ),
                                 
                                 

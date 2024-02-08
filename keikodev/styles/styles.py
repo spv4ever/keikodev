@@ -4,6 +4,13 @@ from .colors import Color as Color
 from .colors import TextColor as TextColor
 from .fonts import Fuentes as Fuentes
 
+STYLESHEETS = [
+    "https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap",
+    "https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap",
+    "img/css/styles.css",
+    "fonts/Fonts.css"
+]
+
 # Constantes
 MAX_WIDTH = "560px"
 CONTENT_WIDTH = "1000px"
