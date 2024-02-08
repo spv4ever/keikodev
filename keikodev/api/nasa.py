@@ -59,25 +59,21 @@ class nasaApi():
         nombre_fichero = ano+mes+dia
         date = f"{dia}/{mes}/{ano}"
         #def subir_json_a_sftp(nombre_fichero, response, SFTP_HOST, SFTP_USER, SFTP_PASSWORD, SFTP_FOLDER):
-        contenido = json.dumps(response, indent=4)
-        try:
-            # Establecer conexión FTP
-            with FTP_TLS() as ftp:
-                ftp.connect(self.SFTP_HOST)
-                ftp.login(user=self.SFTP_USER, passwd=self.SFTP_PASSWORD)
-                ftp.prot_p()  # Activar protección de datos
-                ftp.cwd(self.SFTP_FOLDER)
+        # contenido = json.dumps(response, indent=4)
+        # try:
+        #     # Establecer conexión FTP
+        #     with FTP_TLS() as ftp:
+        #         ftp.connect(self.SFTP_HOST)
+        #         ftp.login(user=self.SFTP_USER, passwd=self.SFTP_PASSWORD)
+        #         ftp.prot_p()  # Activar protección de datos
+        #         ftp.cwd(self.SFTP_FOLDER)
                 
-                with BytesIO(contenido.encode('utf-8')) as file_obj:
-                    ftp.storlines(f"STOR {nombre_fichero}.json", file_obj)
+        #         with BytesIO(contenido.encode('utf-8')) as file_obj:
+        #             ftp.storlines(f"STOR {nombre_fichero}.json", file_obj)
                     
-                    print("Archivo JSON subido exitosamente al servidor FTP")
-        except Exception as e:
-            print("Error al subir el archivo JSON al servidor FTP:", e)
-
-
-
-
+        #             print("Archivo JSON subido exitosamente al servidor FTP")
+        # except Exception as e:
+        #     print("Error al subir el archivo JSON al servidor FTP:", e)
 
         # try:
         #     # Establecer la conexión SFTP
