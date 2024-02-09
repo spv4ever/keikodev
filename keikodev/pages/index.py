@@ -30,7 +30,7 @@ from keikodev.styles.colors import TextColor as TextColor
     description=utils.index_description,
     image= utils.preview,
     meta=utils.index_meta,
-    on_load = PageState.check_live
+    on_load = [PageState.check_live,PageState.featured_links]
 
 )
 def index() -> rx.Component:

@@ -30,7 +30,7 @@ def constr() -> rx.Component:
                 rx.center(
                 header(False),
                 ),
-                construccion(),
+                construccion(PageState.featured_info),
                 max_width=styles.CONTENT_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value,

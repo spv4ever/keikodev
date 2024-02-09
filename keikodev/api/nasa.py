@@ -10,6 +10,7 @@ import paramiko
 import logging
 from io import BytesIO
 
+
 # paramiko.util.log_to_file("paramiko.log")
 # paramiko_logger = logging.getLogger("paramiko")
 # paramiko_logger.setLevel(logging.DEBUG)
@@ -22,6 +23,8 @@ class nasaApi():
     SFTP_USER = os.environ.get("SFTP_USER")
     SFTP_PASSWORD = os.environ.get("SFTP_PASSWORD")
     SFTP_FOLDER = os.environ.get("SFTP_FOLDER")
+    response = str
+    date = str
 
     def tomaFoto(self, fecha):
         if len(fecha)  > 0:
@@ -29,16 +32,18 @@ class nasaApi():
             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha}').text
         else:
             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}').text
-        response = json.loads(raw_response)
-        date = response['date']
-        hdurl = response['hdurl']
-        title = response['title']
-        explanation = response['explanation']
-        url = response['url']
+        self.response = json.loads(raw_response)
+        date = self.response['date']
+        self.date = self.response['date']
+        hdurl = self.response['hdurl']
+        title = self.response['title']
+        explanation = self.response['explanation']
+        url = self.response['url']
         dia = date[8:10]
         mes = date[5:7]
         ano = date[0:4]
         date = f"{dia}/{mes}/{ano}"
+        
         return True, hdurl, date, title, explanation, url
     
     def fotoFTP(self, fecha):
@@ -47,12 +52,12 @@ class nasaApi():
             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha}').text
         else:
             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}').text
-        response = json.loads(raw_response)
-        date = response['date']
-        hdurl = response['hdurl']
-        title = response['title']
-        explanation = response['explanation']
-        url = response['url']
+        self.response = json.loads(raw_response)
+        date = self.response['date']
+        hdurl = self.response['hdurl']
+        title = self.response['title']
+        explanation = self.response['explanation']
+        url = self.response['url']
         dia = date[8:10]
         mes = date[5:7]
         ano = date[0:4]
@@ -162,7 +167,7 @@ class nasaApi():
         # with open(nombre_archivo + ".txt", "w") as archivo:
         #     archivo.write(contenido)
         print("Tomando foto !!!!!!!!")
-        print(response)
+        print(self.response['date'])
         return True, hdurl, date, title, explanation, url
 
     
