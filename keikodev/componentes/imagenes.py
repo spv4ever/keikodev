@@ -6,9 +6,6 @@ from keikodev.styles.fonts import Fuentes as Fuentes
 from keikodev.state.ModalState import ModalState as ModalState
 
 
-
-
-
 def unaimagen(imagen1: str, tamaño: str, alt="")->rx.Component:
     return rx.box(
             rx.center(
@@ -29,6 +26,7 @@ def unaimagen(imagen1: str, tamaño: str, alt="")->rx.Component:
 def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
     return rx.box(rx.responsive_grid(
                 rx.center(
+                    
                     rx.image(src=imagen1,
                             width="450px",
                             heigth="auto",
@@ -56,6 +54,7 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
             width = "100%",
             padding = Size.SMALL_LARGE.value,
             ),
+            
             rx.modal(
             rx.modal_overlay(
                 rx.modal_content(
@@ -125,28 +124,28 @@ def tresimagenes(imagen1: str, imagen2: str, imagen3: str)->rx.Component:
             width = "100%",
             padding = Size.SMALL_LARGE.value,
             ),
-        rx.modal(
-            rx.modal_overlay(
-                rx.modal_content(
-                    rx.modal_body(
-                        rx.box(
-                            rx.image(
-                                src=ModalState.count,
-                                width="800px",
-                                heigth = "auto"
+            rx.modal(
+                rx.modal_overlay(
+                    rx.modal_content(
+                        rx.modal_body(
+                            rx.box(
+                                rx.image(
+                                    src=ModalState.count,
+                                    width="800px",
+                                    heigth = "auto"
+                                    ),
+                            ),
+                        rx.modal_footer(
+                                rx.button(
+                                    "Close",
+                                    on_click=ModalState.change(""),
                                 ),
+                                ),
+                            
                         ),
-                    rx.modal_footer(
-                            rx.button(
-                                "Close",
-                                on_click=ModalState.change(""),
-                            ),
-                            ),
-                        
                     ),
                 ),
+            is_open=ModalState.show,
+            size="xl",
             ),
-        is_open=ModalState.show,
-        size="xl",
-        ),
     )

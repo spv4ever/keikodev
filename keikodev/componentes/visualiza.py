@@ -42,7 +42,7 @@ def index():
             bg="#ecfdf5",
             color="#047857",
             border_radius="lg",
-            on_click=ModalState.change("keiko_manga.png"),
+            on_click=ModalState.change("keiko_manga_sd.png"),
 
         ),
         rx.modal(

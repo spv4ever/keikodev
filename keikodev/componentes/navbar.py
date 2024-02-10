@@ -8,6 +8,7 @@ from keikodev.routes import Route
 from keikodev.componentes.main_menu import main_menu as main_menu
 from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import fotoNasa as fotoNasa
+from keikodev.state.ModalState import ModalStateFull
 
 
 def navbar():
@@ -36,20 +37,63 @@ def navbar():
                 ),
 
                 rx.box(
-                        rx.text(f"Imagen del día: {PageState.date}" ,
+                        rx.text(f"Foto desde Nasa diaria: {PageState.date}" ,
                                 margin=Size.DEFAULT.value,
                                 display = "flex",
                                 align_items = "center",
                                 justify_content = "center",
                                 color = TextColor.BODY.value,
-                                size = Size.SMALL.value,
+                                size = Size.VERY_SMALL.value,
                                 ),
                         rx.image(
                                 src=PageState.url,
+                                html_height = "800px",
+                                html_width= "600px",
                                 width = "auto",
                                 height = "50px",
+                                on_click=ModalStateFull.change(PageState.hdurl),
+                                _hover = {"cursor": "pointer"},
                                 
                                 ),
+                        rx.modal(
+                                rx.modal_overlay(
+                                        rx.modal_content(
+                                                rx.modal_body(
+                                                        rx.center(
+                                                        rx.vstack(
+                                                                rx.button(
+                                                                "Cerrar ventana",
+                                                                size = "lg",
+                                                                variant= "outline",
+                                                                border_width = "3px",
+                                                                width="30%",
+                                                                border_color = Color.PRIMARY.value,
+                                                                on_click=ModalStateFull.change(""),
+                                                                                                                                
+                                                                ),
+                                                                rx.image(
+                                                                        src=ModalStateFull.count,
+                                                                        width="100%",
+                                                                        height="auto",
+                                                                ),
+                                                                rx.text(PageState.title,
+                                                                        color = TextColor.PRIMARY.value),
+                                                                rx.text(PageState.explanation,
+                                                                        color = TextColor.PRIMARY.value),
+                                                                max_width = styles.CONTENT_WIDTH,
+                                                        ),
+                                                        ),
+
+                                                        style = styles.background_pattern_style,
+                                                        
+                                                ),
+                                                bg = Color.BACKGROUND.value,
+                                        ),
+                                        
+                                ),
+                                is_open=ModalStateFull.show,
+                                size="full",
+                        ),
                         width = "100%",
                         display = "flex",
                         align_items = "right",

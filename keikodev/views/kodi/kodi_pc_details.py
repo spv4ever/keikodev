@@ -9,6 +9,8 @@ import keikodev.views.constants as const
 from keikodev.styles.fonts import Fuentes as Fuentes
 from keikodev.componentes.imagenes import dosimagenes as dosimagenes
 from keikodev.componentes.imagenes import unaimagen as unaimagen
+from keikodev.routes import Route
+from keikodev.componentes.linkbutton import linkbutton
 
 def kodi_pc_details()->rx.Component:
     return rx.vstack(
@@ -143,6 +145,22 @@ def kodi_pc_details()->rx.Component:
                   rx.span(""" que será nuestro primer repositorio donde tendremos las primeras utilidades 
                           para nuestro Kodi, entra en la sección de instalación de luar para continuar.""")
                 ),
+            ),
+        rx.hstack(
+                linkbutton("Instalación de Addons",
+                    "",
+                    "/img/kodi2.png",
+                    Route.KODI_ADDONS.value,
+                    is_external=False
+                    ),
+                linkbutton("Menú Principal Kodi",
+                    "",
+                    "/img/kodi2.png",
+                    Route.KODI.value,
+                    is_external=False
+                    ),
+                padding = Size.BIG.value,
+                
             ),
         spacing=Size.VERY_SMALL.value,
         padding = Size.MEDIUM.value,

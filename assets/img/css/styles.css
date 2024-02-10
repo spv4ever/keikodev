@@ -5,3 +5,18 @@
 .blink {
     animation: blinker 1s linear infinite;
 }   
+
+
+
+.texto {
+    animation: deslizar 2s forwards; /* Duración de la animación y retención de estado final */
+  }
+  
+  @keyframes deslizar {
+    0% {
+      transform: translateX(100%); /* Comienza desde la derecha del contenedor */
+    }
+    100% {
+      transform: translateX(0); /* Termina en la posición inicial del contenedor */
+    }
+  }

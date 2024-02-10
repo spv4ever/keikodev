@@ -69,6 +69,9 @@ KODI_WINDOWS_URL = "https://kodi.tv/download/windows/"
 #Librerías de imagenes.
 KODI_IMAGES = "/img/kodi_images/"
 
+#Nutrición
+MG_URL = "https://manugarciachacon.com/"
+
 #prueba constantes.
 NASA_URL = ""
 

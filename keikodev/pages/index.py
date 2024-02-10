@@ -15,6 +15,7 @@ from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import  fotoNasa as fotoNasa
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.models.nasa_images import nasaLink
+from keikodev.state.ModalState import modal_small
 
 # class IndexState(rx.State):
     
@@ -38,6 +39,7 @@ from keikodev.models.nasa_images import nasaLink
 def index() -> rx.Component:
     return rx.box(
         utils.lang(),
+        
         navbar(),
         rx.center(
             rx.vstack(
@@ -51,6 +53,8 @@ def index() -> rx.Component:
                 style=styles.background_gradient_style
             ),
         footer(),
+        
+        
         style = styles.background_pattern_style,
     )
 

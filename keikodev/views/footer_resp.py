@@ -16,7 +16,7 @@ def footer_resp()-> rx.Component:
     return rx.vstack(
                 rx.avatar(name="Albert García",
                         size="xl", 
-                        src = "/keiko_manga.png",
+                        src = "/keiko_manga_sd.png",
                         padding="2px",
                         border="4px",
                         border_color = Color.PRIMARY.value,

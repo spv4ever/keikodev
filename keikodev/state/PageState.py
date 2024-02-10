@@ -8,7 +8,7 @@ import json
 
 import datetime as dt
 
-USER = "coscu"
+USER = "gerardromero"
 
 
 class PageState(rx.State):
@@ -20,9 +20,6 @@ class PageState(rx.State):
         title: str
         explanation: str
         hdurl: str
-        
-       
-
 
         async def check_live(self):
                 self.is_live = await live(USER)
@@ -47,19 +44,6 @@ class PageState(rx.State):
                         self.explanation = item["explanation"]
                         self.hdurl = item["hdurl"]
 
-                # link = json.loads(json_data[0])
-                # print(link)
-                # first_item = link[0]
-                # print(first_item)
-                #self.link['date'] = self.link['date'][:10]
-                # Acceder a elementos específicos del diccionario
-                # print("Fecha:", self.date)
-                # print("URL:", self.url)
-                # print("Título:", self.title)
-                # print("Explicación:", self.explanation)
-                # print("URL de alta definición:", self.hdurl)
-
-                
         async def featured_links(self):
                 self.featured_info = await featured()
                 print(self.featured_info)

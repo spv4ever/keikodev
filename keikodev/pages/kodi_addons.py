@@ -6,6 +6,7 @@ from keikodev.views.footer_resp import footer_resp
 from keikodev.routes import Route
 from keikodev.views.kodi.kodi_addons_details import kodi_addons_details as kodi_addons_details
 import keikodev.styles.styles as styles
+from keikodev.state.PageState import PageState
 
 @rx.page(
     route=Route.KODI_ADDONS.value,
@@ -13,6 +14,7 @@ import keikodev.styles.styles as styles
     description=utils.kodi_addons_description,
     image= utils.preview,
     meta=utils.kodi_addons_meta,
+    on_load=PageState.check_live,
 )
 
 def kodi_addons()-> rx.Component:
@@ -24,6 +26,7 @@ def kodi_addons()-> rx.Component:
             max_width=styles.CONTENT_WIDTH,
             ),
         footer_resp(),
+        
         style = styles.background_pattern_style,
     )
 

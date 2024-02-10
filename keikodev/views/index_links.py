@@ -45,6 +45,12 @@ def index_links()-> rx.Component:
             Route.KODI.value,
             is_external=False),
 
+        linkbutton("MG Todo en nutrición y fitness",
+            "Apartado para mantenerte en forma, entrenamientos, etc",
+            "/img/dumbbell-solid.svg",
+            constants.MG_URL,
+            is_external=True),
+
         linkbutton("Biblioteca de imágenes",
             "Crear biblioteca de imágenes con fotografía propia",
             "/img/images.svg",

@@ -9,6 +9,8 @@ import keikodev.views.constants as const
 from keikodev.styles.fonts import Fuentes as Fuentes
 from keikodev.componentes.imagenes import dosimagenes as dosimagenes
 from keikodev.componentes.imagenes import unaimagen as unaimagen
+from keikodev.routes import Route
+from keikodev.componentes.linkbutton import linkbutton
 
 
 
@@ -105,20 +107,22 @@ def kodi_addons_details()->rx.Component:
             steps("""Ahora ya podemos entrar en el add-on, entrar usuario y contraseña para entrar en HBO Max. Es muy interesante ver otro tipo de 
               organización más simple del contenido. Sin tanta publicidad."""),
         dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial39.png',f'{const.KODI_IMAGES}kodi_tutorial40.png'),
-
-
-        
-
-
-
-        
-
-
-        
-
-
-        
-        
+        rx.hstack(
+                linkbutton("Instalación de Kodi",
+                    "",
+                    "/img/kodi2.png",
+                    Route.KODI_PC.value,
+                    is_external=False
+                    ),
+                linkbutton("Menú Principal Kodi",
+                    "",
+                    "/img/kodi2.png",
+                    Route.KODI.value,
+                    is_external=False
+                    ),
+                padding = Size.BIG.value,
+                
+            ),
         spacing=Size.VERY_SMALL.value,
         padding = Size.MEDIUM.value,
         width="100%",  
