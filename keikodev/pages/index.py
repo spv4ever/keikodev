@@ -14,6 +14,7 @@ from keikodev.api.api import foto
 from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import  fotoNasa as fotoNasa
 from keikodev.styles.colors import TextColor as TextColor
+from keikodev.models.nasa_images import nasaLink
 
 # class IndexState(rx.State):
     
@@ -22,7 +23,7 @@ from keikodev.styles.colors import TextColor as TextColor
 #     # def say_hello(self):
 #     #     return hello()
 
-    
+
 
 @rx.page(
     route=Route.INDEX.value,
@@ -31,6 +32,7 @@ from keikodev.styles.colors import TextColor as TextColor
     image= utils.preview,
     meta=utils.index_meta,
     on_load = [PageState.check_live,PageState.featured_links]
+
 
 )
 def index() -> rx.Component:

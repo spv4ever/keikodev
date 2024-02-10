@@ -24,7 +24,7 @@ def construccion(featured=[])->rx.Component:
         ),
         
         rx.button("clic me",
-                  on_click=Image_Load.tomaFoto("2024-01-31")
+                  on_click=PageState.tomaFoto("2024-02-08")
 
 
         ),
@@ -34,7 +34,7 @@ def construccion(featured=[])->rx.Component:
 
         rx.text(f'{featured}'),
         
-        rx.image(src=Image_Load.url[1]),
+        rx.image(src=PageState.hdurl),
 
         width = "100%",
     )

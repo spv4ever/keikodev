@@ -10,7 +10,6 @@ from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import fotoNasa as fotoNasa
 
 
-
 def navbar():
         return rx.hstack(
                 rx.box(
@@ -37,7 +36,7 @@ def navbar():
                 ),
 
                 rx.box(
-                        rx.text(f"Imagen del día: {PageState.url[2]}" ,
+                        rx.text(f"Imagen del día: {PageState.date}" ,
                                 margin=Size.DEFAULT.value,
                                 display = "flex",
                                 align_items = "center",
@@ -46,7 +45,7 @@ def navbar():
                                 size = Size.SMALL.value,
                                 ),
                         rx.image(
-                                src=PageState.url[5],
+                                src=PageState.url,
                                 width = "auto",
                                 height = "50px",
                                 

@@ -15,6 +15,6 @@ class Image_Load(rx.State):
     async def tomaFoto(self,fecha):
         #fecha =  datetime.today().date() - timedelta(days=1)
         print(fecha)
-        self.url = await fotoFTP(fecha)
+        self.url = await foto(fecha)
         #print(self.url)    
 
