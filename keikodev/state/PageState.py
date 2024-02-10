@@ -8,7 +8,7 @@ import json
 
 import datetime as dt
 
-USER = "afor_digital"
+USER = "coscu"
 
 
 class PageState(rx.State):

@@ -25,13 +25,7 @@ def construccion(featured=[])->rx.Component:
         
         rx.button("clic me",
                   on_click=PageState.tomaFoto("2024-02-08")
-
-
         ),
-        rx.button("clic me db",
-                  on_click=PageState.featured_links
-        ),
-
         rx.text(f'{featured}'),
         
         rx.image(src=PageState.hdurl),
