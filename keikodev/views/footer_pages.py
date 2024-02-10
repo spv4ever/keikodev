@@ -25,6 +25,7 @@ def footer_pages()-> rx.Component:
                     rx.text(
                         "Aprendiendo desarrollo web desde Catalunya.",
                         font_size = Size.MEDIUM.value,
+                        class_name="marquee",
                         ),
                     margin_top=Size.ZERO.value,
                     ),
