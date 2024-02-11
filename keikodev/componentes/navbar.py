@@ -9,6 +9,7 @@ from keikodev.componentes.main_menu import main_menu as main_menu
 from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import fotoNasa as fotoNasa
 from keikodev.state.ModalState import ModalStateFull
+from keikodev.componentes.visualiza import visualiza as visualiza
 
 
 def navbar():
@@ -60,28 +61,33 @@ def navbar():
                                         rx.modal_content(
                                                 rx.modal_body(
                                                         rx.center(
-                                                        rx.vstack(
-                                                                rx.button(
-                                                                "Cerrar ventana",
-                                                                size = "lg",
-                                                                variant= "outline",
-                                                                border_width = "3px",
-                                                                width="30%",
-                                                                border_color = Color.PRIMARY.value,
-                                                                on_click=ModalStateFull.change(""),
-                                                                                                                                
+                                                                #visualiza(),
+
+                                                                rx.vstack(
+                                                                        rx.button(
+                                                                        "Cerrar ventana",
+                                                                        size = "lg",
+                                                                        variant= "outline",
+                                                                        border_width = "3px",
+                                                                        width="30%",
+                                                                        border_color = Color.PRIMARY.value,
+                                                                        on_click=ModalStateFull.change(""),
+                                                                                                                                        
+                                                                        ),
+                                                                        #visualiza(),
+                                                                        rx.image(
+                                                                                src=ModalStateFull.hdurl,
+                                                                                width="100%",
+                                                                                height="auto",
+                                                                        ),
+                                                                        rx.text(PageState.title,
+                                                                                color = TextColor.PRIMARY.value),
+                                                                        rx.text(PageState.explanation,
+                                                                                color = TextColor.PRIMARY.value),
+
+                                                                        max_width = styles.CONTENT_WIDTH,
                                                                 ),
-                                                                rx.image(
-                                                                        src=ModalStateFull.count,
-                                                                        width="100%",
-                                                                        height="auto",
-                                                                ),
-                                                                rx.text(PageState.title,
-                                                                        color = TextColor.PRIMARY.value),
-                                                                rx.text(PageState.explanation,
-                                                                        color = TextColor.PRIMARY.value),
-                                                                max_width = styles.CONTENT_WIDTH,
-                                                        ),
+
                                                         ),
 
                                                         style = styles.background_pattern_style,

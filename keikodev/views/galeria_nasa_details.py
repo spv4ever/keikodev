@@ -11,18 +11,35 @@ from keikodev.componentes.imagenes import dosimagenes as dosimagenes
 from keikodev.componentes.imagenes import unaimagen as unaimagen
 import keikodev.componentes.imagenes as imagenes
 from keikodev.api.funciones import dameUltimosCincoDias as dameUltimosCincoDias
-from keikodev.state.fotoNasa import Image_Load as Image_Load
+#from keikodev.state.fotoNasa import Image_Load as Image_Load
+from keikodev.componentes.card_galery import card_galery
+from keikodev.data.data_galeria_nasa import Datagalerianasa
 
-def galeria_nasa_details()->rx.Component:
+
+def galeria_nasa_details(date_income: list[Datagalerianasa])->rx.Component:
     return rx.vstack(
         rx.box(
-            title(
-                rx.center('Biblioteca de fotos de la nasa en alta resolución'),
+            rx.heading(
+                rx.center('Biblioteca de fotos de la nasa en alta resolución', 
+                        font_family= Fuentes.NASA.value,
+                        font_size=Size.MEDIUM.value),
                 ),
             margin_bottom = Size.BIG.value,
             ),
-        #dameUltimosCincoDias(),
-        rx.image(src=Image_Load.url[1], on_load=Image_Load.tomaFoto("2024-01-01")),
+                rx.vstack(
+            rx.responsive_grid(
+                
+                    *[
+                        card_galery(data,
+                        )
+                        for index, data in enumerate(date_income)
+                    ],
+                
+                columns=[1,2,3,4],
+                spacing = "4"
+            ),
+        ),
+        
         spacing=Size.VERY_SMALL.value,
         padding = Size.MEDIUM.value,
         width="100%",  

@@ -2,7 +2,7 @@ import reflex as rx
 from keikodev.api.api import live
 from keikodev.api.api import foto
 from keikodev.api.api import featured
-from keikodev.models.nasa_images import nasaLink
+from keikodev.models.Nasalink import Nasalink
 from pydantic import BaseModel
 import json
 

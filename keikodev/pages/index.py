@@ -14,7 +14,7 @@ from keikodev.api.api import foto
 from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import  fotoNasa as fotoNasa
 from keikodev.styles.colors import TextColor as TextColor
-from keikodev.models.nasa_images import nasaLink
+from keikodev.models.Nasalink import Nasalink
 from keikodev.state.ModalState import modal_small
 
 # class IndexState(rx.State):

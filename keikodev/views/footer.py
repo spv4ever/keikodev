@@ -27,7 +27,7 @@ def footer()-> rx.Component:
                 font_size = Size.MEDIUM.value),
                 rx.hstack(
                     rx.text(
-                        "Aprendiendo desarrollo web desde Catalunya.",
+                        "Aprendiendo desarrollo web.",
                         font_size = Size.MEDIUM.value,
                         width = "100%",
                         class_name="marquee-content",

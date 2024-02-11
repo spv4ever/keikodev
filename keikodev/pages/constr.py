@@ -10,6 +10,9 @@ from keikodev.views.footer import footer
 from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
 from keikodev.state.PageState import PageState
+from keikodev.data.data_galeria_nasa import items_galeria
+
+
 
 @rx.page(
     route=Route.CONSTR.value,
@@ -30,8 +33,8 @@ def constr() -> rx.Component:
                 rx.center(
                 header(False),
                 ),
-                construccion(PageState.featured_info),
-                max_width=styles.CONTENT_WIDTH,
+                construccion(items_galeria),
+                max_width=styles.CONTENT_GALERY,
                 width="100%",
                 margin_y=Size.BIG.value,
                 min_height = "650px",

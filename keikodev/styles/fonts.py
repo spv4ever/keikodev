@@ -4,5 +4,6 @@ class Fuentes(Enum):
     DEFAULT = "Poppins-Light"
     TITLE = "Poppins-Bold"
     LOGO = "Agbalumo-Regular"
+    NASA = "Nasa-Medium"
 
 

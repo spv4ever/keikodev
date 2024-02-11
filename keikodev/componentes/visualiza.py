@@ -1,4 +1,25 @@
 import reflex as rx
+from keikodev.styles.colors import Color as Color, TextColor
+from keikodev.state.ModalState import ModalStateFull as ModalStateFull
+from keikodev.state.PageState import PageState as PageState
+import keikodev.styles.styles as styles
+
+
+
+def visualiza()->rx.Component:
+    return rx.vstack(
+            rx.image(
+                        src=ModalStateFull.hdurl,
+                        width="100%",
+                        height="auto",
+                ),
+                rx.text(PageState.title,
+                        color = TextColor.PRIMARY.value),
+                rx.text(PageState.explanation,
+                        color = TextColor.PRIMARY.value),
+                max_width = styles.CONTENT_WIDTH,
+        ),
+                                                                
 
 # class ModalState(rx.State):
 #     show: bool = False

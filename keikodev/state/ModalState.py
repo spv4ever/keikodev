@@ -38,7 +38,7 @@ def modal_small()-> rx.Component:
 
 class ModalStateFull(rx.State):
     show: bool = False
-    count: str
-    def change(self, count:str):
+    hdurl: str
+    def change(self, hdurl:str):
         self.show = not (self.show)
-        self.count = count
+        self.hdurl = hdurl

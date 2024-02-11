@@ -14,6 +14,7 @@ STYLESHEETS = [
 # Constantes
 MAX_WIDTH = "560px"
 CONTENT_WIDTH = "1000px"
+CONTENT_GALERY = "100%"
 
 # Sizes
 class Size(Enum):

@@ -6,7 +6,7 @@ import requests
 import keikodev.views.constants as const
 import datetime as datetime
 from keikodev.api.supabase import SupabaseApi
-from keikodev.models.nasa_images import nasaLink
+from keikodev.models.Nasalink import Nasalink
 
 
 
@@ -23,20 +23,15 @@ class nasaApi():
 
     def tomaFoto(self, fecha):
         if fecha == "":
-            print("Le asignamos fecha")
             fecha = datetime.datetime.now().date()
-            print(fecha)
         else:
             fecha_creada = datetime.datetime.strptime(fecha, '%Y-%m-%d')
             fecha = fecha_creada.date()
-            print("tiene ya fecha")
-            print(fecha)
 
         supabase_api = SupabaseApi()
         existe_foto = supabase_api.check_existe(fecha)
         print(existe_foto)
         if existe_foto is False:
-            print("pido foto a la nasa")
             fecha_str = fecha.strftime('%Y-%m-%d')
             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text
             self.response = json.loads(raw_response)
@@ -45,6 +40,10 @@ class nasaApi():
                 fecha_str = fecha.strftime('%Y-%m-%d')
                 raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text   
                 self.response = json.loads(raw_response)
+            
+            
+            
+            
 
             date = fecha
             self.date = self.response['date']
@@ -57,22 +56,12 @@ class nasaApi():
                 supabase_api.insert(url, date, hdurl, explanation, title)
             else:
                 print("Dia anterior no insertar")
-
-
-            # dia = date[8:10]
-            # mes = date[5:7]
-            # ano = date[0:4]
-            # fecha = f"{dia}/{mes}/{ano}"
-            # nasaLink.url = url
-            # nasaLink.date = datetime.datetime.strptime(date, '%Y-%m-%d')
-            # nasaLink.hdurl = hdurl
-            # nasaLink.explanation = explanation
-            # nasaLink.title = title
-            #link = nasaLink(url=url, date=datetime.datetime.strptime(date, '%Y-%m-%d'), hdurl=hdurl, explanation=explanation, title=title)
-            #datos_foto = self.response
         
-        datos_foto=supabase_api.carga_foto(fecha)
 
+        datos_foto=supabase_api.carga_foto(fecha)
+        datos_json=json.loads(datos_foto)
+        datos_json = datos_json[0]
+        model = Nasalink(**datos_json)
         return True, datos_foto #, hdurl, date, title, explanation, url
 
     
@@ -97,4 +86,3 @@ class nasaApi():
         print(self.response['date'])
         return True, hdurl, date, title, explanation, url
 
-    
