@@ -20,3 +20,25 @@
       transform: translateX(0); /* Termina en la posición inicial del contenedor */
     }
   }
+
+
+  .marquee-container {
+    width: 100%; /* Ancho del contenedor */
+    overflow: hidden; /* Oculta el contenido que desborde */
+    position: relative; /* Posición relativa para el contenido desplazable */
+    white-space: nowrap; /* Evita que el texto se divida en varias líneas */
+}
+
+.marquee-content {
+    display: inline-block; /* Permite que el texto haga scroll horizontalmente */
+    animation: marquee 10s linear infinite; /* Animación de desplazamiento */
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(100%); /* Desplazamiento inicial fuera del contenedor */
+    }
+    100% {
+        transform: translateX(-100%); /* Desplazamiento completo hacia la izquierda */
+    }
+}

@@ -41,7 +41,9 @@ def galeria_nasa() -> rx.Component:
                 max_width=styles.CONTENT_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value
-                )
+                ),
+                style=styles.background_gradient_style,
+
             ),
         footer(),
         style = styles.background_pattern_style,

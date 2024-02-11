@@ -9,7 +9,7 @@ from keikodev.componentes.main_menu import main_menu as main_menu
 from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import fotoNasa as fotoNasa
 from keikodev.state.ModalState import ModalStateFull
-from keikodev.componentes.visualiza import visualiza as visualiza
+from keikodev.componentes.visualiza import visualiza_modal as visualiza_modal
 
 
 def navbar():
@@ -38,6 +38,7 @@ def navbar():
                 ),
 
                 rx.box(
+                        #visualiza_modal(),
                         rx.text(f"Foto desde Nasa diaria: {PageState.date}" ,
                                 margin=Size.DEFAULT.value,
                                 display = "flex",
@@ -54,15 +55,15 @@ def navbar():
                                 height = "50px",
                                 on_click=ModalStateFull.change(PageState.hdurl),
                                 _hover = {"cursor": "pointer"},
-                                
                                 ),
+                                
+
+                        
                         rx.modal(
                                 rx.modal_overlay(
                                         rx.modal_content(
                                                 rx.modal_body(
                                                         rx.center(
-                                                                #visualiza(),
-
                                                                 rx.vstack(
                                                                         rx.button(
                                                                         "Cerrar ventana",
@@ -71,10 +72,8 @@ def navbar():
                                                                         border_width = "3px",
                                                                         width="30%",
                                                                         border_color = Color.PRIMARY.value,
-                                                                        on_click=ModalStateFull.change(""),
-                                                                                                                                        
+                                                                        on_click=ModalStateFull.change(""),                                                                      
                                                                         ),
-                                                                        #visualiza(),
                                                                         rx.image(
                                                                                 src=ModalStateFull.hdurl,
                                                                                 width="100%",
@@ -104,7 +103,7 @@ def navbar():
                         display = "flex",
                         align_items = "right",
                         justify_content = "right",
-                        ),
+                ),
         spacing = Size.LARGE.value,
         position="sticky", #Deja la barra arriba y se mueve el head y footer
         bg=Color.CONTENT.value,
@@ -114,4 +113,3 @@ def navbar():
         z_index = "999",
         top="0"
         )
-    

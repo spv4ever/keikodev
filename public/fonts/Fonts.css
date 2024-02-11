@@ -13,3 +13,8 @@
     src: url("Poppins-Light.ttf") format("truetype");
 }
 
+@font-face {
+    font-family: "Nasa-Medium";
+    src: url("Nasa.ttf") format("truetype");
+}
+

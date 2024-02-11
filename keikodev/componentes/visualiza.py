@@ -6,85 +6,44 @@ import keikodev.styles.styles as styles
 
 
 
-def visualiza()->rx.Component:
-    return rx.vstack(
-            rx.image(
-                        src=ModalStateFull.hdurl,
-                        width="100%",
-                        height="auto",
-                ),
-                rx.text(PageState.title,
-                        color = TextColor.PRIMARY.value),
-                rx.text(PageState.explanation,
-                        color = TextColor.PRIMARY.value),
-                max_width = styles.CONTENT_WIDTH,
-        ),
-                                                                
+def visualiza_modal()->rx.Component:
+    return rx.modal(
+                                rx.modal_overlay(
+                                        rx.modal_content(
+                                                rx.modal_body(
+                                                        rx.center(
+                                                                rx.vstack(
+                                                                        rx.button(
+                                                                        "Cerrar ventana",
+                                                                        size = "lg",
+                                                                        variant= "outline",
+                                                                        border_width = "3px",
+                                                                        width="30%",
+                                                                        border_color = Color.PRIMARY.value,
+                                                                        on_click=ModalStateFull.change(""),                                                                      
+                                                                        ),
+                                                                        rx.image(
+                                                                                src=ModalStateFull.hdurl,
+                                                                                width="100%",
+                                                                                height="auto",
+                                                                        ),
+                                                                        rx.text(PageState.title,
+                                                                                color = TextColor.PRIMARY.value),
+                                                                        rx.text(PageState.explanation,
+                                                                                color = TextColor.PRIMARY.value),
 
-# class ModalState(rx.State):
-#     show: bool = False
-#     count: str
+                                                                        max_width = styles.CONTENT_WIDTH,
+                                                                ),
 
-#     def change(self, count:str):
-#         self.show = not (self.show)
-#         self.count = count
+                                                        ),
 
-# def visualiza()->rx.Component:
-#         return 
-#         rx.modal(
-#             rx.modal_overlay(
-#                 rx.modal_content(
-#                     rx.modal_body(
-#                         rx.image(
-#                             src=ModalState.count),
-#                         rx.button(
-#                             "Close",
-#                             on_click=ModalState.change(""),
-#                         )
-#                     ),
-#                 ),
-#             ),
-#         is_open=ModalState.show
-#         ), 
-
-
-"""
-def index():
-    return rx.hstack(
-        rx.image(
-            src="favicon.ico",
-            bg="#fef2f2",
-            color="#b91c1c",
-            border_radius="lg",
-            on_click=ModalState.change("avatar3.png"),
-        ),
-        rx.image(
-            src="favicon.ico",
-            bg="#ecfdf5",
-            color="#047857",
-            border_radius="lg",
-            on_click=ModalState.change("keiko_manga_sd.png"),
-
-        ),
-        rx.modal(
-            rx.modal_overlay(
-                rx.modal_content(
-                    rx.modal_body(
-                        rx.image(
-                            src=ModalState.count),
-                        rx.button(
-                            "Close",
-                            on_click=ModalState.change(""),
-                        )
-                    ),
-                ),
-            ),
-        is_open=ModalState.show
-        ), 
-
-
-        rx.heading(rx.image(src=State.count), font_size="2em"),
-        spacing="1em",
-
-    )
-"""
+                                                        style = styles.background_pattern_style,
+                                                        
+                                                ),
+                                                bg = Color.BACKGROUND.value,
+                                        ),
+                                        
+                                ),
+                                is_open=ModalStateFull.show,
+                                size="full",
+                        ),
