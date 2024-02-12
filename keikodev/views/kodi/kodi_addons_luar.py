@@ -163,6 +163,7 @@ def kodi_addons_luar()->rx.Component:
                 width="100%",
                 height = "20px",
             ),
+            
             rx.card(
                 rx.card_body(
                     rx.list(
@@ -245,7 +246,8 @@ def kodi_addons_luar()->rx.Component:
                 width = "100%",
                 padding_y = Size.MEDIUM.value,
                 margin = Size.BIG.value,
-                box_shadow= f"5px 5px 20px {Color.PRIMARY.value}"
+                box_shadow= f"5px 5px 20px {Color.PRIMARY.value}",
+                max_width = styles.CONTENT_WIDTH,
                 ),
             rx.box(
                 width="100%",
@@ -344,6 +346,8 @@ def kodi_addons_luar()->rx.Component:
                 ¡Disfruta de tu experiencia multimedia!"""),
             title("Otros links Relacionados"),
             rx.hstack(
+            rx.responsive_grid(
+                
                 linkbutton("Instalación en Windows y Android TV",
                     "",
                     "/img/windows.svg",
@@ -361,9 +365,12 @@ def kodi_addons_luar()->rx.Component:
                     "/img/kodi2.png",
                     Route.KODI.value,
                     is_external=False
-                    ),
-                padding = Size.BIG.value,
-                
+                ),
+                align="start",
+            spacing=Size.DEFAULT.value,
+            columns=[1,2,3] 
+            ),
+            
             ),
         spacing=Size.VERY_SMALL.value,
         padding = Size.MEDIUM.value,

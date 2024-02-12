@@ -1,7 +1,7 @@
 import reflex as rx
 from keikodev.styles.styles import Size as Size
-from keikodev.styles.colors import Color as Color
-from keikodev.styles.colors import TextColor as TextColor
+from keikodev.styles.colors import Color as Color, TextColor
+from keikodev.styles.fonts import Fuentes as Fuentes
 import keikodev.styles.styles as styles
 import keikodev.views.constants as const
 from keikodev.routes import Route
@@ -14,51 +14,70 @@ from keikodev.componentes.visualiza import visualiza_modal as visualiza_modal
 
 def navbar():
         return rx.hstack(
-                rx.box(
-                main_menu(),
-                heigth = "3em",
-                ),
-                rx.image(src="/avatar.png",
-                        width="50px",
-                        height="auto",
-                        border_radius="15px 50px",
-                        border="5px solid #555",
-                        box_shadow="lg"),
-                rx.link(
-                        rx.box(
-                                rx.span("Keiko",
-                                        color=Color.PRIMARY.value,
+                        #rx.box(
+                        main_menu(),
+                        #heigth = "3em",
+                        #),
+                        rx.image(src="/avatar.png",
+                                width="50px",
+                                height="auto",
+                                border_radius="15px 50px",
+                                border="5px solid #555",
+                                box_shadow="lg"),
+                        rx.link(
+                                rx.box(
+                                        rx.span("Keiko",
+                                                color=Color.PRIMARY.value,
+                                                ),
+                                        rx.span("Dev",
+                                                color=Color.SECONDARY.value
                                         ),
-                                rx.span("Dev",
-                                        color=Color.SECONDARY.value
+                                        style=styles.navbar_title_style
+                                ), 
+                                href=Route.INDEX.value,
+                        ),
+                        rx.flex(
+                                rx.vstack(
+                                        rx.html("""<!-- www.tutiempo.net - Ancho:304px - Alto:40px -->
+                                        <div id="TT_JC6wLxtBtDB6YFMUpfuEEEkkk7aULWaEkCZysy5yyEzBxzJBK">El tiempo - Tutiempo.net</div>
+                                        <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JC6wLxtBtDB6YFMUpfuEEEkkk7aULWaEkCZysy5yyEzBxzJBK"></script>""",
+                                        ),
+                                        rx.text("Tiempo en Segur de Calafell - Powered by tutiempo.net",
+                                                font_size = Size.SMALL_LARGE.value, 
+                                                font_family = Fuentes.DEFAULT.value,
+                                                color = TextColor.GREEN.value,
+                                                text_align = "center",
+                                                        ),
+                                        display=["none","none","flex","flex","flex"],
+                                        
                                 ),
-                                style=styles.navbar_title_style
-                        ), 
-                        href=Route.INDEX.value,
-                ),
+                                width = "100%",
+                                justify_content="center",
+                                align = "center",
+                        ),
+                        rx.flex(
+                                rx.vstack(
+                                        rx.image(
+                                                src=PageState.url,
+                                                width = "auto",
+                                                height = "50px",
+                                                on_click=ModalStateFull.change(PageState.hdurl),
+                                                _hover = {"cursor": "pointer"},
+                                                ),
+                                        rx.text(f"Foto desde Nasa diaria: {PageState.date}",
+                                                font_size = Size.SMALL_LARGE.value, 
+                                                font_family = Fuentes.DEFAULT.value,
+                                                text_align = "center",
+                                                color = TextColor.GREEN.value,
+                                                display=["none","none","flex","flex","flex"],
+                                        ),
+                                ),
+                                max_width = "200px",
+                                width = "100%",
+                                justify_content="flex-end",
+                                align = "center",
+                                ),
 
-                rx.box(
-                        #visualiza_modal(),
-                        rx.text(f"Foto desde Nasa diaria: {PageState.date}" ,
-                                margin=Size.DEFAULT.value,
-                                display = "flex",
-                                align_items = "center",
-                                justify_content = "center",
-                                color = TextColor.BODY.value,
-                                size = Size.VERY_SMALL.value,
-                                ),
-                        rx.image(
-                                src=PageState.url,
-                                html_height = "800px",
-                                html_width= "600px",
-                                width = "auto",
-                                height = "50px",
-                                on_click=ModalStateFull.change(PageState.hdurl),
-                                _hover = {"cursor": "pointer"},
-                                ),
-                                
-
-                        
                         rx.modal(
                                 rx.modal_overlay(
                                         rx.modal_content(
@@ -99,17 +118,18 @@ def navbar():
                                 is_open=ModalStateFull.show,
                                 size="full",
                         ),
-                        width = "100%",
-                        display = "flex",
-                        align_items = "right",
-                        justify_content = "right",
-                ),
-        spacing = Size.LARGE.value,
-        position="sticky", #Deja la barra arriba y se mueve el head y footer
-        bg=Color.CONTENT.value,
-        padding_x=Size.DEFAULT.value,
-        padding_y=Size.SMALL.value,
-        width="100%",
-        z_index = "999",
-        top="0"
-        )
+                        #width = "100%",
+                        # display = "flex",
+                        # align_items = "right",
+                        # justify_content = "right",
+                
+                #spacing = Size.LARGE.value,
+                position="sticky", #Deja la barra arriba y se mueve el head y footer
+                bg=Color.CONTENT.value,
+                # padding_x=Size.DEFAULT.value,
+                # padding_y=Size.SMALL.value,
+                spacing="2em",
+                width="100%",
+                z_index = "999",
+                top="0"
+                )

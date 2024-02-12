@@ -108,6 +108,7 @@ def kodi_addons_details()->rx.Component:
               organización más simple del contenido. Sin tanta publicidad."""),
         dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial39.png',f'{const.KODI_IMAGES}kodi_tutorial40.png'),
         rx.hstack(
+            rx.responsive_grid(
                 linkbutton("Instalación de Kodi",
                     "",
                     "/img/kodi2.png",
@@ -120,8 +121,10 @@ def kodi_addons_details()->rx.Component:
                     Route.KODI.value,
                     is_external=False
                     ),
-                padding = Size.BIG.value,
-                
+                columns = [1,2],
+                spacing=Size.DEFAULT.value,
+            ),
+            spacing=Size.DEFAULT.value,
             ),
         spacing=Size.VERY_SMALL.value,
         padding = Size.MEDIUM.value,
