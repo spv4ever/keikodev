@@ -18,6 +18,7 @@ def navbar():
                         main_menu(),
                         #heigth = "3em",
                         #),
+                        rx.flex(
                         rx.image(src="/avatar.png",
                                 width="50px",
                                 height="auto",
@@ -35,6 +36,10 @@ def navbar():
                                         style=styles.navbar_title_style
                                 ), 
                                 href=Route.INDEX.value,
+                        ),
+                        justify_content="center",
+                        align = "center",
+
                         ),
                         rx.flex(
                                 rx.vstack(
@@ -61,9 +66,11 @@ def navbar():
                                                 src=PageState.url,
                                                 width = "auto",
                                                 height = "50px",
+                                                fit = "cousin",
                                                 on_click=ModalStateFull.change(PageState.hdurl),
                                                 _hover = {"cursor": "pointer"},
-                                                ),
+                                                margin = Size.ZERO.value,
+                                        ),
                                         rx.text(f"Foto desde Nasa diaria: {PageState.date}",
                                                 font_size = Size.SMALL_LARGE.value, 
                                                 font_family = Fuentes.DEFAULT.value,
