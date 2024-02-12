@@ -12,6 +12,7 @@ from keikodev.styles.styles import Size as Size
 from keikodev.views.galeria_links import galeria_links
 from keikodev.state.ModalState import ModalState
 from keikodev.state.PageState import PageState as PageState
+from keikodev.state.alllinks import Alllinks
 from keikodev.views.galeria_nasa_details import galeria_nasa_details
 from keikodev.data.data_galeria_nasa import items_galeria
 
@@ -23,7 +24,7 @@ from keikodev.data.data_galeria_nasa import items_galeria
     description=utils.galeria_nasa_description,
     image= utils.preview,
     meta=utils.dev_meta,
-    on_load=PageState.check_live,
+    on_load=[PageState.check_live,Alllinks.obteneralllinks]
 )
 
 def galeria_nasa() -> rx.Component:
