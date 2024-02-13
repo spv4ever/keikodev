@@ -40,7 +40,7 @@ def galeria_nasa() -> rx.Component:
             ),
         rx.center(
             rx.vstack(
-                galeria_nasa_details(items_galeria),
+                galeria_nasa_details(),
                 max_width=styles.CONTENT_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value

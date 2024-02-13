@@ -18,7 +18,7 @@ from keikodev.data.reflex_class import Datagalerianasarx
 from keikodev.state.PageState import PageState
 
 
-def galeria_nasa_details(date_income: list[Datagalerianasa])->rx.Component:
+def galeria_nasa_details()->rx.Component:
     return rx.vstack(
         rx.box(
             rx.heading(

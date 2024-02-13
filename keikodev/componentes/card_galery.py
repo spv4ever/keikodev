@@ -4,13 +4,15 @@ from keikodev.styles.fonts import Fuentes
 from keikodev.styles.colors import Color, TextColor
 from keikodev.styles.styles import Size
 from keikodev.state.ModalState import ModalStateFull
+#from keikodev.state.PageState import PageState
 
 
 
-def card_galery(data: Datagalerianasa)-> rx.Component:
+def card_galery(data)-> rx.Component:
     return rx.box(
                 rx.vstack(
                     rx.box(
+                        
                     rx.text(data.date, 
                             font_size = Size.LARGE.value, 
                             font_family= Fuentes.NASA.value, 

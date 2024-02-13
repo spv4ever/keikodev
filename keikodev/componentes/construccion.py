@@ -31,11 +31,11 @@ def construccion(date_income: list[Datagalerianasa])->rx.Component:
         rx.vstack(
             rx.responsive_grid(
                 
-                    *[
-                        card_galery(data,
-                        )
-                        for index, data in enumerate(date_income)
-                    ],
+                    # *[
+                    #     card_galery(data,
+                    #     )
+                    #     for index, data in enumerate(date_income)
+                    # ],
                 
                 columns=[1,2,3,4],
                 spacing = "6"
