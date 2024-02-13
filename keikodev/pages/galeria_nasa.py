@@ -19,13 +19,14 @@ from keikodev.data.data_galeria_nasa import Datagalerianasa
 
 
 
+
 @rx.page(
     route=Route.GALERIA_NASA.value,
     title=utils.galeria_nasa_title,
     description=utils.galeria_nasa_description,
     image= utils.preview,
     meta=utils.dev_meta,
-    on_load=[PageState.check_live,Alllinks.obteneralllinks]
+    on_load=[PageState.check_live,Alllinks.obteneralllinks, PageState.check_foto]
 )
 
 def galeria_nasa() -> rx.Component:

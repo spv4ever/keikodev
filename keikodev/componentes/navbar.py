@@ -93,7 +93,7 @@ def navbar():
                                                                 rx.vstack(
                                                                         rx.button(
                                                                         "Cerrar ventana",
-                                                                        size = "lg",
+                                                                        size = "md",
                                                                         variant= "outline",
                                                                         border_width = "3px",
                                                                         width="30%",

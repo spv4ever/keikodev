@@ -24,7 +24,7 @@ class PageState(rx.State):
         title: str
         explanation: str
         hdurl: str
-        items_galeria: tuple
+        #items_galeria: Datagalerianasa
 
         async def check_live(self):
                 self.is_live = await live(USER)
@@ -52,7 +52,15 @@ class PageState(rx.State):
                                 ) 
                                 for item in response
                         ]
-                
+                # self.items_galeria = items_galeria
+                # print(items_galeria)
+                # for item in items_galeria:
+                #         print("Date:", item.date)
+                #         print("URL:", item.url)
+                #         print("Title:", item.title)
+                #         print("Explanation:", item.explanation)
+                #         print("HDURL:", item.hdurl)
+                #return items_galeria
                 
 
         async def tomaFoto(self,date):
