@@ -48,6 +48,22 @@ class SupabaseApi:
         supabase = None
         data = response.data
         return data
+    
+    def featured(self):
+        supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
+        #response = supabase.table('links').select("*").execute() # Sin orden, tal como están dados de alta.
+        response = supabase.table('links').select("*").order('date.desc').execute() #Ordenado de último a antiguo.
+        supabase = None
+
+        featured_data = []
+
+        if len(response.data) > 0:
+            for featured_item in response.data:
+                featured_data.append(featured_item)
+
+        #print(featured_data)
+
+        return featured_data    
 
 
 
@@ -55,15 +71,7 @@ class SupabaseApi:
 
 
 
-    def featured(self) -> list:
-        return
-        # response = self.supabase.table('links').select("*").execute()   
-        # featured_data = []
-        # if len(response.data) > 0:
-        #     for featured_item in response.data:
-        #         featured_data.append(featured_item)
-        #self.insert()
-        #eturn #featured_data
+
 
 
 

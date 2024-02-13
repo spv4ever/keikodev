@@ -1,7 +1,8 @@
+import reflex as rx
 from keikodev.api.supabase import SupabaseApi
 import json
 
-class Datagalerianasa:
+class Datagalerianasa():
     def __init__(
             self,
             date: str,

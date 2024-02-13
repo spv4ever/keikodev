@@ -95,8 +95,10 @@ def header(details=True, live=False)-> rx.Component:
                         rx.heading("Descubre más sobre mí",size="md",
                                     color=Color.PRIMARY.value,
                                     font_family = Fuentes.LOGO.value,
-                                    class_name="texto",
-                                    ),),
+                                    #class_name="texto",
+                                    ),
+                                    #width = "250px"
+                                    ),
                         rx.accordion_icon(),
                     ),
                     rx.accordion_panel(
