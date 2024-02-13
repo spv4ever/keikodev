@@ -8,4 +8,5 @@ class Alllinks(rx.State):
     async def obteneralllinks(self):
         supabase_api = SupabaseApi()
         response = supabase_api.allLinks()
+        
         #print(response)

@@ -25,24 +25,24 @@ def footer()-> rx.Component:
                 href="https://github.com/spv4ever",
                 is_external=True,
                 font_size = Size.MEDIUM.value),
-                # rx.hstack(
-                #     rx.text(
-                #         "Aprendiendo desarrollo web.",
-                #         font_size = Size.MEDIUM.value,
-                #         width = "100%",
-                #         class_name="marquee-content",
+                rx.hstack(
+                    rx.text(
+                        "Aprendiendo desarrollo web.",
+                        font_size = Size.MEDIUM.value,
+                        width = "100%",
+                        class_name="marquee-content",
                         
-                #         ),
-                #     margin_top=Size.ZERO.value,
-                #     class_name="marquee-container",
-                #     width=Styles.MAX_WIDTH,
-                #     ),
-                    # Float_Button(
-                    #      icon = rx.Image (src="/img/bmc-logo.svg"),
-                    #      href = const.DONACIONES_URL,
-                    #      target='_blank',
-                    #     #disabled = False,
-                    #      ),
+                        ),
+                    margin_top=Size.ZERO.value,
+                    class_name="marquee-container",
+                    width="300px",
+                    ),
+                    Float_Button(
+                         icon = rx.Image (src="/img/bmc-logo.svg"),
+                         href = const.DONACIONES_URL,
+                         target='_blank',
+                        #disabled = False,
+                         ),
                 #margin_bottom=Size.BIG.value,
                 padding_bottom = Size.MEDIUM_BIG.value,
                 color = TextColor.FOOTER.value,

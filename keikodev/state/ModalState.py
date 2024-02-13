@@ -39,6 +39,12 @@ def modal_small()-> rx.Component:
 class ModalStateFull(rx.State):
     show: bool = False
     hdurl: str
-    def change(self, hdurl:str):
+    title: str
+    explanation: str
+
+    def change(self, hdurl:str, title:str = "", explanation: str =""):
         self.show = not (self.show)
         self.hdurl = hdurl
+        self.title = title
+        self.explanation = explanation
+        

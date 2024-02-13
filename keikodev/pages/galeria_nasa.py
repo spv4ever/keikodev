@@ -15,6 +15,7 @@ from keikodev.state.PageState import PageState as PageState
 from keikodev.state.alllinks import Alllinks
 from keikodev.views.galeria_nasa_details import galeria_nasa_details
 from keikodev.data.data_galeria_nasa import items_galeria
+from keikodev.data.data_galeria_nasa import Datagalerianasa
 
 
 
