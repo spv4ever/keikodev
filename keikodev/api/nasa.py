@@ -13,6 +13,7 @@ from keikodev.models.Nasalink import Nasalink
 
 class nasaApi():
     dotenv.load_dotenv()
+    #NASA_KEY = os.environ.get("NASA_")
     NASA_KEY = os.environ.get("NASA_KEY_ID")
     SFTP_HOST = os.environ.get("SFTP_HOST")
     SFTP_USER = os.environ.get("SFTP_USER")
@@ -30,27 +31,55 @@ class nasaApi():
 
         supabase_api = SupabaseApi()
         existe_foto = supabase_api.check_existe(fecha)
-        print(existe_foto)
+        #print(existe_foto)
         if existe_foto is False:
             fecha_str = fecha.strftime('%Y-%m-%d')
-            raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text
-            self.response = json.loads(raw_response)
-            if len(self.response) == 3:
-                fecha = fecha - datetime.timedelta(days=1)
-                fecha_str = fecha.strftime('%Y-%m-%d')
-                raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text   
-                self.response = json.loads(raw_response)
-            
-            
-            
-            
+            #fecha_str = '2024-02-15'
 
-            date = fecha
-            self.date = self.response['date']
-            hdurl = self.response['hdurl']
-            title = self.response['title']
-            explanation = self.response['explanation']
-            url = self.response['url']
+            try:
+                raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text
+                
+            except requests.RequestException as e:
+                print("Error al hacer la solicitud a la API de la NASA:", e)
+
+            carga_ok = False
+            if raw_response:
+                try:
+                    # Intenta cargar la respuesta como JSON
+                    response_dict = json.loads(raw_response)
+                    
+                    # Verifica si es un diccionario (JSON)
+                    if isinstance(response_dict, dict):
+                        # Verifica si el código de estado es 400
+                        if response_dict.get("code") == 400:
+                            fecha = fecha - datetime.timedelta(days=1)
+                            fecha_str = fecha.strftime('%Y-%m-%d')
+                            raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text  
+                            carga_ok = True
+                        else:
+                            # Verifica si la clave "fecha" está presente
+                            if "date" in response_dict:
+                                # Si la clave "fecha" está presente, asigna el diccionario a self.response
+                                carga_ok = True
+                                print("Conexión exitosa a la API de la NASA")
+                            else:
+                                print("La respuesta JSON no contiene la clave 'fecha'")
+                    else:
+                        print("La respuesta no es un JSON válido")
+                except json.JSONDecodeError:
+                    print("Error al decodificar la respuesta JSON de la API de la NASA")
+            else:
+                print("La respuesta está vacía")
+
+            if carga_ok is True:
+                self.response = json.loads(raw_response)
+                date = fecha
+                self.date = self.response['date']
+                hdurl = self.response['hdurl']
+                title = self.response['title']
+                explanation = self.response['explanation']
+                url = self.response['url']
+
             existe_foto = supabase_api.check_existe(fecha)
             if existe_foto is False:
                 supabase_api.insert(url, date, hdurl, explanation, title)

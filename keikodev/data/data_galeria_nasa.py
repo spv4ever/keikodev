@@ -21,7 +21,7 @@ class Datagalerianasa():
 
 supabase = SupabaseApi()
 response = supabase.allLinks()
-print("actualizando variable")
+
 
 items_galeria = [
     Datagalerianasa(

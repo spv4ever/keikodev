@@ -96,6 +96,6 @@ class PageState(rx.State):
                                 for item in self.featured_info
                         ]
                 fechas = [item.date for item in self.featured_details]
-                print(fechas)
+                
         
         
