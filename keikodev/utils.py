@@ -51,6 +51,10 @@ galeria_description = "Galerías de imagenes, fotos diarias, conexión directa c
 galeria_nasa_title = "Últimas fotos publicadas desde la Nasa"
 galeria_nasa_description = "Galería de fotos donde se irán publicando las últimas fotos directas desde La Nasa"
 
+# Galeria Nasa
+emulator_title = "Links y Manuales del mundo de la emulación"
+emulator_description = "Biblioteca de información sobre emuladores"
+
 
 
 
@@ -138,4 +142,11 @@ galeria_nasa_meta = [
     {"name": "og:description", "content": galeria_nasa_description},
 ]
 galeria_nasa_meta.extend(_meta)
+
+# emulator
+emulator_meta = [
+    {"name": "og:title", "content": emulator_title},
+    {"name": "og:description", "content": emulator_description},
+]
+emulator_meta.extend(_meta)
 

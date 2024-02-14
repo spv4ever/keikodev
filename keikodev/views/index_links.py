@@ -60,7 +60,7 @@ def index_links()-> rx.Component:
         linkbutton('Mundo de la emulación', 
             "Todo lo relativo al mundo de la emulación Consola", 
             "/img/gamepad-solid.svg",
-            Route.CONSTR.value,
+            Route.EMULATOR.value,
             is_external=False),
 
         linkbutton('Servicios personalizados', 
