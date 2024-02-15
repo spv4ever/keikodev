@@ -13,7 +13,7 @@ import json
 
 import datetime as dt
 
-USER = "gerardromero"
+USER = "mouredev"
 
 
 class PageState(rx.State):
@@ -40,36 +40,6 @@ class PageState(rx.State):
                         self.title = item["title"]
                         self.explanation = item["explanation"]
                         self.hdurl = item["hdurl"]
-
-        # async def check_foto(self):
-        #         supabase_api = SupabaseApi()
-        #         response = supabase_api.allLinks()
-        #         print("Actualizando desde check foto")
-                
-                
-        #         items_galeria = [
-        #                 Datagalerianasarx(
-        #                         date=item["date"], 
-        #                         url=item["url"],
-        #                         title=item["title"],
-        #                         explanation=item["explanation"],
-        #                         hdurl = item["hdurl"]
-        #                         ) 
-        #                         for item in response
-        #                 ]
-                
-        #         self.items_galeria = items_galeria
-                
-                # self.items_galeria = items_galeria
-                # print(items_galeria)
-                # for item in items_galeria:
-                #         print("Date:", item.date)
-                #         print("URL:", item.url)
-                #         print("Title:", item.title)
-                #         print("Explanation:", item.explanation)
-                #         print("HDURL:", item.hdurl)
-                #return items_galeria
-                
 
         async def tomaFoto(self,date):
                 url = await foto(date)

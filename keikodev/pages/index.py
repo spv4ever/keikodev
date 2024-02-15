@@ -39,7 +39,7 @@ from keikodev.state.ModalState import modal_small
 def index() -> rx.Component:
     return rx.box(
         utils.lang(),
-        
+        utils.cookies(),
         navbar(),
         rx.center(
             rx.vstack(

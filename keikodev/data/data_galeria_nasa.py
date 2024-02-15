@@ -22,7 +22,6 @@ class Datagalerianasa():
 supabase = SupabaseApi()
 response = supabase.allLinks()
 
-
 items_galeria = [
     Datagalerianasa(
         date=item["date"], 

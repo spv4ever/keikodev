@@ -4,6 +4,9 @@ import reflex as rx
 def lang() -> rx.Component:
     return rx.script("document.documentElement.lang='es'")
 
+def cookies() -> rx.Component:
+    return rx.script(src="//cdn.cookie-script.com/s/badcfd79f77b344234eebfda9910dc62.js")
+
 
 # Index information
 index_title = "KeikoDev. Links esenciales para Python, Recursos, formación, cyber estafas, utilidades"
@@ -54,6 +57,14 @@ galeria_nasa_description = "Galería de fotos donde se irán publicando las últ
 # Galeria Nasa
 emulator_title = "Links y Manuales del mundo de la emulación"
 emulator_description = "Biblioteca de información sobre emuladores"
+
+# Terminos
+cookies_title = "Política de cookies"
+cookies_description = "Política de cookies"
+
+# Privacidad
+privacidad_title = "Política de privacidad"
+privacidad_description = "Política de privacidad"
 
 
 
@@ -149,4 +160,23 @@ emulator_meta = [
     {"name": "og:description", "content": emulator_description},
 ]
 emulator_meta.extend(_meta)
+
+
+# Terminos
+cookies_title = "Política de cookies"
+cookies_description = "Política de cookies"
+cookies_meta = [
+    {"name": "og:title", "content": cookies_title},
+    {"name": "og:description", "content": cookies_description},
+]
+cookies_meta.extend(_meta)
+
+# Privacidad
+privacidad_title = "Política de privacidad"
+privacidad_description = "Política de privacidad"
+privacidad_meta = [
+    {"name": "og:title", "content": privacidad_title},
+    {"name": "og:description", "content": privacidad_description},
+]
+privacidad_meta.extend(_meta)
 
