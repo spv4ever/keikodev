@@ -66,6 +66,10 @@ cookies_description = "Política de cookies"
 privacidad_title = "Política de privacidad"
 privacidad_description = "Política de privacidad"
 
+# Privacidad
+cursos_title = "Catálogos de formaciones y cursos"
+cursos_description = "Todos los catálogos disponibles en formaciones para todos"
+
 
 
 
@@ -180,3 +184,27 @@ privacidad_meta = [
 ]
 privacidad_meta.extend(_meta)
 
+# Cursos
+cursos_meta = [
+    {"name": "og:title", "content": cursos_title},
+    {"name": "og:description", "content": cursos_description},
+]
+cursos_meta.extend(_meta)
+
+# trucos
+trucos_title = "Trucos web, windows, android, ios"
+trucos_description = "Recopilación de trucos para todas las plataformas"
+trucos_meta = [
+    {"name": "og:title", "content": trucos_title},
+    {"name": "og:description", "content": trucos_description},
+]
+trucos_meta.extend(_meta)
+
+# kodi trucos
+kodi_trucos_title = "Trucos web, windows, android, ios"
+kodi_trucos_description = "Recopilación de trucos para todas las plataformas"
+kodi_trucos_meta = [
+    {"name": "og:title", "content": kodi_trucos_title},
+    {"name": "og:description", "content": kodi_trucos_description},
+]
+kodi_trucos_meta.extend(_meta)

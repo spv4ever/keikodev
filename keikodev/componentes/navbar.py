@@ -47,6 +47,9 @@ def navbar():
                                         <div id="TT_JC6wLxtBtDB6YFMUpfuEEEkkk7aULWaEkCZysy5yyEzBxzJBK">El tiempo - Tutiempo.net</div>
                                         <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JC6wLxtBtDB6YFMUpfuEEEkkk7aULWaEkCZysy5yyEzBxzJBK"></script>""",
                                         ),
+                                        # rx.script(
+                                        #         src="https://example.com/your-script.js",on_ready=rx.call_script(navbar())),
+
                                         rx.text("Tiempo en Segur de Calafell - Powered by tutiempo.net",
                                                 font_size = Size.SMALL_LARGE.value, 
                                                 font_family = Fuentes.DEFAULT.value,

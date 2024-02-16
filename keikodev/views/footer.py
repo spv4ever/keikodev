@@ -45,15 +45,17 @@ def footer()-> rx.Component:
                          target='_blank',
                         #disabled = False,
                          ),
-                rx.link(
-                    rx.text("Política de privacidad",
-                            font_size = Size.MEDIUM.value),
-                    href=Route.PRIVACIDAD.value,
-                ),
-                rx.link(
-                    rx.text("Política de cookies",
-                            font_size = Size.MEDIUM.value),
-                    href=Route.COOKIES.value,
+                rx.hstack(
+                    rx.link(
+                        rx.text("Política de privacidad",
+                                font_size = Size.MEDIUM.value),
+                        href=Route.PRIVACIDAD.value,
+                    ),
+                    rx.link(
+                        rx.text("Política de cookies",
+                                font_size = Size.MEDIUM.value),
+                        href=Route.COOKIES.value,
+                    ),
                 ),
                 #margin_bottom=Size.BIG.value,
                 padding_bottom = Size.MEDIUM_BIG.value,

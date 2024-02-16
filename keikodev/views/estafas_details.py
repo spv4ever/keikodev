@@ -27,7 +27,19 @@ def estafas_details()->rx.Component:
             o simplemente explicando lo que le ha pasado a """, 
             rx.span(rx.link("info@keikodev.es",href="mailto:info@keikodev.es"),font_family = Fuentes.TITLE.value),
             rx.span(" indicando si prefiere permanecer en el anonimato o quiere aparecer como fuente de la noticia."))),
-            
+        card(url="", title="Ojo con esta nueva modalidad. Spoofing", 
+                lista_imagenes=[('/img/estafas/estafa3-1.jpg'),('/img/estafas/estafa3-2.jpg'),('/img/estafas/estafa3-3.jpg')],
+                body="""Tenemos una nueva modalidad de estafa al teléfono. Los estafadores te llaman haciendose pasar
+                por un empleado de tu banco, donde te indica que alguien está intentando transferir dinero y se ponen en contacto
+                contigo para verificar la transacción. Te pedirán datos para confirmar tu identidad, pero realmente lo que estás dando
+                son los datos para acceder a tu cuenta y con ello robarte tu dinero. Recuerda los básicos en estos casos. 1.- Les debes
+                decir que ahora te pones tú en contacto con ellos. 2º Tu banco nunca te llamará y te pedirá claves de acceso para entrar
+                 en tus cuentas ni a modo de verificación. En particular, prefiero siempre colgar y llamar yo, ya que los estafadores
+                  son capaces de suplantar el nº de teléfono desde donde llaman y aparecer como tu entidad bancaria.""",
+                color=TextColor.PRIMARY, 
+                badge_text="16/02/2024", 
+                featured=True,
+                ),    
         card(url="", title="La llamada urgente porque te vamos a subir el precio", 
                 lista_imagenes=[('/img/estafas/estafa-2-1.jpg'),('/img/estafas/estafa-2-2.jpg')],
                 body="""Hoy comparto el penúltimo intento de fraude de las compañías telefónicas, no os podre

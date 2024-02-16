@@ -10,7 +10,7 @@ from keikodev.state.ModalState import ModalState as ModalState
 from .heading import heading
 from .badge import badge
 
-def card(url: str, title: str, lista_imagenes , body="", color=TextColor.PRIMARY, badge_text="", featured=False) -> rx.Component:
+def card(url: str, title: str, lista_imagenes , body="", color=TextColor.PRIMARY, badge_text="", featured=False, external=False) -> rx.Component:
     return rx.link(
         rx.vstack(
             rx.cond(
@@ -51,6 +51,7 @@ def card(url: str, title: str, lista_imagenes , body="", color=TextColor.PRIMARY
             height="100%",
             style=styles.featured_container_style if featured else styles.container_style,
         ),
-        #href=url,
+        href=url,
+        is_external=external,
         width="100%"
     )

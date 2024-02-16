@@ -21,6 +21,12 @@ def kodi_links()-> rx.Component:
                 Route.KODI_ADDONS.value,
                 is_external=False
                 ),
+                linkbutton("Trucos para kodi",
+                "Mejora el rendimiento, soluciona problemas de configuración...",
+                "/img/kodi2.png",
+                Route.KODI_TRUCOS.value,
+                is_external=False
+                ),
                 linkbutton("Instalación de Addon Luar",
                 "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
                 "/img/kodi2.png",

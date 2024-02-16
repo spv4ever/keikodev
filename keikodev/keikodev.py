@@ -16,6 +16,9 @@ from keikodev.pages.galeria_nasa import galeria_nasa
 from keikodev.pages.emulator import emulator
 from keikodev.pages.cookies import cookies
 from keikodev.pages.privacidad import privacidad
+from keikodev.pages.cursos import cursos
+from keikodev.pages.trucos import trucos
+from keikodev.pages.kodi_trucos import kodi_trucos
 
 from keikodev.api.api import repo as repo
 from keikodev.api.api import live as live

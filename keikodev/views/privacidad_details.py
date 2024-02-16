@@ -6,24 +6,22 @@ import keikodev.styles.styles as styles
 from keikodev.state.fotoNasa import Image_Load as Image_Load
 from keikodev.state.PageState import PageState as PageState
 from keikodev.componentes.card import card as card
-from keikodev.state.alllinks import Alllinks
-from keikodev.models.Nasalink import Nasalink
-from keikodev.data.data_galeria_nasa import Datagalerianasa
-from keikodev.data.data_galeria_nasa import items_galeria
-from typing import List
-from keikodev.componentes.card_galery import card_galery
+# from keikodev.state.alllinks import Alllinks
+# from keikodev.models.Nasalink import Nasalink
+# from keikodev.data.data_galeria_nasa import Datagalerianasa
+# from keikodev.data.data_galeria_nasa import items_galeria
+# from typing import List
+# from keikodev.componentes.card_galery import card_galery
 
 
 def privacidad_details()->rx.Component:
     return rx.vstack(
         rx.heading(
-            "Todavía no estamos listos",
+            "Política de Privacidad",
             size = "lg",
             style=styles.title_center_style,
             ),
-        rx.text("""
-                    POLÍTICA DE PRIVACIDAD
-                    El presente Política de Privacidad establece los términos en que keikodev.es usa y protege la
+        rx.text("""El presente Política de Privacidad establece los términos en que keikodev.es usa y protege la
                     información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta
                     compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le
                     pedimos llenar los campos de información personal con la cual usted pueda ser identificado, lo
@@ -81,6 +79,6 @@ def privacidad_details()->rx.Component:
                     Privacidad en cualquier momento.
                     Esta politica de privacidad se han generado en politicadeprivacidadplantilla.com.
                     """),
-
-        width = "100%",
+        color = TextColor.SECONDARY.value,
+        width = styles.CONTENT_WIDTH,
     )

@@ -15,4 +15,7 @@ class Route(Enum):
     EMULATOR = "/emulator"
     COOKIES = "/cookies"
     PRIVACIDAD = "/privacidad"
+    CURSOS = "/cursos"
+    TRUCOS = "/trucos"
+    KODI_TRUCOS = "/koditrucos"
     
