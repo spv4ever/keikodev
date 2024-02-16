@@ -7,13 +7,13 @@ import keikodev.styles.styles as styles
 
 
 def visualiza_modal()->rx.Component:
-    return rx.modal(
-                                rx.modal_overlay(
-                                        rx.modal_content(
-                                                rx.modal_body(
-                                                        rx.center(
-                                                                rx.vstack(
-                                                                        rx.button(
+    return rx.chakra.modal(
+                                rx.chakra.modal_overlay(
+                                        rx.chakra.modal_content(
+                                                rx.chakra.modal_body(
+                                                        rx.chakra.center(
+                                                                rx.chakra.vstack(
+                                                                        rx.chakra.button(
                                                                         "Cerrar ventana",
                                                                         size = "lg",
                                                                         variant= "outline",
@@ -22,14 +22,14 @@ def visualiza_modal()->rx.Component:
                                                                         border_color = Color.PRIMARY.value,
                                                                         on_click=ModalStateFull.change(""),                                                                      
                                                                         ),
-                                                                        rx.image(
+                                                                        rx.chakra.image(
                                                                                 src=ModalStateFull.hdurl,
                                                                                 width="100%",
                                                                                 height="auto",
                                                                         ),
-                                                                        rx.text(PageState.title,
+                                                                        rx.chakra.text(PageState.title,
                                                                                 color = TextColor.PRIMARY.value),
-                                                                        rx.text(PageState.explanation,
+                                                                        rx.chakra.text(PageState.explanation,
                                                                                 color = TextColor.PRIMARY.value),
 
                                                                         max_width = styles.CONTENT_WIDTH,

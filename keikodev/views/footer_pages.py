@@ -8,21 +8,21 @@ from keikodev.componentes.ant_components import Float_Button
 import keikodev.views.constants as const
 
 def footer_pages()-> rx.Component:
-    return rx.vstack(
+    return rx.chakra.vstack(
 
-        rx.avatar(name="Albert García",
+        rx.chakra.avatar(name="Albert García",
                           size="xl", 
                           src = "/keiko_manga_sd.png",
                           padding="2px",
                           border="4px",
                           border_color = Color.PRIMARY.value,
                           ),
-        rx.link(f'© 1991-{datetime.date.today().year} Blog personal de Albert García.',
+        rx.chakra.link(f'© 1991-{datetime.date.today().year} Blog personal de Albert García.',
                 href="https://github.com/spv4ever",
                 is_external=True,
                 font_size = Size.MEDIUM.value),
-                rx.hstack(
-                    rx.text(
+                rx.chakra.hstack(
+                    rx.chakra.text(
                         "Aprendiendo desarrollo web desde Catalunya.",
                         font_size = Size.MEDIUM.value,
                         class_name="marquee",

@@ -14,26 +14,26 @@ import keikodev.utils as utils
 
 
 def navbar():
-        return rx.hstack(
-                        #rx.box(
+        return rx.chakra.hstack(
+                        #rx.chakra.box(
                         utils.lang(),
                         main_menu(),
                         #heigth = "3em",
                         #),
-                        rx.flex(
-                        rx.image(src="/avatar.png",
+                        rx.chakra.flex(
+                        rx.chakra.image(src="/avatar.png",
                                  alt="Logo",
                                 width="50px",
                                 height="auto",
                                 border_radius="15px 50px",
                                 border="5px solid #555",
                                 box_shadow="lg"),
-                        rx.link(
-                                rx.box(
-                                        rx.span("Keiko",
+                        rx.chakra.link(
+                                rx.chakra.box(
+                                        rx.chakra.span("Keiko",
                                                 color=Color.PRIMARY.value,
                                                 ),
-                                        rx.span("Dev",
+                                        rx.chakra.span("Dev",
                                                 color=Color.SECONDARY.value
                                         ),
                                         style=styles.navbar_title_style
@@ -44,8 +44,8 @@ def navbar():
                         align = "center",
 
                         ),
-                        rx.flex(
-                                rx.vstack(
+                        rx.chakra.flex(
+                                rx.chakra.vstack(
                                         rx.html("""<!-- www.tutiempo.net - Ancho:304px - Alto:40px -->
                                         <div id="TT_JC6wLxtBtDB6YFMUpfuEEEkkk7aULWaEkCZysy5yyEzBxzJBK">El tiempo - Tutiempo.net</div>
                                         <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JC6wLxtBtDB6YFMUpfuEEEkkk7aULWaEkCZysy5yyEzBxzJBK"></script>""",
@@ -53,7 +53,7 @@ def navbar():
                                         # rx.script(
                                         #         src="https://example.com/your-script.js",on_ready=rx.call_script(navbar())),
 
-                                        rx.text("Tiempo en Segur de Calafell - Powered by tutiempo.net",
+                                        rx.chakra.text("Tiempo en Segur de Calafell - Powered by tutiempo.net",
                                                 font_size = Size.SMALL_LARGE.value, 
                                                 font_family = Fuentes.DEFAULT.value,
                                                 color = TextColor.GREEN.value,
@@ -66,9 +66,9 @@ def navbar():
                                 justify_content="center",
                                 align = "center",
                         ),
-                        rx.flex(
-                                rx.vstack(
-                                        rx.image(
+                        rx.chakra.flex(
+                                rx.chakra.vstack(
+                                        rx.chakra.image(
                                                 src=PageState.url,
                                                 alt="Foto diaria Nasa",
                                                 width = "auto",
@@ -78,7 +78,7 @@ def navbar():
                                                 _hover = {"cursor": "pointer"},
                                                 margin = Size.ZERO.value,
                                         ),
-                                        rx.text(f"Foto desde Nasa diaria: {PageState.date}",
+                                        rx.chakra.text(f"Foto desde Nasa diaria: {PageState.date}",
                                                 font_size = Size.SMALL_LARGE.value, 
                                                 font_family = Fuentes.DEFAULT.value,
                                                 text_align = "center",
@@ -92,13 +92,13 @@ def navbar():
                                 align = "center",
                                 ),
 
-                        rx.modal(
-                                rx.modal_overlay(
-                                        rx.modal_content(
-                                                rx.modal_body(
-                                                        rx.center(
-                                                                rx.vstack(
-                                                                        rx.button(
+                        rx.chakra.modal(
+                                rx.chakra.modal_overlay(
+                                        rx.chakra.modal_content(
+                                                rx.chakra.modal_body(
+                                                        rx.chakra.center(
+                                                                rx.chakra.vstack(
+                                                                        rx.chakra.button(
                                                                         "Cerrar ventana",
                                                                         size = "md",
                                                                         variant= "outline",
@@ -107,15 +107,15 @@ def navbar():
                                                                         border_color = Color.PRIMARY.value,
                                                                         on_click=ModalStateFull.change("","",""),                                                                      
                                                                         ),
-                                                                        rx.image(
+                                                                        rx.chakra.image(
                                                                                 src=ModalStateFull.hdurl,
                                                                                 alt="Imagen pantalla completa",
                                                                                 width="100%",
                                                                                 height="auto",
                                                                         ),
-                                                                        rx.text(ModalStateFull.title,
+                                                                        rx.chakra.text(ModalStateFull.title,
                                                                                 color = TextColor.PRIMARY.value),
-                                                                        rx.text(ModalStateFull.explanation,
+                                                                        rx.chakra.text(ModalStateFull.explanation,
                                                                                 color = TextColor.PRIMARY.value),
 
                                                                         max_width = styles.CONTENT_WIDTH,

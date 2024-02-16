@@ -19,10 +19,10 @@ from keikodev.views.kodi.kodi_trucos_details import kodi_trucos_details
 )
 
 def kodi_trucos()-> rx.Component:
-    return rx.vstack(
+    return rx.chakra.vstack(
         utils.lang(),
         navbar(),
-        rx.center(
+        rx.chakra.center(
             kodi_trucos_details(),
             max_width=styles.CONTENT_WIDTH,
             ),

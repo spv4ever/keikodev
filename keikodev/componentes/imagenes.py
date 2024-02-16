@@ -7,9 +7,9 @@ from keikodev.state.ModalState import ModalState as ModalState
 
 
 def unaimagen(imagen1: str, tamaño: str, alt="")->rx.Component:
-    return rx.box(
-            rx.center(
-                rx.image(src=imagen1,
+    return rx.chakra.box(
+            rx.chakra.center(
+                rx.chakra.image(src=imagen1,
                     width=tamaño,
                     heigth="auto",
                     border="2px solid",
@@ -24,10 +24,10 @@ def unaimagen(imagen1: str, tamaño: str, alt="")->rx.Component:
 
 
 def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
-    return rx.box(rx.responsive_grid(
-                rx.center(
+    return rx.chakra.box(rx.chakra.responsive_grid(
+                rx.chakra.center(
                     
-                    rx.image(src=imagen1,
+                    rx.chakra.image(src=imagen1,
                             width="450px",
                             heigth="auto",
                             border="2px solid",
@@ -38,8 +38,8 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
                             ),
 
                 ),
-                rx.center(
-                    rx.image(src=imagen2,
+                rx.chakra.center(
+                    rx.chakra.image(src=imagen2,
                             width="450px",
                             heigth="auto",
                             border="2px solid",
@@ -55,19 +55,19 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
             padding = Size.SMALL_LARGE.value,
             ),
             
-            rx.modal(
-            rx.modal_overlay(
-                rx.modal_content(
-                    rx.modal_body(
-                        rx.box(
-                            rx.image(
+            rx.chakra.modal(
+            rx.chakra.modal_overlay(
+                rx.chakra.modal_content(
+                    rx.chakra.modal_body(
+                        rx.chakra.box(
+                            rx.chakra.image(
                                 src=ModalState.count,
                                 width="800px",
                                 heigth = "auto"
                                 ),
                         ),
-                    rx.modal_footer(
-                            rx.button(
+                    rx.chakra.modal_footer(
+                            rx.chakra.button(
                                 "Close",
                                 on_click=ModalState.change(""),
                             ),
@@ -82,9 +82,9 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
     )
 
 def tresimagenes(imagen1: str, imagen2: str, imagen3: str)->rx.Component:
-    return rx.box(rx.responsive_grid(
-                rx.center(
-                    rx.image(src=imagen1,
+    return rx.chakra.box(rx.chakra.responsive_grid(
+                rx.chakra.center(
+                    rx.chakra.image(src=imagen1,
                             width="300px",
                             heigth="auto",
                             border="2px solid",
@@ -95,8 +95,8 @@ def tresimagenes(imagen1: str, imagen2: str, imagen3: str)->rx.Component:
                             ),
 
                 ),
-                rx.center(
-                    rx.image(src=imagen2,
+                rx.chakra.center(
+                    rx.chakra.image(src=imagen2,
                             width="300px",
                             heigth="auto",
                             border="2px solid",
@@ -106,8 +106,8 @@ def tresimagenes(imagen1: str, imagen2: str, imagen3: str)->rx.Component:
                             on_click=ModalState.change(imagen2)
                             ),
                 ),
-                rx.center(
-                    rx.image(src=imagen3,
+                rx.chakra.center(
+                    rx.chakra.image(src=imagen3,
                             width="300px",
                             heigth="auto",
                             border="2px solid",
@@ -124,19 +124,19 @@ def tresimagenes(imagen1: str, imagen2: str, imagen3: str)->rx.Component:
             width = "100%",
             padding = Size.SMALL_LARGE.value,
             ),
-            rx.modal(
-                rx.modal_overlay(
-                    rx.modal_content(
-                        rx.modal_body(
-                            rx.box(
-                                rx.image(
+            rx.chakra.modal(
+                rx.chakra.modal_overlay(
+                    rx.chakra.modal_content(
+                        rx.chakra.modal_body(
+                            rx.chakra.box(
+                                rx.chakra.image(
                                     src=ModalState.count,
                                     width="800px",
                                     heigth = "auto"
                                     ),
                             ),
-                        rx.modal_footer(
-                                rx.button(
+                        rx.chakra.modal_footer(
+                                rx.chakra.button(
                                     "Close",
                                     on_click=ModalState.change(""),
                                 ),

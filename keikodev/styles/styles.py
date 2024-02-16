@@ -36,11 +36,11 @@ BASE_STYLE = {
     "font_family": Fuentes.DEFAULT.value,
     #"background_color": Color.BACKGROUND.value + "!important",
     "background_color": Color.BACKGROUND.value,
-    rx.Heading:{
+    rx.chakra.Heading:{
         "color" : TextColor.HEADER.value,
         "font_family": Fuentes.TITLE.value
     },
-    rx.Button:{
+    rx.chakra.Button:{
         "width" : "100%",
         "height" : "100%",
         "display":"block",
@@ -54,7 +54,7 @@ BASE_STYLE = {
             "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value}",
             }
     },
-    rx.Link:{
+    rx.chakra.Link:{
         "text_decoration" : "none",
         "_hover" : {}   
     },

@@ -15,13 +15,13 @@ from keikodev.componentes.card import card as card
 
 
 def privacidad_details()->rx.Component:
-    return rx.vstack(
-        rx.heading(
+    return rx.chakra.vstack(
+        rx.chakra.heading(
             "Política de Privacidad",
             size = "lg",
             style=styles.title_center_style,
             ),
-        rx.text("""El presente Política de Privacidad establece los términos en que keikodev.es usa y protege la
+        rx.chakra.text("""El presente Política de Privacidad establece los términos en que keikodev.es usa y protege la
                     información que es proporcionada por sus usuarios al momento de utilizar su sitio web. Esta
                     compañía está comprometida con la seguridad de los datos de sus usuarios. Cuando le
                     pedimos llenar los campos de información personal con la cual usted pueda ser identificado, lo

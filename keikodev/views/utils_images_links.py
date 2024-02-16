@@ -7,7 +7,7 @@ from keikodev.routes import Route
 
 
 def utils_images_links()-> rx.Component:
-        return rx.vstack(
+        return rx.chakra.vstack(
                 title("Retoque fotográfico online"),
 
                 linkbutton("Fotor",

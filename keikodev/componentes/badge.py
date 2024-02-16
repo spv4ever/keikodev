@@ -6,8 +6,8 @@ from keikodev.styles.colors import TextColor
 
 
 def badge(text: str, color=TextColor.PINK, small=False) -> rx.Component:
-    return rx.box(
-        rx.badge(
+    return rx.chakra.box(
+        rx.chakra.badge(
             text,
             padding_x=Size.DEFAULT.value if small else Size.BIG.value,
             padding_y=Size.VERY_SMALL.value if small else Size.SMALL.value,

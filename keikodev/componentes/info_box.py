@@ -6,8 +6,8 @@ import keikodev.styles.styles as styles
 
 
 def info_box(title: str)->rx.Component:
-    return rx.box(
-             rx.text(
+    return rx.chakra.box(
+             rx.chakra.text(
                 title,
                 style=styles.infobox_body_style,
                 width = "100%",

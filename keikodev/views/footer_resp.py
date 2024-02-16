@@ -13,36 +13,36 @@ from keikodev.componentes.steps import steps as steps
 from keikodev.styles.fonts import Fuentes as Fuentes
 
 def footer_resp()-> rx.Component:
-    return rx.vstack(
-                rx.avatar(name="Albert García",
+    return rx.chakra.vstack(
+                rx.chakra.avatar(name="Albert García",
                         size="xl", 
                         src = "/keiko_manga_sd.png",
                         padding="2px",
                         border="4px",
                         border_color = Color.PRIMARY.value,
                         ),
-                rx.link(f'© 1991-{datetime.date.today().year} Blog personal de Albert García.',
+                rx.chakra.link(f'© 1991-{datetime.date.today().year} Blog personal de Albert García.',
                         href="https://github.com/spv4ever",
                         is_external=True,
                         font_size = Size.MEDIUM.value),
                     Float_Button(
-                         icon = rx.Image (src="/img/bmc-logo.svg"),
+                         icon = rx.chakra.Image (src="/img/bmc-logo.svg"),
                          href = const.DONACIONES_URL,
                          target='_blank',
                         #disabled = False,
                          ),
-                                 rx.box(
-                        rx.vstack(
+                                 rx.chakra.box(
+                        rx.chakra.vstack(
                         
-                            rx.text("Renuncia de responsabilidad: ",font_family=Fuentes.TITLE.value, ),
-                            rx.text("""Keikodev.es no se hace responsable de cualquier 
+                            rx.chakra.text("Renuncia de responsabilidad: ",font_family=Fuentes.TITLE.value, ),
+                            rx.chakra.text("""Keikodev.es no se hace responsable de cualquier 
                                     daño o pérdida de información. Nuestra intención solo es informar, 
                                     utilizando contenido de Internet. Keikodev.es y todo el 
                                     material aquí mencionado no es oficial."""),
-                            rx.text("""No estamos vinculados con ningún vendedor de servicio IPTV, 
+                            rx.chakra.text("""No estamos vinculados con ningún vendedor de servicio IPTV, 
                                     el contenido mencionado en Keikodev.es es gratuito a menos 
                                     que se indique lo contrario"""),
-                            rx.text("""Cualquier complemento que elija agregar es bajo su 
+                            rx.chakra.text("""Cualquier complemento que elija agregar es bajo su 
                                     propia responsabilidad. La información que proporcionamos en 
                                     los complementos está disponible gratuitamente en Internet y 
                                     de los propios desarrolladores de complementos. No ofrecemos 

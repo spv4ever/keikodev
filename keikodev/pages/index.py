@@ -37,12 +37,12 @@ from keikodev.state.ModalState import modal_small
 
 )
 def index() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         utils.lang(),
         utils.cookies(),
         navbar(),
-        rx.center(
-            rx.vstack(
+        rx.chakra.center(
+            rx.chakra.vstack(
                 header(live=PageState.is_live[0]),
                 index_links(),
                 spacing=Size.DEFAULT.value,

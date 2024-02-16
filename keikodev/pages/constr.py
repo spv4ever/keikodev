@@ -25,12 +25,12 @@ from keikodev.data.data_galeria_nasa import items_galeria
 )
 
 def constr() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         utils.lang(),
         navbar(),
-        rx.center(
-            rx.vstack(
-                rx.center(
+        rx.chakra.center(
+            rx.chakra.vstack(
+                rx.chakra.center(
                 header(False),
                 ),
                 construccion(items_galeria),

@@ -7,7 +7,7 @@ from keikodev.routes import Route
 
 
 def dev_links()-> rx.Component:
-        return rx.vstack(
+        return rx.chakra.vstack(
         title("Recursos para programación"),
                 linkbutton("Reflex",
                         "Entorno para programación WEB desde Python con hosting incluido (Alpha)",

@@ -7,7 +7,7 @@ from keikodev.routes import Route
 
 
 def index_links()-> rx.Component:
-    return rx.vstack(
+    return rx.chakra.vstack(
         title("Recursos para programación"),
         linkbutton("Mundo de la Programación",
             "Páginas relacionadas con el desarrollo de aplicaciones web, python, SQL",

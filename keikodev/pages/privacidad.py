@@ -26,12 +26,12 @@ from keikodev.views.privacidad_details import privacidad_details
 )
 
 def privacidad() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         utils.lang(),
         navbar(),
-        rx.center(
-            rx.vstack(
-                rx.center(
+        rx.chakra.center(
+            rx.chakra.vstack(
+                rx.chakra.center(
                 header(False),
                 ),
                 privacidad_details(),

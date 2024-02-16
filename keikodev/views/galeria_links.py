@@ -7,7 +7,7 @@ from keikodev.routes import Route
 
 
 def galeria_links()-> rx.Component:
-        return rx.vstack(
+        return rx.chakra.vstack(
                 title("Galerías de imagenes"),
                 linkbutton("Mis fotos en Flickr",
                 "Galería de imagenes, cosecha propia, compartidas en flickr",

@@ -15,21 +15,21 @@ from keikodev.componentes.card_galery import card_galery
 
 
 def construccion(date_income: list[Datagalerianasa])->rx.Component:
-    return rx.vstack(
-        rx.heading(
+    return rx.chakra.vstack(
+        rx.chakra.heading(
             "Todavía no estamos listos",
             size = "lg",
             style=styles.title_center_style,
             ),
-        rx.image(
+        rx.chakra.image(
             src="/en-construccion.webp.png",
         ),
         
-        rx.button("clic me",
+        rx.chakra.button("clic me",
                   on_click=PageState.tomaFoto("2024-02-08")
         ),
-        rx.vstack(
-            rx.responsive_grid(
+        rx.chakra.vstack(
+            rx.chakra.responsive_grid(
                 
                     # *[
                     #     card_galery(data,
@@ -43,7 +43,7 @@ def construccion(date_income: list[Datagalerianasa])->rx.Component:
         ),
         
         
-        rx.image(src=PageState.hdurl),
+        rx.chakra.image(src=PageState.hdurl),
 
         width = "100%",
     )

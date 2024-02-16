@@ -11,51 +11,51 @@ from keikodev.routes import Route
 
 
 def main_menu()-> rx.Component:
-           return rx.menu(
-                rx.menu_button(
-                        rx.text(
+           return rx.chakra.menu(
+                rx.chakra.menu_button(
+                        rx.chakra.text(
                                 "Menu",
                                 style=styles.main_menu_style,
                                 
                                 
                                 ),
                         ),
-                        rx.menu_list(
-                                rx.menu_item(
-                                        rx.link(
+                        rx.chakra.menu_list(
+                                rx.chakra.menu_item(
+                                        rx.chakra.link(
                                                 "Mundo de la Programación",
                                                 href = Route.DEV.value,
                                                 ),
                                         style=styles.main_menu_style,
                                         ),
-                                rx.menu_item(
-                                        rx.link(
+                                rx.chakra.menu_item(
+                                        rx.chakra.link(
                                                 "Herramientas Gráficas",
                                                 href = Route.UTILS_IMAGES.value,
                                                 
                                                 ),
                                         style=styles.main_menu_style,
                                         ),
-                                rx.menu_divider(),
-                                rx.menu_item(
-                                        rx.link(
+                                rx.chakra.menu_divider(),
+                                rx.chakra.menu_item(
+                                        rx.chakra.link(
                                                 "Manuales Kodi",
                                                 href = Route.KODI.value,
                                                 ),
                                         style=styles.main_menu_style,
                                         
                                         ),
-                                rx.menu_item(
-                                        rx.link(
+                                rx.chakra.menu_item(
+                                        rx.chakra.link(
                                                 "Ciberestafas",
                                                 href = Route.ESTAFAS.value,
                                                 ),
                                         style=styles.main_menu_style,
                                         
                                         ),
-                                rx.menu_divider(),
-                                rx.menu_item(
-                                        rx.link(
+                                rx.chakra.menu_divider(),
+                                rx.chakra.menu_item(
+                                        rx.chakra.link(
                                                 "Índice",
                                                 href = Route.INDEX.value,
                                         ),

@@ -9,19 +9,19 @@ class ModalState(rx.State):
         
 
 def modal_small()-> rx.Component:
-    return rx.modal(
-        rx.modal_overlay(
-            rx.modal_content(
-                rx.modal_body(
-                    rx.box(
-                        rx.image(
+    return rx.chakra.modal(
+        rx.chakra.modal_overlay(
+            rx.chakra.modal_content(
+                rx.chakra.modal_body(
+                    rx.chakra.box(
+                        rx.chakra.image(
                             src=ModalState.count,
                             width="800px",
                             heigth = "auto"
                             ),
                     ),
-                rx.modal_footer(
-                        rx.button(
+                rx.chakra.modal_footer(
+                        rx.chakra.button(
                             "Close",
                             on_click=ModalState.change(""),
                         ),

@@ -7,7 +7,7 @@ from keikodev.routes import Route
 
 
 def emulator_links()-> rx.Component:
-        return rx.vstack(
+        return rx.chakra.vstack(
                 title("Sección del mundo de la emulaciòn"),
                 linkbutton("MAME emulador arcade retro",
                 "Emulador de las primeras máquinas recreativas",

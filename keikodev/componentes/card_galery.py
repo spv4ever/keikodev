@@ -9,11 +9,11 @@ from keikodev.state.ModalState import ModalStateFull
 
 
 def card_galery(data)-> rx.Component:
-    return rx.box(
-                rx.vstack(
-                    rx.box(
+    return rx.chakra.box(
+                rx.chakra.vstack(
+                    rx.chakra.box(
                         
-                    rx.text(data.date, 
+                    rx.chakra.text(data.date, 
                             font_size = Size.LARGE.value, 
                             font_family= Fuentes.NASA.value, 
                             color = TextColor.PRIMARY.value,
@@ -23,7 +23,7 @@ def card_galery(data)-> rx.Component:
                             align_items = "center",
                             padding_bottom = Size.SMALL.value,
                             ),
-                    rx.image(src=data.url,
+                    rx.chakra.image(src=data.url,
                              alt = data.title, 
                             object_fit = "contain",
                             _hover = {"cursor": "zoom-in"},

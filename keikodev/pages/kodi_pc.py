@@ -18,10 +18,10 @@ from keikodev.state.PageState import PageState
 )
 
 def kodi_pc()-> rx.Component:
-    return rx.vstack(
+    return rx.chakra.vstack(
         utils.lang(),
         navbar(),
-        rx.center(
+        rx.chakra.center(
             kodi_pc_details(),
             max_width=styles.CONTENT_WIDTH,
             ),

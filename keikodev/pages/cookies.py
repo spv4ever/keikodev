@@ -26,12 +26,12 @@ from keikodev.views.cookies_details import cookies_details
 )
 
 def cookies() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         utils.lang(),
         navbar(),
-        rx.center(
-            rx.vstack(
-                rx.center(
+        rx.chakra.center(
+            rx.chakra.vstack(
+                rx.chakra.center(
                 header(False),
                 ),
                 cookies_details(),

@@ -15,31 +15,31 @@ from keikodev.componentes.linkbutton import linkbutton
 
 
 def kodi_addons_details()->rx.Component:
-    return rx.vstack(
-        rx.box(
+    return rx.chakra.vstack(
+        rx.chakra.box(
             title(
-                rx.center('Tutorial instalación de complementos en Kodi'),
+                rx.chakra.center('Tutorial instalación de complementos en Kodi'),
                 ),
                 
             margin_bottom = Size.BIG.value,
             ),
         
         
-        steps(rx.span(
+        steps(rx.chakra.span(
                 "La instalación de programas externos o complementos, también llamados ", 
-                    rx.span("add-ons",font_family=Fuentes.TITLE.value),
-                    rx.span("en Kodi, se puede realizar de varias formas: Desde un "),
-                    rx.span("repositorio",font_family=Fuentes.TITLE.value),
-                    rx.span(" ya instalado o desde un "),
-                    rx.span("archivo",font_family=Fuentes.TITLE.value),
-                    rx.span(" comprimido ZIP."),
+                    rx.chakra.span("add-ons",font_family=Fuentes.TITLE.value),
+                    rx.chakra.span("en Kodi, se puede realizar de varias formas: Desde un "),
+                    rx.chakra.span("repositorio",font_family=Fuentes.TITLE.value),
+                    rx.chakra.span(" ya instalado o desde un "),
+                    rx.chakra.span("archivo",font_family=Fuentes.TITLE.value),
+                    rx.chakra.span(" comprimido ZIP."),
             ),
         ),
         unaimagen(f"{const.KODI_IMAGES}kodi_tutorial12.png","900px"),        
         
-        steps(rx.span("Los repositorios son complementos a modo de ",
-                rx.span("bibliotecas de programas ",font_family=Fuentes.TITLE.value),
-                rx.span("que nos permiten instalar add-ons concretos listos para ser usados."),
+        steps(rx.chakra.span("Los repositorios son complementos a modo de ",
+                rx.chakra.span("bibliotecas de programas ",font_family=Fuentes.TITLE.value),
+                rx.chakra.span("que nos permiten instalar add-ons concretos listos para ser usados."),
             ),
         ),
                 
@@ -56,9 +56,9 @@ def kodi_addons_details()->rx.Component:
         steps("""Es muy importante que dejemos que Kodi complete los procesos de instalación y que no se 
             haga nada hasta que veamos que la instalación ha sido un exitosa"""),
 
-        steps(rx.span("Los complementos que se instalen, se podrán encontrar en la opción ",
-                rx.span("Add-ons",font_family=Fuentes.TITLE.value),
-                rx.span(" del menú principal."),
+        steps(rx.chakra.span("Los complementos que se instalen, se podrán encontrar en la opción ",
+                rx.chakra.span("Add-ons",font_family=Fuentes.TITLE.value),
+                rx.chakra.span(" del menú principal."),
             ),
         ),
 
@@ -107,8 +107,8 @@ def kodi_addons_details()->rx.Component:
             steps("""Ahora ya podemos entrar en el add-on, entrar usuario y contraseña para entrar en HBO Max. Es muy interesante ver otro tipo de 
               organización más simple del contenido. Sin tanta publicidad."""),
         dosimagenes(f'{const.KODI_IMAGES}kodi_tutorial39.png',f'{const.KODI_IMAGES}kodi_tutorial40.png'),
-        rx.hstack(
-            rx.responsive_grid(
+        rx.chakra.hstack(
+            rx.chakra.responsive_grid(
                 linkbutton("Instalación de Kodi",
                     "",
                     "/img/kodi2.png",

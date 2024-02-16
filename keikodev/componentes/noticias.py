@@ -13,11 +13,11 @@ from keikodev.componentes.imagenes import tresimagenes as tresimagenes
 
 
 def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", fuente="")->rx.Component:
-    return  rx.responsive_grid(
-                rx.box(
-                    rx.grid(
-                        rx.grid_item(
-                            rx.image(
+    return  rx.chakra.responsive_grid(
+                rx.chakra.box(
+                    rx.chakra.grid(
+                        rx.chakra.grid_item(
+                            rx.chakra.image(
                                 src="/img/estafas/DoNc.gif",
                                 object_fit = "scale-down",
                                 width = "100%",
@@ -29,9 +29,9 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                         row_span=6, 
                         col_span=1
                         ),
-                        rx.grid_item(
-                            rx.box(
-                                rx.text(
+                        rx.chakra.grid_item(
+                            rx.chakra.box(
+                                rx.chakra.text(
                                     titulo,
                                     font_size = Size.LARGE_SMALL.value,
                                     font_family = fuentes.TITLE.value,
@@ -48,9 +48,9 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                             col_span=5,
                             color = Color.SECONDARY.value,
                             ),
-                            rx.grid_item(
-                                rx.box(
-                                    rx.text(
+                            rx.chakra.grid_item(
+                                rx.chakra.box(
+                                    rx.chakra.text(
                                             fecha,
                                             font_size = Size.LARGE_SMALL.value,
                                             font_family = fuentes.TITLE.value,
@@ -67,9 +67,9 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                                 col_span=1,
                                 color = Color.SECONDARY.value,
                                 ),
-                            rx.grid_item(
-                                rx.box(
-                                    rx.text(
+                            rx.chakra.grid_item(
+                                rx.chakra.box(
+                                    rx.chakra.text(
                                         texto, 
                                         font_size = Size.MEDIUM.value,
                                         color = TextColor.BODY.value,
@@ -82,7 +82,7 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                                 row_span=5,
                                 col_span=6),
                 
-                rx.grid_item("Imágenes, capturas y otros documentos gráficos", 
+                rx.chakra.grid_item("Imágenes, capturas y otros documentos gráficos", 
                             font_family = fuentes.TITLE.value, 
                             color = TextColor.HEADER.value,
                             padding_left = Size.SMALL.value,
@@ -95,7 +95,7 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                             row_span=1, 
                             col_span=5,
                         ),
-                rx.grid_item(f"Fuente: {fuente}", 
+                rx.chakra.grid_item(f"Fuente: {fuente}", 
                             font_family = fuentes.TITLE.value, 
                             color = TextColor.HEADER.value,
                             padding_right = Size.DEFAULT.value,
@@ -109,9 +109,9 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                             col_span=2,
                         ),
 
-                # rx.grid_item(
-                #     rx.container(
-                #         rx.image(
+                # rx.chakra.grid_item(
+                #     rx.chakra.container(
+                #         rx.chakra.image(
                 #             src=f"/img/estafas/{imagen1}",
                 #             object_fit = "scale-down",
                 #             width = "100%",
@@ -127,9 +127,9 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                 # col_span=2,
                 # ),
 
-                # rx.grid_item(
-                #     rx.container(
-                #         rx.image(
+                # rx.chakra.grid_item(
+                #     rx.chakra.container(
+                #         rx.chakra.image(
                 #             src=f"/img/estafas/{imagen2}",
                 #             object_fit = "scale-down",
                 #             width = "100%",
@@ -144,9 +144,9 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
                 # col_span=2,
                 # ),
 
-                # rx.grid_item(
-                #     rx.container(
-                #         rx.image(
+                # rx.chakra.grid_item(
+                #     rx.chakra.container(
+                #         rx.chakra.image(
                 #             src=f"/img/estafas/{imagen3}",
                 #             object_fit = "scale-down",
                 #             width = "100%",
@@ -174,7 +174,7 @@ def noticias(fecha="", titulo="", texto="", imagen1="", imagen2="", imagen3="", 
         border_radius = "15px",
         border_color = Color.CONTENT.value,
         ),
-            rx.box(
+            rx.chakra.box(
                 #tresimagenes(f"/img/estafas/{imagen1}",f"/img/estafas/{imagen2}",f"/img/estafas/{imagen3}"),
             ),
         columns=[1],

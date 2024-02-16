@@ -7,7 +7,7 @@ from keikodev.routes import Route
 
 
 def kodi_links()-> rx.Component:
-        return rx.vstack(
+        return rx.chakra.vstack(
                 title("Manuales Kodi"),
                 linkbutton("Instalación en Windows y Android TV",
                 "Primeros pasos para la instalación de kodi en Windows y Android TV.",

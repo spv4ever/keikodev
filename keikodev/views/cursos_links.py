@@ -7,7 +7,7 @@ from keikodev.routes import Route
 
 
 def cursos_links()-> rx.Component:
-        return rx.vstack(
+        return rx.chakra.vstack(
                 title("Cursos "),
                 linkbutton("Primer listado",
                 "Tipología de primeros cursos",

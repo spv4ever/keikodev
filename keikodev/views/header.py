@@ -13,13 +13,13 @@ import keikodev.views.constants as const
 
 
 def header(details=True, live=False)-> rx.Component:
-    return rx.vstack(
-                rx.hstack(
-                    rx.avatar(
+    return rx.chakra.vstack(
+                rx.chakra.hstack(
+                    rx.chakra.avatar(
                         rx.cond(
                                 live,
-                                rx.avatar_badge(
-                                    rx.image(src="/img/twitch.svg",alt="Logo twitch"),
+                                rx.chakra.avatar_badge(
+                                    rx.chakra.image(src="/img/twitch.svg",alt="Logo twitch"),
                                 box_size = Size.MEDIUM.value,
                                 bg = Color.PURPLE.value,
                                 border_color = Color.PURPLE.value,
@@ -37,17 +37,17 @@ def header(details=True, live=False)-> rx.Component:
                             border_color = Color.PRIMARY.value,
                             box_shadow = f"0px 0px 20px {Color.PRIMARY.value}"
                             ),
-                    rx.vstack(
-                        rx.heading(
+                    rx.chakra.vstack(
+                        rx.chakra.heading(
                             'Alberto García',
                             size = "lg"
                             ),
-                        rx.text(
+                        rx.chakra.text(
                             "info@keikodev.es",
                             margin_top=Size.ZERO.value,
                             color = TextColor.BODY.value,
                             ),
-                        rx.hstack(
+                        rx.chakra.hstack(
                             linkicon(
                                 "/img/email.svg",
                                 f"mailto:{const.EMAIL}",
@@ -95,44 +95,44 @@ def header(details=True, live=False)-> rx.Component:
                     ),
         rx.cond(
             details,
-            rx.accordion(
-                rx.accordion_item(
-                    rx.accordion_button(
-                        rx.box(
-                        rx.heading("Descubre más sobre mí",size="md",
+            rx.chakra.accordion(
+                rx.chakra.accordion_item(
+                    rx.chakra.accordion_button(
+                        rx.chakra.box(
+                        rx.chakra.heading("Descubre más sobre mí",size="md",
                                     color=Color.PRIMARY.value,
                                     font_family = Fuentes.LOGO.value,
                                     #class_name="texto",
                                     ),
                                     #width = "250px"
                                     ),
-                        rx.accordion_icon(),
+                        rx.chakra.accordion_icon(),
                     ),
-                    rx.accordion_panel(
-                    rx.vstack(
-                        rx.flex(
+                    rx.chakra.accordion_panel(
+                    rx.chakra.vstack(
+                        rx.chakra.flex(
                             info_text("+30","años de experiencia"),
-                            rx.spacer(),
+                            rx.chakra.spacer(),
                             info_text("5","lenguajes de programación"),
-                            rx.spacer(),
+                            rx.chakra.spacer(),
                             info_text("+1000","informes"),
                             width = "100%"
                             ),
-                        rx.responsive_grid(
+                        rx.chakra.responsive_grid(
                             info_box('PowerBI'),
                             info_box('Bussines Objects'),
                             columns = [1,2],
                             spacing= "4",
                             width = "100%",
                             ),
-                        rx.responsive_grid(
+                        rx.chakra.responsive_grid(
                             info_box('Excel'),
                             info_box('Python'),
                             columns = [1,2],
                             spacing= "4",
                             width = "100%",
                             ),
-                        rx.text("""Soy técnico informático con más de 30 años de experiencia, 
+                        rx.chakra.text("""Soy técnico informático con más de 30 años de experiencia, 
                                 fanático de la gestión de datos y bigdata. Entre mis hobbies está seguir
                                 aprendiendo cada día y python me está fascinando. Actualmente sigo desarrollando
                                 principalmente rutinas y procesos en python que llevarían horas de trabajo y enormes

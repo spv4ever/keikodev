@@ -18,10 +18,10 @@ from keikodev.views.estafas_details import estafas_details as estafas_details
 )
 
 def estafas()-> rx.Component:
-    return rx.vstack(
+    return rx.chakra.vstack(
         utils.lang(),
         navbar(),
-        rx.center(
+        rx.chakra.center(
             estafas_details(),
             max_width=styles.CONTENT_WIDTH,
             ),

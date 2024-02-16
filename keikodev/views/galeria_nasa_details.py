@@ -19,17 +19,17 @@ from keikodev.state.PageState import PageState
 
 
 def galeria_nasa_details()->rx.Component:
-    return rx.vstack(
-        rx.box(
-            rx.heading(
-                rx.center('Biblioteca de fotos de la nasa en alta resolución', 
+    return rx.chakra.vstack(
+        rx.chakra.box(
+            rx.chakra.heading(
+                rx.chakra.center('Biblioteca de fotos de la nasa en alta resolución', 
                         font_family= Fuentes.NASA.value,
                         font_size=Size.MEDIUM.value),
                 ),
             margin_bottom = Size.BIG.value,
             ),
-                rx.vstack(
-            rx.responsive_grid(
+                rx.chakra.vstack(
+            rx.chakra.responsive_grid(
                 
                     # *[
                     #     card_galery(data,

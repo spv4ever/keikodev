@@ -22,17 +22,17 @@ from keikodev.state.PageState import PageState as PageState
 )
 
 def dev() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         utils.lang(),
         navbar(),
         #Float_Button(disabled=False),
         Float_Button(
-                icon = rx.Image(src="/avatar.png"),
+                icon = rx.chakra.Image(src="/avatar.png"),
                 href = Route.INDEX.value,
                 target = "_top",
                 ),
-        rx.center(
-            rx.vstack(
+        rx.chakra.center(
+            rx.chakra.vstack(
                 header(False,live=PageState.is_live[0]),
                 dev_links(),
                 max_width=styles.MAX_WIDTH,

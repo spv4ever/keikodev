@@ -12,10 +12,10 @@ import keikodev.views.constants as const
 
 
 def footer()-> rx.Component:
-    return rx.box(
-        rx.vstack(
+    return rx.chakra.box(
+        rx.chakra.vstack(
 
-        rx.avatar(
+        rx.chakra.avatar(
             name="Albert García",
             size="xl", 
             src = "/keiko_manga_sd.png",
@@ -23,12 +23,12 @@ def footer()-> rx.Component:
             border="4px",
             border_color = Color.PRIMARY.value,
             ),
-        rx.link(f'© 1991-{datetime.date.today().year} Blog personal de Albert García.',
+        rx.chakra.link(f'© 1991-{datetime.date.today().year} Blog personal de Albert García.',
                 href="https://github.com/spv4ever",
                 is_external=True,
                 font_size = Size.MEDIUM.value),
-                rx.hstack(
-                    rx.text(
+                rx.chakra.hstack(
+                    rx.chakra.text(
                         "Aprendiendo desarrollo web.",
                         font_size = Size.MEDIUM.value,
                         width = "100%",
@@ -41,19 +41,19 @@ def footer()-> rx.Component:
                     ),
 
                     Float_Button(
-                         icon = rx.Image (src="/img/bmc-logo.svg"),
+                         icon = rx.chakra.Image (src="/img/bmc-logo.svg",alt="Café"),
                          href = const.DONACIONES_URL,
                          target='_blank',
                         #disabled = False,
                          ),
-                rx.hstack(
-                    rx.link(
-                        rx.text("Política de privacidad",
+                rx.chakra.hstack(
+                    rx.chakra.link(
+                        rx.chakra.text("Política de privacidad",
                                 font_size = Size.MEDIUM.value),
                         href=Route.PRIVACIDAD.value,
                     ),
-                    rx.link(
-                        rx.text("Política de cookies",
+                    rx.chakra.link(
+                        rx.chakra.text("Política de cookies",
                                 font_size = Size.MEDIUM.value),
                         href=Route.COOKIES.value,
                     ),

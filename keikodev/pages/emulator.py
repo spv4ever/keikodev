@@ -26,16 +26,16 @@ from keikodev.views.emulator_links import emulator_links
 )
 
 def emulator() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         utils.lang(),
         navbar(),
         Float_Button(
-            icon = rx.Image(src="/avatar.png"),
+            icon = rx.chakra.Image(src="/avatar.png"),
             href = Route.INDEX.value,
             target = "_top",
             ),
-        rx.center(
-            rx.vstack(
+        rx.chakra.center(
+            rx.chakra.vstack(
                 header(False),
                 emulator_links(),
                 max_width=styles.MAX_WIDTH,

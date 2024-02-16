@@ -14,10 +14,10 @@ from keikodev.componentes.linkbutton import linkbutton
 from keikodev.componentes.card import card as card
 
 def kodi_trucos_details()->rx.Component:
-    return rx.vstack(
-        rx.box(
+    return rx.chakra.vstack(
+        rx.chakra.box(
             title(
-                rx.center('Trucos para Kodi'),
+                rx.chakra.center('Trucos para Kodi'),
                 ),
             margin_bottom = Size.BIG.value,
             ),
@@ -33,7 +33,7 @@ def kodi_trucos_details()->rx.Component:
                 featured=False,
                 ),
             
-        rx.hstack(
+        rx.chakra.hstack(
                 linkbutton("Instalación de Addons",
                     "",
                     "/img/kodi2.png",

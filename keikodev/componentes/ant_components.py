@@ -5,7 +5,7 @@ import json
 class FloatButton(rx.Component):
         library = "antd"
         tag = "FloatButton"
-        icon: rx.Var[rx.Image]
+        icon: rx.Var[rx.chakra.Image]
         href:  rx.Var[str]
         target: rx.Var[str]
         

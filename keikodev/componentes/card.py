@@ -11,16 +11,16 @@ from .heading import heading
 from .badge import badge
 
 def card(url: str, title: str, lista_imagenes , body="", color=TextColor.PRIMARY, badge_text="", featured=False, external=False) -> rx.Component:
-    return rx.link(
-        rx.vstack(
+    return rx.chakra.link(
+        rx.chakra.vstack(
             rx.cond(
                 badge_text != "",
-                rx.box(
+                rx.chakra.box(
                     badge(badge_text),
                     width="100%"
                 )
             ),
-            rx.hstack(
+            rx.chakra.hstack(
                 heading(
                     title,
                     color,
@@ -30,7 +30,7 @@ def card(url: str, title: str, lista_imagenes , body="", color=TextColor.PRIMARY
             ),
             rx.cond(
                 body != "",
-                rx.text(
+                rx.chakra.text(
                     body,
                     font_size=Size.DEFAULT.value,
                     color=TextColor.SECONDARY.value,
@@ -41,11 +41,11 @@ def card(url: str, title: str, lista_imagenes , body="", color=TextColor.PRIMARY
             rx.match(
                 len(lista_imagenes), 
                 (1, unaimagen(lista_imagenes[len(lista_imagenes)-1],"300")),
-                #(2, rx.text(len(lista_imagenes))),
+                #(2, rx.chakra.text(len(lista_imagenes))),
                 (2, dosimagenes(lista_imagenes[len(lista_imagenes)-1],lista_imagenes[len(lista_imagenes)-2])),
-                #(len(lista_imagenes)==3, rx.text(lista_imagenes)),                
+                #(len(lista_imagenes)==3, rx.chakra.text(lista_imagenes)),                
                 (3, tresimagenes(lista_imagenes[0],lista_imagenes[len(lista_imagenes)-1],lista_imagenes[len(lista_imagenes)-2])),                
-                rx.text("Sin imagenes"),
+                rx.chakra.text("Sin imagenes"),
                 ),
             
             height="100%",

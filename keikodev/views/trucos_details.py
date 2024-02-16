@@ -13,20 +13,20 @@ from keikodev.componentes.noticias import noticias as noticias
 from keikodev.componentes.card import card as card
 
 def trucos_details()->rx.Component:
-    return rx.vstack(
-        rx.box(
+    return rx.chakra.vstack(
+        rx.chakra.box(
             title(
-                rx.center('Página para difundir trucos que vaya recopilando de la web'),
+                rx.chakra.center('Página para difundir trucos que vaya recopilando de la web'),
                 ),
             width = "100%",
             margin_bottom = Size.BIG.value,
         ),
         # steps("""Sección dedicada a la difusión de los intentos de estafa que recibamos, con el objetivo de compartir
         #     con todo el mundo, aquellos pequeños intentos de fraude donde podemos caer de forma muy fácil."""),
-        # steps(rx.span("""Si alguien quiere colaborar con estos intentos de fraude, me puede enviar un email con los detalles, fotos, capturas, 
+        # steps(rx.chakra.span("""Si alguien quiere colaborar con estos intentos de fraude, me puede enviar un email con los detalles, fotos, capturas, 
         #     o simplemente explicando lo que le ha pasado a """, 
-        #     rx.span(rx.link("info@keikodev.es",href="mailto:info@keikodev.es"),font_family = Fuentes.TITLE.value),
-        #     rx.span(" indicando si prefiere permanecer en el anonimato o quiere aparecer como fuente de la noticia."))),
+        #     rx.chakra.span(rx.chakra.link("info@keikodev.es",href="mailto:info@keikodev.es"),font_family = Fuentes.TITLE.value),
+        #     rx.chakra.span(" indicando si prefiere permanecer en el anonimato o quiere aparecer como fuente de la noticia."))),
             
         card(url="https://12ft.io/", title="Navega sin publicidad y sin bloqueos de pago", 
                 lista_imagenes=[('/img/trucos/truco1-1.png'),('/img/trucos/truco1-3.png'),('/img/trucos/truco1-2.png')],

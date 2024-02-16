@@ -30,16 +30,16 @@ from keikodev.data.data_galeria_nasa import Datagalerianasa
 )
 
 def galeria_nasa() -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
         utils.lang(),
         navbar(),
         Float_Button(
-            icon = rx.Image(src="/avatar.png"),
+            icon = rx.chakra.Image(src="/avatar.png"),
             href = Route.INDEX.value,
             target = "_top",
             ),
-        rx.center(
-            rx.vstack(
+        rx.chakra.center(
+            rx.chakra.vstack(
                 galeria_nasa_details(),
                 max_width=styles.CONTENT_WIDTH,
                 width="100%",

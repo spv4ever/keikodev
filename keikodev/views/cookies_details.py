@@ -15,14 +15,14 @@ from keikodev.componentes.card import card as card
 
 
 def cookies_details()->rx.Component:
-    return rx.vstack(
-        rx.heading(
+    return rx.chakra.vstack(
+        rx.chakra.heading(
             "Política de cookies",
             size = "lg",
             style=styles.title_center_style,
             ),
 
-        rx.text("""
+        rx.chakra.text("""
                 El acceso a este Sitio Web puede implicar la utilización de cookies. Las cookies son pequeñas cantidades
                 de información que se almacenan en el navegador utilizado por cada Usuario —en los distintos dispositivos
                 que pueda utilizar para navegar— para que el servidor recuerde cierta información que posteriormente y
