@@ -39,6 +39,7 @@ def footer()-> rx.Component:
                     class_name="marquee-container",
                     width="300px",
                     ),
+
                     Float_Button(
                          icon = rx.Image (src="/img/bmc-logo.svg"),
                          href = const.DONACIONES_URL,

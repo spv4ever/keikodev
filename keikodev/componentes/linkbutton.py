@@ -9,6 +9,7 @@ def linkbutton(title: str, body: str, image: str, url: str, tooltip="", is_exter
                             rx.hstack(
                                 rx.image(
                                     src=image,
+                                    alt=title,
                                     width=styles.Size.LARGE.value,
                                     height=styles.Size.LARGE.value,
                                     margin=Size.MEDIUM.value,

@@ -19,7 +19,7 @@ def header(details=True, live=False)-> rx.Component:
                         rx.cond(
                                 live,
                                 rx.avatar_badge(
-                                    rx.image(src="/img/twitch.svg"),
+                                    rx.image(src="/img/twitch.svg",alt="Logo twitch"),
                                 box_size = Size.MEDIUM.value,
                                 bg = Color.PURPLE.value,
                                 border_color = Color.PURPLE.value,
@@ -31,6 +31,7 @@ def header(details=True, live=False)-> rx.Component:
                             name="Albert García Sabadell",
                             size="xl", 
                             src = "/avatar3.png",
+                            alt = "Logo",
                             padding="2px",
                             border="4px",
                             border_color = Color.PRIMARY.value,
@@ -50,26 +51,32 @@ def header(details=True, live=False)-> rx.Component:
                             linkicon(
                                 "/img/email.svg",
                                 f"mailto:{const.EMAIL}",
+                                "contact",
                                 ),
                             linkicon(
                                 "/img/github.svg",
                                 const.GITHUB_URL,
+                                "Github",
                                 ),
                             linkicon(
                                 "/img/x.svg",
                                 const.TWITTER_X_URL,
+                                "X - Twitter",
                                 ),
                             linkicon(
                                 "/img/instagram.svg",
                                 const.INSTAGRAM_URL,
+                                "Instagram",
                                 ),
                             linkicon(
                                 "/img/flickr.svg",
                                 const.FLICKR_URL,
+                                "Flickr",
                                 ),
                             linkicon(
                                 "/img/linkedin.svg",
                                 const.LINKEDIN_URL,
+                                "Linkedin"
                                 ),
                             
                         spacing=Size.DEFAULT.value,

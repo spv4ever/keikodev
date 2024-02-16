@@ -10,16 +10,19 @@ from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import fotoNasa as fotoNasa
 from keikodev.state.ModalState import ModalStateFull
 from keikodev.componentes.visualiza import visualiza_modal as visualiza_modal
+import keikodev.utils as utils
 
 
 def navbar():
         return rx.hstack(
                         #rx.box(
+                        utils.lang(),
                         main_menu(),
                         #heigth = "3em",
                         #),
                         rx.flex(
                         rx.image(src="/avatar.png",
+                                 alt="Logo",
                                 width="50px",
                                 height="auto",
                                 border_radius="15px 50px",
@@ -67,6 +70,7 @@ def navbar():
                                 rx.vstack(
                                         rx.image(
                                                 src=PageState.url,
+                                                alt="Foto diaria Nasa",
                                                 width = "auto",
                                                 height = "50px",
                                                 fit = "cousin",
@@ -105,6 +109,7 @@ def navbar():
                                                                         ),
                                                                         rx.image(
                                                                                 src=ModalStateFull.hdurl,
+                                                                                alt="Imagen pantalla completa",
                                                                                 width="100%",
                                                                                 height="auto",
                                                                         ),
