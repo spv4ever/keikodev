@@ -10,6 +10,7 @@ RUN python3.11 -m venv $VIRTUAL_ENV
 RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
+RUN reflex init
 CMD reflex run --env prod --backend-only
 
 
