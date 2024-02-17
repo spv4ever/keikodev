@@ -100,11 +100,11 @@ def index_login():
     )
 
 
-@rx.page(route="/protected")
+#@rx.page(route="/protected")
 @require_google_login
 def protected() -> rx.Component:
     return rx.chakra.vstack(
         user_info(StateLogin.tokeninfo),
         rx.chakra.text(StateLogin.protected_content),
-        rx.chakra.link("Home", href="/"),
+        #rx.chakra.link("Home", href="/"),
     )

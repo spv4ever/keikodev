@@ -14,6 +14,8 @@ class GoogleOAuthProvider(rx.Component):
 class GoogleLogin(rx.Component):
     library = "@react-oauth/google"
     tag = "GoogleLogin"
+    theme = "filled_blue"
+    size = "small"
 
     def get_event_triggers(self):
         return {"on_success": lambda data: [data]}

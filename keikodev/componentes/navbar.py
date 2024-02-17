@@ -11,6 +11,8 @@ from keikodev.state.fotoNasa import fotoNasa as fotoNasa
 from keikodev.state.ModalState import ModalStateFull
 from keikodev.componentes.visualiza import visualiza_modal as visualiza_modal
 import keikodev.utils as utils
+from keikodev.pages.google_auth import StateLogin, user_info,index_login,login, require_google_login, protected
+
 
 
 def navbar():
@@ -22,7 +24,7 @@ def navbar():
                         #),
                         rx.chakra.flex(
                         rx.chakra.image(src="/avatar.png",
-                                 alt="Logo",
+                                alt="Logo",
                                 width="50px",
                                 height="auto",
                                 border_radius="15px 50px",
@@ -44,6 +46,9 @@ def navbar():
                         align = "center",
 
                         ),
+                        protected(),
+                        #user_info(StateLogin.tokeninfo),
+
                         rx.chakra.flex(
                                 rx.chakra.vstack(
                                         rx.html("""<!-- www.tutiempo.net - Ancho:304px - Alto:40px -->
