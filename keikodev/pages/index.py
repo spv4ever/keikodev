@@ -17,12 +17,10 @@ from keikodev.styles.colors import TextColor as TextColor
 from keikodev.models.Nasalink import Nasalink
 from keikodev.state.ModalState import modal_small
 
-# class IndexState(rx.State):
-    
-    
-#     # @rx.var
-#     # def say_hello(self):
-#     #     return hello()
+
+
+
+
 
 
 
@@ -36,6 +34,7 @@ from keikodev.state.ModalState import modal_small
 
 
 )
+
 def index() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
@@ -53,6 +52,7 @@ def index() -> rx.Component:
                 style=styles.background_gradient_style
             ),
         footer(),
+        
         
         
         style = styles.background_pattern_style,

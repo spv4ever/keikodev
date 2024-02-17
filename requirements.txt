@@ -1,5 +1,6 @@
-reflex==0.4.0
+reflex==0.3.10
 python-dotenv
 mysql-connector-python
 paramiko
 supabase
+google-auth[requests]

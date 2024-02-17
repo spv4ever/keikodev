@@ -12,7 +12,8 @@ import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 from keikodev.views.kodi_links import kodi_links
 from keikodev.state.PageState import PageState
-
+import functools
+from keikodev.pages.google_auth import require_google_login
 
 
 @rx.page(
@@ -25,6 +26,7 @@ from keikodev.state.PageState import PageState
 
 )
 
+@require_google_login
 def kodi() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
