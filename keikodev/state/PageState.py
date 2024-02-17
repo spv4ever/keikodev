@@ -8,6 +8,7 @@ from keikodev.data.data_galeria_nasa import Datagalerianasa
 from keikodev.data.data_galeria_nasa import items_galeria
 from keikodev.api.supabase import SupabaseApi
 from keikodev.data.reflex_class import Datagalerianasarx
+from keikodev.componentes.tutiempo import tutiempo
 
 import json
 
@@ -31,6 +32,7 @@ class PageState(rx.State):
 
         async def check_live(self):
                 self.is_live = await live(USER)
+                tutiempo()
                 url = await foto("")
                 is_valid, json_data = url
                 data = json.loads(json_data)

@@ -11,6 +11,8 @@ import reflex as rx
 
 from keikodev.pages.react_oauth_google import GoogleOAuthProvider, GoogleLogin
 
+from keikodev.styles.colors import Color, TextColor
+
 
 dotenv.load_dotenv()
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
@@ -51,9 +53,11 @@ class StateLogin(rx.State):
 
     @rx.cached_var
     def protected_content(self) -> str:
-        if self.token_is_valid:
-            return f"This content can only be viewed by a logged in User. Nice to see you {self.tokeninfo['name']}"
-        return "Not logged in."
+        if self.token_is_valid is False:
+            return "Not logged in."
+
+            #return f"This content can only be viewed by a logged in User. Nice to see you {self.tokeninfo['name']}"
+        
 
 
 def user_info(tokeninfo: dict) -> rx.Component:
@@ -61,14 +65,15 @@ def user_info(tokeninfo: dict) -> rx.Component:
         rx.chakra.avatar(
             name=tokeninfo["name"],
             src=tokeninfo["picture"],
-            size="lg",
+            size="sm",
         ),
         rx.chakra.vstack(
-            rx.chakra.heading(tokeninfo["name"], size="md"),
-            rx.chakra.text(tokeninfo["email"]),
+            rx.chakra.heading(tokeninfo["name"], size="xs"),
+            rx.chakra.button("Cerrar", size="xs", on_click=StateLogin.logout),
+            #rx.chakra.text(tokeninfo["email"],color = Color.PRIMARY.value),
             align_items="flex-start",
         ),
-        rx.chakra.button("Logout", on_click=StateLogin.logout),
+        
         padding="10px",
     )
 

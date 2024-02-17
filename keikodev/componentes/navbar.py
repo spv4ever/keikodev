@@ -11,7 +11,9 @@ from keikodev.state.fotoNasa import fotoNasa as fotoNasa
 from keikodev.state.ModalState import ModalStateFull
 from keikodev.componentes.visualiza import visualiza_modal as visualiza_modal
 import keikodev.utils as utils
-from keikodev.pages.google_auth import StateLogin, user_info,index_login,login, require_google_login, protected
+from keikodev.componentes.tutiempo import tutiempo
+
+from keikodev.pages.google_auth import protected
 
 
 
@@ -46,15 +48,14 @@ def navbar():
                         align = "center",
 
                         ),
-                        protected(),
+                        
                         #user_info(StateLogin.tokeninfo),
 
                         rx.chakra.flex(
+                                protected(),
                                 rx.chakra.vstack(
-                                        rx.html("""<!-- www.tutiempo.net - Ancho:304px - Alto:40px -->
-                                        <div id="TT_JC6wLxtBtDB6YFMUpfuEEEkkk7aULWaEkCZysy5yyEzBxzJBK">El tiempo - Tutiempo.net</div>
-                                        <script type="text/javascript" src="https://www.tutiempo.net/s-widget/l_JC6wLxtBtDB6YFMUpfuEEEkkk7aULWaEkCZysy5yyEzBxzJBK"></script>""",
-                                        ),
+                                        tutiempo(),
+                                        
                                         # rx.script(
                                         #         src="https://example.com/your-script.js",on_ready=rx.call_script(navbar())),
 

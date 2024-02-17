@@ -26,7 +26,7 @@ from keikodev.pages.google_auth import require_google_login
 
 )
 
-@require_google_login
+#@require_google_login
 def kodi() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
