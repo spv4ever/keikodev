@@ -11,8 +11,10 @@ RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
 
 RUN pip install reflex --upgrade
+RUN reflex init
 RUN reflex script keep-chakra
 RUN reflex init
+
 
 
 CMD reflex run --env prod --backend-only
