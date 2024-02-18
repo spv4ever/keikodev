@@ -5,6 +5,7 @@ from keikodev.styles.styles import Size as Size
 import keikodev.views.constants as constants
 from keikodev.routes import Route
 from keikodev.pages.kodi_kodivertido import kodi_kodivertido
+from keikodev.pages.kodi_cristalazul import kodi_cristalazul
 
 from keikodev.pages.google_auth import require_google_login
 
@@ -45,7 +46,7 @@ def kodi_links()-> rx.Component:
                 linkbutton("Instalación de Addon Cristal Azul",
                 "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
                 "/img/kodi2.png",
-                Route.CONSTR.value,
+                Route.KODI_CRISTALAZUL.value,
                 is_external=False
                 ),
                 linkbutton("Instalación de Addon Tv Chopo",

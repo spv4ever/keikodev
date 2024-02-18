@@ -19,4 +19,5 @@ class Route(Enum):
     TRUCOS = "/trucos"
     KODI_TRUCOS = "/koditrucos"
     KODI_KODIVERTIDO = "/kodi/kodivertido"
+    KODI_CRISTALAZUL = "/kodi/cristalazul"
     

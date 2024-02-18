@@ -16,18 +16,17 @@ KODI_IMAGES = "/img/kodi_images/"
 
 
 
-def kodi_addons_kodivertido()->rx.Component:
+def kodi_addons_cristalazul()->rx.Component:
     return rx.chakra.vstack(
                 rx.chakra.box(
                     title(
-                        rx.chakra.center('Cómo instalar el complemento Kodivertido en Kodi'),
+                        rx.chakra.center('Cómo instalar el complemento Cristal Azul en Kodi'),
                     ),
                     margin_bottom = Size.BIG.value,
                     ),
-            steps(rxch.span('El repositorio completo de ',
-                rxch.span('kodivertido',font_family=Fuentes.TITLE.value),
+            steps(rxch.span('',rxch.span('Cristal azul',font_family=Fuentes.TITLE.value),
                 rxch.span(' lo podrás encontrar en el gestor Luar, si no lo tienes, pásate por la sección '),
-                rx.link(rxch.span('Instalación de Luar',font_family=Fuentes.TITLE.value),href=Route.KODI_LUAR.value),
+                rxch.link(rxch.span('Instalación de Luar',font_family=Fuentes.TITLE.value),href=Route.KODI_LUAR.value),
                 rxch.span(' para instalarlo.'),
                 ),
             ),
@@ -39,22 +38,24 @@ def kodi_addons_kodivertido()->rx.Component:
 
             tresimagenes(f'{KODI_IMAGES}kodi_tutorial43.png', f'{KODI_IMAGES}kodi_tutorial44.png',f'{KODI_IMAGES}kodi_tutorial45.png'),
 
-            steps(rxch.span('Seleccionamos de la lista Kodivertido, nos aparecerá la pantalla de confirmación del addon para instalar y aceptamos la opción de instalar'),),
+            steps(rxch.span('Seleccionamos de la lista Cristal Azul, nos aparecerá la pantalla de confirmación del addon para instalar y aceptamos la opción de instalar'),),
             
-            dosimagenes(f'{KODI_IMAGES}kodi_tutorial46.png', f'{KODI_IMAGES}kodi_tutorial47.png'),
+            dosimagenes(f'{KODI_IMAGES}kodi_tutorial51.png', f'{KODI_IMAGES}kodi_tutorial50.png'),
 
             steps(rxch.span('Dejamos que acabe el proceso de instalación y ya tendremos nuestro ',
-                rxch.span('Kodivertido', font_family=Fuentes.TITLE.value),
+                rxch.span('Cristal Azul', font_family=Fuentes.TITLE.value),
                 rxch.span(' instalado.'),
                 ),
             ),
 
-            dosimagenes(f'{KODI_IMAGES}kodi_tutorial49.png',f'{KODI_IMAGES}kodi_tutorial48.png'),
+            dosimagenes(f'{KODI_IMAGES}kodi_tutorial49.png',f'{KODI_IMAGES}kodi_tutorial52.png'),
 
-            steps(rxch.span('El propio addon contiene más librerias y todo lo necearios para funcionar'),),
+            steps(rxch.span('Es muy imporante que tengas la última versión 3.0.8, dado que la verisón anterior no funciona. ',
+                rxch.span('Si tenías la anterior versión instalada, lo mejor es desinstalar, volver a instalar luar y ya tendrás la nueva en el repositorio para su instalación.'),font_family=Fuentes.TITLE.value,),
+                ),
 
             steps(rxch.span('Si tienes algún problema con la instalación de addons, puedes revisar el ',
-                    rx.link(rxch.span('Tutorial de instalación de addon',font_family=Fuentes.TITLE.value),
+                    rxch.link(rxch.span('Tutorial de instalación de addon',font_family=Fuentes.TITLE.value),
                             href=Route.KODI_ADDONS.value),
                 ),
             ),

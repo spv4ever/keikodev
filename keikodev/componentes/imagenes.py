@@ -10,6 +10,7 @@ def unaimagen(imagen1: str, tamaño: str, alt="")->rx.Component:
     return rx.chakra.box(
             rx.chakra.center(
                 rx.chakra.image(src=imagen1,
+                    alt=imagen1,
                     width=tamaño,
                     heigth="auto",
                     border="2px solid",
@@ -28,6 +29,7 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
                 rx.chakra.center(
                     
                     rx.chakra.image(src=imagen1,
+                            alt=imagen1,
                             width="450px",
                             heigth="auto",
                             border="2px solid",
@@ -40,6 +42,7 @@ def dosimagenes(imagen1: str, imagen2: str)->rx.Component:
                 ),
                 rx.chakra.center(
                     rx.chakra.image(src=imagen2,
+                            alt=imagen2,
                             width="450px",
                             heigth="auto",
                             border="2px solid",
@@ -85,6 +88,7 @@ def tresimagenes(imagen1: str, imagen2: str, imagen3: str)->rx.Component:
     return rx.chakra.box(rx.chakra.responsive_grid(
                 rx.chakra.center(
                     rx.chakra.image(src=imagen1,
+                            alt=imagen1,
                             width="300px",
                             heigth="auto",
                             border="2px solid",
@@ -97,6 +101,7 @@ def tresimagenes(imagen1: str, imagen2: str, imagen3: str)->rx.Component:
                 ),
                 rx.chakra.center(
                     rx.chakra.image(src=imagen2,
+                            alt=imagen2,
                             width="300px",
                             heigth="auto",
                             border="2px solid",
@@ -108,6 +113,7 @@ def tresimagenes(imagen1: str, imagen2: str, imagen3: str)->rx.Component:
                 ),
                 rx.chakra.center(
                     rx.chakra.image(src=imagen3,
+                            alt=imagen3,
                             width="300px",
                             heigth="auto",
                             border="2px solid",

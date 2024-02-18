@@ -24,7 +24,7 @@ def card_galery(data)-> rx.Component:
                             padding_bottom = Size.SMALL.value,
                             ),
                     rx.chakra.image(src=data.url,
-                             alt = data.title, 
+                            alt = data.title, 
                             object_fit = "contain",
                             _hover = {"cursor": "zoom-in"},
                             on_click=ModalStateFull.change(data.hdurl, data.title, data.explanation)
