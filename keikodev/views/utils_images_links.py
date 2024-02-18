@@ -8,6 +8,13 @@ from keikodev.routes import Route
 
 def utils_images_links()-> rx.Component:
         return rx.chakra.vstack(
+                title("Herramientas video IA"),
+
+                linkbutton("Fliki.ai",
+                        "Impresionante generador de videos por IA gratuito.",
+                        "/img/video-solid.svg",
+                        constants.FLIKI_URL,
+                        ),
                 title("Retoque fotográfico online"),
 
                 linkbutton("Fotor",

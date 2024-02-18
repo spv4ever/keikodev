@@ -12,6 +12,7 @@ CURSO_LRPS_URL = "https://go.hotmart.com/R90266873D?dp=1"
 GIFER_URL = "https://gifer.com/es"
 GIPHY_URL = "https://giphy.com/"
 TENOR_URL = "https://tenor.com/"
+FLIKI_URL = "https://fliki.ai/?via=keikodev"
 
 
 
