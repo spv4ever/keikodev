@@ -75,12 +75,12 @@ cursos_description = "Todos los catálogos disponibles en formaciones para todos
 
 
 _meta = [
+    {"content": "ca-pub-7920736444321179","name": "google-adsense-account"},
     {"name": "og:type", "content": "website"},
     {"name": "og:image", "content": preview},
     {"name": "twitter:card", "content": "summary_large_image"},
     {"name": "twitter:site", "content": "@Albert_gasa"},
-    {"name": "google-adsense-account", "content": "ca-pub-7920736444321179"}
-]
+    ]
 
 # Index
 

@@ -16,13 +16,7 @@ from keikodev.state.fotoNasa import  fotoNasa as fotoNasa
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.models.Nasalink import Nasalink
 from keikodev.state.ModalState import modal_small
-
-
-
-
-
-
-
+from keikodev.componentes.adsscript import ads_script
 
 @rx.page(
     route=Route.INDEX.value,
@@ -30,9 +24,8 @@ from keikodev.state.ModalState import modal_small
     description=utils.index_description,
     image= utils.preview,
     meta=utils.index_meta,
-    on_load = [PageState.check_live,PageState.featured_links]
-
-
+    on_load = [PageState.check_live,PageState.featured_links],
+    
 )
 
 def index() -> rx.Component:

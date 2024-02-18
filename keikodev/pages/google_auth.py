@@ -60,7 +60,7 @@ class StateLogin(rx.State):
 
 
 def user_info(tokeninfo: dict) -> rx.Component:
-    return rx.box(
+    return rx.chakra.box(
             rx.chakra.hstack(
                 rx.chakra.avatar(
                     name=tokeninfo["name"],

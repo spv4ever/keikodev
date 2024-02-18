@@ -6,6 +6,7 @@ import requests
 import keikodev.views.constants as const
 import datetime as datetime
 from keikodev.api.supabase import SupabaseApi
+from keikodev.api.db import Database
 from keikodev.models.Nasalink import Nasalink
 
 
@@ -20,9 +21,11 @@ class nasaApi():
     SFTP_PASSWORD = os.environ.get("SFTP_PASSWORD")
     SFTP_FOLDER = os.environ.get("SFTP_FOLDER")
     response = str
+    tabla = "nasa_imagenes"
     
 
     def tomaFoto(self, fecha):
+        fecha = "2024-01-03"
         if fecha == "":
             fecha = datetime.datetime.now().date()
         else:
@@ -31,7 +34,10 @@ class nasaApi():
 
         supabase_api = SupabaseApi()
         existe_foto = supabase_api.check_existe(fecha)
+        mysql_api = Database()
         
+        resultado = mysql_api.where("nasa_imagenes",f"fecha='{fecha}'")
+        #print(len(resultado))
         #print(existe_foto)
         if existe_foto is False:
             
@@ -86,6 +92,7 @@ class nasaApi():
             existe_foto = supabase_api.check_existe(fecha)
             if existe_foto is False:
                 supabase_api.insert(url, date, hdurl, explanation, title)
+                #mysql_api.insert("nasa_imagenes",json.loads(raw_response))
             else:
                 print("Dia anterior no insertar")
         

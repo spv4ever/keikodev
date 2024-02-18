@@ -33,6 +33,7 @@ from google.auth.transport import requests
 from google.oauth2.id_token import verify_oauth2_token
 from .pages.react_oauth_google import GoogleOAuthProvider, GoogleLogin
 import dotenv
+from keikodev.componentes.adsscript import ads_script
 
 dotenv.load_dotenv()
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
@@ -134,9 +135,7 @@ def protected() -> rx.Component:
 
 
 app = rx.App(
-    style = styles.BASE_STYLE,
-    stylesheets=styles.STYLESHEETS,
-        head_components=[
+        head_components=[ads_script,
         rx.script(
             src=f"https://www.googletagmanager.com/gtag/js?id={const.G_TAG}"),
         rx.script(
@@ -147,15 +146,10 @@ app = rx.App(
                 gtag('config', '{const.G_TAG}');
             """
         ),
-        rx.script(
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js",
-        custom_attrs={
-            "client": "ca-pub-7920736444321179",
-            "crossorigin": "anonymous",
-            "async": "",
-        }
-    )
+        
     ],
+    style = styles.BASE_STYLE,
+    stylesheets=styles.STYLESHEETS,
 )
 
 #app.api.add_api_route("/hello",hello)

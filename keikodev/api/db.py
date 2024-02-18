@@ -62,6 +62,17 @@ class Database:
         cursor.close()
         self.close()
         return result
+    
+    def where(self, table, where):
+        # Consultar todos los registros de la tabla especificada
+        self.connect()
+        cursor = self.configdb.cursor()
+        sql = f"SELECT * FROM {table} where {where}"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        cursor.close()
+        self.close()
+        return result
 
 # Ejemplo de uso:
 

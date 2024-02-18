@@ -11,11 +11,13 @@ from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
 from keikodev.state.PageState import PageState
 from keikodev.data.data_galeria_nasa import items_galeria
+from keikodev.componentes.adsscript import ads_script
 
 
 
 @rx.page(
     route=Route.CONSTR.value,
+    
     title=utils.constr_title,
     description=utils.constr_description,
     image= utils.preview,

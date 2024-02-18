@@ -27,7 +27,7 @@ def kodi_addons_kodivertido()->rx.Component:
             steps(rxch.span('El repositorio completo de ',
                 rxch.span('kodivertido',font_family=Fuentes.TITLE.value),
                 rxch.span(' lo podrás encontrar en el gestor Luar, si no lo tienes, pásate por la sección '),
-                rx.link(rxch.span('Instalación de Luar',font_family=Fuentes.TITLE.value),href=Route.KODI_LUAR.value),
+                rx.chakra.link(rxch.span('Instalación de Luar',font_family=Fuentes.TITLE.value),href=Route.KODI_LUAR.value),
                 rxch.span(' para instalarlo.'),
                 ),
             ),
@@ -54,7 +54,7 @@ def kodi_addons_kodivertido()->rx.Component:
             steps(rxch.span('El propio addon contiene más librerias y todo lo necearios para funcionar'),),
 
             steps(rxch.span('Si tienes algún problema con la instalación de addons, puedes revisar el ',
-                    rx.link(rxch.span('Tutorial de instalación de addon',font_family=Fuentes.TITLE.value),
+                    rx.chakra.link(rxch.span('Tutorial de instalación de addon',font_family=Fuentes.TITLE.value),
                             href=Route.KODI_ADDONS.value),
                 ),
             ),

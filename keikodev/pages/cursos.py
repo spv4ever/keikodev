@@ -11,6 +11,7 @@ import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 from keikodev.state.PageState import PageState
 from keikodev.views.cursos_links import cursos_links
+from keikodev.componentes.adsscript import ads_script
 
 
 
@@ -21,6 +22,7 @@ from keikodev.views.cursos_links import cursos_links
     image= utils.preview,
     meta=utils.dev_meta,
     on_load=PageState.check_live,
+    
 
 )
 
