@@ -12,6 +12,7 @@ def cookies() -> rx.Component:
 index_title = "KeikoDev. Links esenciales para Python, Recursos, formación, cyber estafas, utilidades"
 index_description = "Soy técnico informático con más de 30 años de experiencia, fanático de la gestión de datos y Bigdata."
 preview = 'avatar3.png'
+metaads = ''
 
 # Links utiles para desarrollo
 dev_title = "Página con recursos para desarrolladores"
@@ -77,7 +78,8 @@ _meta = [
     {"name": "og:type", "content": "website"},
     {"name": "og:image", "content": preview},
     {"name": "twitter:card", "content": "summary_large_image"},
-    {"name": "twitter:site", "content": "@Albert_gasa"}
+    {"name": "twitter:site", "content": "@Albert_gasa"},
+    {"name": "google-adsense-account", "content": "ca-pub-7920736444321179"}
 ]
 
 # Index
