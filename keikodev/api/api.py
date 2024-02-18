@@ -8,7 +8,7 @@ from .supabase import SupabaseApi
 
 TWITCH_API = TwitchAPI()
 NASA_API = nasaApi()
-DB_API = Database()
+#DB_API = Database()
 SUPABASE_API = SupabaseApi()
 
 def ejemploDB():
@@ -33,7 +33,6 @@ async def repo() -> str:
     return const.GITHUB_URL
 
 async def live(user: str) -> bool:
-
     return TWITCH_API.live(user)
 
 

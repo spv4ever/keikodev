@@ -7,7 +7,7 @@ from keikodev.routes import Route
 
 from keikodev.pages.google_auth import require_google_login
 
-@require_google_login
+#@require_google_login
 def kodi_links()-> rx.Component:
         return rx.chakra.vstack(
                 title("Manuales Kodi"),

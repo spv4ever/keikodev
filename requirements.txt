@@ -4,3 +4,4 @@ mysql-connector-python
 paramiko
 supabase
 google-auth[requests]
+gunicorn

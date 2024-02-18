@@ -16,6 +16,7 @@ class GoogleLogin(rx.Component):
     tag = "GoogleLogin"
     theme = "filled_blue"
     size = "small"
+    text = "signin"
 
     def get_event_triggers(self):
         return {"on_success": lambda data: [data]}

@@ -1,3 +1,4 @@
+import reflex as rx
 import functools
 import json
 import os
@@ -6,12 +7,10 @@ import dotenv
 
 from google.auth.transport import requests
 from google.oauth2.id_token import verify_oauth2_token
-
-import reflex as rx
-
 from keikodev.pages.react_oauth_google import GoogleOAuthProvider, GoogleLogin
-
 from keikodev.styles.colors import Color, TextColor
+from keikodev.styles.styles import Size
+
 
 
 dotenv.load_dotenv()
@@ -61,20 +60,41 @@ class StateLogin(rx.State):
 
 
 def user_info(tokeninfo: dict) -> rx.Component:
-    return rx.chakra.hstack(
-        rx.chakra.avatar(
-            name=tokeninfo["name"],
-            src=tokeninfo["picture"],
-            size="sm",
-        ),
-        rx.chakra.vstack(
-            rx.chakra.heading(tokeninfo["name"], size="xs"),
-            rx.chakra.button("Cerrar", size="xs", on_click=StateLogin.logout),
-            #rx.chakra.text(tokeninfo["email"],color = Color.PRIMARY.value),
-            align_items="flex-start",
-        ),
-        
-        padding="10px",
+    return rx.box(
+            rx.chakra.hstack(
+                rx.chakra.avatar(
+                    name=tokeninfo["name"],
+                    src=tokeninfo["picture"],
+                    size="md",
+                    display=["none","none","flex","flex","flex"],
+                ),
+                rx.chakra.vstack(
+                    rx.chakra.heading(tokeninfo["name"],
+                                    font_size = Size.MEDIUM.value,
+                                    size="xs",
+                                    ),
+                    rx.chakra.text(tokeninfo["email"],
+                                color = Color.PRIMARY.value,
+                                font_size = Size.MEDIUM.value,
+                                margin=Size.ZERO.value,
+                                display=["none","none","flex","flex","flex"],
+                                ),
+                    align_items="center",
+                ),
+                rx.chakra.button("Cerrar", 
+                    size="xs",
+                    margin=Size.ZERO.value,
+                    on_click=StateLogin.logout
+                ),
+                align_items="center",
+                justify_content = "center",
+                padding="10px",
+    ),
+    height = "100%",
+    display = "flex",
+    align_items="center",
+    justify_content = "center",
+
     )
 
 

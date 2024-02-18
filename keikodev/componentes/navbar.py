@@ -25,54 +25,29 @@ def navbar():
                         #heigth = "3em",
                         #),
                         rx.chakra.flex(
-                        rx.chakra.image(src="/avatar.png",
-                                alt="Logo",
-                                width="50px",
-                                height="auto",
-                                border_radius="15px 50px",
-                                border="5px solid #555",
-                                box_shadow="lg"),
-                        rx.chakra.link(
-                                rx.chakra.box(
-                                        rx.chakra.span("Keiko",
-                                                color=Color.PRIMARY.value,
-                                                ),
-                                        rx.chakra.span("Dev",
-                                                color=Color.SECONDARY.value
-                                        ),
-                                        style=styles.navbar_title_style
-                                ), 
-                                href=Route.INDEX.value,
-                        ),
-                        justify_content="center",
-                        align = "center",
-
-                        ),
-                        
-                        #user_info(StateLogin.tokeninfo),
-
-                        rx.chakra.flex(
-                                protected(),
-                                rx.chakra.vstack(
-                                        tutiempo(),
-                                        
-                                        # rx.script(
-                                        #         src="https://example.com/your-script.js",on_ready=rx.call_script(navbar())),
-
-                                        rx.chakra.text("Tiempo en Segur de Calafell - Powered by tutiempo.net",
-                                                font_size = Size.SMALL_LARGE.value, 
-                                                font_family = Fuentes.DEFAULT.value,
-                                                color = TextColor.GREEN.value,
-                                                text_align = "center",
+                                rx.chakra.image(src="/avatar.png",
+                                        alt="Logo",
+                                        width="50px",
+                                        height="auto",
+                                        border_radius="15px 50px",
+                                        border="5px solid #555",
+                                        box_shadow="lg"),
+                                rx.chakra.link(
+                                        rx.chakra.box(
+                                                rx.chakra.span("Keiko",
+                                                        color=Color.PRIMARY.value,
                                                         ),
-                                        display=["none","none","flex","flex","flex"],
-                                        
+                                                rx.chakra.span("Dev",
+                                                        color=Color.SECONDARY.value
+                                                ),
+                                                style=styles.navbar_title_style
+                                        ), 
+                                        href=Route.INDEX.value,
                                 ),
-                                width = "100%",
                                 justify_content="center",
                                 align = "center",
                         ),
-                        rx.chakra.flex(
+                        rx.chakra.responsive_grid(
                                 rx.chakra.vstack(
                                         rx.chakra.image(
                                                 src=PageState.url,
@@ -84,7 +59,7 @@ def navbar():
                                                 _hover = {"cursor": "pointer"},
                                                 margin = Size.ZERO.value,
                                         ),
-                                        rx.chakra.text(f"Foto desde Nasa diaria: {PageState.date}",
+                                        rx.chakra.text(f"Foto diaria: {PageState.date}",
                                                 font_size = Size.SMALL_LARGE.value, 
                                                 font_family = Fuentes.DEFAULT.value,
                                                 text_align = "center",
@@ -92,11 +67,17 @@ def navbar():
                                                 display=["none","none","flex","flex","flex"],
                                         ),
                                 ),
-                                max_width = "200px",
-                                width = "100%",
+                                rx.chakra.box(
+                                        protected(),
+                                        #display=["none","flex","flex","flex","flex"],
+                                        #min_width = "300px",
+                                        justify_content="flex-end",
+                                ),
+                                #width = "100%",
                                 justify_content="flex-end",
                                 align = "center",
-                                ),
+                                columns=[1,2],
+                        ),
 
                         rx.chakra.modal(
                                 rx.chakra.modal_overlay(
@@ -149,7 +130,7 @@ def navbar():
                 bg=Color.CONTENT.value,
                 # padding_x=Size.DEFAULT.value,
                 # padding_y=Size.SMALL.value,
-                spacing="2em",
+                spacing="1em",
                 width="100%",
                 z_index = "999",
                 top="0"

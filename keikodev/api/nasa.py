@@ -31,16 +31,19 @@ class nasaApi():
 
         supabase_api = SupabaseApi()
         existe_foto = supabase_api.check_existe(fecha)
+        
         #print(existe_foto)
         if existe_foto is False:
+            
             fecha_str = fecha.strftime('%Y-%m-%d')
-            #fecha_str = '2024-02-15'
+            #fecha_str = '2024-01-01'
 
             try:
                 raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text
                 
             except requests.RequestException as e:
                 print("Error al hacer la solicitud a la API de la NASA:", e)
+            
 
             carga_ok = False
             if raw_response:
@@ -51,7 +54,7 @@ class nasaApi():
                     # Verifica si es un diccionario (JSON)
                     if isinstance(response_dict, dict):
                         # Verifica si el código de estado es 400
-                        if response_dict.get("code") == 400:
+                        if response_dict.get("code") == 404:
                             fecha = fecha - datetime.timedelta(days=1)
                             fecha_str = fecha.strftime('%Y-%m-%d')
                             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text  

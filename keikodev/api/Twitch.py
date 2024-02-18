@@ -4,9 +4,10 @@ import requests
 import time
 
 class TwitchAPI:
+
     dotenv.load_dotenv()
-    CLIENT_ID = os.environ.get("TWITCH_CLIENT_ID")
-    CLIENT_SECRET = os.environ.get("TWITCH_SECRET_ID")
+    CLIENT_ID = os.environ.get("CLIENT_ID")
+    CLIENT_SECRET = os.environ.get("SECRET_ID")
 
     def __init__(self) -> None:
         self.token = None
@@ -22,7 +23,7 @@ class TwitchAPI:
                 "grant_type" : "client_credentials"
             }
         )
-
+        #print(response.json()) #Revisar respuesta de token
         if response.status_code == 200:
             data = response.json()
             self.token = data["access_token"]
@@ -37,8 +38,9 @@ class TwitchAPI:
     
 
     def live(self, user: str)-> bool:
-
+        #print(self.token_valid())
         if not self.token_valid():
+            #print("token no válido")
             self.generate_token()
 
         response = requests.get(
@@ -47,8 +49,10 @@ class TwitchAPI:
                 "Client-ID" : self.CLIENT_ID,
                 "Authorization": f"Bearer {self.token}"
             }
+    
 
         )
+        
 
         if response.status_code == 200 and response.json()["data"]:
             data = response.json()["data"]

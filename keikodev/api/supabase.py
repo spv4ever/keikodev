@@ -12,6 +12,8 @@ class SupabaseApi:
     SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
     data: dict
 
+    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+
     def insert(self, url, date, hdurl, explanation, title):
             supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
             date_str = date.isoformat()
