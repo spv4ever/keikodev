@@ -1,71 +1,71 @@
 import os
 import dotenv
-from supabase import Client, create_client, SupabaseRealtimeClient
+#from supabase import Client, create_client, SupabaseRealtimeClient
 from keikodev.models.Nasalink import Nasalink
 import datetime as datetime
 import json
 
 
-class SupabaseApi:
-    dotenv.load_dotenv()
-    SUPABASE_URL = os.environ.get("SUPABASE_URL")
-    SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
-    data: dict
+# class SupabaseApi:
+#     dotenv.load_dotenv()
+#     SUPABASE_URL = os.environ.get("SUPABASE_URL")
+#     SUPABASE_KEY = os.environ.get("SUPABASE_KEY")
+#     data: dict
 
-    supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
+#     #supabase: Client = create_client(SUPABASE_URL, SUPABASE_KEY)
 
-    def insert(self, url, date, hdurl, explanation, title):
-            supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
-            date_str = date.isoformat()
-            data = {"url": url,
-                    "date": date_str,
-                    "hdurl": hdurl,
-                    "explanation": explanation,
-                    "title": title}
-            response = supabase.table('links').insert(data).execute()
-            supabase = None
+#     def insert(self, url, date, hdurl, explanation, title):
+#             supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
+#             date_str = date.isoformat()
+#             data = {"url": url,
+#                     "date": date_str,
+#                     "hdurl": hdurl,
+#                     "explanation": explanation,
+#                     "title": title}
+#             response = supabase.table('links').insert(data).execute()
+#             supabase = None
 
     
-    def check_existe(self, date):
-        supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
-        response = supabase.table('links').select("date").eq('date', date).execute()
-        supabase = None
-        if len(response.data)<1:
-            return False
-        else:
-            return True
+#     def check_existe(self, date):
+#         supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
+#         response = supabase.table('links').select("date").eq('date', date).execute()
+#         supabase = None
+#         if len(response.data)<1:
+#             return False
+#         else:
+#             return True
 
-    def carga_foto(self, date):
-        supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
-        response = supabase.table('links').select("*").eq('date', date).execute()
-        supabase = None
-        data = response.data
-        json_data = json.dumps(data)
-        return json_data
+#     def carga_foto(self, date):
+#         supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
+#         response = supabase.table('links').select("*").eq('date', date).execute()
+#         supabase = None
+#         data = response.data
+#         json_data = json.dumps(data)
+#         return json_data
     
-    def allLinks(self):
-        supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
-        #response = supabase.table('links').select("*").execute() # Sin orden, tal como están dados de alta.
-        response = supabase.table('links').select("*").order('date.desc').execute() #Ordenado de último a antiguo.
-        supabase = None
-        data = response.data
-        return data
+#     def allLinks(self):
+#         supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
+#         #response = supabase.table('links').select("*").execute() # Sin orden, tal como están dados de alta.
+#         response = supabase.table('links').select("*").order('date.desc').execute() #Ordenado de último a antiguo.
+#         supabase = None
+#         data = response.data
+#         return data
     
-    def featured(self):
-        supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
-        #response = supabase.table('links').select("*").execute() # Sin orden, tal como están dados de alta.
-        response = supabase.table('links').select("*").order('date.desc').execute() #Ordenado de último a antiguo.
-        supabase = None
+#     def featured(self):
+#         supabase: Client = create_client(self.SUPABASE_URL, self.SUPABASE_KEY)
+#         #response = supabase.table('links').select("*").execute() # Sin orden, tal como están dados de alta.
+#         response = supabase.table('links').select("*").order('date.desc').execute() #Ordenado de último a antiguo.
+#         supabase = None
 
-        featured_data = []
+#         featured_data = []
 
-        if len(response.data) > 0:
-            for featured_item in response.data:
-                featured_data.append(featured_item)
+#         if len(response.data) > 0:
+#             for featured_item in response.data:
+#                 featured_data.append(featured_item)
 
-        #print(featured_data)
+#         #print(featured_data)
 
-        return featured_data    
+#         return featured_data    
 
 
 

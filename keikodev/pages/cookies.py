@@ -10,7 +10,7 @@ from keikodev.views.footer import footer
 from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
 from keikodev.state.PageState import PageState
-from keikodev.data.data_galeria_nasa import items_galeria
+#from keikodev.data.data_galeria_nasa import items_galeria
 from keikodev.views.cookies_details import cookies_details
 from keikodev.componentes.adsscript import ads_script
 

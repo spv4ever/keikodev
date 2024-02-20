@@ -10,7 +10,7 @@ from keikodev.views.footer import footer
 from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
 from keikodev.state.PageState import PageState
-from keikodev.data.data_galeria_nasa import items_galeria
+#from keikodev.data.data_galeria_nasa import items_galeria
 from keikodev.componentes.adsscript import ads_script
 
 
@@ -35,7 +35,7 @@ def constr() -> rx.Component:
                 rx.chakra.center(
                 header(False),
                 ),
-                construccion(items_galeria),
+                construccion(),
                 max_width=styles.CONTENT_GALERY,
                 width="100%",
                 margin_y=Size.BIG.value,

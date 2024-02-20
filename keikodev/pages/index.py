@@ -24,7 +24,7 @@ from keikodev.componentes.adsscript import ads_script
     description=utils.index_description,
     image= utils.preview,
     meta=utils.index_meta,
-    on_load = [PageState.check_live,PageState.featured_links],
+    on_load = [PageState.check_live],
     
 )
 

@@ -4,12 +4,12 @@ import time
 from .Twitch import TwitchAPI
 from .nasa import nasaApi
 from .db import Database
-from .supabase import SupabaseApi
+#from .supabase import SupabaseApi
 
 TWITCH_API = TwitchAPI()
 NASA_API = nasaApi()
 DB_API = Database()
-SUPABASE_API = SupabaseApi()
+#SUPABASE_API = SupabaseApi()
 
 def ejemploDB():
     if __name__ == "__main__":
@@ -42,8 +42,8 @@ async def foto(fecha):
 async def fotoFTP(fecha):
     return NASA_API.fotoFTP(fecha)
 
-async def featured() -> list:
-    return SUPABASE_API.featured()
+# async def featured() -> list:
+#     return SUPABASE_API.featured()
 
 async def galeria_load() -> list:
     return DB_API.select("nasa_imagenes")
