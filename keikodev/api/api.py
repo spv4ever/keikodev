@@ -45,6 +45,9 @@ async def fotoFTP(fecha):
 async def featured() -> list:
     return SUPABASE_API.featured()
 
+async def galeria_load() -> list:
+    return DB_API.select("nasa_imagenes")
+
 
 
 

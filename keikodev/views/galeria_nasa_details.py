@@ -13,8 +13,8 @@ import keikodev.componentes.imagenes as imagenes
 from keikodev.api.funciones import dameUltimosCincoDias as dameUltimosCincoDias
 #from keikodev.state.fotoNasa import Image_Load as Image_Load
 from keikodev.componentes.card_galery import card_galery
-from keikodev.data.data_galeria_nasa import Datagalerianasa
-from keikodev.data.reflex_class import Datagalerianasarx
+# from keikodev.data.data_galeria_nasa import Datagalerianasa
+# from keikodev.data.reflex_class import Datagalerianasarx
 from keikodev.state.PageState import PageState
 
 
@@ -37,7 +37,7 @@ def galeria_nasa_details()->rx.Component:
                     #     for index, data in enumerate(date_income)
                         
                     # ],
-                rx.foreach(PageState.featured_details, card_galery),
+                rx.foreach(PageState.galeria_fotos, card_galery),
                 
                 columns=[1,2,3,4],
                 spacing = "4"

@@ -26,7 +26,7 @@ from keikodev.data.data_galeria_nasa import Datagalerianasa
     description=utils.galeria_nasa_description,
     image= utils.preview,
     meta=utils.dev_meta,
-    on_load=[PageState.check_live,Alllinks.obteneralllinks,PageState.featured_links]
+    on_load=[PageState.check_live,Alllinks.obteneralllinks,PageState.featured_links, PageState.galeria_fotos_load]
 )
 
 def galeria_nasa() -> rx.Component:

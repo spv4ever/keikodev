@@ -1,6 +1,6 @@
 import reflex as rx
 from keikodev.api.supabase import SupabaseApi
-from keikodev.models.Nasalink import Nasalink
+from keikodev.api.db import Database
 
 class Alllinks(rx.State):
     json_output: list

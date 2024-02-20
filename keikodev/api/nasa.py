@@ -8,6 +8,7 @@ import datetime as datetime
 from keikodev.api.supabase import SupabaseApi
 from keikodev.api.db import Database
 from keikodev.models.Nasalink import Nasalink
+#from datetime import date
 
 
 
@@ -25,7 +26,7 @@ class nasaApi():
     
 
     def tomaFoto(self, fecha):
-        fecha = "2024-01-03"
+        #fecha = "2024-01-20"
         if fecha == "":
             fecha = datetime.datetime.now().date()
         else:
@@ -40,10 +41,8 @@ class nasaApi():
         #print(len(resultado))
         #print(existe_foto)
         if existe_foto is False:
-            
             fecha_str = fecha.strftime('%Y-%m-%d')
             #fecha_str = '2024-01-01'
-
             try:
                 raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text
                 
@@ -56,7 +55,6 @@ class nasaApi():
                 try:
                     # Intenta cargar la respuesta como JSON
                     response_dict = json.loads(raw_response)
-                    
                     # Verifica si es un diccionario (JSON)
                     if isinstance(response_dict, dict):
                         # Verifica si el código de estado es 400
@@ -79,12 +77,17 @@ class nasaApi():
                     print("Error al decodificar la respuesta JSON de la API de la NASA")
             else:
                 print("La respuesta está vacía")
-
+            
+            #print(raw_response)
+            
             if carga_ok is True:
                 self.response = json.loads(raw_response)
                 date = fecha
                 self.date = self.response['date']
-                hdurl = self.response['hdurl']
+                if self.response['media_type'] == "video":
+                    hdurl = ""
+                else:
+                    hdurl = self.response['hdurl']
                 title = self.response['title']
                 explanation = self.response['explanation']
                 url = self.response['url']
@@ -92,17 +95,41 @@ class nasaApi():
             existe_foto = supabase_api.check_existe(fecha)
             if existe_foto is False:
                 supabase_api.insert(url, date, hdurl, explanation, title)
-                #mysql_api.insert("nasa_imagenes",json.loads(raw_response))
+
+                tabla = {
+                    "fecha": date.strftime('%Y-%m-%d'),
+                    "url": url,
+                    "titulo": title,
+                    "descripcion": explanation,
+                    "hdurl": hdurl
+                }
+                json_tabla = json.dumps(tabla)
+                mysql_api.insert("nasa_imagenes",json.loads(json_tabla))
             else:
                 print("Dia anterior no insertar")
         
+        datos_foto_db = mysql_api.where("nasa_imagenes",f"fecha='{fecha}'")
+        keys = ["id","date","url","title","explanation","hdurl"]
+        datos_foto_db = datos_foto_db[0]
 
+        data_list_str = [d.strftime('%Y-%m-%d') if isinstance(d, datetime.date) else d for d in datos_foto_db]
+        #print(data_list_str)
+
+        # datos_foto_db[0][1] = datos_foto_db[0][1].strftime("%Y-%m-%d")
+        datos_foto_db_dict = dict(zip(keys,data_list_str))
+        #print(datos_foto_db_dict)
+        datos_foto_db_json = json.dumps(datos_foto_db_dict,ensure_ascii=False)
+        #print(datos_foto_db_json)
+        
         datos_foto=supabase_api.carga_foto(fecha)
+        #print(datos_foto)
         datos_json=json.loads(datos_foto)
         datos_json = datos_json[0]
-        model = Nasalink(**datos_json)
-        return True, datos_foto #, hdurl, date, title, explanation, url
+        #model = Nasalink(**datos_json)
+    
 
+        return True, datos_foto, datos_foto_db_json
+    
     
     def fotoFTP(self, fecha):
         if len(fecha)  > 0:
