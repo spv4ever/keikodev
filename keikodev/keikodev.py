@@ -154,7 +154,7 @@ app = rx.App(
 
 #app.api.add_api_route("/hello",hello)
 # app.api.add_api_route("/repo", repo)
-#app.api.add_api_route("/live/{user}", live)
+app.api.add_api_route("/live/{user}", live)
 # app.api.add_api_route("/foto", foto)
 
 
