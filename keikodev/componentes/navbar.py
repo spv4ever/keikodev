@@ -27,7 +27,7 @@ def navbar():
                         #),
                         rx.chakra.flex(
                                 rx.chakra.image(src="/avatar.png",
-                                        alt="Logo",
+                                        alt="avatar",
                                         width="50px",
                                         height="auto",
                                         border_radius="15px 50px",
