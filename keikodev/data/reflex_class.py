@@ -6,3 +6,5 @@ class Datagalerianasarx(rx.Base):
     title: str
     explanation: str
     hdurl: str
+    copyright: str
+    media_type: str

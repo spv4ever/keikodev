@@ -27,6 +27,9 @@ class PageState(rx.State):
         title: str
         explanation: str
         hdurl: str
+        copyright: str
+        media_type: str
+        
         #items_galeria: list[Datagalerianasarx]
         featured_info: list[Datagalerianasarx]
         featured_details: list[Datagalerianasarx]
@@ -35,8 +38,8 @@ class PageState(rx.State):
 
         async def check_live(self):
                 self.is_live = await live(USER)
-                tutiempo()
-                #url = await foto("")
+                #tutiempo()
+                url = await foto("")
                 # is_valid, json_data, json_data_db = url
                 # data = json.loads(json_data)
                 # datadb = json.loads(json_data_db)
@@ -83,9 +86,9 @@ class PageState(rx.State):
         #         #fechas = [item.date for item in self.featured_details]
                 
         async def galeria_fotos_load(self):
-                print("entrando por galeria")
+                #print("entrando por galeria")
                 self.galeria_fotos_db = await galeria_load()
-                keys = ["id","date","url","title","explanation","hdurl"]
+                keys = ["id","date","url","title","explanation","hdurl","copyright", "media_type"]
                 galeria_json = []
                 for lista in self.galeria_fotos_db:
                         galeria_json.append(dict(zip(keys, lista)))
@@ -95,7 +98,9 @@ class PageState(rx.State):
                                 url=item["url"],
                                 title=item["title"],
                                 explanation=item["explanation"],
-                                hdurl = item["hdurl"]
+                                hdurl = item["hdurl"],
+                                copyright = item["copyright"],
+                                media_type = item["media_type"]
                                 ) 
                                 for item in galeria_json
                         ]

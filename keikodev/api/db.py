@@ -56,7 +56,7 @@ class Database:
         # Consultar todos los registros de la tabla especificada
         self.connect()
         cursor = self.configdb.cursor()
-        sql = f"SELECT * FROM nasa_imagenes order by 2 desc"
+        sql = f"SELECT * FROM nasa_imagenes where copyright = '' and media_type = 'image' order by 2 desc"
         cursor.execute(sql)
         result = cursor.fetchall()
         cursor.close()

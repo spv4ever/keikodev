@@ -21,7 +21,8 @@ def navbar():
         return rx.chakra.hstack(
                         #rx.chakra.box(
                         utils.lang(),
-                        main_menu(),
+                        rx.heading(
+                        main_menu(),as_="h1"),
                         #heigth = "3em",
                         #),
                         rx.chakra.flex(
@@ -133,5 +134,6 @@ def navbar():
                 spacing="1em",
                 width="100%",
                 z_index = "999",
-                top="0"
+                top="0",
+                as_="h1"
                 )
