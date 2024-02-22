@@ -4,10 +4,6 @@ import requests
 from urllib.parse import quote_plus
 import mysql.connector
 
-import os
-import dotenv
-import mysql.connector
-from urllib.parse import quote_plus
 
 class Database:
     def __init__(self):
