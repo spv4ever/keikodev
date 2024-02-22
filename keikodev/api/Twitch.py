@@ -2,6 +2,7 @@ import dotenv
 import os
 import requests
 import time
+from keikodev.models.live import Live
 
 class TwitchAPI:
 
@@ -23,7 +24,7 @@ class TwitchAPI:
                 "grant_type" : "client_credentials"
             }
         )
-        #print(response.json()) #Revisar respuesta de token
+        print(response.json()) #Revisar respuesta de token
         if response.status_code == 200:
             data = response.json()
             self.token = data["access_token"]
@@ -38,9 +39,9 @@ class TwitchAPI:
     
 
     def live(self, user: str)-> bool:
-        #print(self.token_valid())
+        print(self.token_valid())
         if not self.token_valid():
-            #print("token no válido")
+            print("token no válido")
             self.generate_token()
 
         response = requests.get(
@@ -56,13 +57,9 @@ class TwitchAPI:
 
         if response.status_code == 200 and response.json()["data"]:
             data = response.json()["data"]
-            url = data[0]['thumbnail_url']
-            url = url.replace('{width}', '800').replace('{height}', '600')
-            #print(url)
-            #print(data)
-            return True, url
+            return Live(live=True, title=data[0]["title"])
         
-        return False, ""
+        return Live(live=False, title="")
 
 
     

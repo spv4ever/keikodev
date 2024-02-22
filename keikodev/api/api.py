@@ -4,6 +4,7 @@ import time
 from .Twitch import TwitchAPI
 from .nasa import nasaApi
 from .db import Database
+from keikodev.models.live import Live
 #from .supabase import SupabaseApi
 
 TWITCH_API = TwitchAPI()
@@ -32,7 +33,7 @@ def hello() -> str:
 async def repo() -> str:
     return const.GITHUB_URL
 
-async def live(user: str) -> bool:
+async def live(user: str) -> Live:
     return TWITCH_API.live(user)
 
 
