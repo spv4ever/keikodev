@@ -34,7 +34,8 @@ def cookies() -> rx.Component:
         rx.chakra.center(
             rx.chakra.vstack(
                 rx.chakra.center(
-                header(False),
+                header(False,
+                       live_status=PageState.live_status),
                 ),
                 cookies_details(),
                 max_width=styles.CONTENT_GALERY,
