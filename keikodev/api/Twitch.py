@@ -7,8 +7,8 @@ from keikodev.models.live import Live
 class TwitchAPI:
 
     dotenv.load_dotenv()
-    CLIENT_ID = os.environ.get("CLIENT_ID")
-    CLIENT_SECRET = os.environ.get("SECRET_ID")
+    CLIENT_ID = os.environ.get("TWITCH_CLIENT_ID")
+    CLIENT_SECRET = os.environ.get("TWITCH_SECRET_ID")
 
     def __init__(self) -> None:
         self.token = None
