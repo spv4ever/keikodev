@@ -4,3 +4,6 @@ mysql-connector-python
 paramiko
 google-auth[requests]
 gunicorn
+fastapi
+starlette
+pydantic
