@@ -46,11 +46,11 @@ def index_links()-> rx.Component:
             "Noticias sobre intentos de estafa en internet",
             is_external=False),
 
-        linkbutton("Todo lo relacionado con Kodi",
-            "Apartado destinado a mantener la configuración de kodi",
-            "/img/tv-solid.svg",
-            Route.KODI.value,
-            is_external=False),
+        # linkbutton("Todo lo relacionado con Kodi",
+        #     "Apartado destinado a mantener la configuración de kodi",
+        #     "/img/tv-solid.svg",
+        #     Route.KODI.value,
+        #     is_external=False),
 
         linkbutton("MG Todo en nutrición y fitness",
             "Apartado para mantenerte en forma, entrenamientos, etc",
@@ -64,11 +64,11 @@ def index_links()-> rx.Component:
             Route.GALERIA.value,
             is_external=False),
 
-        linkbutton('Mundo de la emulación', 
-            "Todo lo relativo al mundo de la emulación Consola", 
-            "/img/gamepad-solid.svg",
-            Route.EMULATOR.value,
-            is_external=False),
+        # linkbutton('Mundo de la emulación', 
+        #     "Todo lo relativo al mundo de la emulación Consola", 
+        #     "/img/gamepad-solid.svg",
+        #     Route.EMULATOR.value,
+        #     is_external=False),
 
         linkbutton('Servicios personalizados', 
             "Servicios IT personalizados, macros, excel, python, web.", 

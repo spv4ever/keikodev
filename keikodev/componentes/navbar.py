@@ -18,21 +18,19 @@ from keikodev.pages.google_auth import protected
 
 
 def navbar():
-        return rx.chakra.hstack(
-                        #rx.chakra.box(
+        return rx.chakra.flex(
                         utils.lang(),
-                        rx.heading(
-                        main_menu(),as_="h1"),
-                        #heigth = "3em",
-                        #),
-                        rx.chakra.flex(
+                                main_menu(),
                                 rx.chakra.image(src="/avatar.png",
                                         alt="avatar",
+                                        display="flex",
                                         width="50px",
                                         height="auto",
                                         border_radius="15px 50px",
                                         border="5px solid #555",
-                                        box_shadow="lg"),
+                                        box_shadow="lg",
+                                        margin_x = Size.DEFAULT.value,
+                                        ),
                                 rx.chakra.link(
                                         rx.chakra.box(
                                                 rx.chakra.span("Keiko",
@@ -41,44 +39,16 @@ def navbar():
                                                 rx.chakra.span("Dev",
                                                         color=Color.SECONDARY.value
                                                 ),
-                                                style=styles.navbar_title_style
+                                                style=styles.navbar_title_style,
+                                                margin_x = Size.DEFAULT.value,
                                         ), 
                                         href=Route.INDEX.value,
                                 ),
-                                justify_content="center",
-                                align = "center",
-                        ),
-                        rx.chakra.responsive_grid(
-                                #rx.chakra.vstack(
-                                        # rx.chakra.image(
-                                        #         src=PageState.url,
-                                        #         alt="Foto diaria Nasa",
-                                        #         width = "auto",
-                                        #         height = "50px",
-                                        #         fit = "cousin",
-                                        #         on_click=ModalStateFull.change(PageState.hdurl, PageState.title, PageState.explanation),
-                                        #         _hover = {"cursor": "pointer"},
-                                        #         margin = Size.ZERO.value,
-                                        # ),
-                                        # rx.chakra.text(f"Foto diaria: {PageState.date}",
-                                        #         font_size = Size.SMALL_LARGE.value, 
-                                        #         font_family = Fuentes.DEFAULT.value,
-                                        #         text_align = "center",
-                                        #         color = TextColor.GREEN.value,
-                                        #         display=["none","none","flex","flex","flex"],
-                                        # ),
-                                #),
-                                rx.chakra.box(
-                                        protected(),
-                                        #display=["none","flex","flex","flex","flex"],
-                                        #min_width = "300px",
-                                        justify_content="flex-end",
-                                ),
-                                #width = "100%",
-                                justify_content="flex-end",
-                                align = "center",
-                                columns=[1,2],
-                        ),
+                                protected(),
+
+                                
+                        
+
 
                         rx.chakra.modal(
                                 rx.chakra.modal_overlay(
@@ -126,12 +96,13 @@ def navbar():
                         # align_items = "right",
                         # justify_content = "right",
                 
-                #spacing = Size.LARGE.value,
+                direction = "row",
+                justify="start",
+                align = "center",
+                wrap = "wrap",
                 position="sticky", #Deja la barra arriba y se mueve el head y footer
                 bg=Color.CONTENT.value,
-                # padding_x=Size.DEFAULT.value,
-                # padding_y=Size.SMALL.value,
-                spacing="1em",
+                spacing = "8",
                 width="100%",
                 z_index = "999",
                 top="0",
