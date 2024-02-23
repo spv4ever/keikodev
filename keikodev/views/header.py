@@ -21,13 +21,11 @@ def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
                                 live_status.live,
                                 rx.chakra.avatar_badge(
                                     rx.chakra.image(src="/img/twitch.svg",alt="Logo twitch"),
-                                box_size = Size.MEDIUM.value,
-                                bg = Color.PURPLE.value,
-                                border_color = Color.PURPLE.value,
-                                class_name="blink",
-                            ),
-                                
-                                
+                                    box_size = Size.MEDIUM.value,
+                                    bg = Color.PURPLE.value,
+                                    border_color = Color.PURPLE.value,
+                                    class_name="blink",
+                                ),
                             ),
                             name="Albert García Sabadell",
                             size="xl", 

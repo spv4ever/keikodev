@@ -1,13 +1,10 @@
 import reflex as rx
 from keikodev.api.api import live
 from keikodev.api.api import foto
-#from keikodev.api.api import featured
 from keikodev.api.api import galeria_load
 from keikodev.models.Nasalink import Nasalink
 from pydantic import BaseModel
 from keikodev.data.data_galeria_nasa import Datagalerianasa
-#from keikodev.data.data_galeria_nasa import items_galeria
-#from keikodev.api.supabase import SupabaseApi
 from keikodev.data.reflex_class import Datagalerianasarx
 from keikodev.componentes.tutiempo import tutiempo
 from keikodev.models.live import Live
@@ -16,7 +13,7 @@ import json
 
 import datetime as dt
 
-USER = "imantado"
+USER = "mouredev"
 
 
 class PageState(rx.State):
@@ -30,8 +27,6 @@ class PageState(rx.State):
         hdurl: str
         copyright: str
         media_type: str
-        
-        #items_galeria: list[Datagalerianasarx]
         featured_info: list[Datagalerianasarx]
         featured_details: list[Datagalerianasarx]
         galeria_fotos: list[Datagalerianasarx]
@@ -40,9 +35,11 @@ class PageState(rx.State):
         live_status = Live(live=False, title="")
 
         async def check_live(self):
+                print("pidiendo estado")
                 self.live_status = await live(USER)
+                print(self.live_status)
                 #tutiempo()
-                url = await foto("")
+                #url = await foto("")
                 # is_valid, json_data, json_data_db = url
                 # data = json.loads(json_data)
                 # datadb = json.loads(json_data_db)

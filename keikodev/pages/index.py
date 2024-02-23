@@ -24,7 +24,7 @@ from keikodev.componentes.adsscript import ads_script
     description=utils.index_description,
     image= utils.preview,
     meta=utils.index_meta,
-    on_load = [PageState.galeria_fotos_load, PageState.check_live],
+    on_load = [PageState.galeria_fotos_load, PageState.check_live]
     
 )
 
@@ -35,7 +35,7 @@ def index() -> rx.Component:
         navbar(),
         rx.chakra.center(
             rx.chakra.vstack(
-                header(live_status=PageState.live_status),
+                header(True, live_status=PageState.live_status),
                 index_links(),
                 spacing=Size.DEFAULT.value,
                 max_width=styles.MAX_WIDTH,
