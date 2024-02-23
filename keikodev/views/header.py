@@ -8,16 +8,17 @@ from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.fonts import Fuentes as Fuentes
 import keikodev.styles.styles as styles
 from keikodev.componentes.title import title
+from keikodev.models.live import Live
 
 import keikodev.views.constants as const
 
 
-def header(details=True, live=False)-> rx.Component:
+def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
     return rx.chakra.vstack(
                 rx.chakra.hstack(
                     rx.chakra.avatar(
                         rx.cond(
-                                live,
+                                live_status.live,
                                 rx.chakra.avatar_badge(
                                     rx.chakra.image(src="/img/twitch.svg",alt="Logo twitch"),
                                 box_size = Size.MEDIUM.value,

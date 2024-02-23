@@ -10,12 +10,13 @@ from keikodev.data.data_galeria_nasa import Datagalerianasa
 #from keikodev.api.supabase import SupabaseApi
 from keikodev.data.reflex_class import Datagalerianasarx
 from keikodev.componentes.tutiempo import tutiempo
+from keikodev.models.live import Live
 
 import json
 
 import datetime as dt
 
-USER = "ibai"
+USER = "ManzDev"
 
 
 class PageState(rx.State):
@@ -36,8 +37,10 @@ class PageState(rx.State):
         galeria_fotos: list[Datagalerianasarx]
         galeria_fotos_db : list[Datagalerianasarx]
 
+        live_status = Live(live=False, title="")
+
         async def check_live(self):
-                self.is_live = await live(USER)
+                self.live_status = await live(USER)
                 #tutiempo()
                 url = await foto("")
                 # is_valid, json_data, json_data_db = url

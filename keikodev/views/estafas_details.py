@@ -38,7 +38,7 @@ def estafas_details()->rx.Component:
                   son capaces de suplantar el nº de teléfono desde donde llaman y aparecer como tu entidad bancaria.""",
                 color=TextColor.PRIMARY, 
                 badge_text="16/02/2024", 
-                featured=True,
+                featured=False,
                 ),    
         card(url="", title="La llamada urgente porque te vamos a subir el precio", 
                 lista_imagenes=[('/img/estafas/estafa-2-1.jpg'),('/img/estafas/estafa-2-2.jpg')],

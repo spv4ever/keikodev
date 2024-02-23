@@ -35,7 +35,7 @@ def index() -> rx.Component:
         navbar(),
         rx.chakra.center(
             rx.chakra.vstack(
-                header(live=PageState.is_live[0]),
+                header(live_status=PageState.live_status),
                 index_links(),
                 spacing=Size.DEFAULT.value,
                 max_width=styles.MAX_WIDTH,

@@ -24,7 +24,7 @@ class nasaApi():
     
 
     def tomaFoto(self, fecha):
-        fecha = "2024-01-28"
+        fecha = "2024-02-22"
         if fecha == "":
             fecha = datetime.datetime.now().date()
         else:
@@ -43,7 +43,7 @@ class nasaApi():
 
             except requests.RequestException as e:
                 print("Error al hacer la solicitud a la API de la NASA:", e)
-
+            #print(raw_response)
             carga_ok = False
             if raw_response:
                 try:
@@ -52,7 +52,7 @@ class nasaApi():
                     # Verifica si es un diccionario (JSON)
                     if isinstance(response_dict, dict):
                         # Verifica si el código de estado es 400
-                        if response_dict.get("code") == 404:
+                        if response_dict.get("code") == 404 or response_dict.get("code") == 400:
                             fecha = fecha - datetime.timedelta(days=1)
                             fecha_str = fecha.strftime('%Y-%m-%d')
                             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text  
