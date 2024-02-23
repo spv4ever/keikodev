@@ -1,29 +1,28 @@
 import reflex as rx
-
 import keikodev.utils as utils
 from keikodev.componentes.navbar import navbar
 from keikodev.views.footer_resp import footer_resp
 from keikodev.routes import Route
-from keikodev.views.kodi.kodi_pc_details import kodi_pc_details as kodi_pc_details
+from keikodev.views.kodi.kodi_addons_tvchopo import kodi_addons_tvchopo
 import keikodev.styles.styles as styles
 from keikodev.state.PageState import PageState
-from keikodev.views.kodi.kodi_trucos_details import kodi_trucos_details
 
 @rx.page(
-    route=Route.KODI_TRUCOS.value,
-    title=utils.kodi_trucos_title,
-    description=utils.kodi_trucos_description,
+    route=Route.KODI_TVCHOPO.value,
+    title=utils.kodi_title, 
+    description=utils.kodi_description,
     image= utils.preview,
-    meta=utils.kodi_trucos_meta,
+    meta=utils.kodi_meta,
+    
     
 )
 
-def kodi_trucos()-> rx.Component:
+def kodi_tvchopo()-> rx.Component:
     return rx.chakra.vstack(
         utils.lang(),
         navbar(),
         rx.chakra.center(
-            kodi_trucos_details(),
+            kodi_addons_tvchopo(),
             max_width=styles.CONTENT_WIDTH,
             ),
         footer_resp(),

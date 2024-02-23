@@ -22,6 +22,24 @@ def trucos_details()->rx.Component:
             margin_bottom = Size.BIG.value,
         ),
 
+        card(url="https://www.ilovepdf.com/es", title="Web para trabajar con documentos PDF", 
+                lista_imagenes=[('/img/trucos/trucos-4-1.png')],
+                body="""Herramienta web para hacer todo lo que necesites con documentos PDF, cambiar, transformar, firmar, pasar a otros formatos y todo gratis""",
+                color=TextColor.PRIMARY, 
+                badge_text="Herramientas Web", 
+                featured=False, external=True
+                ),
+
+        card(url="https://www.ventoy.net/en/index.html", title="Herramienta para crear usb multiboot", 
+                lista_imagenes=[('/img/trucos/trucos-3-1.png'),('/img/trucos/trucos-3-2.png')],
+                body="""Herramienta muy últl para preparar un pendrive con multiples sistemas operativo para arrancar. El procedimiento es muy simple. 
+                 Descargamos de la página oficial, descomprimimos y ejecutamos. Nos preguntar por la unidad donde está el pendrive y procederá a preparalo.
+                   Una vez que esté listo, simplemente compiando las ISOs que querramos será suficiente. Arrancamos desde el USB y nos aparecerá el menú multiboot""",
+                color=TextColor.PRIMARY, 
+                badge_text="Herramientas PC", 
+                featured=False, external=True
+                ),
+
         card(url="https://www.hdd-tool.com/index.html", title="La mejor herramienta de clonación de discos duros... Gratis", 
                 lista_imagenes=[('/img/trucos/trucos-2-1.jpg'),('/img/trucos/trucos-2-2.jpg')],
                 body="""Hoy traigo una herramienta para clonar discos duros que me ha solucionado un problema. Se llama Niubi y

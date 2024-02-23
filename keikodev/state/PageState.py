@@ -9,7 +9,7 @@ from keikodev.models.live import Live
 import json
 import datetime as dt
 
-USER = "mouredev"
+USER = "afor_digital"
 
 class PageState(rx.State):
         
@@ -27,9 +27,9 @@ class PageState(rx.State):
 
 
         async def check_live(self):
-                print("pidiendo estado")
+                #print("pidiendo estado")
                 self.live_status = await live(USER)
-                print(self.live_status)
+                #print(self.live_status)
 
         async def tomaFoto(self,date):
                 url = await foto(date)
@@ -43,7 +43,7 @@ class PageState(rx.State):
                         self.hdurl = item["hdurl"]
 
         async def galeria_fotos_load(self):
-                print("entrando por galeria")
+                #print("entrando por galeria")
                 self.galeria_fotos_db = await galeria_load()
                 keys = ["id","date","url","title","explanation","hdurl","copyright", "media_type"]
                 galeria_json = []

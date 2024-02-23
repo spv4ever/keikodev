@@ -4,7 +4,7 @@ from keikodev.styles.colors import Color as Color
 from keikodev.styles.colors import TextColor as TextColor
 import keikodev.styles.styles as styles
 from keikodev.state.fotoNasa import Image_Load as Image_Load
-from keikodev.state.PageState2 import PageState as PageState
+from keikodev.state.PageState import PageState as PageState
 from keikodev.componentes.card import card as card
 #from keikodev.state.alllinks import Alllinks
 from keikodev.models.Nasalink import Nasalink

@@ -11,7 +11,7 @@ import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 from keikodev.views.galeria_links import galeria_links
 from keikodev.state.ModalState import ModalState
-from keikodev.state.PageState2 import PageState as PageState
+from keikodev.state.PageState import PageState as PageState
 
 
 

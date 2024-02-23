@@ -9,7 +9,7 @@ from keikodev.views.dev_links import dev_links
 from keikodev.views.footer import footer
 from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
-from keikodev.state.PageState2 import PageState
+from keikodev.state.PageState import PageState
 #from keikodev.data.data_galeria_nasa import items_galeria
 from keikodev.views.privacidad_details import privacidad_details
 

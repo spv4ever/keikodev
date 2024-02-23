@@ -24,7 +24,7 @@ class TwitchAPI:
                 "grant_type" : "client_credentials"
             }
         )
-        print(response.json()) #Revisar respuesta de token
+        #print(response.json()) #Revisar respuesta de token
         if response.status_code == 200:
             data = response.json()
             self.token = data["access_token"]
@@ -39,7 +39,7 @@ class TwitchAPI:
     
 
     def live(self, user: str)-> bool:
-        print(self.token_valid())
+        #print(self.token_valid())
         if not self.token_valid():
             print("token no válido")
             self.generate_token()

@@ -20,6 +20,9 @@ from keikodev.pages.cursos import cursos
 from keikodev.pages.trucos import trucos
 from keikodev.pages.kodi_trucos import kodi_trucos
 from keikodev.pages.google_auth import index_login
+from google.auth.transport import requests
+from google.oauth2.id_token import verify_oauth2_token
+import dotenv
 
 from keikodev.api.api import repo as repo
 from keikodev.api.api import live as live
@@ -30,10 +33,7 @@ import functools
 import json
 import os
 import time
-from google.auth.transport import requests
-from google.oauth2.id_token import verify_oauth2_token
 from .pages.react_oauth_google import GoogleOAuthProvider, GoogleLogin
-import dotenv
 from keikodev.componentes.adsscript import ads_script
 
 dotenv.load_dotenv()

@@ -6,6 +6,7 @@ import keikodev.views.constants as constants
 from keikodev.routes import Route
 from keikodev.pages.kodi_kodivertido import kodi_kodivertido
 from keikodev.pages.kodi_cristalazul import kodi_cristalazul
+from keikodev.pages.kodi_tvchopo import kodi_tvchopo
 
 from keikodev.pages.google_auth import require_google_login
 
@@ -52,10 +53,16 @@ def kodi_links()-> rx.Component:
                 linkbutton("Instalación de Addon Tv Chopo",
                 "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
                 "/img/kodi2.png",
-                Route.CONSTR.value,
+                Route.KODI_TVCHOPO.value,
                 is_external=False
                 ),
                 linkbutton("Instalación de Addon Balandro",
+                "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
+                "/img/kodi2.png",
+                Route.CONSTR.value,
+                is_external=False
+                ),
+                linkbutton("Instalación de Addon Arrow Negra",
                 "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
                 "/img/kodi2.png",
                 Route.CONSTR.value,

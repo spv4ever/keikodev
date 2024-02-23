@@ -5,7 +5,7 @@ from keikodev.views.footer_resp import footer_resp
 from keikodev.routes import Route
 from keikodev.views.kodi.kodi_addons_cristalazul import kodi_addons_cristalazul
 import keikodev.styles.styles as styles
-from keikodev.state.PageState2 import PageState
+from keikodev.state.PageState import PageState
 
 @rx.page(
     route=Route.KODI_CRISTALAZUL.value,

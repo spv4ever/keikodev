@@ -6,7 +6,7 @@ import keikodev.styles.styles as styles
 import keikodev.views.constants as const
 from keikodev.routes import Route
 from keikodev.componentes.main_menu import main_menu as main_menu
-from keikodev.state.PageState2 import PageState as PageState
+from keikodev.state.PageState import PageState as PageState
 from keikodev.state.alllinks import Alllinks
 from keikodev.state.fotoNasa import fotoNasa as fotoNasa
 from keikodev.state.ModalState import ModalStateFull

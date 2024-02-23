@@ -10,7 +10,7 @@ from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
 from keikodev.componentes.ant_components import Float_Button
 from keikodev.componentes.ant_components import FloatButton
-from keikodev.state.PageState2 import PageState as PageState
+from keikodev.state.PageState import PageState as PageState
 
 @rx.page(
     route=Route.DEV.value,
