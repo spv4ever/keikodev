@@ -25,6 +25,7 @@ from keikodev.api.api import repo as repo
 from keikodev.api.api import live as live
 from keikodev.api.api import hello as hello
 from keikodev.api.api import foto as foto
+from keikodev.api.api import consultaDB as consultaDB
 import functools
 import json
 import os
@@ -153,8 +154,10 @@ app = rx.App(
 )
 
 app.api.add_api_route("/hello",hello)
+app.api.add_api_route("/db",consultaDB)
 app.api.add_api_route("/repo", repo)
 app.api.add_api_route("/live/{user}", live)
+
 # app.api.add_api_route("/foto", foto)
 
 

@@ -49,6 +49,13 @@ async def fotoFTP(fecha):
 async def galeria_load() -> list:
     return DB_API.select("nasa_imagenes")
 
+async def consultaDB() -> list:
+    return DB_API.select("nasa_imagenes")
+
+
+
+
+
 
 
 
