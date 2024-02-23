@@ -9,7 +9,7 @@ from keikodev.componentes.ant_components import Float_Button
 import keikodev.utils as utils
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
-from keikodev.state.PageState import PageState
+from keikodev.state.PageState2 import PageState
 from keikodev.views.trucos_details import trucos_details
 
 
@@ -20,7 +20,7 @@ from keikodev.views.trucos_details import trucos_details
     description=utils.trucos_description,
     image= utils.preview,
     meta=utils.dev_meta,
-    on_load=PageState.check_live,
+    
 
 )
 

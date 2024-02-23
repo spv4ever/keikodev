@@ -1,12 +1,8 @@
 import reflex as rx
-#from keikodev.api.supabase import SupabaseApi
-# from keikodev.api.db import Database
 
-# class Alllinks(rx.State):
-#     json_output: list
+class Alllinks(rx.State):
 
-#     async def obteneralllinks(self):
-#         supabase_api = SupabaseApi()
-#         response = supabase_api.allLinks()
-        
-        #print(response)
+        count: int = 0
+
+        def increment(self):
+                self.count += 1

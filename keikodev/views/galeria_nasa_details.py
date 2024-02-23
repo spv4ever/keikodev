@@ -15,7 +15,7 @@ from keikodev.api.funciones import dameUltimosCincoDias as dameUltimosCincoDias
 from keikodev.componentes.card_galery import card_galery
 # from keikodev.data.data_galeria_nasa import Datagalerianasa
 # from keikodev.data.reflex_class import Datagalerianasarx
-from keikodev.state.PageState import PageState
+from keikodev.state.PageState2 import PageState
 
 
 def galeria_nasa_details()->rx.Component:

@@ -11,7 +11,7 @@ import keikodev.utils as utils
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 from keikodev.views.kodi_links import kodi_links
-from keikodev.state.PageState import PageState
+from keikodev.state.PageState2 import PageState
 import functools
 from keikodev.pages.google_auth import require_google_login
 
@@ -22,7 +22,7 @@ from keikodev.pages.google_auth import require_google_login
     description=utils.kodi_description,
     image= utils.preview,
     meta=utils.dev_meta,
-    on_load=PageState.check_live,
+    
 
 )
 

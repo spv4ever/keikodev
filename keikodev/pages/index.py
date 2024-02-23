@@ -11,21 +11,22 @@ from keikodev.routes import Route
 from keikodev.api.api import live
 from keikodev.api.api import repo
 from keikodev.api.api import foto
-from keikodev.state.PageState import PageState as PageState
+from keikodev.state.PageState2 import PageState as PageState
 from keikodev.state.fotoNasa import  fotoNasa as fotoNasa
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.models.Nasalink import Nasalink
 from keikodev.state.ModalState import modal_small
 from keikodev.componentes.adsscript import ads_script
+from keikodev.state.alllinks import Alllinks
 
 @rx.page(
     route=Route.INDEX.value,
     title=utils.index_title,
     description=utils.index_description,
-    image= utils.preview,
+    image=utils.preview,
     meta=utils.index_meta,
-    on_load = PageState.galeria_fotos_load,
-    
+    on_load=[PageState.galeria_fotos_load, PageState.check_live]
+
 )
 
 def index() -> rx.Component:
@@ -35,7 +36,7 @@ def index() -> rx.Component:
         navbar(),
         rx.chakra.center(
             rx.chakra.vstack(
-                header(True, live_status=PageState.live_status),
+                header(live_status = PageState.live_status),
                 index_links(),
                 spacing=Size.DEFAULT.value,
                 max_width=styles.MAX_WIDTH,

@@ -10,7 +10,7 @@ from keikodev.routes import Route
 from keikodev.componentes.ant_components import Float_Button
 from keikodev.componentes.ant_components import FloatButton
 from keikodev.views.utils_images_links import utils_images_links
-from keikodev.state.PageState import PageState as PageState
+from keikodev.state.PageState2 import PageState as PageState
 
 
 @rx.page(
@@ -19,7 +19,7 @@ from keikodev.state.PageState import PageState as PageState
     description=utils.utils_images_description,
     image= utils.preview,
     meta=utils.utils_images_meta,
-    on_load=PageState.check_live,
+    
 )
 
 def utils_images() -> rx.Component:

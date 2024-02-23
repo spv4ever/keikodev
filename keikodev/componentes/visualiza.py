@@ -1,7 +1,7 @@
 import reflex as rx
 from keikodev.styles.colors import Color as Color, TextColor
 from keikodev.state.ModalState import ModalStateFull as ModalStateFull
-from keikodev.state.PageState import PageState as PageState
+from keikodev.state.PageState2 import PageState as PageState
 import keikodev.styles.styles as styles
 
 

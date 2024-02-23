@@ -6,7 +6,7 @@ from keikodev.views.footer_resp import footer_resp
 from keikodev.routes import Route
 from keikodev.views.kodi.kodi_pc_details import kodi_pc_details as kodi_pc_details
 import keikodev.styles.styles as styles
-from keikodev.state.PageState import PageState
+from keikodev.state.PageState2 import PageState
 
 @rx.page(
     route=Route.KODI_PC.value,
@@ -14,7 +14,7 @@ from keikodev.state.PageState import PageState
     description=utils.kodi_pc_description,
     image= utils.preview,
     meta=utils.kodi_pc_meta,
-    on_load=PageState.check_live
+    
 )
 
 def kodi_pc()-> rx.Component:
