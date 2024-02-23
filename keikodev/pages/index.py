@@ -24,7 +24,7 @@ from keikodev.componentes.adsscript import ads_script
     description=utils.index_description,
     image= utils.preview,
     meta=utils.index_meta,
-    on_load = [PageState.check_live],
+    on_load = [PageState.galeria_fotos_load, PageState.check_live],
     
 )
 
