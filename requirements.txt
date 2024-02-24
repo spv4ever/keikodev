@@ -1,6 +1,6 @@
+google-auth==2.28.1
+mysql-connector-python==8.3.0
+paramiko==3.4.0
+pip==24.0
+python-dotenv==1.0.1
 reflex==0.4.1
-python-dotenv
-mysql-connector-python
-paramiko
-google-auth[requests]
-

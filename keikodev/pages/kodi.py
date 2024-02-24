@@ -38,7 +38,7 @@ def kodi() -> rx.Component:
             ),
         rx.chakra.center(
             rx.chakra.vstack(
-                header(False),
+                #header(False),
                 kodi_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",

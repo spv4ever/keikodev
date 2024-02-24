@@ -9,6 +9,7 @@ from keikodev.styles.fonts import Fuentes as Fuentes
 from keikodev.componentes.ant_components import Float_Button 
 import keikodev.utils as utils
 import keikodev.views.constants as const
+from keikodev.componentes.temas_legales import privacy_policy_link, privacy_policy_script, cookie_policy_link, iubenda_script, iubenda_external_scripts, iubenda_script_cookies
 
 
 def footer()-> rx.Component:
@@ -46,17 +47,14 @@ def footer()-> rx.Component:
                          target='_blank',
                         #disabled = False,
                          ),
-                rx.chakra.hstack(
-                    rx.chakra.link(
-                        rx.chakra.text("Política de privacidad",
-                                font_size = Size.MEDIUM.value),
-                        href=Route.PRIVACIDAD.value,
-                    ),
-                    rx.chakra.link(
-                        rx.chakra.text("Política de cookies",
-                                font_size = Size.MEDIUM.value),
-                        href=Route.COOKIES.value,
-                    ),
+                rx.chakra.vstack(
+                    privacy_policy_link(),
+                    privacy_policy_script(),
+                    cookie_policy_link(),
+                    iubenda_script(),
+                    iubenda_external_scripts(),
+                    iubenda_script_cookies(),
+
                 ),
                 #margin_bottom=Size.BIG.value,
                 padding_bottom = Size.MEDIUM_BIG.value,

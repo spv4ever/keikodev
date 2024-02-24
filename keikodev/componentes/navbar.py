@@ -13,6 +13,7 @@ from keikodev.state.ModalState import ModalStateFull
 from keikodev.componentes.visualiza import visualiza_modal as visualiza_modal
 import keikodev.utils as utils
 from keikodev.componentes.tutiempo import tutiempo
+from keikodev.componentes.facebook import facebook_like_button
 
 from keikodev.pages.google_auth import protected
 
@@ -46,6 +47,8 @@ def navbar():
                                         href=Route.INDEX.value,
                                 ),
                                 protected(),
+                                rx.spacer(),
+                                facebook_like_button(),
                                 # rx.button('clic me', on_click= Alllinks.increment),
                                 # rx.text(Alllinks.count),
 

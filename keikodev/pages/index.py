@@ -18,6 +18,7 @@ from keikodev.models.Nasalink import Nasalink
 from keikodev.state.ModalState import modal_small
 from keikodev.componentes.adsscript import ads_script
 from keikodev.state.alllinks import Alllinks
+from keikodev.componentes.facebook import facebook_sdk
 
 @rx.page(
     route=Route.INDEX.value,
@@ -32,7 +33,8 @@ from keikodev.state.alllinks import Alllinks
 def index() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
-        utils.cookies(),
+        #utils.cookies(),
+        facebook_sdk(),
         navbar(),
         rx.chakra.center(
             rx.chakra.vstack(
