@@ -21,6 +21,7 @@ from keikodev.state.PageState import PageState as PageState
     description=utils.galeria_description,
     image= utils.preview,
     meta=utils.dev_meta,
+    on_load=[PageState.galeria_fotos_load]
     
 )
 

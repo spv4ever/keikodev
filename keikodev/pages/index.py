@@ -34,7 +34,7 @@ def index() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
         #utils.cookies(),
-        facebook_sdk(),
+        #facebook_sdk(),
         navbar(),
         rx.chakra.center(
             rx.chakra.vstack(

@@ -24,7 +24,7 @@ class nasaApi():
     
 
     def tomaFoto(self, fecha):
-        fecha = "2024-02-22"
+        fecha = "2024-02-23"
         if fecha == "":
             fecha = datetime.datetime.now().date()
         else:
@@ -36,7 +36,7 @@ class nasaApi():
         resultado = mysql_api.where("nasa_imagenes",f"fecha='{fecha}'")
 
         if not resultado:
-            #print("Resultado ",resultado)
+            print("Resultado ",resultado)
             fecha_str = fecha.strftime('%Y-%m-%d')
             try:
                 raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text

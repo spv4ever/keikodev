@@ -25,7 +25,8 @@ from keikodev.data.data_galeria_nasa import Datagalerianasa
     title=utils.galeria_nasa_title,
     description=utils.galeria_nasa_description,
     image= utils.preview,
-    meta=utils.dev_meta
+    meta=utils.dev_meta,
+    on_load=[PageState.galeria_fotos_load]
     
 )
 
