@@ -46,9 +46,9 @@ def navbar():
                                         ), 
                                         href=Route.INDEX.value,
                                 ),
-                                protected(),
+                                #protected(),
                                 #rx.spacer(),
-                                facebook_like_button(),
+                                #facebook_like_button(),
                                 
                                 # rx.button('clic me', on_click= Alllinks.increment),
                                 # rx.text(Alllinks.count),
