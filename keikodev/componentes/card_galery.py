@@ -4,11 +4,12 @@ from keikodev.styles.fonts import Fuentes
 from keikodev.styles.colors import Color, TextColor
 from keikodev.styles.styles import Size
 from keikodev.state.ModalState import ModalStateFull
-#from keikodev.state.PageState import PageState
+from keikodev.state.PageState import PageState
+from keikodev.data.reflex_class import Datagalerianasarx
 
 
 
-def card_galery(data)-> rx.Component:
+def card_galery(data: Datagalerianasarx)-> rx.Component:
     return rx.chakra.box(
                 rx.chakra.vstack(
                     rx.chakra.box(

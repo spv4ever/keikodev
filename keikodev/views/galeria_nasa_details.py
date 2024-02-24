@@ -34,11 +34,11 @@ def galeria_nasa_details()->rx.Component:
                     # *[
                     #     card_galery(data,
                     #     )
-                    #     for index, data in enumerate(date_income)
+                    #     for index, data in enumerate(PageState.galeria_fotos)
                         
                     # ],
                 rx.foreach(PageState.galeria_fotos, card_galery),
-                
+                #rx.text(PageState.galeria_fotos),
                 columns=[1,2,3,4],
                 spacing = "4"
             ),
