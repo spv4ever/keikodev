@@ -67,7 +67,7 @@ BASE_STYLE = {
 
 container_style = {
     "width" : "100%",
-    "padding": Size.MEDIUM_BIG.value,
+    "padding": Size.DEFAULT.value,
     "border_radius": "1.5rem",
     "background": Color.CONTENT.value,
     "_hover": {
