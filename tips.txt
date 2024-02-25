@@ -37,3 +37,126 @@ https://keywordsheeter.com/
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7920736444321179"
      crossorigin="anonymous"></script>
+
+     import reflex as rx
+
+class AppState(rx.State):
+    current_view: rx.Component = rx.text("Default content")
+
+def load_content(component: rx.Component):
+    AppState.current_view = component
+
+def menu():
+    return rx.accordion.root(
+        rx.accordion.item(
+            header="Menu Option 1",
+            content=rx.button("Load Option 1 Content", on_click=lambda: load_content(rx.text("Option 1 content"))),
+        ),
+        rx.accordion.item(
+            header="Menu Option 2",
+            content=rx.button("Load Option 2 Content", on_click=lambda: load_content(rx.text("Option 2 content"))),
+        ),
+        # Add additional menu options and content loaders here
+    )
+
+def middle_section():
+    return rx.box(
+        AppState.current_view,
+        # Other properties for styling and layout can be added here
+    )
+
+def index():
+    return rx.hstack(
+        menu(),
+        middle_section(),
+        # Apply necessary styling or layout properties here
+    )
+
+app = rx.App()
+app.add_page(index)
+app.compile()
+
+import reflex as rx
+
+def index():
+    return rx.accordion.root(
+        rx.accordion.item(
+            header="Menu 1",
+            content=rx.chakra.menu(
+                rx.chakra.menu_button("Menu 1 Options"),
+                rx.chakra.menu_list(
+                    rx.chakra.menu_item("Option 1.1"),
+                    rx.chakra.menu_item("Option 1.2"),
+                    # Additional menu items...
+                ),
+            ),
+        ),
+        rx.accordion.item(
+            header="Menu 2",
+            content=rx.chakra.menu(
+                rx.chakra.menu_button("Menu 2 Options"),
+                rx.chakra.menu_list(
+                    rx.chakra.menu_item("Option 2.1"),
+                    rx.chakra.menu_item("Option 2.2"),
+                    # Additional menu items...
+                ),
+            ),
+        ),
+        # More accordion items as needed...
+    )
+
+app = rx.App()
+app.add_page(index)
+app.compile()
+
+import reflex as rx
+
+def sidebar():
+    return rx.vstack(
+        rx.button("Option 1", on_click=lambda: print("Option 1")),
+        rx.button("Option 2", on_click=lambda: print("Option 2")),
+        # Add more menu options here
+        position="fixed",
+        height="100%",
+        left="0px",
+        top="0px",
+        z_index="5",
+        padding_x="2em",
+        padding_y="1em",
+        background_color="lightgray",
+        align_items="left",
+        width="250px",
+    )
+
+def content():
+    return rx.box(
+        rx.text("Content based on selected menu option will go here."),
+        # Display the content based on the selected menu option
+    )
+
+def index():
+    return rx.fragment(
+        sidebar(),
+        rx.container(
+            content(),
+            max_width="60em",
+            margin_left="250px",
+            padding="2em",
+        ),
+    )
+
+app = rx.App()
+app.add_page(index)
+app.compile()
+
+
+class StateExample(rx.State):
+    condition_one: bool = True
+    condition_two: bool = False
+
+def complex_conditional_rendering():
+    return rx.cond(
+        StateExample.condition_one & ~StateExample.condition_two,
+        rx.text("This text is visible when condition_one is True and condition_two is False"),
+        rx.text("This text is shown when the combined condition is False"),
+    )

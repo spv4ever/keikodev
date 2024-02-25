@@ -58,6 +58,12 @@ def index_links()-> rx.Component:
             constants.MG_URL,
             is_external=True),
 
+        linkbutton("Sección de recetas de cocina",
+            "Sección del canal de youtube keikodev Recetas",
+            "/img/images.svg",
+            Route.COCINA.value,
+            is_external=False),
+
         linkbutton("Biblioteca de imágenes",
             "Crear biblioteca de imágenes con fotografía propia",
             "/img/images.svg",

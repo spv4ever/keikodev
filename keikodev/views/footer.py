@@ -61,7 +61,7 @@ def footer()-> rx.Component:
                 color = TextColor.FOOTER.value,
                 font_family = Fuentes.DEFAULT.value,
     ),
-    
+    width = "100%",
     bg = Color.IMAGE_BOX.value,
     #height = "400px"
 

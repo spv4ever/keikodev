@@ -20,9 +20,11 @@ from keikodev.pages.cursos import cursos
 from keikodev.pages.trucos import trucos
 from keikodev.pages.kodi_trucos import kodi_trucos
 from keikodev.pages.google_auth import index_login
+from keikodev.pages.cocina import cocina
 from keikodev.state.PageState import PageState
 from google.auth.transport import requests
 from google.oauth2.id_token import verify_oauth2_token
+
 import dotenv
 
 from keikodev.api.api import repo as repo

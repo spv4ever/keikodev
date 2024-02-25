@@ -46,8 +46,8 @@ def galeria_nasa_details()->rx.Component:
         
         rx.chakra.text("Imagenes del día cedidas por la NASA",
                     color = TextColor.PRIMARY.value),
-        rx.chakra.text("Todas las imagenes publicadas han sido revisadas y son de uso libre sin copyright del autor",
-                    color = TextColor.PRIMARY.value),
+        #rx.chakra.text("Todas las imagenes publicadas han sido revisadas y son de uso libre sin copyright del autor",
+        #            color = TextColor.PRIMARY.value
         
         spacing=Size.BIG.value,
         padding = Size.MEDIUM.value,

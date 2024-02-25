@@ -31,17 +31,17 @@ class PageState(rx.State):
                 self.live_status = await live(USER)
                 #print(self.live_status)
 
-        async def tomaFoto(self,date):
+        async def tomaFoto(self):
                 print("Actualizando fotos")
-                url = await foto(date)
-                is_valid, json_data = url
-                data = json.loads(json_data)
-                for item in data:
-                        self.date = item["date"]
-                        self.url = item["url"]
-                        self.title = item["title"]
-                        self.explanation = item["explanation"]
-                        self.hdurl = item["hdurl"]
+                url = await foto()
+                # is_valid, json_data = url
+                # data = json.loads(json_data)
+                # for item in data:
+                #         self.date = item["date"]
+                #         self.url = item["url"]
+                #         self.title = item["title"]
+                #         self.explanation = item["explanation"]
+                #         self.hdurl = item["hdurl"]
 
         async def galeria_fotos_load(self):
                 print("entrando por galeria")

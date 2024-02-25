@@ -13,7 +13,7 @@ from keikodev.pages.google_auth import require_google_login
 #@require_google_login
 def kodi_links()-> rx.Component:
         return rx.chakra.vstack(
-                title("Manuales Kodi"),
+                title("Sección dedicada a Kodi"),
                 linkbutton("Instalación en Windows y Android TV",
                 "Primeros pasos para la instalación de kodi en Windows y Android TV.",
                 "/img/windows.svg",

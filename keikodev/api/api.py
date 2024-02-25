@@ -37,8 +37,8 @@ async def live(user: str) -> Live:
     return TWITCH_API.live(user)
 
 
-async def foto(fecha):
-    return NASA_API.tomaFoto(fecha)
+async def foto():
+    return NASA_API.tomaFoto()
 
 async def fotoFTP(fecha):
     return NASA_API.fotoFTP(fecha)

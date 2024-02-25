@@ -10,7 +10,6 @@ from keikodev.componentes.card import card as card
 from keikodev.models.Nasalink import Nasalink
 from keikodev.data.data_galeria_nasa import Datagalerianasa
 #from keikodev.data.data_galeria_nasa import items_galeria
-from typing import List
 from keikodev.componentes.card_galery import card_galery
 
 
@@ -25,25 +24,7 @@ def construccion()->rx.Component:
             src="/en-construccion.webp.png",
         ),
         
-        rx.chakra.button("clic me",
-                  on_click=PageState.tomaFoto("2024-02-08")
-        ),
-        rx.chakra.vstack(
-            rx.chakra.responsive_grid(
-                
-                    # *[
-                    #     card_galery(data,
-                    #     )
-                    #     for index, data in enumerate(date_income)
-                    # ],
-                
-                columns=[1,2,3,4],
-                spacing = "6"
-            ),
-        ),
         
-        
-        rx.chakra.image(src=PageState.hdurl),
 
         width = "100%",
     )

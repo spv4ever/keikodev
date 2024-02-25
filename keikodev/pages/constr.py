@@ -12,8 +12,7 @@ from keikodev.routes import Route
 from keikodev.state.PageState import PageState
 #from keikodev.data.data_galeria_nasa import items_galeria
 from keikodev.componentes.adsscript import ads_script
-
-
+from keikodev.views.galeria_nasa_details import galeria_nasa_details
 
 @rx.page(
     route=Route.CONSTR.value,
@@ -21,10 +20,8 @@ from keikodev.componentes.adsscript import ads_script
     title=utils.constr_title,
     description=utils.constr_description,
     image= utils.preview,
-    meta=utils.dev_meta,
+    meta=utils.dev_meta,)
     
-
-)
 
 def constr() -> rx.Component:
     return rx.chakra.box(

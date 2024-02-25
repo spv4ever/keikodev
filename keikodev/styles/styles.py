@@ -19,6 +19,7 @@ CONTENT_GALERY = "100%"
 # Sizes
 class Size(Enum):
     ZERO = '0px !important'
+    VERY_XS = "0.1em"
     VERY_SMALL = "0.2em"
     SMALL = "0.5em"
     SMALL_LARGE = "0.7em"
@@ -30,6 +31,9 @@ class Size(Enum):
     DEFAULT_BIG = "1.5em"
     MEDIUM_BIG = "3em"
     VERY_BIG = "6em"
+
+class SizeRx(Enum):
+    DEFAULT = "6"
 
 # Styles
 BASE_STYLE = {
@@ -62,6 +66,7 @@ BASE_STYLE = {
 }
 
 container_style = {
+    "width" : "100%",
     "padding": Size.MEDIUM_BIG.value,
     "border_radius": "1.5rem",
     "background": Color.CONTENT.value,
@@ -86,6 +91,11 @@ background_pattern_style = {
     "background-size": "120px 120px",
 }
 
+background_gradient_pattern_style = {
+    "background": f"linear-gradient(to bottom, rgb(0, 0, 0, 0) 60%, {Color.IMAGE_BOX.value} 100%)",
+    "background-size": "120px 120px",
+}
+
 button_title_style = dict(
     font_family=Fuentes.TITLE.value,
     font_size = Size.DEFAULT.value,
@@ -95,6 +105,13 @@ button_title_style = dict(
 button_body_style = dict(
     font_family=Fuentes.DEFAULT.value,
     font_size = Size.SMALL_LARGE.value,
+    color=TextColor.BODY.value,
+    text_align = "start"
+)
+
+receta_style = dict(
+    font_family=Fuentes.DEFAULT.value,
+    font_size = Size.DEFAULT.value,
     color=TextColor.BODY.value,
     text_align = "start"
 )

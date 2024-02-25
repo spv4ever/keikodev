@@ -23,8 +23,8 @@ class nasaApi():
     tabla = "nasa_imagenes"
     
 
-    def tomaFoto(self, fecha):
-        fecha = "2024-02-23"
+    def tomaFoto(self, fecha=""):
+        #fecha = "2024-02-12"
         if fecha == "":
             fecha = datetime.datetime.now().date()
         else:
@@ -56,7 +56,7 @@ class nasaApi():
                             fecha = fecha - datetime.timedelta(days=1)
                             fecha_str = fecha.strftime('%Y-%m-%d')
                             raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text  
-                            carga_ok = True
+                            carga_ok = False
                         else:
                             # Verifica si la clave "fecha" está presente
                             if "date" in response_dict:
@@ -91,18 +91,18 @@ class nasaApi():
                     self.copyright = self.response['copyright']
                 else:
                     self.copyright = ""
-
-            foto_details = {
-                "fecha": self.date,
-                "url": self.url,
-                "titulo": self.title,
-                "descripcion": self.explanation,
-                "hdurl": self.hdurl,
-                "media_type": self.media_type,
-                "copyright" : self.copyright
-            }
-            json_tabla = json.dumps(foto_details)
-            mysql_api.insert("nasa_imagenes",json.loads(json_tabla))
+                foto_details = {
+                    "fecha": self.date,
+                    "url": self.url,
+                    "titulo": self.title,
+                    "descripcion": self.explanation,
+                    "hdurl": self.hdurl,
+                    "media_type": self.media_type,
+                    "copyright" : self.copyright
+                }
+                json_tabla = json.dumps(foto_details)
+                print("Insertando nueva foto")
+                mysql_api.insert("nasa_imagenes",json.loads(json_tabla))
         else:
             print("Dia anterior no insertar")
         

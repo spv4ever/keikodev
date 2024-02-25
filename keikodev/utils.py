@@ -210,3 +210,12 @@ kodi_trucos_meta = [
     {"name": "og:description", "content": kodi_trucos_description},
 ]
 kodi_trucos_meta.extend(_meta)
+
+# kodi trucos
+cocina_title = "Recetas de cocina casera"
+cocina_description = "Canal de youtube keikodev recetas"
+cocina_meta = [
+    {"name": "og:title", "content": cocina_title},
+    {"name": "og:description", "content": cocina_description},
+]
+cocina_meta.extend(_meta)
