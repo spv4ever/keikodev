@@ -28,7 +28,7 @@ def card_galery(data: Datagalerianasarx)-> rx.Component:
                             alt = data.title, 
                             object_fit = "contain",
                             _hover = {"cursor": "zoom-in"},
-                            on_click=ModalStateFull.change(data.hdurl, data.title, data.explanation)
+                            on_click=ModalStateFull.change(data.hdurl, data.title, data.explanation, data.copyright),
                             ),
                     border_width = "2px",
                     border_color = Color.PRIMARY.value,

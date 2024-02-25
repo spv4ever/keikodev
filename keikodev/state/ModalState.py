@@ -41,10 +41,12 @@ class ModalStateFull(rx.State):
     hdurl: str
     title: str
     explanation: str
+    copyright: str
 
-    def change(self, hdurl:str, title:str = "", explanation: str =""):
+    def change(self, hdurl:str, title:str = "", explanation: str ="", copyright: str=""):
         self.show = not (self.show)
         self.hdurl = hdurl
         self.title = title
         self.explanation = explanation
+        self.copyright = copyright
         

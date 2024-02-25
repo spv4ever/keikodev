@@ -30,7 +30,7 @@ def galeria_nasa_details()->rx.Component:
                         font_size=Size.MEDIUM.value,
                         ),
                 ),
-                rx.button("Fotos",on_click=PageState.galeria_fotos_load),
+                #rx.button("Fotos",on_click=PageState.galeria_fotos_load),
             margin_bottom = Size.BIG.value,
             ),
                 rx.chakra.vstack(

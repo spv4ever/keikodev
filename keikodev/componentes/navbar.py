@@ -32,6 +32,7 @@ def navbar():
                                         border="5px solid #555",
                                         box_shadow="lg",
                                         margin_x = Size.DEFAULT.value,
+                                        on_load=PageState.galeria_fotos_load,
                                         ),
                                 rx.chakra.link(
                                         rx.chakra.box(
@@ -79,6 +80,8 @@ def navbar():
                                                                                 height="auto",
                                                                         ),
                                                                         rx.chakra.text(ModalStateFull.title,
+                                                                                color = TextColor.PRIMARY.value),
+                                                                        rx.chakra.text("Copyright: ", ModalStateFull.copyright,
                                                                                 color = TextColor.PRIMARY.value),
                                                                         rx.chakra.text(ModalStateFull.explanation,
                                                                                 color = TextColor.PRIMARY.value),
