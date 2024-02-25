@@ -53,6 +53,14 @@ def main_menu()-> rx.Component:
                                         style=styles.main_menu_style,
                                         
                                         ),
+                                rx.chakra.menu_item(
+                                        rx.chakra.link(
+                                                "Recetas",
+                                                href = Route.COCINA.value,
+                                                ),
+                                        style=styles.main_menu_style,
+                                        
+                                        ),
                                 rx.chakra.menu_divider(),
                                 rx.chakra.menu_item(
                                         rx.chakra.link(
