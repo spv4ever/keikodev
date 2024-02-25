@@ -17,6 +17,9 @@ from keikodev.componentes.card_galery import card_galery
 # from keikodev.data.reflex_class import Datagalerianasarx
 from keikodev.state.PageState import PageState
 
+# test = PageState()
+# test.galeria_fotos_load()
+
 
 def galeria_nasa_details()->rx.Component:
     return rx.chakra.vstack(
@@ -24,8 +27,10 @@ def galeria_nasa_details()->rx.Component:
             rx.chakra.heading(
                 rx.chakra.center('Biblioteca de fotos de la nasa en alta resolución', 
                         font_family= Fuentes.NASA.value,
-                        font_size=Size.MEDIUM.value),
+                        font_size=Size.MEDIUM.value,
+                        ),
                 ),
+                rx.button("Fotos",on_click=PageState.galeria_fotos_load),
             margin_bottom = Size.BIG.value,
             ),
                 rx.chakra.vstack(
