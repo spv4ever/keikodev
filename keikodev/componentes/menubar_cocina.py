@@ -16,7 +16,7 @@ def menubar_cocina()->rx.Component:
         direction="column",
         align="start",
         justify="start",
-        margin_top = "5em"
+        margin_top = "10em"
 
     )
     

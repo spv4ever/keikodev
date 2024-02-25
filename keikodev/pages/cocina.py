@@ -24,7 +24,7 @@ def cocina()-> rx.Component:
         utils.lang(),
         navbar(),
         rx.hstack(
-        #menubar_cocina(),
+        menubar_cocina(),
         rx.chakra.center(
             cocina_details(),
             max_width=styles.CONTENT_WIDTH,
