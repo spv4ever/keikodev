@@ -26,8 +26,6 @@ from keikodev.componentes.facebook import facebook_sdk
     description=utils.index_description,
     image=utils.preview,
     meta=utils.index_meta,
-    on_load=[PageState.galeria_fotos_load, PageState.check_live, PageState.tomaFoto]
-
 )
 
 def index() -> rx.Component:
@@ -50,7 +48,7 @@ def index() -> rx.Component:
         footer(),
         
         
-        
+        on_mount=PageState.check_live,
         style = styles.background_pattern_style,
     )
 

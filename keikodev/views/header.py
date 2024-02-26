@@ -9,7 +9,7 @@ from keikodev.styles.fonts import Fuentes as Fuentes
 import keikodev.styles.styles as styles
 from keikodev.componentes.title import title
 from keikodev.models.live import Live
-
+from keikodev.state.PageState import PageState
 import keikodev.views.constants as const
 
 
@@ -158,6 +158,7 @@ def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
             ),
 
         ),
+        on_mount=PageState.tomaFoto,
         width = "100%",
         font_family = Fuentes.DEFAULT.value,
         spacing=Size.BIG.value,
