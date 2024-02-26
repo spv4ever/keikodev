@@ -14,6 +14,8 @@ from keikodev.componentes.card import card as card
 from keikodev.componentes.receta import receta
 import keikodev.recetas.torrijas as torrijas
 import keikodev.recetas.canelones as canelones
+from keikodev.componentes.menubar_cocina import menubar_cocina
+from keikodev.componentes.menubar_cocina import SelectState3
 
 def cocina_details()->rx.Component:
     return rx.chakra.vstack(
@@ -27,9 +29,18 @@ def cocina_details()->rx.Component:
         steps("""Sección de recetas del canal de youtube Keikodev Recetas, donde publicaremos desde las recetas y secretos más preciados de 
             la familia, hasta cocina tradicional, moderna, rápida, especiales alimentación sana, etc"""),
 
-        receta(title = torrijas.titulo, ingredientes=torrijas.ingredientes, explicacion=torrijas.explicacion, url=torrijas.url, tipo=torrijas.tipo),
-        receta(title = canelones.titulo, ingredientes=canelones.ingredientes, explicacion=canelones.explicacion, url=canelones.url, tipo=canelones.tipo),
+        menubar_cocina(),
+        
+        #rx.text(SelectState3.value),
 
+        rx.cond((SelectState3.value == torrijas.tipo) | (SelectState3.value == "Todas"),
+        receta(title = torrijas.titulo, ingredientes=torrijas.ingredientes, explicacion=torrijas.explicacion, url=torrijas.url, tipo=torrijas.tipo),
+        ),
+        rx.cond((SelectState3.value == canelones.tipo) | (SelectState3.value == "Todas"),
+        receta(title = canelones.titulo, ingredientes=canelones.ingredientes, explicacion=canelones.explicacion, url=canelones.url, tipo=canelones.tipo),
+        ),
+
+        
         spacing=Size.DEFAULT.value,
         padding = Size.MEDIUM.value,
         align_items="Start",

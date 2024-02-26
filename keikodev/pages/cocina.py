@@ -23,12 +23,10 @@ def cocina()-> rx.Component:
     return rx.chakra.vstack(
         utils.lang(),
         navbar(),
-        rx.hstack(
-        menubar_cocina(),
         rx.chakra.center(
             cocina_details(),
             max_width=styles.CONTENT_WIDTH,
-            ),),
+            ),
         footer(),
         style=styles.background_pattern_style,
         #style = styles.background_pattern_style,
