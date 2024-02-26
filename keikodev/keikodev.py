@@ -13,6 +13,7 @@ from keikodev.pages.estafas import estafas
 from keikodev.pages.utils_images import utils_images
 from keikodev.pages.galeria import galeria
 from keikodev.pages.galeria_nasa import galeria_nasa
+from keikodev.pages.galeria_nasa_video import galeria_nasa_video
 from keikodev.pages.emulator import emulator
 from keikodev.pages.cookies import cookies
 from keikodev.pages.privacidad import privacidad

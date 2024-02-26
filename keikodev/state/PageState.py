@@ -1,7 +1,7 @@
 import reflex as rx
 from keikodev.api.api import live
 from keikodev.api.api import foto
-from keikodev.api.api import galeria_load
+from keikodev.api.api import galeria_load, galeria_load_video
 from keikodev.data.data_galeria_nasa import Datagalerianasa
 from keikodev.data.reflex_class import Datagalerianasarx
 from keikodev.componentes.tutiempo import tutiempo
@@ -23,6 +23,8 @@ class PageState(rx.State):
         media_type: str = ""
         galeria_fotos: list[Datagalerianasarx]
         galeria_fotos_db : list[Datagalerianasarx]
+        galeria_videos: list[Datagalerianasarx]
+        galeria_videos_db : list[Datagalerianasarx]
         
 
 
@@ -34,14 +36,6 @@ class PageState(rx.State):
         async def tomaFoto(self):
                 print("Actualizando fotos")
                 url = await foto()
-                # is_valid, json_data = url
-                # data = json.loads(json_data)
-                # for item in data:
-                #         self.date = item["date"]
-                #         self.url = item["url"]
-                #         self.title = item["title"]
-                #         self.explanation = item["explanation"]
-                #         self.hdurl = item["hdurl"]
 
         async def galeria_fotos_load(self):
                 print("entrando por galeria")
@@ -64,6 +58,28 @@ class PageState(rx.State):
                         ]
                 fechas = [item.date for item in self.galeria_fotos]
                 url = [item.url for item in self.galeria_fotos]
+
+        async def galeria_fotos_load_video(self):
+                print("entrando por galeria")
+                self.galeria_videos_db = await galeria_load_video()
+                keys = ["id","date","url","title","explanation","hdurl","copyright", "media_type"]
+                galeria_json = []
+                for lista in self.galeria_videos_db:
+                        galeria_json.append(dict(zip(keys, lista)))
+                self.galeria_videos = [
+                        Datagalerianasarx(
+                                date=item["date"].strftime("%Y-%m-%d"), 
+                                url=item["url"],
+                                title=item["title"],
+                                explanation=item["explanation"],
+                                hdurl = item["hdurl"],
+                                copyright = item["copyright"],
+                                media_type = item["media_type"]
+                                ) 
+                                for item in galeria_json
+                        ]
+                fechas = [item.date for item in self.galeria_videos]
+                url = [item.url for item in self.galeria_videos]
                 
                 
         

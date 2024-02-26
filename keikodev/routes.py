@@ -12,6 +12,7 @@ class Route(Enum):
     ESTAFAS = "/estafas"
     GALERIA = "/galeria"
     GALERIA_NASA = "/galeria_nasa"
+    GALERIA_NASA_VIDEO = "galeria_nasa_video"
     EMULATOR = "/emulator"
     COOKIES = "/cookies"
     PRIVACIDAD = "/privacidad"

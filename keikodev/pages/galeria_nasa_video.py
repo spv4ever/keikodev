@@ -13,23 +13,22 @@ from keikodev.views.galeria_links import galeria_links
 from keikodev.state.ModalState import ModalState
 from keikodev.state.PageState import PageState as PageState
 #from keikodev.state.alllinks import Alllinks
-from keikodev.views.galeria_nasa_details import galeria_nasa_details
+from keikodev.views.galeria_nasa_video_details import galeria_nasa_video_details
 #from keikodev.data.data_galeria_nasa import items_galeria
-from keikodev.data.data_galeria_nasa import Datagalerianasa
+#from keikodev.data.data_galeria_nasa import Datagalerianasa
 
 
 
 
 @rx.page(
-    route=Route.GALERIA_NASA.value,
+    route=Route.GALERIA_NASA_VIDEO.value,
     title=utils.galeria_nasa_title,
     description=utils.galeria_nasa_description,
     image= utils.preview,
-    meta=utils.dev_meta,
-    
+    meta=utils.dev_meta,    
 )
 
-def galeria_nasa() -> rx.Component:
+def galeria_nasa_video() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
         navbar(),
@@ -40,15 +39,17 @@ def galeria_nasa() -> rx.Component:
             ),
         rx.chakra.center(
             rx.chakra.vstack(
-                galeria_nasa_details(),
+                galeria_nasa_video_details(),
                 max_width=styles.CONTENT_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value,
-                on_mount=PageState.galeria_fotos_load,
+                
+                on_mount=PageState.galeria_fotos_load_video,
                 ),
                 style=styles.background_gradient_style,
 
             ),
         footer(),
+        
         style = styles.background_pattern_style,
     )

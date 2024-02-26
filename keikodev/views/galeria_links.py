@@ -21,6 +21,12 @@ def galeria_links()-> rx.Component:
                 Route.GALERIA_NASA.value,
                 is_external=False,
                 ),
+                linkbutton("Videos de La Nasa",
+                "Recopilación de videos desde la Nasa",
+                "/img/shuttle-space-solid.svg",
+                Route.GALERIA_NASA_VIDEO.value,
+                is_external=False,
+                ),
 
 
 
