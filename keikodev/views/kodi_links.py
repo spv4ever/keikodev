@@ -1,4 +1,5 @@
 import reflex as rx
+import keikodev.data.anuncios as anuncios
 from keikodev.componentes.linkbutton import linkbutton
 from keikodev.componentes.title import title
 from keikodev.styles.styles import Size as Size
@@ -36,10 +37,10 @@ def kodi_links()-> rx.Component:
 
                 rx.link(
                         rx.image(
-                                src='/img/xiaomi.gif',
+                                src=anuncios.anuncio_kodi_imagen,
                                 border_radius="15px",
                         ),
-                        href="https://www.amazon.es/Xiaomi-Box-2nd-Gen-procesador/dp/B0C1DJWGYV?crid=R57GB4XBUFHV&dib=eyJ2IjoiMSJ9.f0xFT-wMbQk7B6HftgmqbFGXQ6ZhCj_zvqEfiFHgdJWfgXfjHl1OtJLs4gNWQIc5BEmZDPSGUD7OJ1D6sz8HAdV0PUNJBHngJXY_N5I5VWUAPmjBZ7KT-uL7_SvKYC0UHU_vgeG5b07h6mKfptjidcTLOHJq0VUDHy8QpPa4E0g1PxXIYT_eap3S8hBHOTrRrMU0lygAIPK_SCec6cdChA.bPKXl0sr_22eFjj4YFV-BIEI_ukMeJTsdsX1PG1UBWI&dib_tag=se&keywords=android+tv+box&qid=1709066864&refinements=p_123%3A338933&rnid=91049100031&s=electronics&sprefix=android+%2Caps%2C149&sr=1-1&linkCode=ll1&tag=keikodev-21&linkId=d2e5d56e702db348ced662b4c4b6df5e&language=es_ES&ref_=as_li_ss_tl",
+                        href=anuncios.anuncio_kodi_url,
                         is_external=True,
                 ),
                 linkbutton("Instalación de Addon Luar",

@@ -1,4 +1,5 @@
 import reflex as rx
+import keikodev.data.anuncios as anuncios
 from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.colors import Color as Color
@@ -34,10 +35,27 @@ def cocina_details()->rx.Component:
         #rx.text(SelectState3.value),
 
         rx.cond((SelectState3.value == torrijas.tipo) | (SelectState3.value == "Todas"),
-        receta(title = torrijas.titulo, ingredientes=torrijas.ingredientes, explicacion=torrijas.explicacion, url=torrijas.url, tipo=torrijas.tipo),
+            receta(title = torrijas.titulo, ingredientes=torrijas.ingredientes, explicacion=torrijas.explicacion, url=torrijas.url, tipo=torrijas.tipo),
         ),
+    
+        rx.box(
+            rx.link(
+                    rx.image(
+                            src=anuncios.anuncio_torrijas_imagen,
+                            border_radius="15px",
+                    ),
+                    href=anuncios.anuncio_torrijas_url,
+                    is_external=True,
+            ),
+        display = "flex",
+        width = "100%",
+        justify_content="center",
+        lign_items="center",
+        ),
+    
+
         rx.cond((SelectState3.value == canelones.tipo) | (SelectState3.value == "Todas"),
-        receta(title = canelones.titulo, ingredientes=canelones.ingredientes, explicacion=canelones.explicacion, url=canelones.url, tipo=canelones.tipo),
+            receta(title = canelones.titulo, ingredientes=canelones.ingredientes, explicacion=canelones.explicacion, url=canelones.url, tipo=canelones.tipo),
         ),
 
         
