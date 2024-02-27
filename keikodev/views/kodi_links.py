@@ -63,15 +63,7 @@ def kodi_links()-> rx.Component:
                 Route.KODI_BALANDRO.value,
                 is_external=False
                 ),
-                linkbutton("Instalación de Addon Arrow Negra",
-                "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
-                "/img/kodi2.png",
-                Route.CONSTR.value,
-                is_external=False
-                ),
-
-
 
         width = "100%",
         spacing=Size.MEDIUM.value,
-    )
+        )
