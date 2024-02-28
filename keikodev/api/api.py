@@ -10,6 +10,8 @@ from keikodev.models.live import Live
 TWITCH_API = TwitchAPI()
 NASA_API = nasaApi()
 DB_API = Database()
+
+
 #SUPABASE_API = SupabaseApi()
 
 def ejemploDB():

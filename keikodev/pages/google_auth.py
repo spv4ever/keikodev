@@ -7,9 +7,11 @@ import dotenv
 
 from google.auth.transport import requests
 from google.oauth2.id_token import verify_oauth2_token
+
 from keikodev.pages.react_oauth_google import GoogleOAuthProvider, GoogleLogin
 from keikodev.styles.colors import Color, TextColor
 from keikodev.styles.styles import Size
+from keikodev.api.Users import UsersState
 
 
 
@@ -17,6 +19,8 @@ dotenv.load_dotenv()
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 
 
+
+user = UsersState()
 
 class StateLogin(rx.State):
     id_token_json: str = rx.LocalStorage()
@@ -27,11 +31,13 @@ class StateLogin(rx.State):
     @rx.cached_var
     def tokeninfo(self) -> dict[str, str]:
         try:
-            return verify_oauth2_token(
+            var = verify_oauth2_token(
                 json.loads(self.id_token_json)["credential"],
                 requests.Request(),
                 GOOGLE_CLIENT_ID,
             )
+            user.check_user(var)
+            return var 
         except Exception as exc:
             if self.id_token_json:
                 print(f"Error verifying token: {exc}")
@@ -67,6 +73,7 @@ def user_info(tokeninfo: dict) -> rx.Component:
                     src=tokeninfo["picture"],
                     size="md",
                     display=["none","none","flex","flex","flex"],
+                    #on_mouse_over=UsersState.check_user(tokeninfo["email"]),
                 ),
                 rx.chakra.vstack(
                     rx.chakra.heading(tokeninfo["name"],

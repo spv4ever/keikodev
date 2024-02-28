@@ -15,6 +15,7 @@ from keikodev.componentes.card import card as card
 from keikodev.componentes.receta import receta
 import keikodev.recetas.torrijas as torrijas
 import keikodev.recetas.canelones as canelones
+import keikodev.recetas.saludable as saludable
 from keikodev.componentes.menubar_cocina import menubar_cocina
 from keikodev.componentes.menubar_cocina import SelectState3
 
@@ -56,6 +57,10 @@ def cocina_details()->rx.Component:
 
         rx.cond((SelectState3.value == canelones.tipo) | (SelectState3.value == "Todas"),
             receta(title = canelones.titulo, ingredientes=canelones.ingredientes, explicacion=canelones.explicacion, url=canelones.url, tipo=canelones.tipo),
+        ),
+
+        rx.cond((SelectState3.value == saludable.tipo) | (SelectState3.value == "Todas"),
+            receta(title = saludable.titulo, ingredientes=saludable.ingredientes, explicacion=saludable.explicacion, url=saludable.url, tipo=saludable.tipo),
         ),
 
         
