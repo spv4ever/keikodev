@@ -72,9 +72,13 @@ KODI_IMAGES = "/img/kodi_images/"
 
 #Nutrición
 MG_URL = "https://manugarciachacon.com/"
+YOUTUBE_URL = "http://www.youtube.com/@keikodevrecetas"
+
 
 #prueba constantes.
 NASA_URL = ""
+
+
 
 
 

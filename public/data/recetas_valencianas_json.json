@@ -1,0 +1,384 @@
+{
+    "recetas_valencianas": [
+      {
+        "numero": 1,
+        "nombre": "Paella Valenciana",
+        "ingredientes": [
+          "Arroz",
+          "Pollo",
+          "Conejo",
+          "Judía verde",
+          "Garrofó",
+          "Tomate",
+          "Pimiento rojo",
+          "Aceite de oliva",
+          "Azafrán",
+          "Pimentón",
+          "Caldo de ave",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una paellera, sofrie el pollo y el conejo en aceite de oliva.",
+          "Añade el tomate, pimiento rojo, judía verde y garrofó.",
+          "Incorpora el arroz, el azafrán, el pimentón y mezcla bien.",
+          "Vierte el caldo de ave caliente, sazona con sal y cocina hasta que el arroz esté en su punto."
+        ]
+      },
+      {
+        "numero": 2,
+        "nombre": "Fideuà",
+        "ingredientes": [
+          "Fideos gruesos",
+          "Mariscos variados (calamares, gambas, mejillones)",
+          "Pescado blanco",
+          "Tomate",
+          "Pimiento rojo",
+          "Cebolla",
+          "Ajo",
+          "Aceite de oliva",
+          "Caldo de pescado",
+          "Azafrán",
+          "Pimentón",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una paellera, sofríe ajo, cebolla y pimiento en aceite de oliva.",
+          "Añade el tomate, los mariscos y el pescado cortado en trozos.",
+          "Incorpora los fideos, el azafrán, el pimentón y mezcla bien.",
+          "Vierte el caldo de pescado caliente, sazona con sal y cocina hasta que los fideos estén al dente."
+        ]
+      },
+      {
+        "numero": 3,
+        "nombre": "All i Pebre",
+        "ingredientes": [
+          "Anguila",
+          "Patatas",
+          "Ajo",
+          "Pimiento rojo",
+          "Tomate",
+          "Pimentón",
+          "Guindilla",
+          "Aceite de oliva",
+          "Caldo de pescado",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una cazuela, sofríe ajo, pimiento y tomate en aceite de oliva.",
+          "Añade la anguila en trozos, el pimentón, la guindilla y las patatas en rodajas.",
+          "Vierte el caldo de pescado caliente, sazona con sal y cocina a fuego lento hasta que las patatas estén tiernas."
+        ]
+      },
+      {
+        "numero": 4,
+        "nombre": "Esgarraet",
+        "ingredientes": [
+          "Pimientos rojos asados",
+          "Bacalao desalado",
+          "Ajo",
+          "Aceite de oliva",
+          "Vinagre",
+          "Perejil",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Asa los pimientos rojos y pélalos. Corta en tiras.",
+          "Desmiga el bacalao desalado y mezcla con los pimientos.",
+          "Añade ajo picado, aceite de oliva, vinagre, perejil y sal al gusto. Deja reposar antes de servir."
+        ]
+      },
+      {
+        "numero": 5,
+        "nombre": "Arroz al Horno",
+        "ingredientes": [
+          "Arroz",
+          "Costillas de cerdo",
+          "Morcilla",
+          "Chorizo",
+          "Garbanzos",
+          "Tomate",
+          "Pimiento rojo",
+          "Ajo",
+          "Aceite de oliva",
+          "Caldo de carne",
+          "Pimentón",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una cazuela, sofríe ajo, pimiento y tomate en aceite de oliva.",
+          "Añade las costillas, morcilla, chorizo, garbanzos y arroz.",
+          "Incorpora el caldo de carne caliente, pimentón, sal y cocina en el horno hasta que el arroz esté hecho."
+        ]
+      },
+      {
+        "numero": 6,
+        "nombre": "Bunyols de Calabaza",
+        "ingredientes": [
+          "Calabaza",
+          "Harina",
+          "Azúcar",
+          "Levadura",
+          "Huevos",
+          "Anís en grano",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Cuece y tritura la calabaza. Deja enfriar.",
+          "Mezcla la calabaza con harina, azúcar, levadura, huevos y anís en grano.",
+          "Forma bolas y fríe en aceite caliente hasta que estén doradas. Espolvorea con azúcar antes de servir."
+        ]
+      },
+      {
+        "numero": 7,
+        "nombre": "Espencat",
+        "ingredientes": [
+          "Berenjena",
+          "Pimiento rojo",
+          "Tomate",
+          "Ajo",
+          "Aceite de oliva",
+          "Vinagre",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Asa la berenjena, el pimiento y el tomate. Pela y corta en tiras.",
+          "En un bol, mezcla los vegetales asados con ajo picado, aceite de oliva, vinagre y sal."
+        ]
+      },
+      {
+        "numero": 8,
+        "nombre": "Coca de Recapte",
+        "ingredientes": [
+          "Harina",
+          "Pimientos asados",
+          "Berenjena",
+          "Aceitunas negras",
+          "Tomate",
+          "Aceite de oliva",
+          "Levadura",
+          "Azúcar",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Mezcla harina, levadura, azúcar y sal. Añade agua y forma una masa.",
+          "Estira la masa y colócala en una bandeja.",
+          "Cubre con pimientos, berenjena, tomate y aceitunas. Rocía con aceite de oliva y hornea hasta que esté dorada."
+        ]
+      },
+      {
+        "numero": 9,
+        "nombre": "Figatells",
+        "ingredientes": [
+          "Hígado de cerdo",
+          "Panceta",
+          "Ajo",
+          "Perejil",
+          "Huevo",
+          "Pan rallado",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Pica finamente hígado de cerdo, panceta, ajo y perejil.",
+          "Mezcla con huevo batido, pan rallado, sal y pimienta.",
+          "Forma albóndigas y fríe en aceite caliente hasta que estén doradas."
+        ]
+      },
+      {
+        "numero": 10,
+        "nombre": "Horchata de Chufa",
+        "ingredientes": [
+          "Chufas",
+          "Agua",
+          "Azúcar",
+          "Canela (opcional)"
+        ],
+        "instrucciones": [
+          "Lava las chufas y deja en remojo durante 12 horas.",
+          "Licua las chufas con agua y cuela.",
+          "Añade azúcar al gusto y refrigera. Sirve con canela si lo deseas."
+        ]
+      },
+      {
+        "numero": 11,
+        "nombre": "Rossejat",
+        "ingredientes": [
+          "Fideos gruesos",
+          "Gambas",
+          "Sepia",
+          "Tomate",
+          "Pimiento rojo",
+          "Ajo",
+          "Caldo de pescado",
+          "Azafrán",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una paellera, sofríe ajo, tomate y pimiento en aceite de oliva.",
+          "Añade la sepia en trozos, las gambas, el azafrán y los fideos.",
+          "Vierte el caldo de pescado caliente, sazona con sal y cocina hasta que los fideos estén al dente."
+        ]
+      },
+      {
+        "numero": 12,
+        "nombre": "Turrón de Jijona",
+        "ingredientes": [
+          "Almendras",
+          "Miel",
+          "Azúcar",
+          "Clara de huevo"
+        ],
+        "instrucciones": [
+          "Tuesta las almendras y tritúralas.",
+          "Calienta miel y azúcar hasta formar un almíbar.",
+          "Mezcla las almendras trituradas con el almíbar y agrega clara de huevo batida.",
+          "Extiende la mezcla en un molde y deja enfriar antes de cortar en porciones."
+        ]
+      },
+      {
+        "numero": 13,
+        "nombre": "Tigernuts",
+        "ingredientes": [
+          "Chufas",
+          "Azúcar",
+          "Agua"
+        ],
+        "instrucciones": [
+          "Lava las chufas y deja en remojo durante 24 horas.",
+          "Licua las chufas con agua y cuela.",
+          "Añade azúcar al gusto y refrigera. Sirve bien frío."
+        ]
+      },
+      {
+        "numero": 14,
+        "nombre": "Orelletes",
+        "ingredientes": [
+          "Harina",
+          "Azúcar",
+          "Aceite de oliva",
+          "Anís",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Mezcla harina, azúcar, aceite de oliva, anís y sal. Amasa hasta obtener una masa suave.",
+          "Estira la masa y corta en formas alargadas.",
+          "Fríe en aceite caliente hasta que estén doradas. Espolvorea con azúcar antes de servir."
+        ]
+      },
+      {
+        "numero": 15,
+        "nombre": "Migas",
+        "ingredientes": [
+          "Pan duro",
+          "Aceite de oliva",
+          "Ajo",
+          "Pimentón",
+          "Uvas (opcional)"
+        ],
+        "instrucciones": [
+          "Desmenuza el pan duro.",
+          "En una sartén, sofríe ajo en aceite de oliva, añade el pan desmenuzado y pimentón.",
+          "Remueve hasta que las migas estén doradas. Sirve con uvas si lo deseas."
+        ]
+      },
+      {
+        "numero": 16,
+        "nombre": "Coques de Recapte",
+        "ingredientes": [
+          "Harina",
+          "Tomate",
+          "Pimiento rojo",
+          "Berenjena",
+          "Aceitunas negras",
+          "Anchoas",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Mezcla harina, tomate, pimiento, berenjena, aceitunas y anchoas.",
+          "Añade aceite de oliva y sal. Forma una masa y estira sobre una bandeja.",
+          "Hornea hasta que la masa esté dorada."
+        ]
+      },
+      {
+        "numero": 17,
+        "nombre": "Cassola de Sant Blai",
+        "ingredientes": [
+          "Carne de cerdo",
+          "Arroz",
+          "Coliflor",
+          "Habas",
+          "Tomate",
+          "Pimiento rojo",
+          "Ajo",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una cazuela, sofríe ajo, tomate y pimiento en aceite de oliva.",
+          "Añade la carne de cerdo, coliflor, habas y arroz.",
+          "Vierte agua caliente, sazona con sal y cocina hasta que el arroz esté hecho."
+        ]
+      },
+      {
+        "numero": 18,
+        "nombre": "Cocas de Mollitas",
+        "ingredientes": [
+          "Harina",
+          "Aceite de oliva",
+          "Tomate",
+          "Pimiento rojo",
+          "Morcilla",
+          "Huevos duros",
+          "Aceitunas negras",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Mezcla harina, aceite de oliva y sal. Forma una masa y estira sobre una bandeja.",
+          "Cubre con tomate, pimiento, morcilla y huevos duros.",
+          "Hornea hasta que la masa esté dorada y crujiente."
+        ]
+      },
+      {
+        "numero": 19,
+        "nombre": "Arròs amb Fesols i Naps",
+        "ingredientes": [
+          "Arroz",
+          "Habas",
+          "Nabos",
+          "Ajo",
+          "Pimentón",
+          "Aceite de oliva",
+          "Caldo de verduras",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una cazuela, sofríe ajo en aceite de oliva.",
+          "Añade habas, nabos y arroz.",
+          "Incorpora caldo de verduras caliente, pimentón, sal y cocina hasta que el arroz esté hecho."
+        ]
+      },
+      {
+        "numero": 20,
+        "nombre": "Pastissets de Boniato",
+        "ingredientes": [
+          "Boniato",
+          "Azúcar",
+          "Aceite de oliva",
+          "Harina",
+          "Anís en grano",
+          "Canela",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Cuece y tritura el boniato. Deja enfriar.",
+          "Mezcla el boniato con azúcar, harina, anís, canela y sal. Forma bolas y estira.",
+          "Fríe en aceite caliente hasta que estén dorados. Espolvorea con azúcar antes de servir."
+        ]
+      }
+    ]
+  }
+  

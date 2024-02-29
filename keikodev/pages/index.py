@@ -19,6 +19,7 @@ from keikodev.state.ModalState import modal_small
 from keikodev.componentes.adsscript import ads_script
 from keikodev.state.alllinks import Alllinks
 from keikodev.componentes.facebook import facebook_sdk
+from keikodev.data.recetas_json import recetas_andaluzas
 
 @rx.page(
     route=Route.INDEX.value,

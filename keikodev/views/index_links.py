@@ -8,7 +8,45 @@ from keikodev.routes import Route
 
 def index_links()-> rx.Component:
     return rx.chakra.vstack(
-        title("Recursos para programación"),
+        title("Secciones Keikodev"),
+        linkbutton("Sección de recetas de cocina",
+            "Sección Recetas Caseras y cocina internacional",
+            "/img/utensils-solid.svg",
+            Route.COCINA.value,
+            is_external=False),
+
+        linkbutton("Canal de youtube",
+            "Sección del canal de youtube keikodev Recetas",
+            "/img/youtube.svg",
+            constants.YOUTUBE_URL,
+            is_external=True),
+
+        linkbutton("El rincón de keiko",
+            "Nueva sección del mundo animal",
+            "/img/paw-solid.svg",
+            Route.CONSTR.value,
+            is_external=False),
+
+        linkbutton("MG Todo en nutrición y fitness",
+            "Apartado para mantenerte en forma, entrenamientos, etc",
+            "/img/dumbbell-solid.svg",
+            constants.MG_URL,
+            is_external=True),
+
+
+        title("Tecnología"),
+        linkbutton("Todo lo relacionado con Kodi",
+            "Apartado destinado a mantener la configuración de kodi",
+            "/img/tv-solid.svg",
+            Route.KODI.value,
+            is_external=False),
+        linkbutton('Ciberestafas', 
+            "Toda la actualidad de los intentos de fraude que recibamos", 
+            "/img/user-secret-solid.svg",
+            Route.ESTAFAS.value,
+            "Noticias sobre intentos de estafa en internet",
+            is_external=False),
+
         linkbutton("Mundo de la Programación",
             "Páginas relacionadas con el desarrollo de aplicaciones web, python, SQL",
             "/img/dev.svg",
@@ -39,31 +77,6 @@ def index_links()-> rx.Component:
         #     is_external=False),
         
         title("Otras recursos de interes"),
-        linkbutton('Ciberestafas', 
-            "Toda la actualidad de los intentos de fraude que recibamos", 
-            "/img/user-secret-solid.svg",
-            Route.ESTAFAS.value,
-            "Noticias sobre intentos de estafa en internet",
-            is_external=False),
-
-        linkbutton("Todo lo relacionado con Kodi",
-            "Apartado destinado a mantener la configuración de kodi",
-            "/img/tv-solid.svg",
-            Route.KODI.value,
-            is_external=False),
-
-        linkbutton("MG Todo en nutrición y fitness",
-            "Apartado para mantenerte en forma, entrenamientos, etc",
-            "/img/dumbbell-solid.svg",
-            constants.MG_URL,
-            is_external=True),
-
-        linkbutton("Sección de recetas de cocina",
-            "Sección del canal de youtube keikodev Recetas",
-            "/img/images.svg",
-            Route.COCINA.value,
-            is_external=False),
-
         linkbutton("Biblioteca de imágenes",
             "Crear biblioteca de imágenes con fotografía propia",
             "/img/images.svg",

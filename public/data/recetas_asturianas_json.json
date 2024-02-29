@@ -1,0 +1,364 @@
+{
+    "recetas_asturianas": [
+      {
+        "numero": 1,
+        "nombre": "Fabada Asturiana",
+        "ingredientes": [
+          "Fabes",
+          "Compango (chorizo, morcilla, lacón)",
+          "Cebolla",
+          "Ajo",
+          "Aceite de oliva",
+          "Pimentón",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Deja las fabes en remojo durante la noche.",
+          "En una olla, cocina las fabes con el compango, cebolla, ajo, aceite de oliva, pimentón y sal hasta que estén tiernas."
+        ]
+      },
+      {
+        "numero": 2,
+        "nombre": "Cachopo Asturiano",
+        "ingredientes": [
+          "Filetes de ternera",
+          "Jamón serrano",
+          "Queso",
+          "Huevo",
+          "Pan rallado",
+          "Harina",
+          "Ajo",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Coloca jamón y queso entre dos filetes de ternera.",
+          "Pasa el cachopo por harina, huevo batido y pan rallado.",
+          "Fríe en aceite de oliva con ajo hasta que esté dorado. Sazona con sal."
+        ]
+      },
+      {
+        "numero": 3,
+        "nombre": "Caldereta de Pescado",
+        "ingredientes": [
+          "Pescado variado (merluza, congrio, rape)",
+          "Patatas",
+          "Cebolla",
+          "Ajo",
+          "Tomate",
+          "Pimiento rojo",
+          "Laurel",
+          "Pimentón",
+          "Aceite de oliva",
+          "Vino blanco",
+          "Caldo de pescado",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una cazuela, sofríe cebolla, ajo, tomate y pimiento en aceite de oliva.",
+          "Añade patatas, laurel, pimentón y pescado en trozos.",
+          "Vierte el vino blanco, caldo de pescado caliente, sazona con sal y cocina hasta que las patatas estén tiernas."
+        ]
+      },
+      {
+        "numero": 4,
+        "nombre": "Bollo Preñao",
+        "ingredientes": [
+          "Pan de bollo",
+          "Chorizo",
+          "Lacón",
+          "Aceite de oliva"
+        ],
+        "instrucciones": [
+          "Corta el pan de bollo por la mitad.",
+          "Rellena con chorizo y lacón.",
+          "Cierra el pan y prensa. Calienta en una parrilla con aceite de oliva hasta que esté crujiente."
+        ]
+      },
+      {
+        "numero": 5,
+        "nombre": "Pote Asturiano",
+        "ingredientes": [
+          "Patatas",
+          "Compango (chorizo, morcilla, lacón)",
+          "Garbanzos",
+          "Ajo",
+          "Cebolla",
+          "Pimentón",
+          "Aceite de oliva",
+          "Laurel",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una olla, cocina las patatas, compango, garbanzos, ajo, cebolla, laurel, pimentón y sal hasta que estén tiernos."
+        ]
+      },
+      {
+        "numero": 6,
+        "nombre": "Arroz con Leche Asturiano",
+        "ingredientes": [
+          "Arroz",
+          "Leche",
+          "Azúcar",
+          "Canela",
+          "Limón"
+        ],
+        "instrucciones": [
+          "Cocina el arroz en leche con azúcar, canela y cáscara de limón hasta que esté cremoso."
+        ]
+      },
+      {
+        "numero": 7,
+        "nombre": "Casadielles",
+        "ingredientes": [
+          "Harina",
+          "Anís",
+          "Vino blanco",
+          "Aceite de oliva",
+          "Nueces",
+          "Azúcar",
+          "Anís en grano"
+        ],
+        "instrucciones": [
+          "Mezcla harina, anís, vino blanco y aceite de oliva hasta obtener una masa.",
+          "Estira la masa y rellena con nueces, azúcar y anís en grano.",
+          "Forma las casadielles y hornea hasta que estén doradas."
+        ]
+      },
+      {
+        "numero": 8,
+        "nombre": "Tarta de Manzana Asturiana",
+        "ingredientes": [
+          "Masa para tarta",
+          "Manzanas",
+          "Azúcar",
+          "Canela",
+          "Huevo"
+        ],
+        "instrucciones": [
+          "Forra un molde con la masa para tarta.",
+          "Cubre con rodajas de manzana, azúcar y canela.",
+          "Hornea hasta que la masa esté dorada. Pincela con huevo batido antes de servir."
+        ]
+      },
+      {
+        "numero": 9,
+        "nombre": "Sopa de Pescado a la Sidra",
+        "ingredientes": [
+          "Pescado variado (merluza, congrio, rape)",
+          "Sidra",
+          "Cebolla",
+          "Ajo",
+          "Tomate",
+          "Pimiento verde",
+          "Laurel",
+          "Pimentón",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una cazuela, sofríe cebolla, ajo, tomate y pimiento verde en aceite de oliva.",
+          "Añade el pescado en trozos, laurel, pimentón y sidra.",
+          "Sazona con sal y cocina hasta que el pescado esté hecho."
+        ]
+      },
+      {
+        "numero": 10,
+        "nombre": "Frixuelos",
+        "ingredientes": [
+          "Harina",
+          "Leche",
+          "Huevo",
+          "Azúcar",
+          "Sal",
+          "Anís"
+        ],
+        "instrucciones": [
+          "Mezcla harina, leche, huevo, azúcar, sal y anís hasta obtener una masa líquida.",
+          "En una sartén caliente, vierte un poco de masa y extiende formando un círculo fino.",
+          "Cocina ambos lados hasta que estén dorados. Repite con el resto de la masa."
+        ]
+      },
+      {
+        "numero": 11,
+        "nombre": "Carbayones",
+        "ingredientes": [
+          "Masa para hojaldre",
+          "Almendra molida",
+          "Azúcar",
+          "Huevo"
+        ],
+        "instrucciones": [
+          "Estira la masa para hojaldre y corta en círculos.",
+          "Rellena con una mezcla de almendra molida y azúcar.",
+          "Cierra formando una especie de empanadilla y pincela con huevo batido. Hornea hasta que estén dorados."
+        ]
+      },
+      {
+        "numero": 12,
+        "nombre": "Arroz con Bugre",
+        "ingredientes": [
+          "Arroz",
+          "Bugre (cangrejo de mar)",
+          "Cebolla",
+          "Ajo",
+          "Tomate",
+          "Pimiento verde",
+          "Pimentón",
+          "Aceite de oliva",
+          "Caldo de pescado",
+          "Azafrán",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una paellera, sofríe cebolla, ajo, tomate y pimiento verde en aceite de oliva.",
+          "Añade el bugre en trozos, arroz, azafrán y pimentón.",
+          "Vierte el caldo de pescado caliente, sazona con sal y cocina hasta que el arroz esté en su punto."
+        ]
+      },
+      {
+        "numero": 13,
+        "nombre": "Tarta de Frixuelos",
+        "ingredientes": [
+          "Frixuelos",
+          "Nata montada",
+          "Fresas",
+          "Azúcar glas"
+        ],
+        "instrucciones": [
+          "Coloca capas de frixuelos con nata montada y fresas.",
+          "Espolvorea con azúcar glas antes de servir."
+        ]
+      },
+      {
+        "numero": 14,
+        "nombre": "Empanada Asturiana",
+        "ingredientes": [
+          "Masa para empanada",
+          "Atún",
+          "Tomate",
+          "Pimiento verde",
+          "Cebolla",
+          "Huevo duro",
+          "Aceitunas verdes",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Estira la masa para empanada y colócala en una bandeja.",
+          "Rellena con atún, tomate, pimiento verde, cebolla, huevo duro y aceitunas.",
+          "Cierra la masa y hornea hasta que esté dorada."
+        ]
+      },
+      {
+        "numero": 15,
+        "nombre": "Compota de Manzana Asturiana",
+        "ingredientes": [
+          "Manzanas",
+          "Azúcar",
+          "Canela",
+          "Limón"
+        ],
+        "instrucciones": [
+          "Pela y corta las manzanas en trozos.",
+          "Cocina las manzanas con azúcar, canela y cáscara de limón hasta obtener una compota."
+        ]
+      },
+      {
+        "numero": 16,
+        "nombre": "Piquillos Rellenos de Marisco",
+        "ingredientes": [
+          "Pimientos del piquillo",
+          "Mariscos variados (gambas, langostinos)",
+          "Cebolla",
+          "Ajo",
+          "Tomate",
+          "Pimiento verde",
+          "Brandy",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una sartén, sofríe cebolla, ajo, tomate y pimiento verde en aceite de oliva.",
+          "Añade mariscos salteados con brandy.",
+          "Rellena los pimientos con la mezcla y hornea hasta que estén calientes."
+        ]
+      },
+      {
+        "numero": 17,
+        "nombre": "Arroz con Necoras",
+        "ingredientes": [
+          "Arroz",
+          "Necoras",
+          "Cebolla",
+          "Ajo",
+          "Tomate",
+          "Pimiento verde",
+          "Caldo de pescado",
+          "Aceite de oliva",
+          "Pimentón",
+          "Azafrán",
+          "Sal"
+        ],
+        "instrucciones": [
+          "En una paellera, sofríe cebolla, ajo, tomate y pimiento verde en aceite de oliva.",
+          "Añade las necoras, arroz, pimentón, azafrán y caldo de pescado caliente.",
+          "Sazona con sal y cocina hasta que el arroz esté en su punto."
+        ]
+      },
+      {
+        "numero": 18,
+        "nombre": "Tarta de Avellanas",
+        "ingredientes": [
+          "Avellanas",
+          "Azúcar",
+          "Harina",
+          "Huevos",
+          "Mantequilla",
+          "Leche",
+          "Cacao en polvo",
+          "Levadura"
+        ],
+        "instrucciones": [
+          "Tuesta las avellanas y tritúralas.",
+          "Bate huevos con azúcar, harina, levadura, mantequilla y leche.",
+          "Divide la masa, mezcla una parte con avellanas trituradas y la otra con cacao en polvo.",
+          "Vierte las masas en un molde y hornea hasta que esté cocido."
+        ]
+      },
+      {
+        "numero": 19,
+        "nombre": "Cocido Montañés",
+        "ingredientes": [
+          "Fabes",
+          "Compango (chorizo, morcilla, panceta)",
+          "Patatas",
+          "Col",
+          "Ajo",
+          "Aceite de oliva",
+          "Pimentón",
+          "Laurel",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Deja las fabes en remojo durante la noche.",
+          "En una olla, cocina las fabes con el compango, patatas, col, ajo, laurel, pimentón y sal hasta que estén tiernos."
+        ]
+      },
+      {
+        "numero": 20,
+        "nombre": "Crema de Marañuelas",
+        "ingredientes": [
+          "Marañuelas",
+          "Leche",
+          "Azúcar",
+          "Huevo"
+        ],
+        "instrucciones": [
+          "Hierve las marañuelas en leche con azúcar hasta que estén tiernas.",
+          "Bate huevos y añade a la mezcla hasta que espese."
+        ]
+      }
+    ]
+  }
+  

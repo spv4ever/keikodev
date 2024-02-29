@@ -1,0 +1,402 @@
+{
+    "recetas_italianas": [
+      {
+        "numero": 1,
+        "nombre": "Pasta Carbonara",
+        "ingredientes": [
+          "Espaguetis",
+          "Bacon o panceta",
+          "Huevos",
+          "Queso parmesano",
+          "Pimienta negra"
+        ],
+        "instrucciones": [
+          "Cocina los espaguetis al dente.",
+          "Saltea bacon o panceta.",
+          "Mezcla huevos, queso parmesano y pimienta. Añade a la pasta y mezcla."
+        ]
+      },
+      {
+        "numero": 2,
+        "nombre": "Pizza Margherita",
+        "ingredientes": [
+          "Masa para pizza",
+          "Salsa de tomate",
+          "Mozzarella",
+          "Albahaca fresca",
+          "Aceite de oliva"
+        ],
+        "instrucciones": [
+          "Extiende la masa en un molde para pizza.",
+          "Cubre con salsa de tomate y mozzarella.",
+          "Hornea y añade albahaca fresca y un chorrito de aceite de oliva al sacarla."
+        ]
+      },
+      {
+        "numero": 3,
+        "nombre": "Risotto ai Funghi",
+        "ingredientes": [
+          "Arroz Arborio",
+          "Setas",
+          "Cebolla",
+          "Caldo de verduras",
+          "Vino blanco",
+          "Queso parmesano",
+          "Mantequilla",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Sofríe cebolla en aceite y añade arroz.",
+          "Añade vino blanco y espera a que se evapore.",
+          "Agrega caldo de verduras y setas. Cocina hasta que el arroz esté tierno.",
+          "Finaliza con queso parmesano, mantequilla, sal y pimienta al gusto."
+        ]
+      },
+      {
+        "numero": 4,
+        "nombre": "Lasagna",
+        "ingredientes": [
+          "Láminas de lasaña",
+          "Carne de ternera",
+          "Tomate triturado",
+          "Cebolla",
+          "Ajo",
+          "Queso ricotta",
+          "Queso mozzarella",
+          "Queso parmesano",
+          "Albahaca",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Sofríe cebolla y ajo en aceite de oliva.",
+          "Añade carne y cocina hasta que se dore.",
+          "Añade tomate, albahaca, sal y pimienta. Cocina a fuego lento.",
+          "En un molde, alterna capas de láminas de lasaña, carne y quesos. Repite.",
+          "Hornea hasta que esté dorada y burbujeante."
+        ]
+      },
+      {
+        "numero": 5,
+        "nombre": "Tiramisú",
+        "ingredientes": [
+          "Queso mascarpone",
+          "Huevos",
+          "Azúcar",
+          "Café",
+          "Licor de café",
+          "Bizcochos de soletilla",
+          "Cacao en polvo"
+        ],
+        "instrucciones": [
+          "Mezcla yemas de huevo con azúcar hasta obtener una crema.",
+          "Añade mascarpone y mezcla bien.",
+          "Bate las claras a punto de nieve y añade a la mezcla anterior.",
+          "En un recipiente, alterna capas de bizcochos de soletilla mojados en café con capas de crema.",
+          "Espolvorea cacao en polvo por encima. Refrigera antes de servir."
+        ]
+      },
+      {
+        "numero": 6,
+        "nombre": "Ossobuco alla Milanese",
+        "ingredientes": [
+          "Jarretes de ternera",
+          "Harina",
+          "Aceite de oliva",
+          "Cebolla",
+          "Zanahoria",
+          "Apio",
+          "Ajo",
+          "Caldo de carne",
+          "Vino blanco",
+          "Tomate triturado",
+          "Ralladura de limón",
+          "Perejil",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Salpimienta y enharina los jarretes de ternera.",
+          "Sofríe en aceite de oliva hasta dorar. Retira de la sartén.",
+          "En la misma sartén, sofríe cebolla, zanahoria, apio y ajo.",
+          "Añade caldo de carne, vino blanco, tomate triturado, ralladura de limón y perejil.",
+          "Devuelve los jarretes a la sartén y cocina a fuego lento hasta que estén tiernos."
+        ]
+      },
+      {
+        "numero": 7,
+        "nombre": "Gnocchi alla Sorrentina",
+        "ingredientes": [
+          "Gnocchi",
+          "Salsa de tomate",
+          "Mozzarella",
+          "Queso parmesano",
+          "Albahaca fresca",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Cocina los gnocchi según las instrucciones del paquete.",
+          "En una fuente para horno, mezcla los gnocchi con salsa de tomate y albahaca.",
+          "Añade mozzarella y parmesano. Hornea hasta que esté dorado y burbujeante."
+        ]
+      },
+      {
+        "numero": 8,
+        "nombre": "Minestrone",
+        "ingredientes": [
+          "Caldo de verduras",
+          "Tomate triturado",
+          "Zanahoria",
+          "Apio",
+          "Judías verdes",
+          "Pasta corta",
+          "Espinacas",
+          "Alubias cannellini",
+          "Aceite de oliva",
+          "Ajo",
+          "Albahaca",
+          "Orégano",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "En una olla, sofríe ajo en aceite de oliva.",
+          "Añade zanahoria, apio, judías verdes, tomate triturado y caldo de verduras.",
+          "Cuando hierva, añade pasta, espinacas, alubias cannellini y hierbas.",
+          "Cocina hasta que la pasta esté al dente. Ajusta sazón."
+        ]
+      },
+      {
+        "numero": 9,
+        "nombre": "Bruschetta",
+        "ingredientes": [
+          "Pan rústico",
+          "Tomates",
+          "Ajo",
+          "Albahaca fresca",
+          "Aceite de oliva",
+          "Vinagre balsámico",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Tuesta rodajas de pan rústico.",
+          "Mezcla tomates, ajo, albahaca, aceite de oliva y vinagre balsámico.",
+          "Coloca la mezcla sobre las rodajas de pan. Sazona con sal y pimienta."
+        ]
+      },
+      {
+        "numero": 10,
+        "nombre": "Caponata",
+        "ingredientes": [
+          "Berenjena",
+          "Apio",
+          "Tomate",
+          "Aceitunas verdes",
+          "Alcaparras",
+          "Cebolla",
+          "Vinagre de vino",
+          "Azúcar",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Corta berenjena y apio en trozos y cocina en agua con sal hasta que estén tiernos.",
+          "En una sartén, sofríe cebolla en aceite de oliva.",
+          "Añade tomate, aceitunas, alcaparras, vinagre, azúcar, berenjena y apio cocidos.",
+          "Cocina a fuego lento hasta que los sabores se mezclen. Ajusta sazón."
+        ]
+      },
+      {
+        "numero": 11,
+        "nombre": "Fettuccine Alfredo",
+        "ingredientes": [
+          "Fettuccine",
+          "Nata",
+          "Mantequilla",
+          "Queso parmesano",
+          "Sal",
+          "Pimienta",
+          "Nuez moscada"
+        ],
+        "instrucciones": [
+          "Cocina los fettuccine al dente.",
+          "En una sartén, calienta nata y añade mantequilla, queso parmesano, sal, pimienta y nuez moscada al gusto.",
+          "Mezcla con la pasta cocida y sirve caliente."
+        ]
+      },
+      {
+        "numero": 12,
+        "nombre": "Ravioli con Ricotta e Spinaci",
+        "ingredientes": [
+          "Ravioli rellenos de ricotta y espinacas",
+          "Salsa de tomate",
+          "Queso parmesano",
+          "Albahaca fresca",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Cocina los ravioli según las instrucciones del paquete.",
+          "Sirve con salsa de tomate, queso parmesano rallado, albahaca, aceite de oliva, sal y pimienta al gusto."
+        ]
+      },
+      {
+        "numero": 13,
+        "nombre": "Cannoli Siciliani",
+        "ingredientes": [
+          "Cáscara de cannoli",
+          "Ricotta",
+          "Azúcar glas",
+          "Chocolate rallado",
+          "Frutas confitadas"
+        ],
+        "instrucciones": [
+          "Mezcla ricotta con azúcar glas y chocolate rallado.",
+          "Rellena las cáscaras de cannoli con la mezcla.",
+          "Decora los extremos con frutas confitadas."
+        ]
+      },
+      {
+        "numero": 14,
+        "nombre": "Pesto Genovese",
+        "ingredientes": [
+          "Albahaca fresca",
+          "Piñones",
+          "Ajo",
+          "Queso parmesano",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Tritura albahaca, piñones, ajo y queso parmesano en un procesador de alimentos.",
+          "Añade aceite de oliva hasta obtener una consistencia suave.",
+          "Sazona con sal y pimienta al gusto. Sirve con pasta."
+        ]
+      },
+      {
+        "numero": 15,
+        "nombre": "Arancini",
+        "ingredientes": [
+          "Arroz",
+          "Salsa de tomate",
+          "Mozzarella",
+          "Queso parmesano",
+          "Huevo",
+          "Pan rallado",
+          "Aceite para freír"
+        ],
+        "instrucciones": [
+          "Cocina arroz y mézclalo con salsa de tomate, queso parmesano y huevo.",
+          "Forma bolas rellenas con cubos de mozzarella.",
+          "Pasa por huevo batido y pan rallado. Fríe hasta que estén doradas."
+        ]
+      },
+      {
+        "numero": 16,
+        "nombre": "Panna Cotta",
+        "ingredientes": [
+          "Nata",
+          "Leche",
+          "Azúcar",
+          "Gelatina",
+          "Vainilla",
+          "Frutas rojas (opcional)"
+        ],
+        "instrucciones": [
+          "Calienta nata, leche y azúcar sin hervir.",
+          "Añade gelatina y vainilla. Mezcla hasta que la gelatina se disuelva.",
+          "Vierte en moldes y refrigera. Sirve con frutas rojas si lo deseas."
+        ]
+      },
+      {
+        "numero": 17,
+        "nombre": "Saltimbocca alla Romana",
+        "ingredientes": [
+          "Filetes de ternera",
+          "Lonchas de jamón crudo",
+          "Salvia fresca",
+          "Harina",
+          "Vino blanco",
+          "Caldo de pollo",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Coloca una loncha de jamón y una hoja de salvia sobre cada filete de ternera.",
+          "Sujeta con palillos y enharina ligeramente.",
+          "Fríe en aceite de oliva hasta dorar. Añade vino blanco y caldo de pollo.",
+          "Cocina hasta que la salsa se reduzca. Sazona con sal y pimienta al gusto."
+        ]
+      },
+      {
+        "numero": 18,
+        "nombre": "Gelato",
+        "ingredientes": [
+          "Leche",
+          "Nata",
+          "Yemas de huevo",
+          "Azúcar",
+          "Vainilla",
+          "Frutas frescas (opcional)"
+        ],
+        "instrucciones": [
+          "Calienta leche y nata sin hervir.",
+          "Bate yemas de huevo con azúcar y añade a la mezcla caliente.",
+          "Añade vainilla y refrigera. Luego, procesa en una máquina para hacer helado.",
+          "Sirve con frutas frescas si lo deseas."
+        ]
+      },
+      {
+        "numero": 19,
+        "nombre": "Focaccia",
+        "ingredientes": [
+          "Harina",
+          "Agua",
+          "Levadura",
+          "Aceite de oliva",
+          "Sal",
+          "Tomates cherry",
+          "Romero",
+          "Ajo",
+          "Sal gruesa"
+        ],
+        "instrucciones": [
+          "Mezcla harina, agua, levadura, aceite de oliva y sal hasta obtener una masa suave.",
+          "Estira la masa en una bandeja. Haz hoyos con los dedos.",
+          "Coloca tomates cherry, romero y ajo sobre la masa. Espolvorea con sal gruesa.",
+          "Hornea hasta que esté dorada."
+        ]
+      },
+      {
+        "numero": 20,
+        "nombre": "Amatriciana",
+        "ingredientes": [
+          "Pasta (preferiblemente bucatini)",
+          "Tomate triturado",
+          "Guanciale o panceta",
+          "Queso pecorino",
+          "Aceite de oliva",
+          "Ajo",
+          "Guindilla (opcional)",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Sofríe guanciale o panceta en aceite de oliva. Añade ajo y guindilla si lo deseas.",
+          "Añade tomate triturado y cocina a fuego lento.",
+          "Cocina la pasta al dente y mezcla con la salsa. Sirve con queso pecorino, sal y pimienta."
+        ]
+      }
+    ]
+  }
+  

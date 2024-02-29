@@ -18,6 +18,11 @@ import keikodev.recetas.canelones as canelones
 import keikodev.recetas.saludable as saludable
 from keikodev.componentes.menubar_cocina import menubar_cocina
 from keikodev.componentes.menubar_cocina import SelectState3
+from keikodev.data.recetas_json import recetas_andaluzas, recetas_alemanas, recetas_catalanas, recetas_japonesas, recetas_mexicanas, recetas_veganas
+#from keikodev.data.recetas_andaluzas import Receta
+
+from keikodev.componentes.receta_text import recetatext
+
 
 def cocina_details()->rx.Component:
     return rx.chakra.vstack(
@@ -63,10 +68,36 @@ def cocina_details()->rx.Component:
             receta(title = saludable.titulo, ingredientes=saludable.ingredientes, explicacion=saludable.explicacion, url=saludable.url, tipo=saludable.tipo),
         ),
 
-        
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_andaluzas
+        ],
+
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_alemanas
+        ],
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_catalanas
+        ],
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_japonesas
+        ],
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_mexicanas
+        ],
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_veganas
+        ],
+
         spacing=Size.DEFAULT.value,
         padding = Size.MEDIUM.value,
         align_items="Start",
         width="100%",
 
     )
+
