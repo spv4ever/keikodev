@@ -1,0 +1,374 @@
+{
+    "recetas_japonesas": [
+      {
+        "numero": 1,
+        "nombre": "Sushi de Salmón",
+        "ingredientes": [
+          "Arroz de sushi",
+          "Alga nori",
+          "Salmón fresco",
+          "Aguacate",
+          "Vinagre de arroz",
+          "Azúcar",
+          "Sal",
+          "Salsa de soja"
+        ],
+        "instrucciones": [
+          "Cocina el arroz de sushi y aliña con vinagre, azúcar y sal.",
+          "Coloca una hoja de nori en una esterilla para sushi.",
+          "Extiende el arroz sobre el nori y agrega tiras de salmón y aguacate.",
+          "Enrolla con la ayuda de la esterilla y corta en porciones.",
+          "Sirve con salsa de soja."
+        ]
+      },
+      {
+        "numero": 2,
+        "nombre": "Ramen de Cerdo",
+        "ingredientes": [
+          "Fideos de ramen",
+          "Caldo de cerdo",
+          "Cerdo en rodajas",
+          "Cebolla verde picada",
+          "Huevo cocido",
+          "Alga nori",
+          "Brotes de bambú",
+          "Aceite de sésamo"
+        ],
+        "instrucciones": [
+          "Cocina los fideos de ramen según las instrucciones del paquete.",
+          "Hierve el caldo de cerdo y cocina las rodajas de cerdo.",
+          "Sirve los fideos en un tazón, agrega el caldo, cerdo, cebolla verde, huevo, alga nori y brotes de bambú.",
+          "Rocía con aceite de sésamo antes de servir."
+        ]
+      },
+      {
+        "numero": 3,
+        "nombre": "Tempura de Verduras",
+        "ingredientes": [
+          "Brotes de brócoli",
+          "Zanahorias en rodajas",
+          "Calabacín en tiras",
+          "Harina de tempura",
+          "Agua helada",
+          "Aceite para freír",
+          "Salsa de inmersión"
+        ],
+        "instrucciones": [
+          "Mezcla la harina de tempura con agua helada hasta obtener una masa ligera.",
+          "Sumerge las verduras en la masa y fríe en aceite caliente hasta que estén doradas.",
+          "Escurre sobre papel absorbente y sirve con salsa de inmersión."
+        ]
+      },
+      {
+        "numero": 4,
+        "nombre": "Okonomiyaki",
+        "ingredientes": [
+          "Repollo rallado",
+          "Harina",
+          "Huevos",
+          "Camarones o panceta (opcional)",
+          "Salsa okonomiyaki",
+          "Mayonesa",
+          "Alga nori rallada",
+          "Katsuobushi (copos de bonito seco)"
+        ],
+        "instrucciones": [
+          "Mezcla el repollo rallado, la harina y los huevos para hacer una masa.",
+          "Añade camarones o panceta si lo deseas.",
+          "Cocina la masa en una sartén hasta que ambos lados estén dorados.",
+          "Cubre con salsa okonomiyaki, mayonesa, alga nori rallada y katsuobushi."
+        ]
+      },
+      {
+        "numero": 5,
+        "nombre": "Gyudon (Tazón de Carne)",
+        "ingredientes": [
+          "Carne de res en rodajas finas",
+          "Cebollas en rodajas",
+          "Caldo dashi",
+          "Salsa de soja",
+          "Mirin",
+          "Azúcar",
+          "Arroz cocido",
+          "Cebollas verdes picadas"
+        ],
+        "instrucciones": [
+          "Saltea la carne y las cebollas en una sartén.",
+          "Agrega caldo dashi, salsa de soja, mirin y azúcar.",
+          "Cocina hasta que la carne esté bien cocida y la salsa se reduzca.",
+          "Sirve sobre arroz y espolvorea con cebollas verdes."
+        ]
+      },
+      {
+        "numero": 6,
+        "nombre": "Hijiki no Nimono (Algas Hijiki Cocidas)",
+        "ingredientes": [
+          "Algas hijiki secas",
+          "Zanahorias en tiras",
+          "Tofu cortado en cubos",
+          "Salsa de soja",
+          "Mirin",
+          "Azúcar",
+          "Caldo dashi"
+        ],
+        "instrucciones": [
+          "Remoja las algas hijiki en agua hasta que se rehidraten.",
+          "Saltea las zanahorias y el tofu en una sartén.",
+          "Añade las algas escurridas, salsa de soja, mirin, azúcar y caldo dashi.",
+          "Cocina a fuego lento hasta que los ingredientes absorban el líquido."
+        ]
+      },
+      {
+        "numero": 7,
+        "nombre": "Yakitori (Brochetas de Pollo)",
+        "ingredientes": [
+          "Pechugas de pollo en trozos",
+          "Sake",
+          "Salsa de soja",
+          "Mirin",
+          "Azúcar",
+          "Cebolla verde en rodajas"
+        ],
+        "instrucciones": [
+          "Ensarta los trozos de pollo en brochetas.",
+          "Mezcla sake, salsa de soja, mirin y azúcar para hacer la salsa.",
+          "Asa las brochetas y cepíllalas con la salsa hasta que estén doradas.",
+          "Espolvorea con cebolla verde antes de servir."
+        ]
+      },
+      {
+        "numero": 8,
+        "nombre": "Uramaki de Aguacate y Pepino",
+        "ingredientes": [
+          "Alga nori",
+          "Arroz de sushi",
+          "Aguacate en tiras",
+          "Pepino en tiras",
+          "Vinagre de arroz",
+          "Azúcar",
+          "Sal",
+          "Salsa de soja"
+        ],
+        "instrucciones": [
+          "Coloca una hoja de nori sobre una esterilla para sushi.",
+          "Extiende una capa delgada de arroz y voltea la hoja de nori.",
+          "Añade tiras de aguacate y pepino en el centro.",
+          "Enrolla con la ayuda de la esterilla y corta en porciones.",
+          "Sirve con salsa de soja."
+        ]
+      },
+      {
+        "numero": 9,
+        "nombre": "Sunomono (Ensalada de Pepino Agripicante)",
+        "ingredientes": [
+          "Pepino en rodajas finas",
+          "Vinagre de arroz",
+          "Azúcar",
+          "Salsa de soja",
+          "Alga wakame rehidratada",
+          "Sésamo tostado"
+        ],
+        "instrucciones": [
+          "Mezcla pepino con vinagre de arroz, azúcar y salsa de soja.",
+          "Añade alga wakame rehidratada y espolvorea con sésamo tostado.",
+          "Refrigera antes de servir."
+        ]
+      },
+      {
+        "numero": 10,
+        "nombre": "Nabeyaki Udon (Udon en Olla de Hierro)",
+        "ingredientes": [
+          "Fideos udon",
+          "Caldo dashi",
+          "Pollo cocido en rodajas",
+          "Huevo",
+          "Setas shiitake",
+          "Cebolla verde en rodajas",
+          "Kamaboko (pasta de pescado)"
+        ],
+        "instrucciones": [
+          "Cocina los fideos udon según las instrucciones del paquete.",
+          "Hierve caldo dashi con pollo, setas, cebolla verde y kamaboko.",
+          "Sirve los fideos en un tazón, vierte el caldo y agrega un huevo.",
+          "Coloca en una olla de hierro y cocina hasta que el huevo esté listo."
+        ]
+      },
+      {
+        "numero": 11,
+        "nombre": "Tonkatsu (Filete de Cerdo Empanizado)",
+        "ingredientes": [
+          "Filetes de cerdo",
+          "Harina",
+          "Huevo batido",
+          "Pan rallado",
+          "Aceite para freír",
+          "Repollo rallado",
+          "Salsa tonkatsu"
+        ],
+        "instrucciones": [
+          "Pasa los filetes de cerdo por harina, huevo batido y pan rallado.",
+          "Fríe en aceite caliente hasta que estén dorados y cocidos por dentro.",
+          "Sirve sobre repollo rallado y acompaña con salsa tonkatsu."
+        ]
+      },
+      {
+        "numero": 12,
+        "nombre": "Chawanmushi (Flan Salado al Vapor)",
+        "ingredientes": [
+          "Huevos",
+          "Caldo dashi",
+          "Pollo cocido",
+          "Gambas",
+          "Setas shiitake",
+          "Guarniciones opcionales: guisantes, zanahorias"
+        ],
+        "instrucciones": [
+          "Bate los huevos y mezcla con caldo dashi.",
+          "Añade pollo, gambas, setas y otras guarniciones en cuencos para flan.",
+          "Vierte la mezcla de huevo sobre las guarniciones.",
+          "Cocina al vapor hasta que esté firme."
+        ]
+      },
+      {
+        "numero": 13,
+        "nombre": "Oyakodon (Tazón de Pollo y Huevo)",
+        "ingredientes": [
+          "Muslos de pollo en rodajas",
+          "Cebolla en rodajas",
+          "Caldo dashi",
+          "Salsa de soja",
+          "Mirin",
+          "Huevos batidos",
+          "Cebolla verde en rodajas"
+        ],
+        "instrucciones": [
+          "Saltea el pollo y la cebolla en una sartén.",
+          "Añade caldo dashi, salsa de soja y mirin.",
+          "Vierte huevos batidos y cocina hasta que estén cuajados.",
+          "Sirve sobre arroz y espolvorea con cebolla verde."
+        ]
+      },
+      {
+        "numero": 14,
+        "nombre": "Karaage (Pollo Frito Japonés)",
+        "ingredientes": [
+          "Trozos de pollo",
+          "Salsa de soja",
+          "Sake",
+          "Jengibre rallado",
+          "Ajo picado",
+          "Harina de maíz",
+          "Aceite para freír"
+        ],
+        "instrucciones": [
+          "Marina el pollo en salsa de soja, sake, jengibre y ajo.",
+          "Reboza los trozos de pollo en harina de maíz.",
+          "Fríe en aceite caliente hasta que estén dorados y crujientes."
+        ]
+      },
+      {
+        "numero": 15,
+        "nombre": "Goma-ae (Vegetales con Salsa de Sésamo)",
+        "ingredientes": [
+          "Espinacas cocidas",
+          "Zanahorias en rodajas",
+          "Salsa de sésamo",
+          "Sake",
+          "Azúcar",
+          "Salsa de soja"
+        ],
+        "instrucciones": [
+          "Mezcla espinacas y zanahorias cocidas.",
+          "Prepara una salsa con sésamo, sake, azúcar y salsa de soja.",
+          "Mezcla las verduras con la salsa y sirve frío."
+        ]
+      },
+      {
+        "numero": 16,
+        "nombre": "Katsudon (Tazón de Cerdo Empanizado)",
+        "ingredientes": [
+          "Filete de cerdo empanizado",
+          "Cebolla en rodajas",
+          "Caldo dashi",
+          "Salsa de soja",
+          "Mirin",
+          "Huevos batidos",
+          "Cebolla verde en rodajas"
+        ],
+        "instrucciones": [
+          "Cocina el filete de cerdo empanizado y córtalo en tiras.",
+          "Saltea la cebolla, añade caldo dashi, salsa de soja y mirin.",
+          "Coloca las tiras de cerdo sobre la cebolla y vierte huevos batidos.",
+          "Cocina hasta que los huevos estén cuajados."
+        ]
+      },
+      {
+        "numero": 17,
+        "nombre": "Nikujaga (Estofado de Carne y Patatas)",
+        "ingredientes": [
+          "Carne de res en tiras",
+          "Patatas en rodajas",
+          "Cebolla en rodajas",
+          "Zanahorias en rodajas",
+          "Caldo dashi",
+          "Salsa de soja",
+          "Mirin",
+          "Azúcar"
+        ],
+        "instrucciones": [
+          "Saltea la carne en una olla, añade caldo dashi, salsa de soja, mirin y azúcar.",
+          "Agrega patatas, cebolla y zanahorias.",
+          "Cocina a fuego lento hasta que las verduras estén tiernas."
+        ]
+      },
+      {
+        "numero": 18,
+        "nombre": "Tamago Sushi (Sushi de Huevo)",
+        "ingredientes": [
+          "Huevos",
+          "Azúcar",
+          "Salsa de soja",
+          "Vinagre de arroz",
+          "Alga nori",
+          "Arroz de sushi"
+        ],
+        "instrucciones": [
+          "Bate los huevos con azúcar, salsa de soja y vinagre de arroz.",
+          "Cocina una fina capa de huevo en una sartén y córtala en tiras.",
+          "Coloca las tiras de huevo sobre el arroz y envuelve con alga nori."
+        ]
+      },
+      {
+        "numero": 19,
+        "nombre": "Yudofu (Tofu Hervido)",
+        "ingredientes": [
+          "Tofu firme en cubos",
+          "Caldo dashi",
+          "Salsa de soja",
+          "Cebollas verdes en rodajas",
+          "Jengibre rallado"
+        ],
+        "instrucciones": [
+          "Hierve el tofu en caldo dashi y salsa de soja.",
+          "Sirve en tazones individuales y espolvorea con cebollas verdes y jengibre."
+        ]
+      },
+      {
+        "numero": 20,
+        "nombre": "Zaru Soba (Fideos de Trigo Sarraceno Fríos)",
+        "ingredientes": [
+          "Fideos de trigo sarraceno",
+          "Salsa de soba",
+          "Cebollas verdes picadas",
+          "Wasabi",
+          "Alga nori en tiras"
+        ],
+        "instrucciones": [
+          "Cocina los fideos de trigo sarraceno según las instrucciones del paquete.",
+          "Enjuágalos bajo agua fría y sírvelos en platos individuales.",
+          "Acompaña con salsa de soba, cebollas verdes, wasabi y alga nori."
+        ]
+      }
+    ]
+  }
+  

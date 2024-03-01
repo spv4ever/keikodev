@@ -25,7 +25,7 @@ from keikodev.views.galeria_nasa_video_details import galeria_nasa_video_details
     title=utils.galeria_nasa_title,
     description=utils.galeria_nasa_description,
     image= utils.preview,
-    meta=utils.dev_meta,    
+    meta=utils.galeria_nasa_meta,    
 )
 
 def galeria_nasa_video() -> rx.Component:

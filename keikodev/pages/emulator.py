@@ -20,7 +20,7 @@ from keikodev.views.emulator_links import emulator_links
     title=utils.emulator_title,
     description=utils.emulator_description,
     image= utils.preview,
-    meta=utils.dev_meta,
+    meta=utils.emulator_meta,
     
 
 )

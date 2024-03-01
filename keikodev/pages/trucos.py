@@ -19,7 +19,7 @@ from keikodev.views.trucos_details import trucos_details
     title=utils.trucos_title,
     description=utils.trucos_description,
     image= utils.preview,
-    meta=utils.dev_meta,
+    meta=utils.trucos_meta,
     
 
 )

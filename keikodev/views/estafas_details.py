@@ -27,6 +27,35 @@ def estafas_details()->rx.Component:
             o simplemente explicando lo que le ha pasado a """, 
             rx.chakra.span(rx.chakra.link("info@keikodev.es",href="mailto:info@keikodev.es"),font_family = Fuentes.TITLE.value),
             rx.chakra.span(" indicando si prefiere permanecer en el anonimato o quiere aparecer como fuente de la noticia."))),
+
+
+        
+        card(url="", title="Que hacer si caemos en una ciberestafa", 
+                lista_imagenes=[('/img/estafas/estafa5-1.png')],
+                body="""Ciberestafas bancarias: Robo de credenciales mediante técnicas como phishing, smishing y vishing. 
+                Recuperación de fondos: Algunos bancos se niegan a reconocer responsabilidad y devolver fondos.
+                Obligación de seguridad: Entidades deben tener pasarelas de pago seguras; normativas exigen devolver fondos en incidencias.
+                Acciones ante ciberfraude: Acudir al banco, cambiar claves; reclamaciones y juicios si se niegan a devolver.
+                Sentencias favorables: Clientes obtienen razón al demostrar falta de capacidad para discernir fraudes sofisticados.
+                Concientización: Entidades realizan campañas sobre credenciales para evitar fraudes.
+                Pasos legales: Reclamar mediante burofax, Defensor del Cliente, Banco de España, y, en última instancia, jurisdicción civil.""",
+
+                color=TextColor.PRIMARY, 
+                badge_text="29/02/2024", 
+                featured=False,
+                ),  
+        
+        card(url="", title="Nueva oleada de remesas de mensajes estafa", 
+                lista_imagenes=[('/img/estafas/estafa4-1.png')],
+                body="""Una nueva oleada de mensajes ha llegado, esta vez a través del correo electrónico, en un intento por obtener 
+                        nuestros datos. Nos alertan sobre un supuesto paquete pendiente de entrega. El remitente de este correo, 
+                        que aparece como huangjinhua787@tgmail.cyou, ya ni siquiera se esfuerza en disfrazarse de manera más sutil. 
+                        En cualquier caso, es crucial no caer en la trampa y enviar estos mensajes directamente a la papelera.""",
+                color=TextColor.PRIMARY, 
+                badge_text="27/02/2024", 
+                featured=False,
+                ),  
+
         card(url="", title="Ojo con esta nueva modalidad. Spoofing", 
                 lista_imagenes=[('/img/estafas/estafa3-1.jpg'),('/img/estafas/estafa3-2.jpg'),('/img/estafas/estafa3-3.jpg')],
                 body="""Tenemos una nueva modalidad de estafa al teléfono. Los estafadores te llaman haciendose pasar

@@ -1,4 +1,5 @@
 import reflex as rx
+import keikodev.data.anuncios as anuncios
 from keikodev.componentes.linkbutton import linkbutton
 from keikodev.componentes.title import title
 from keikodev.styles.styles import Size as Size
@@ -33,6 +34,15 @@ def kodi_links()-> rx.Component:
                 Route.KODI_TRUCOS.value,
                 is_external=False
                 ),
+
+                rx.link(
+                        rx.image(
+                                src=anuncios.anuncio_kodi_imagen,
+                                border_radius="15px",
+                        ),
+                        href=anuncios.anuncio_kodi_url,
+                        is_external=True,
+                ),
                 linkbutton("Instalación de Addon Luar",
                 "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
                 "/img/kodi2.png",
@@ -63,15 +73,7 @@ def kodi_links()-> rx.Component:
                 Route.KODI_BALANDRO.value,
                 is_external=False
                 ),
-                linkbutton("Instalación de Addon Arrow Negra",
-                "Instalación, gestión, mantenimento, actualización de complementos para kodi.",
-                "/img/kodi2.png",
-                Route.CONSTR.value,
-                is_external=False
-                ),
-
-
 
         width = "100%",
         spacing=Size.MEDIUM.value,
-    )
+        )

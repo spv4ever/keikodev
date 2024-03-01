@@ -18,7 +18,6 @@ from keikodev.componentes.facebook import facebook_like_button,facebook_sdk_init
 from keikodev.pages.google_auth import protected
 
 
-
 def navbar():
         return rx.chakra.flex(
                         utils.lang(),
@@ -47,7 +46,7 @@ def navbar():
                                         ), 
                                         href=Route.INDEX.value,
                                 ),
-                                #protected(),
+                                protected(),
                                 #rx.spacer(),
                                 #facebook_like_button(),
                                 
@@ -116,5 +115,5 @@ def navbar():
                 width="100%",
                 z_index = "999",
                 top="0",
-                as_="h1"
+                as_="h1",
                 )
