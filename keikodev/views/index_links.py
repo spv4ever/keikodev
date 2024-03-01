@@ -24,7 +24,7 @@ def index_links()-> rx.Component:
         linkbutton("El rincón de keiko",
             "Nueva sección del mundo animal",
             "/img/paw-solid.svg",
-            Route.CONSTR.value,
+            Route.KEIKO.value,
             is_external=False),
 
         linkbutton("MG Todo en nutrición y fitness",

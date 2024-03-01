@@ -20,7 +20,7 @@ from keikodev.views.privacidad_details import privacidad_details
     title=utils.privacidad_title,
     description=utils.privacidad_description,
     image= utils.preview,
-    meta=utils.dev_meta,
+    meta=utils.privacidad_meta,
     
 
 )

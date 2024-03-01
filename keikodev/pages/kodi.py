@@ -21,7 +21,7 @@ from keikodev.pages.google_auth import require_google_login
     title=utils.kodi_title,
     description=utils.kodi_description,
     image= utils.preview,
-    meta=utils.dev_meta,
+    meta=utils.kodi_meta,
     
 
 )

@@ -25,4 +25,5 @@ class Route(Enum):
     KODI_BALANDRO = "/kodi/balandro"
     KODI_ARROWNEGRA = "/kodi/arrownegra"
     COCINA = "/cocina"
+    KEIKO = "/keiko"
     
