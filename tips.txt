@@ -66,5 +66,19 @@ recetas asturianas
 recetas gallegas
 
 
+id=1
+create_time='2024-03-01 21:43:07'
+title='El Peligro Silencioso: La Oruga Procesionaria y su Amenaza para los Perros'
+date='2024-03-01 21:42:59'
+introduction='Las orugas procesionarias (Thaumetopea pityocampa) son insectos que, a primera vista, pueden parecer inofensivos, pero esconden un peligro letal para nuestros amigos peludos. Estas criaturas, comunes en muchas regiones, presentan una seria amenaza para los perros, y es crucial que los dueños estén al tanto de los riesgos asociados.'
+conclusion='La oruga procesionaria representa una amenaza real para la salud de nuestros perros, y la conciencia es la clave para prevenir problemas. Al educarnos sobre la presencia de estas orugas y tomar medidas preventivas, podemos garantizar la seguridad y el bienestar de nuestros leales compañeros caninos.' 
+detalles=[
+    InfoInteresDetalles(id=1, parrafoId=1, tituloParrafo='Características de la Oruga Procesionaria', parrafo='Las orugas procesionarias son fácilmente identificables por sus colores brillantes y su forma peculiar. Su hábitat natural incluye áreas boscosas, donde se alimentan de agujas de pino. Aunque su vida como oruga es relativamente corta, su impacto puede ser devastador.', fotoParrafo=None, idCabecera='1'), 
+    InfoInteresDetalles(id=2, parrafoId=2, tituloParrafo='Peligros para los Perros', parrafo='Lo que hace que la oruga procesionaria sea particularmente peligrosa es la presencia de pelos urticantes en su cuerpo. Estos pelos contienen una toxina que puede causar reacciones graves en los perros que entren en contacto con ellas. Los problemas más comunes incluyen dermatitis, hinchazón, dificultades respiratorias y, en casos extremos, shock anafiláctico.', fotoParrafo=None, idCabecera='1'), 
+    InfoInteresDetalles(id=3, parrafoId=3, tituloParrafo='Síntomas en los Perros', parrafo='Es vital que los dueños estén atentos a los posibles síntomas de exposición a la oruga procesionaria en sus perros. Estos pueden incluir irritación en la piel, inflamación de la boca y la lengua, vómitos, dificultad para respirar y, en casos severos, convulsiones. Ante cualquier signo de malestar, se debe buscar atención veterinaria de inmediato.', fotoParrafo=None, idCabecera='1'), 
+    InfoInteresDetalles(id=4, parrafoId=4, tituloParrafo='Prevención', parrafo='La mejor manera de proteger a los perros contra la oruga procesionaria es evitar el contacto directo. Evitar paseos en áreas boscosas durante la temporada en la que estas orugas están activas (generalmente durante la primavera) puede ser una medida preventiva efectiva. Además, se debe enseñar a los perros a no jugar ni morder objetos desconocidos durante los paseos.', fotoParrafo=None, idCabecera='1'), 
+    InfoInteresDetalles(id=5, parrafoId=5, tituloParrafo='Tratamiento y Primeros Auxilios', parrafo='Si se sospecha que un perro ha entrado en contacto con orugas procesionarias, se deben tomar medidas inmediatas. Lavar la boca y las patas del perro con agua abundante y buscar atención veterinaria es esencial. Los veterinarios pueden administrar tratamientos específicos, como antihistamínicos y corticosteroides, para aliviar los síntomas y minimizar el impacto de la toxina.', fotoParrafo=None, idCabecera='1')]
+
+
 
 

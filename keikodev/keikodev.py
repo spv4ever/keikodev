@@ -26,6 +26,7 @@ from keikodev.pages.cocina import cocina
 from keikodev.state.PageState import PageState
 from google.auth.transport import requests
 from google.oauth2.id_token import verify_oauth2_token
+from keikodev.data.info_interes import leerPost
 
 import dotenv
 
@@ -41,8 +42,11 @@ import time
 from .pages.react_oauth_google import GoogleOAuthProvider, GoogleLogin
 from keikodev.componentes.adsscript import ads_script
 
+
 dotenv.load_dotenv()
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
+
+leerPost()
 
 
 

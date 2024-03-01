@@ -80,6 +80,4 @@ class PageState(rx.State):
                         ]
                 fechas = [item.date for item in self.galeria_videos]
                 url = [item.url for item in self.galeria_videos]
-                
-                
-        
+

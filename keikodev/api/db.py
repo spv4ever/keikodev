@@ -82,6 +82,17 @@ class Database:
         cursor.close()
         self.close()
         return result
+    
+    def select_db(self, table):
+        # Consultar todos los registros de la tabla especificada
+        self.connect()
+        cursor = self.configdb.cursor()
+        sql = f"SELECT * FROM {table}"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        cursor.close()
+        self.close()
+        return result
 
 # Ejemplo de uso:
 

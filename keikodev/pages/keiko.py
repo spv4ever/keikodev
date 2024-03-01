@@ -11,6 +11,7 @@ from keikodev.routes import Route
 from keikodev.componentes.ant_components import Float_Button
 from keikodev.componentes.ant_components import FloatButton
 from keikodev.state.PageState import PageState as PageState
+from keikodev.state.info_interes_state import InfoInteresState
 
 @rx.page(
     route=Route.KEIKO.value,
@@ -43,4 +44,5 @@ def keiko() -> rx.Component:
             ),
         footer(),
         style = styles.background_pattern_style,
+        on_mount=InfoInteresState.leepostinteres,
     )

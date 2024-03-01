@@ -5,6 +5,8 @@ from .Twitch import TwitchAPI
 from .nasa import nasaApi
 from .db import Database
 from keikodev.models.live import Live
+from keikodev.data.info_interes import leerPost
+
 #from .supabase import SupabaseApi
 
 TWITCH_API = TwitchAPI()
@@ -56,6 +58,9 @@ async def galeria_load_video() -> list:
 
 async def consultaDB() -> list:
     return DB_API.select("nasa_imagenes")
+
+async def cargaInfo():
+    return leerPost()
 
 
 
