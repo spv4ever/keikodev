@@ -75,6 +75,14 @@ container_style = {
     }
 }
 
+post_style = {
+    "height": 400, 
+    "color": TextColor.BODY.value, 
+    "padding": Size.DEFAULT.value,
+    "border_radius": "1.5rem",
+    "background-color":Color.BACKGROUND.value
+    }
+
 featured_container_style = {
     "padding": Size.MEDIUM_BIG.value,
     "border_radius": "1.5rem",

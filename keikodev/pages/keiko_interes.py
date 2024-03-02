@@ -34,7 +34,7 @@ def keiko_interes() -> rx.Component:
             rx.chakra.vstack(
                 #header(False,live_status=PageState.live_status),
                 keiko_interes_details(),
-                max_width=styles.MAX_WIDTH,
+                max_width=styles.CONTENT_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value
                 ),

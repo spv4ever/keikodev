@@ -1,4 +1,5 @@
 import reflex as rx
+from datetime import datetime as dt
 
 # Comun
 def lang() -> rx.Component:
@@ -6,6 +7,10 @@ def lang() -> rx.Component:
 
 def cookies() -> rx.Component:
     return rx.script(src="//cdn.cookie-script.com/s/badcfd79f77b344234eebfda9910dc62.js")
+
+def formato_fecha(fecha):
+    return dt.strftime(fecha, "%Y/%m/%d")
+
 
 
 # Index information

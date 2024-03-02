@@ -42,3 +42,15 @@
         transform: translateX(-100%); /* Desplazamiento completo hacia la izquierda */
     }
 }
+
+/* CSS file */
+.flex-container {
+  display: flex;
+  flex-direction: row; /* default to row */
+}
+
+@media screen and (max-width: 768px) { /* example breakpoint for smaller screens */
+  .flex-container {
+    flex-direction: column;
+  }
+}

@@ -25,9 +25,11 @@ def leerPost():
         ]
         cabecera_modelo = InfoInteresCabecera(
             id=item_cabecera[0],
-            create_time = item_cabecera[1].strftime('%Y-%m-%d %H:%M:%S'),
+            #create_time = item_cabecera[1].strftime('%Y-%m-%d %H:%M:%S'),
+            create_time = item_cabecera[1].strftime('%d/%m/%Y'),
             title = item_cabecera[2],
-            date = item_cabecera[3].strftime('%Y-%m-%d %H:%M:%S'),
+            #date = item_cabecera[3].strftime('%Y-%m-%d %H:%M:%S'),
+            date = item_cabecera[3].strftime('%d/%m/%Y'),
             introduction=item_cabecera[4],
             conclusion=item_cabecera[5],
             detalles=detalles_modelo
