@@ -6,6 +6,7 @@ from .nasa import nasaApi
 from .db import Database
 from keikodev.models.live import Live
 from keikodev.data.info_interes import leerPost
+from keikodev.models.info_interes_models import InfoInteresCabecera
 
 #from .supabase import SupabaseApi
 
@@ -59,7 +60,7 @@ async def galeria_load_video() -> list:
 async def consultaDB() -> list:
     return DB_API.select("nasa_imagenes")
 
-async def cargaInfo():
+async def cargaInfo() -> InfoInteresCabecera:
     return leerPost()
 
 

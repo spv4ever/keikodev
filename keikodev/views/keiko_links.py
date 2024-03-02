@@ -14,7 +14,7 @@ def keiko_links()-> rx.Component:
                 linkbutton("Información de interés",
                 "Toda la información de interés y recomendaciones de keiko",
                 "/img/paw-solid.svg",
-                Route.CONSTR.value,
+                Route.KEIKO_INTERES.value,
                 is_external=False
                 ),
 

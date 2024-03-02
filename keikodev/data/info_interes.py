@@ -33,6 +33,8 @@ def leerPost():
             detalles=detalles_modelo
         )
         cabeceras_modelo.append(cabecera_modelo)
+    
+    return cabeceras_modelo
 
     # for item in cabeceras_modelo:
     #     print(item.introduction)

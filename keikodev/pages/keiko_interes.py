@@ -2,8 +2,6 @@ import reflex as rx
 import keikodev.utils as utils
 import keikodev.views.constants as const
 from keikodev.componentes.navbar import navbar
-from keikodev.views.header import header
-from keikodev.views.keiko_links import keiko_links
 from keikodev.views.footer import footer
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
@@ -12,9 +10,10 @@ from keikodev.componentes.ant_components import Float_Button
 from keikodev.componentes.ant_components import FloatButton
 from keikodev.state.PageState import PageState as PageState
 from keikodev.state.info_interes_state import InfoInteresState
+from keikodev.views.keiko_interes_details import keiko_interes_details
 
 @rx.page(
-    route=Route.KEIKO.value,
+    route=Route.KEIKO_INTERES.value,
     title=utils.keiko_title,
     description=utils.keiko_description,
     image= utils.preview,
@@ -22,11 +21,10 @@ from keikodev.state.info_interes_state import InfoInteresState
     
 )
 
-def keiko() -> rx.Component:
+def keiko_interes() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
         navbar(),
-        #Float_Button(disabled=False),
         Float_Button(
                 icon = rx.chakra.Image(src="/avatar.png"),
                 href = Route.INDEX.value,
@@ -35,7 +33,7 @@ def keiko() -> rx.Component:
         rx.chakra.center(
             rx.chakra.vstack(
                 #header(False,live_status=PageState.live_status),
-                keiko_links(),
+                keiko_interes_details(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value
