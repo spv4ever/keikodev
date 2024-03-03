@@ -18,7 +18,7 @@ import keikodev.recetas.canelones as canelones
 import keikodev.recetas.saludable as saludable
 from keikodev.componentes.menubar_cocina import menubar_cocina
 from keikodev.componentes.menubar_cocina import SelectState3
-from keikodev.data.recetas_json import recetas_andaluzas, recetas_alemanas, recetas_catalanas, recetas_japonesas, recetas_mexicanas, recetas_veganas
+from keikodev.data.recetas_json import recetas_andaluzas, recetas_alemanas, recetas_catalanas, recetas_japonesas, recetas_mexicanas, recetas_veganas, recetas_asturianas, recetas_francesas, recetas_italianas, recetas_marroquies, recetas_valencianas
 #from keikodev.data.recetas_andaluzas import Receta
 
 from keikodev.componentes.receta_text import recetatext
@@ -92,6 +92,31 @@ def cocina_details()->rx.Component:
         *[
             recetatext(receta_data)
             for receta_data in recetas_veganas
+        ],
+
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_asturianas
+        ],
+
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_francesas
+        ],
+
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_italianas
+        ],
+
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_marroquies
+        ],
+
+        *[
+            recetatext(receta_data)
+            for receta_data in recetas_valencianas
         ],
 
         spacing=Size.DEFAULT.value,

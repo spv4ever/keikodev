@@ -117,4 +117,84 @@ for receta_data in data["recetas_veganas"]:
     )
     recetas_veganas.append(receta)
 
+with open('assets/data/recetas_asturianas_json.json', 'r') as file:
+    data = json.load(file)
+
+recetas_asturianas = []
+
+# Crear instancias de RecetaAndaluza
+for receta_data in data["recetas_asturianas"]:
+    receta = Receta(
+        receta_data["numero"],
+        receta_data["nombre"],
+        receta_data["ingredientes"],
+        receta_data["instrucciones"],
+        "Recetas asturianas"
+    )
+    recetas_asturianas.append(receta)
+
+with open('assets/data/recetas_francesas_json.json', 'r') as file:
+    data = json.load(file)
+
+recetas_francesas = []
+
+# Crear instancias de RecetaAndaluza
+for receta_data in data["recetas_francesas"]:
+    receta = Receta(
+        receta_data["numero"],
+        receta_data["nombre"],
+        receta_data["ingredientes"],
+        receta_data["instrucciones"],
+        "Recetas francesas"
+    )
+    recetas_francesas.append(receta)
+
+with open('assets/data/recetas_italianas_json.json', 'r') as file:
+    data = json.load(file)
+
+recetas_italianas = []
+
+# Crear instancias de RecetaAndaluza
+for receta_data in data["recetas_italianas"]:
+    receta = Receta(
+        receta_data["numero"],
+        receta_data["nombre"],
+        receta_data["ingredientes"],
+        receta_data["instrucciones"],
+        "Recetas italianas"
+    )
+    recetas_italianas.append(receta)
+
+with open('assets/data/recetas_marroquis_json.json', 'r') as file:
+    data = json.load(file)
+
+recetas_marroquies = []
+
+# Crear instancias de RecetaAndaluza
+for receta_data in data["recetas_marroquies"]:
+    receta = Receta(
+        receta_data["numero"],
+        receta_data["nombre"],
+        receta_data["ingredientes"],
+        receta_data["instrucciones"],
+        "Recetas marroquies"
+    )
+    recetas_marroquies.append(receta)
+
+with open('assets/data/recetas_valencianas_json.json', 'r') as file:
+    data = json.load(file)
+
+recetas_valencianas = []
+
+# Crear instancias de RecetaAndaluza
+for receta_data in data["recetas_valencianas"]:
+    receta = Receta(
+        receta_data["numero"],
+        receta_data["nombre"],
+        receta_data["ingredientes"],
+        receta_data["instrucciones"],
+        "Recetas valencianas"
+    )
+    recetas_valencianas.append(receta)
+
     
