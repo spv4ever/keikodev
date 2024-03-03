@@ -1,5 +1,6 @@
 import reflex as rx
 import keikodev.styles.styles as styles
+
 from keikodev.styles.styles import Size as Size
 
 def linkbutton(title: str, body: str, image: str, url: str, tooltip="", is_external=True, highlight = None)->rx.Component:
@@ -23,6 +24,7 @@ def linkbutton(title: str, body: str, image: str, url: str, tooltip="", is_exter
                                     padding_right = Size.SMALL.value,
                                     ),
                                 ),
+                                
                             ),  
                             href=url,
                             button=True,

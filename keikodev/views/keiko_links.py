@@ -15,7 +15,7 @@ def keiko_links()-> rx.Component:
                 "Toda la información de interés y recomendaciones de keiko",
                 "/img/paw-solid.svg",
                 Route.KEIKO_INTERES.value,
-                is_external=False
+                is_external=False,
                 ),
 
                 linkbutton("Recetas de cocina para perros",

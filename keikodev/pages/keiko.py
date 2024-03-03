@@ -20,7 +20,6 @@ from keikodev.state.cuidados_state import CuidadosState
     description=utils.keiko_description,
     image= utils.preview,
     meta=utils.keiko_meta,
-    on_load=[InfoInteresState.leepostinteres, CuidadosState.leepostcuidados]    
 )
 
 def keiko() -> rx.Component:
@@ -39,9 +38,11 @@ def keiko() -> rx.Component:
                 keiko_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
-                margin_y=Size.BIG.value
+                margin_y=Size.BIG.value,
+                on_mount=InfoInteresState.leepostinteres,
                 ),
             style=styles.background_gradient_style,
+            on_mount=CuidadosState.leepostcuidados,
             ),
         footer(),
         style = styles.background_pattern_style,
