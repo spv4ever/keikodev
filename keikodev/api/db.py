@@ -53,7 +53,7 @@ class Database:
         self.connect()
         cursor = self.configdb.cursor()
         #sql = f"SELECT * FROM nasa_imagenes where copyright = '' and media_type = 'image' order by 2 desc"
-        sql = f"SELECT * FROM nasa_imagenes where media_type = 'image' order by 2 desc"
+        sql = f"SELECT * FROM nasa_imagenes where media_type = 'image' order by 2 desc limit 30"
         cursor.execute(sql)
         result = cursor.fetchall()
         cursor.close()
@@ -87,7 +87,7 @@ class Database:
         # Consultar todos los registros de la tabla especificada
         self.connect()
         cursor = self.configdb.cursor()
-        sql = f"SELECT * FROM {table}"
+        sql = f"SELECT * FROM {table} order by date desc limit 20"
         cursor.execute(sql)
         result = cursor.fetchall()
         cursor.close()

@@ -57,7 +57,6 @@ def keiko_interes_details()->rx.Component:
                 ),
 
                 rx.foreach(InfoInteresState.info_post,lambda item: post_info(item)),
-                #on_mount=InfoInteresState.leepostinteres(),
                 align_items="Start",
                 width="100%",
     )

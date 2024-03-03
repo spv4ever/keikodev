@@ -21,7 +21,7 @@ from keikodev.pages.google_auth import protected
 def navbar():
         return rx.chakra.flex(
                         utils.lang(),
-                                main_menu(),
+                                #main_menu(),
                                 rx.chakra.image(src="/avatar.png",
                                         alt="avatar",
                                         display="flex",

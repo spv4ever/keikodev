@@ -6,7 +6,9 @@ from .nasa import nasaApi
 from .db import Database
 from keikodev.models.live import Live
 from keikodev.data.info_interes import leerPost
+from keikodev.data.cuidados import leerPostCuidados
 from keikodev.models.info_interes_models import InfoInteresCabecera
+from keikodev.models.cuidados_models import CuidadosDetalles
 
 #from .supabase import SupabaseApi
 
@@ -62,6 +64,9 @@ async def consultaDB() -> list:
 
 async def cargaInfo() -> InfoInteresCabecera:
     return leerPost()
+
+async def cargaCuidado() -> CuidadosDetalles:
+    return leerPostCuidados()
 
 
 

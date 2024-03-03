@@ -21,6 +21,7 @@ from keikodev.pages.cursos import cursos
 from keikodev.pages.trucos import trucos
 from keikodev.pages.keiko import keiko
 from keikodev.pages.keiko_interes import keiko_interes
+from keikodev.pages.keiko_cuidados import keiko_cuidados
 from keikodev.pages.kodi_trucos import kodi_trucos
 from keikodev.pages.google_auth import index_login
 from keikodev.pages.cocina import cocina

@@ -36,7 +36,7 @@ def keiko_links()-> rx.Component:
                 linkbutton("Como cuidar de nuestros peludos",
                 "Explora los desafíos de salud más comunes que pueden afectar a nuestros peludos.",
                 "/img/shield-dog-solid.svg",
-                Route.CONSTR.value,
+                Route.KEIKO_CUIDADOS.value,
                 is_external=False,
                 ),
 
