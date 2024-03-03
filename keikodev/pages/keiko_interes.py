@@ -42,5 +42,5 @@ def keiko_interes() -> rx.Component:
             ),
         footer(),
         style = styles.background_pattern_style,
-        #on_mount=InfoInteresState.leepostinteres,
+        on_mount=InfoInteresState.leepostinteres,
     )

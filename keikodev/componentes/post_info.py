@@ -12,7 +12,14 @@ from keikodev.styles.fonts import Fuentes
 def detalles(item:InfoInteresDetalles)-> rx.Component:
     return rx.vstack(
             rx.text(item.tituloParrafo,style={"font_family":Fuentes.TITLE.value}),
-            rx.text(item.parrafo,style={"padding_x":Size.DEFAULT.value}),   
+            rx.text(item.parrafo,style={"padding_x":Size.DEFAULT.value}),
+            rx.hstack(
+                rx.image(src=item.fotoParrafo,width = "300px",height = "auto"),
+                width = "100%",
+                align = "center",
+                justify="center",
+            ),
+            
             )
 
 
