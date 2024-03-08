@@ -5,16 +5,11 @@ import keikodev.styles.styles as styles
 from keikodev.pages.index import index
 from keikodev.pages.dev import dev
 from keikodev.pages.constr import constr
-from keikodev.pages.kodi import kodi
-from keikodev.pages.kodi_addons import kodi_addons
-from keikodev.pages.kodi_pc import kodi_pc
-from keikodev.pages.kodi_luar import kodi_luar
 from keikodev.pages.estafas import estafas
 from keikodev.pages.utils_images import utils_images
 from keikodev.pages.galeria import galeria
 from keikodev.pages.galeria_nasa import galeria_nasa
 from keikodev.pages.galeria_nasa_video import galeria_nasa_video
-from keikodev.pages.emulator import emulator
 from keikodev.pages.cookies import cookies
 from keikodev.pages.privacidad import privacidad
 from keikodev.pages.cursos import cursos
@@ -22,7 +17,6 @@ from keikodev.pages.trucos import trucos
 from keikodev.pages.keiko import keiko
 from keikodev.pages.keiko_interes import keiko_interes
 from keikodev.pages.keiko_cuidados import keiko_cuidados
-from keikodev.pages.kodi_trucos import kodi_trucos
 from keikodev.pages.google_auth import index_login
 from keikodev.pages.cocina import cocina
 from keikodev.state.PageState import PageState
@@ -48,7 +42,7 @@ from keikodev.componentes.adsscript import ads_script
 dotenv.load_dotenv()
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 
-leerPost()
+#leerPost()
 
 
 
@@ -164,10 +158,10 @@ app = rx.App(
     stylesheets=styles.STYLESHEETS,
 )
 
-app.api.add_api_route("/hello",hello)
-app.api.add_api_route("/db",consultaDB)
-app.api.add_api_route("/repo", repo)
-app.api.add_api_route("/live/{user}", live)
+# app.api.add_api_route("/hello",hello)
+# app.api.add_api_route("/db",consultaDB)
+# app.api.add_api_route("/repo", repo)
+# app.api.add_api_route("/live/{user}", live)
 
 # app.api.add_api_route("/foto", foto)
 

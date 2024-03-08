@@ -7,6 +7,7 @@ from .fonts import Fuentes as Fuentes
 STYLESHEETS = [
     "https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap",
     "https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap",
+    "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
     "img/css/styles.css",
     "fonts/Fonts.css"
 ]
@@ -15,6 +16,8 @@ STYLESHEETS = [
 MAX_WIDTH = "560px"
 CONTENT_WIDTH = "1000px"
 CONTENT_GALERY = "100%"
+
+
 
 # Sizes
 class Size(Enum):

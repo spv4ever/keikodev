@@ -39,14 +39,6 @@ def main_menu()-> rx.Component:
                                 rx.chakra.menu_divider(),
                                 rx.chakra.menu_item(
                                         rx.chakra.link(
-                                                "Manuales Kodi",
-                                                href = Route.KODI.value,
-                                                ),
-                                        style=styles.main_menu_style,
-                                        
-                                        ),
-                                rx.chakra.menu_item(
-                                        rx.chakra.link(
                                                 "Ciberestafas",
                                                 href = Route.ESTAFAS.value,
                                                 ),

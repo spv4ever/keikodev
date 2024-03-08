@@ -32,22 +32,6 @@ constr_description = "Estamos de obras, iremos informando..."
 utils_images_title = "Recursos fotográficos Online"
 utils_images_description = "Links para retoques fotográficos online, AI, ..."
 
-# Tools Kodi
-kodi_title = "Manuales de instalación y gestión de KODI"
-kodi_description = "Instalación, mejores addons, tools, repositorios..."
-
-# Tools Kodi_pc
-kodi_pc_title = "Manual de instalación de Kodi para PC y Android"
-kodi_pc_description = "Pasos a seguir para preparar este genial centro multimedia"
-
-# Tools Kodi_pc
-kodi_addons_title = "Información general de gestión de add-ons en Kodi"
-kodi_addons_description = "Todo lo necesario para gestionar add-ons en Kodi, instalación, actualización, mantenimiento."
-
-# Tools Kodi_pc
-kodi_luar_title = "Instalación de addon Luar en Kodi"
-kodi_luar_description = "Pasos a seguir para preparar este genial centro multimedia, añadiendo Luar"
-
 # Ciberestafas
 estafas_title = "Sección de intentos de ciberestafas"
 estafas_description = "Aquí describiremos los intentos de ciberestafas que vamos recibiendo, mails fraudulentos, avisos por wassap, sms..."
@@ -116,33 +100,6 @@ utils_images_meta = [
 ]
 utils_images_meta.extend(_meta)
 
-# kodi
-kodi_meta = [
-    {"name": "og:title", "content": kodi_title},
-    {"name": "og:description", "content": kodi_description},
-]
-kodi_meta.extend(_meta)
-
-# kodi
-kodi_pc_meta = [
-    {"name": "og:title", "content": kodi_pc_title},
-    {"name": "og:description", "content": kodi_pc_description},
-]
-kodi_pc_meta.extend(_meta)
-
-# kodi Luar
-kodi_luar_meta = [
-    {"name": "og:title", "content": kodi_luar_title},
-    {"name": "og:description", "content": kodi_luar_description},
-]
-kodi_luar_meta.extend(_meta)
-
-# kodi addons
-kodi_addons_meta = [
-    {"name": "og:title", "content": kodi_addons_title},
-    {"name": "og:description", "content": kodi_addons_description},
-]
-kodi_addons_meta.extend(_meta)
 
 # ciberestafas
 estafas_meta = [
@@ -206,15 +163,6 @@ trucos_meta = [
     {"name": "og:description", "content": trucos_description},
 ]
 trucos_meta.extend(_meta)
-
-# kodi trucos
-kodi_trucos_title = "Trucos web, windows, android, ios"
-kodi_trucos_description = "Recopilación de trucos para todas las plataformas"
-kodi_trucos_meta = [
-    {"name": "og:title", "content": kodi_trucos_title},
-    {"name": "og:description", "content": kodi_trucos_description},
-]
-kodi_trucos_meta.extend(_meta)
 
 # cocina
 cocina_title = "Recetas de cocina casera"

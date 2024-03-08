@@ -34,7 +34,7 @@ def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
                             padding="2px",
                             border="4px",
                             border_color = Color.PRIMARY.value,
-                            box_shadow = f"0px 0px 20px {Color.PRIMARY.value}"
+                            box_shadow = f"0px 0px 20px {Color.PRIMARY.value}",
                             ),
                     rx.chakra.vstack(
                         rx.chakra.heading(

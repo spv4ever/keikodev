@@ -20,7 +20,7 @@ GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 
 
 
-user = UsersState()
+#user = UsersState()
 
 class StateLogin(rx.State):
     id_token_json: str = rx.LocalStorage()
@@ -36,7 +36,7 @@ class StateLogin(rx.State):
                 requests.Request(),
                 GOOGLE_CLIENT_ID,
             )
-            user.check_user(var)
+            UsersState.check_user(var)
             return var 
         except Exception as exc:
             if self.id_token_json:

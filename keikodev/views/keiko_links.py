@@ -54,6 +54,13 @@ def keiko_links()-> rx.Component:
                 Route.CONSTR.value,
                 is_external=False,
                 ),
+                linkbutton("Página inicial",
+                "Página inicial de keikodev",
+                "/img/house-solid.svg",
+                "/",
+                is_external=False,
+                ),
+                
 
 
 

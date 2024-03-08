@@ -22,6 +22,7 @@ from keikodev.data.recetas_json import recetas_andaluzas, recetas_alemanas, rece
 #from keikodev.data.recetas_andaluzas import Receta
 
 from keikodev.componentes.receta_text import recetatext
+from keikodev.componentes.linkbutton import linkbutton
 
 
 def cocina_details()->rx.Component:
@@ -36,7 +37,19 @@ def cocina_details()->rx.Component:
         steps("""Sección de recetas del canal de youtube Keikodev Recetas, donde publicaremos desde las recetas y secretos más preciados de 
             la familia, hasta cocina tradicional, moderna, rápida, especiales alimentación sana, etc"""),
 
-        menubar_cocina(),
+        rx.flex(
+            menubar_cocina(),
+            linkbutton("Página inicial",
+                "Página inicial de keikodev",
+                "/img/house-solid.svg",
+                "/",
+                is_external=False,
+                ),
+            width = "100%",
+            spacing="8",
+            margin_x = Size.BIG.value,
+            flex_direction = ["column-reverse","row"],
+        ),
         
         #rx.text(SelectState3.value),
 

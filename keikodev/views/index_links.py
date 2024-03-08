@@ -35,11 +35,7 @@ def index_links()-> rx.Component:
 
 
         title("Tecnología"),
-        linkbutton("Todo lo relacionado con Kodi",
-            "Apartado destinado a mantener la configuración de kodi",
-            "/img/tv-solid.svg",
-            Route.KODI.value,
-            is_external=False),
+
         linkbutton('Ciberestafas', 
             "Toda la actualidad de los intentos de fraude que recibamos", 
             "/img/user-secret-solid.svg",
@@ -81,12 +77,6 @@ def index_links()-> rx.Component:
             "Crear biblioteca de imágenes con fotografía propia",
             "/img/images.svg",
             Route.GALERIA.value,
-            is_external=False),
-
-        linkbutton('Mundo de la emulación', 
-            "Todo lo relativo al mundo de la emulación Consola", 
-            "/img/gamepad-solid.svg",
-            Route.EMULATOR.value,
             is_external=False),
 
         linkbutton('Servicios personalizados', 

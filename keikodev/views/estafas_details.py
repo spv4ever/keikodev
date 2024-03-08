@@ -11,6 +11,7 @@ from keikodev.componentes.imagenes import dosimagenes as dosimagenes
 from keikodev.componentes.imagenes import unaimagen as unaimagen
 from keikodev.componentes.noticias import noticias as noticias
 from keikodev.componentes.card import card as card
+from keikodev.componentes.linkbutton import linkbutton
 
 def estafas_details()->rx.Component:
     return rx.chakra.vstack(
@@ -27,8 +28,15 @@ def estafas_details()->rx.Component:
             o simplemente explicando lo que le ha pasado a """, 
             rx.chakra.span(rx.chakra.link("info@keikodev.es",href="mailto:info@keikodev.es"),font_family = Fuentes.TITLE.value),
             rx.chakra.span(" indicando si prefiere permanecer en el anonimato o quiere aparecer como fuente de la noticia."))),
-
-
+        rx.box(
+        linkbutton("Página inicial",
+                "Página inicial de keikodev",
+                "/img/house-solid.svg",
+                "/",
+                is_external=False,
+                ),
+            max_width = "375px",
+        ),
         
         card(url="", title="Que hacer si caemos en una ciberestafa", 
                 lista_imagenes=[('/img/estafas/estafa5-1.png')],
