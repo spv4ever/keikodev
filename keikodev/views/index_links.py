@@ -2,24 +2,50 @@ import reflex as rx
 from keikodev.componentes.linkbutton import linkbutton
 from keikodev.componentes.title import title
 from keikodev.styles.styles import Size as Size
+from keikodev.styles.styles import SizeRx as SizeRx
 from keikodev.styles.colors import Color
+from keikodev.styles.fonts import Fuentes
 import keikodev.views.constants as constants
 from keikodev.routes import Route
 from keikodev.state.countdown import CountdownState
+import keikodev.styles.styles as styles
 
 
 def index_links()-> rx.Component:
     return rx.chakra.vstack(
         title("Secciones Keikodev"),
-
-        rx.button(
-            rx.text(CountdownState.days),
-            rx.text(CountdownState.hour),
-            rx.text(CountdownState.minute),
-            rx.text(CountdownState.seconds, on_mount=CountdownState.start_countdown),
+        rx.box(
+            rx.vstack(
+                rx.hstack(
+                rx.text("3er lanzamiento de Star Ship",
+                        size=SizeRx.DEFAULT.value,
+                        style=styles.title_news_style,
+                        ),
+                        width = "100%",
+                        justify="center",
+                ),
+                rx.hstack(
+                    rx.text(
+                        f"Faltan {CountdownState.days} días y ", 
+                        size=SizeRx.MEDIUM.value
+                        
+                        ),
+                    rx.text(
+                            f"{CountdownState.hour}:{CountdownState.minute}:{CountdownState.seconds}", 
+                            size=SizeRx.MEDIUM.value,
+                            on_mount=CountdownState.start_countdown,
+                        ),
+                    width = "100%",
+                    style=styles.title_news_style,
+                    justify="center",
+                ),
+                width = "100%",
+                justify="center",
+            ),
             background_color=Color.CONTENT.value,
-            border_radius="5px",
-            width="100%"
+            border_radius="15px",
+            width="100%",
+            padding = Size.DEFAULT.value,
         ),
         linkbutton("Sección de recetas de cocina",
             "Sección Recetas Caseras y cocina internacional",

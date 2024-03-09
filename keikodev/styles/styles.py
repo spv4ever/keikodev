@@ -42,7 +42,10 @@ class Size(Enum):
     BUTTON_BIG = "450px"
 
 class SizeRx(Enum):
+    SMALL = "2"
+    MEDIUM = "4"
     DEFAULT = "6"
+    BIG = "8"
 
 # Styles
 BASE_STYLE = {
@@ -116,6 +119,12 @@ background_gradient_pattern_style = {
 button_title_style = dict(
     font_family=Fuentes.TITLE.value,
     font_size = Size.DEFAULT.value,
+    color=TextColor.HEADER.value,
+)
+
+title_news_style = dict(
+    font_family=Fuentes.TITLE.value,
+    font_size = SizeRx.BIG.value,
     color=TextColor.HEADER.value,
 )
 
