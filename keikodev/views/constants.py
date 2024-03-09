@@ -31,6 +31,10 @@ ANTDESIGN_URL = "https://ant.design/"
 RAILWAY_URL ="https://railway.app?referralCode=NK7skT"
 FLET_URL = "https://flet.dev/"
 FL_URL = "https://www.fl0.com/"
+ANIMATECSS_URL = "https://animate.style/"
+PIXVERSEAI_URL = "https://pixverse.ai/"
+CANVA_URL = "https://www.canva.com/"
+CAPCUT_URL = "https://www.capcut.com/"
 
 #Default
 DEFAULT_URL = "http://localhost:3000/"
@@ -65,6 +69,7 @@ CURSO_PSEIN_URL = "https://go.hotmart.com/Y90265742M?dp=1"
 #Nutrición
 MG_URL = "https://manugarciachacon.com/"
 YOUTUBE_URL = "http://www.youtube.com/@keikodevrecetas"
+YOUTUBE_URL_CANAL = "https://www.youtube.com/@keikodevnovedades"
 
 
 #prueba constantes.

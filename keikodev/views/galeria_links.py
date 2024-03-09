@@ -27,6 +27,7 @@ def galeria_links()-> rx.Component:
                 Route.GALERIA_NASA_VIDEO.value,
                 is_external=False,
                 ),
+                linkbutton(is_external=False),
 
 
 

@@ -2,23 +2,41 @@ import reflex as rx
 from keikodev.componentes.linkbutton import linkbutton
 from keikodev.componentes.title import title
 from keikodev.styles.styles import Size as Size
+from keikodev.styles.colors import Color
 import keikodev.views.constants as constants
 from keikodev.routes import Route
+from keikodev.state.countdown import CountdownState
 
 
 def index_links()-> rx.Component:
     return rx.chakra.vstack(
         title("Secciones Keikodev"),
+
+        rx.button(
+            rx.text(CountdownState.days),
+            rx.text(CountdownState.hour),
+            rx.text(CountdownState.minute),
+            rx.text(CountdownState.seconds, on_mount=CountdownState.start_countdown),
+            background_color=Color.CONTENT.value,
+            border_radius="5px",
+            width="100%"
+        ),
         linkbutton("Sección de recetas de cocina",
             "Sección Recetas Caseras y cocina internacional",
             "/img/utensils-solid.svg",
             Route.COCINA.value,
             is_external=False),
 
-        linkbutton("Canal de youtube",
+        linkbutton("Canal de Youtube Recetas",
             "Sección del canal de youtube keikodev Recetas",
             "/img/youtube.svg",
             constants.YOUTUBE_URL,
+            is_external=True),
+
+        linkbutton("Canal de Youtube Novedades",
+            "Sección del canal de youtube keikodev Novedades",
+            "/img/youtube.svg",
+            constants.YOUTUBE_URL_CANAL,
             is_external=True),
 
         linkbutton("El rincón de keiko",

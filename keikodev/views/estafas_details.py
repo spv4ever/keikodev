@@ -28,14 +28,16 @@ def estafas_details()->rx.Component:
             o simplemente explicando lo que le ha pasado a """, 
             rx.chakra.span(rx.chakra.link("info@keikodev.es",href="mailto:info@keikodev.es"),font_family = Fuentes.TITLE.value),
             rx.chakra.span(" indicando si prefiere permanecer en el anonimato o quiere aparecer como fuente de la noticia."))),
-        rx.box(
+        rx.flex(
         linkbutton("Página inicial",
                 "Página inicial de keikodev",
                 "/img/house-solid.svg",
                 "/",
                 is_external=False,
-                ),
-            max_width = "375px",
+                size = Size.BUTTON_SHORT.value,
+                ), 
+            width = "100%",
+            justify="end",
         ),
         
         card(url="", title="Que hacer si caemos en una ciberestafa", 

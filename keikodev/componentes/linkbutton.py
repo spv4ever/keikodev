@@ -3,7 +3,7 @@ import keikodev.styles.styles as styles
 
 from keikodev.styles.styles import Size as Size
 
-def linkbutton(title: str, body: str, image: str, url: str, tooltip="", is_external=True, highlight = None)->rx.Component:
+def linkbutton(title: str="Página inicial", body: str="Página inicial de keikodev", image: str="/img/house-solid.svg", url: str="/", tooltip="", is_external=True, highlight = None, size = "100%")->rx.Component:
     return rx.chakra.tooltip(
                     rx.chakra.link(
                         rx.chakra.button(
@@ -29,7 +29,7 @@ def linkbutton(title: str, body: str, image: str, url: str, tooltip="", is_exter
                             href=url,
                             button=True,
                             is_external=is_external,
-                            width="100%",
+                            width=size,
                             text_decoration="none",
                             
                         ),

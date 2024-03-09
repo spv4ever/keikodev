@@ -12,6 +12,9 @@ STYLESHEETS = [
     "fonts/Fonts.css"
 ]
 
+BOUNCE = "animate__animated animate__bounce"
+ROTATE = "animate__animated animate__rotateIn"
+
 # Constantes
 MAX_WIDTH = "560px"
 CONTENT_WIDTH = "1000px"
@@ -34,6 +37,9 @@ class Size(Enum):
     DEFAULT_BIG = "1.5em"
     MEDIUM_BIG = "3em"
     VERY_BIG = "6em"
+    BUTTON_SHORT = "300px"
+    BUTTON_MEDIUM = "375px"
+    BUTTON_BIG = "450px"
 
 class SizeRx(Enum):
     DEFAULT = "6"

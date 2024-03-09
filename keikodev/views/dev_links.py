@@ -74,6 +74,12 @@ def dev_links()-> rx.Component:
                         "/img/database-solid.svg",
                         constants.ITTOOLS_URL,
                 ),
+                linkbutton("Animate CSS",
+                        "Librería CSS para incorporar animaciones",
+                        "/img/css3.svg",
+                        constants.ANIMATECSS_URL,
+                ),
+                linkbutton(is_external=False),
 
         width = "100%",
         spacing=Size.MEDIUM.value,

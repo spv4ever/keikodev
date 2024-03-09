@@ -35,6 +35,7 @@ def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
                             border="4px",
                             border_color = Color.PRIMARY.value,
                             box_shadow = f"0px 0px 20px {Color.PRIMARY.value}",
+                            class_name=styles.ROTATE,
                             ),
                     rx.chakra.vstack(
                         rx.chakra.heading(
@@ -88,7 +89,7 @@ def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
                     font_family = Fuentes.DEFAULT.value,
                     align_items="start",
                     padding_x=Size.MEDIUM.value,
-                    
+                    class_name=styles.BOUNCE,
                     
                 
                     ),

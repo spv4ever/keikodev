@@ -18,6 +18,7 @@ from keikodev.componentes.facebook import facebook_like_button,facebook_sdk_init
 from keikodev.pages.google_auth import protected
 
 
+
 def navbar():
         return rx.chakra.flex(
                         utils.lang(),
@@ -46,7 +47,12 @@ def navbar():
                                         ), 
                                         href=Route.INDEX.value,
                                 ),
+                                
                                 protected(),
+                                
+                                #rx.button("Start Countdown", on_click=CountdownState.start_countdown),
+
+
                                 #rx.spacer(),
                                 #facebook_like_button(),
                                 

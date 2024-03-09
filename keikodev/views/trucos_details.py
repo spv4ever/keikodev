@@ -11,6 +11,7 @@ from keikodev.componentes.imagenes import dosimagenes as dosimagenes
 from keikodev.componentes.imagenes import unaimagen as unaimagen
 from keikodev.componentes.noticias import noticias as noticias
 from keikodev.componentes.card import card as card
+from keikodev.componentes.linkbutton import linkbutton
 
 def trucos_details()->rx.Component:
     return rx.chakra.vstack(
@@ -20,6 +21,18 @@ def trucos_details()->rx.Component:
                 ),
             width = "100%",
             margin_bottom = Size.BIG.value,
+        ),
+
+        rx.flex(
+        linkbutton("Página inicial",
+                "Página inicial de keikodev",
+                "/img/house-solid.svg",
+                "/",
+                is_external=False,
+                size = Size.BUTTON_SHORT.value,
+                ), 
+            width = "100%",
+            justify="end",
         ),
 
         card(url="https://www.ilovepdf.com/es", title="Web para trabajar con documentos PDF", 
