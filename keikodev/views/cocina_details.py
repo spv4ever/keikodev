@@ -16,6 +16,8 @@ from keikodev.componentes.receta import receta
 import keikodev.recetas.torrijas as torrijas
 import keikodev.recetas.canelones as canelones
 import keikodev.recetas.saludable as saludable
+import keikodev.recetas.alioli as alioli
+import keikodev.recetas.fideua as fideua
 from keikodev.componentes.menubar_cocina import menubar_cocina
 from keikodev.componentes.menubar_cocina import SelectState3
 from keikodev.data.recetas_json import recetas_andaluzas, recetas_alemanas, recetas_catalanas, recetas_japonesas, recetas_mexicanas, recetas_veganas, recetas_asturianas, recetas_francesas, recetas_italianas, recetas_marroquies, recetas_valencianas
@@ -77,14 +79,37 @@ def cocina_details()->rx.Component:
             receta(title = canelones.titulo, ingredientes=canelones.ingredientes, explicacion=canelones.explicacion, url=canelones.url, tipo=canelones.tipo),
         ),
 
+
+
+        rx.cond((SelectState3.value == alioli.tipo) | (SelectState3.value == "Todas"),
+            receta(title = alioli.titulo, ingredientes=alioli.ingredientes, explicacion=alioli.explicacion, url=alioli.url, tipo=alioli.tipo),
+        ),
+
+        rx.cond((SelectState3.value == fideua.tipo) | (SelectState3.value == "Todas"),
+            receta(title = fideua.titulo, ingredientes=fideua.ingredientes, explicacion=fideua.explicacion, url=fideua.url, tipo=fideua.tipo),
+        ),
         rx.cond((SelectState3.value == saludable.tipo) | (SelectState3.value == "Todas"),
             receta(title = saludable.titulo, ingredientes=saludable.ingredientes, explicacion=saludable.explicacion, url=saludable.url, tipo=saludable.tipo),
         ),
+                        # "Recetas Andaluzas",
+                        # "Recetas Catalanas",
+                        # "Recetas Alemanas",
+                        # "Recetas Asturianas",
+                        # "Recetas Francesas",
+                        # "Recetas Italianas",
+                        # "Recetas Japonesas",
+                        # "Recetas Marroquís",
+                        # "Recetas Mexicanas",
+                        # "Recetas Valencianas",
+                        # "Recetas Veganas"]
 
+
+        
         *[
             recetatext(receta_data)
             for receta_data in recetas_andaluzas
         ],
+
 
         *[
             recetatext(receta_data)

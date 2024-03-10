@@ -7,6 +7,7 @@ from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.colors import Color as Color
 import keikodev.styles.styles as styles
+from keikodev.componentes.menubar_cocina import SelectState3
 
 
 
@@ -21,7 +22,9 @@ def ingredientes(data:str)->rx.Component:
     )
 
 def recetatext(recetas_andaluzas:Receta)->rx.Component:
-    return rx.vstack(
+    return rx.cond(
+            (SelectState3.value == recetas_andaluzas.tipo) | (SelectState3.value == "Todas"),
+            rx.vstack(
                 rx.hstack(
                     badge(recetas_andaluzas.tipo, small=True),
                     heading(recetas_andaluzas.nombre, size="md"),
@@ -72,4 +75,5 @@ def recetatext(recetas_andaluzas:Receta)->rx.Component:
                 width = "100%",
                 align_items = "center",
                 style=styles.container_style,
-                )
+                ),
+    )
