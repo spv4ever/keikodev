@@ -21,6 +21,12 @@ def utils_images_links()-> rx.Component:
                         constants.FLIKI_URL,
                         ),
 
+                linkbutton("Leiapix AI",
+                        "Dale movimiento a tus mejores fotos. Gratuito con limitaciones",
+                        "/img/video-solid.svg",
+                        constants.LEIAPIX_URL,
+                        ),
+
                 title("Creadores de presentaciones y videos Online"),
                 linkbutton("Canva",
                         "Creador de videos y presentaciones. Gratuito con limitaciones.",

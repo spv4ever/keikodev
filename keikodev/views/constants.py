@@ -35,6 +35,7 @@ ANIMATECSS_URL = "https://animate.style/"
 PIXVERSEAI_URL = "https://pixverse.ai/"
 CANVA_URL = "https://www.canva.com/"
 CAPCUT_URL = "https://www.capcut.com/"
+LEIAPIX_URL = "https://www.leiapix.com/"
 
 #Default
 DEFAULT_URL = "http://localhost:3000/"
