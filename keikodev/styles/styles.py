@@ -77,6 +77,21 @@ BASE_STYLE = {
 
 }
 
+box_news_style = {
+        "width" : "100%",
+        "height" : "100%",
+        "display":"block",
+        "padding" : Size.SMALL.value,
+        "border_radius" : Size.DEFAULT.value,
+        "color" : TextColor.HEADER.value,
+        "background_color" : Color.CONTENT.value,
+        "white_space" : "normal",
+        "_hover" : {
+            "background_color" : Color.SECONDARY.value,
+            "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value}",
+            }
+    }
+
 container_style = {
     "width" : "100%",
     "padding": Size.DEFAULT.value,

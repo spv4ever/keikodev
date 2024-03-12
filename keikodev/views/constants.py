@@ -40,6 +40,7 @@ LEIAPIX_URL = "https://www.leiapix.com/"
 #Default
 DEFAULT_URL = "http://localhost:3000/"
 GOOGLE_URL = 'http://www.google.es'
+SPACEXSTORM_URL = "https://www.youtube.com/live/UMRGl46Hw_0?si=iJ2U9oWwBi-UHqcR"
 
 #Contactos
 EMAIL = "info@keikodev.es"
