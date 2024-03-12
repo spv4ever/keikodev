@@ -20,6 +20,8 @@ from keikodev.componentes.adsscript import ads_script
 from keikodev.state.alllinks import Alllinks
 from keikodev.componentes.facebook import facebook_sdk
 from keikodev.data.recetas_json import recetas_andaluzas
+from keikodev.state.countdown import CountdownState
+
 
 @rx.page(
     route=Route.INDEX.value,
@@ -44,7 +46,8 @@ def index() -> rx.Component:
                 width="100%",
                 margin_y=Size.BIG.value
                 ),
-                style=styles.background_gradient_style
+                style=styles.background_gradient_style,
+                on_mount=CountdownState.start_countdown,
             ),
         footer(),
         
