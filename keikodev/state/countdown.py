@@ -11,7 +11,7 @@ class CountdownState(rx.State):
 
     @rx.background
     async def start_countdown(self):
-        target_date = datetime(2024, 3, 14, 12, 59, 59)
+        target_date = datetime(2024, 3, 14, 10, 59, 59)
         while True:
             now = datetime.now()
             delta = target_date - now
