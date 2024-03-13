@@ -13,6 +13,7 @@ class Color(Enum):
     YELLOW = "rgb(241, 225, 112)"
     GREEN = "rgb(182, 209, 98)"
     BLUE = "rgb(130, 210, 207)"
+    SPACEX_SECONDARY = "ACA8AC"
 
 
 class TextColor(Enum):

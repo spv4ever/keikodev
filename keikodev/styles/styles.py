@@ -50,7 +50,6 @@ class SizeRx(Enum):
 # Styles
 BASE_STYLE = {
     "font_family": Fuentes.DEFAULT.value,
-    #"background_color": Color.BACKGROUND.value + "!important",
     "background_color": Color.BACKGROUND.value,
     rx.chakra.Heading:{
         "color" : TextColor.HEADER.value,

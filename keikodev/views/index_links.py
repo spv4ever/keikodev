@@ -57,6 +57,7 @@ def index_links()-> rx.Component:
             width = "100%",
             href=constants.SPACEXSTORM_URL,
             is_external=True,
+            
         ),
 
         linkbutton("Sección de recetas de cocina",
@@ -91,6 +92,12 @@ def index_links()-> rx.Component:
 
 
         title("Tecnología"),
+        linkbutton('SpaceX - Rumbo a Marte', 
+            "Información y videos sobre la evolución de SpaceX. Gracias a SpaceXstorm", 
+            "/img/rocket-solid.svg",
+            Route.SPACEX.value,
+            "Noticias sobre intentos de estafa en internet",
+            is_external=False),
 
         linkbutton('Ciberestafas', 
             "Toda la actualidad de los intentos de fraude que recibamos", 

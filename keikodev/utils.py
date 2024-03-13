@@ -181,3 +181,12 @@ keiko_meta = [
     {"name": "og:description", "content": keiko_description},
 ]
 keiko_meta.extend(_meta)
+
+#Sección de spaceX
+spacex_title = "SpaceX - Rumbo a Marte"
+spacex_description = "Espacio para compartir noticias y directos de SpaceX. Gracias a SpaceXstorm por dejarme compartir sus videos."
+spacex_meta = [
+    {"name": "og:title", "content": keiko_title},
+    {"name": "og:description", "content": keiko_description},
+]
+spacex_meta.extend(_meta)

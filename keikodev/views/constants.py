@@ -40,7 +40,7 @@ LEIAPIX_URL = "https://www.leiapix.com/"
 #Default
 DEFAULT_URL = "http://localhost:3000/"
 GOOGLE_URL = 'http://www.google.es'
-SPACEXSTORM_URL = "https://www.youtube.com/live/UMRGl46Hw_0?si=iJ2U9oWwBi-UHqcR"
+
 
 #Contactos
 EMAIL = "info@keikodev.es"
@@ -76,6 +76,11 @@ YOUTUBE_URL_CANAL = "https://www.youtube.com/@keikodevnovedades"
 
 #prueba constantes.
 NASA_URL = ""
+
+#Links SpaceX
+SPACEX_URL = "https://www.spacex.com/"
+SPACEXSTORM_URL = "https://www.youtube.com/live/UMRGl46Hw_0?si=iJ2U9oWwBi-UHqcR"
+SPACEXSTORM_CHANNEL_URL = "https://www.youtube.com/@SpaceXStorm"
 
 
 
