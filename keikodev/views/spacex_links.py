@@ -20,6 +20,11 @@ def spacex_links()-> rx.Component:
                         "/img/rocket-solid.svg",
                         constants.SPACEX_URL,
                 ),
+                linkbutton("Star Ship",
+                        "Recopilación de directos de SpaceXstorm relacionados con la StarShip",
+                        "/img/rocket-solid.svg",
+                        constants.SPACEXSTORM_CHANNEL_URL,
+                ),
                 
                 linkbutton(is_external=False),
 
