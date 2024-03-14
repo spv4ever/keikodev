@@ -79,7 +79,7 @@ NASA_URL = ""
 
 #Links SpaceX
 SPACEX_URL = "https://www.spacex.com/"
-SPACEXSTORM_URL = "https://www.youtube.com/live/UMRGl46Hw_0?si=iJ2U9oWwBi-UHqcR"
+SPACEXSTORM_URL = "https://www.youtube.com/watch?v=8KB15tBahFg"
 SPACEXSTORM_CHANNEL_URL = "https://www.youtube.com/@SpaceXStorm"
 
 

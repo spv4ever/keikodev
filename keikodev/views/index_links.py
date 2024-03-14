@@ -40,7 +40,7 @@ def index_links()-> rx.Component:
                     #     style=styles.title_news_style,
                     #     justify="center",
                     # ),
-                    rx.text("Sigue el lanzamiento con SpaceXstorm",
+                    rx.text("Sigue el lanzamiento",
                             width="100%",
                             align="center",
                             ),
