@@ -25,21 +25,21 @@ def index_links()-> rx.Component:
                             width = "100%",
                             justify="center",
                     ),
-                    rx.hstack(
-                        rx.text(
-                            f"Faltan {CountdownState.days} días y ", 
-                            size=SizeRx.MEDIUM.value,
+                    # rx.hstack(
+                    #     rx.text(
+                    #         f"Faltan {CountdownState.days} días y ", 
+                    #         size=SizeRx.MEDIUM.value,
                             
-                            ),
-                        rx.text(
-                                f"{CountdownState.hour}:{CountdownState.minute}:{CountdownState.seconds}", 
-                                size=SizeRx.MEDIUM.value,
-                                on_mount=CountdownState.start_countdown,
-                            ),
-                        width = "100%",
-                        style=styles.title_news_style,
-                        justify="center",
-                    ),
+                    #         ),
+                    #     rx.text(
+                    #             f"{CountdownState.hour}:{CountdownState.minute}:{CountdownState.seconds}", 
+                    #             size=SizeRx.MEDIUM.value,
+                    #             on_mount=CountdownState.start_countdown,
+                    #         ),
+                    #     width = "100%",
+                    #     style=styles.title_news_style,
+                    #     justify="center",
+                    # ),
                     rx.text("Sigue el lanzamiento con SpaceXstorm",
                             width="100%",
                             align="center",
