@@ -24,6 +24,7 @@ from google.auth.transport import requests
 from google.oauth2.id_token import verify_oauth2_token
 from keikodev.data.info_interes import leerPost
 from keikodev.pages.spacex import spacex
+from keikodev.pages.galeria_starship_video import galeria_starship_video
 
 import dotenv
 

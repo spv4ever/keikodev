@@ -19,5 +19,6 @@ class Route(Enum):
     KEIKO_INTERES = "/keiko/interes"
     KEIKO_CUIDADOS = "/keiko/cuidados"
     SPACEX = "/SpaceX"
+    SPACEX_STARSHIP = "/SpaceX/StarShip"
     
     

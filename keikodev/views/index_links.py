@@ -14,55 +14,55 @@ import keikodev.styles.styles as styles
 def index_links()-> rx.Component:
     return rx.chakra.vstack(
         title("Secciones Keikodev"),
-        rx.link(
-            rx.box(
-                rx.vstack(
-                    rx.hstack(
-                    rx.text("Star Ship - 3er vuelo de prueba",
-                            size=SizeRx.DEFAULT.value,
-                            style=styles.title_news_style,
-                            ),
-                            width = "100%",
-                            justify="center",
-                    ),
-                    # rx.hstack(
-                    #     rx.text(
-                    #         f"Faltan {CountdownState.days} días y ", 
-                    #         size=SizeRx.MEDIUM.value,
+        # rx.link(
+        #     rx.box(
+        #         rx.vstack(
+        #             rx.hstack(
+        #             rx.text("Star Ship - 3er vuelo de prueba",
+        #                     size=SizeRx.DEFAULT.value,
+        #                     style=styles.title_news_style,
+        #                     ),
+        #                     width = "100%",
+        #                     justify="center",
+        #             ),
+        #             # rx.hstack(
+        #             #     rx.text(
+        #             #         f"Faltan {CountdownState.days} días y ", 
+        #             #         size=SizeRx.MEDIUM.value,
                             
-                    #         ),
-                    #     rx.text(
-                    #             f"{CountdownState.hour}:{CountdownState.minute}:{CountdownState.seconds}", 
-                    #             size=SizeRx.MEDIUM.value,
-                    #             on_mount=CountdownState.start_countdown,
-                    #         ),
-                    #     width = "100%",
-                    #     style=styles.title_news_style,
-                    #     justify="center",
-                    # ),
-                    rx.text("Sigue el lanzamiento",
-                            width="100%",
-                            align="center",
-                            ),
-                    rx.text("Lanzamiento 13:00. 30' antes directo",
-                            width="100%",
-                            align="center",
-                            ),
-                    style=styles.title_news_style,
-                    width = "100%",
-                    justify="center",
-                ),
-                style = styles.box_news_style,
-                background_color=Color.CONTENT.value,
-                # border_radius="15px",
-                width="100%",
-                padding = Size.DEFAULT.value,
-            ),
-            width = "100%",
-            href=constants.SPACEXSTORM_URL,
-            is_external=True,
+        #             #         ),
+        #             #     rx.text(
+        #             #             f"{CountdownState.hour}:{CountdownState.minute}:{CountdownState.seconds}", 
+        #             #             size=SizeRx.MEDIUM.value,
+        #             #             on_mount=CountdownState.start_countdown,
+        #             #         ),
+        #             #     width = "100%",
+        #             #     style=styles.title_news_style,
+        #             #     justify="center",
+        #             # ),
+        #             rx.text("Sigue el lanzamiento",
+        #                     width="100%",
+        #                     align="center",
+        #                     ),
+        #             rx.text("Lanzamiento 13:00. 30' antes directo",
+        #                     width="100%",
+        #                     align="center",
+        #                     ),
+        #             style=styles.title_news_style,
+        #             width = "100%",
+        #             justify="center",
+        #         ),
+        #         style = styles.box_news_style,
+        #         background_color=Color.CONTENT.value,
+        #         # border_radius="15px",
+        #         width="100%",
+        #         padding = Size.DEFAULT.value,
+        #     ),
+        #     width = "100%",
+        #     href=constants.SPACEXSTORM_URL,
+        #     is_external=True,
             
-        ),
+        # ),
 
         linkbutton("Sección de recetas de cocina",
             "Sección Recetas Caseras y cocina internacional",

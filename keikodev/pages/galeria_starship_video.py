@@ -12,7 +12,7 @@ from keikodev.styles.styles import Size as Size
 from keikodev.views.galeria_links import galeria_links
 from keikodev.state.ModalState import ModalState
 from keikodev.state.PageState import PageState as PageState
-from keikodev.views.galeria_nasa_video_details import galeria_nasa_video_details
+from keikodev.views.galeria_starship_video_details import galeria_starship_video_details
 
 
 
@@ -21,15 +21,14 @@ from keikodev.views.galeria_nasa_video_details import galeria_nasa_video_details
 
 
 @rx.page(
-    route=Route.GALERIA_NASA_VIDEO.value,
-    title=utils.galeria_nasa_title,
-    description=utils.galeria_nasa_description,
+    route=Route.SPACEX_STARSHIP.value,
+    title=utils.starship_video_title,
+    description=utils.starship_video_description,
     image= utils.preview,
-    meta=utils.galeria_nasa_meta,    
+    meta=utils.starship_video_meta,    
 )
-
-def galeria_nasa_video() -> rx.Component:
-    return rx.chakra.box(
+def galeria_starship_video() -> rx.Component:
+    return rx.box(
         utils.lang(),
         navbar(),
         Float_Button(
@@ -39,17 +38,20 @@ def galeria_nasa_video() -> rx.Component:
             ),
         rx.chakra.center(
             rx.chakra.vstack(
-                galeria_nasa_video_details(),
+                galeria_starship_video_details(),
                 max_width=styles.CONTENT_WIDTH,
                 width="100%",
                 margin_y=Size.BIG.value,
+                min_height = "650px",
                 
-                on_mount=PageState.galeria_fotos_load_video,
                 ),
-                style=styles.background_gradient_style,
+                #style=styles.background_gradient_style,
 
             ),
         footer(),
+        min_height = "650px",
+        background = "center / contain no-repeat url('/img/starship.svg')",
+        width = "100%",
         
-        style = styles.background_pattern_style,
+        #style = styles.background_pattern_style,
     )

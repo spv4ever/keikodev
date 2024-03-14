@@ -79,8 +79,17 @@ NASA_URL = ""
 
 #Links SpaceX
 SPACEX_URL = "https://www.spacex.com/"
-SPACEXSTORM_URL = "https://www.youtube.com/watch?v=8KB15tBahFg"
+
+#Links SpaceXstorm
+SPACEXSTORM_URL_LANZAMIENTO = ""
 SPACEXSTORM_CHANNEL_URL = "https://www.youtube.com/@SpaceXStorm"
+
+#StarShip
+STARSHIP_TERCER_TEST = "https://www.youtube.com/watch?v=Zdse97c9plU"
+STARSHIP_SEGUNDO_TEST = "https://www.youtube.com/watch?v=LgEMTp7vLr4"
+STARSHIP_PRIMER_TEXT = "https://www.youtube.com/watch?v=phLF3WlGnec"
+
+
 
 
 
