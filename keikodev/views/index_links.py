@@ -28,7 +28,7 @@ def index_links()-> rx.Component:
                     rx.hstack(
                         rx.text(
                             f"Faltan {CountdownState.days} días y ", 
-                            size=SizeRx.MEDIUM.value
+                            size=SizeRx.MEDIUM.value,
                             
                             ),
                         rx.text(
@@ -41,6 +41,10 @@ def index_links()-> rx.Component:
                         justify="center",
                     ),
                     rx.text("Sigue el lanzamiento con SpaceXstorm",
+                            width="100%",
+                            align="center",
+                            ),
+                    rx.text("Lanzamiento 13:00. 30' antes directo",
                             width="100%",
                             align="center",
                             ),
