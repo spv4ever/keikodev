@@ -10,8 +10,7 @@ class CuidadosState(rx.State):
         async with self:
             self.info_post = await cargaCuidado()
 
-            # for item in self.info_post:
-            #     print(item.title)
+
 
 
 

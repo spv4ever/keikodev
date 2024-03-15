@@ -93,6 +93,17 @@ class Database:
         cursor.close()
         self.close()
         return result
+    
+    def select_next_launch(self, table):
+        # Consultar todos los registros de la tabla especificada
+        self.connect()
+        cursor = self.configdb.cursor()
+        sql = f"SELECT * FROM {table} where launch_date > NOW() order by launch_date desc limit 1"
+        cursor.execute(sql)
+        result = cursor.fetchall()
+        cursor.close()
+        self.close()
+        return result
 
 # Ejemplo de uso:
 

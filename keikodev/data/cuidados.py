@@ -36,9 +36,6 @@ def leerPostCuidados():
     
     return cabeceras_modelo
 
-    # for item in cabeceras_modelo:
-    #     print(item.introduction)
-
 
 
 

@@ -9,61 +9,16 @@ import keikodev.views.constants as constants
 from keikodev.routes import Route
 from keikodev.state.countdown import CountdownState
 import keikodev.styles.styles as styles
+from keikodev.componentes.next_live import next_live
+from keikodev.state.next_launch_state import Nextlaunch
+
 
 
 def index_links()-> rx.Component:
     return rx.chakra.vstack(
-        title("Secciones Keikodev"),
-        # rx.link(
-        #     rx.box(
-        #         rx.vstack(
-        #             rx.hstack(
-        #             rx.text("Star Ship - 3er vuelo de prueba",
-        #                     size=SizeRx.DEFAULT.value,
-        #                     style=styles.title_news_style,
-        #                     ),
-        #                     width = "100%",
-        #                     justify="center",
-        #             ),
-        #             # rx.hstack(
-        #             #     rx.text(
-        #             #         f"Faltan {CountdownState.days} días y ", 
-        #             #         size=SizeRx.MEDIUM.value,
-                            
-        #             #         ),
-        #             #     rx.text(
-        #             #             f"{CountdownState.hour}:{CountdownState.minute}:{CountdownState.seconds}", 
-        #             #             size=SizeRx.MEDIUM.value,
-        #             #             on_mount=CountdownState.start_countdown,
-        #             #         ),
-        #             #     width = "100%",
-        #             #     style=styles.title_news_style,
-        #             #     justify="center",
-        #             # ),
-        #             rx.text("Sigue el lanzamiento",
-        #                     width="100%",
-        #                     align="center",
-        #                     ),
-        #             rx.text("Lanzamiento 13:00. 30' antes directo",
-        #                     width="100%",
-        #                     align="center",
-        #                     ),
-        #             style=styles.title_news_style,
-        #             width = "100%",
-        #             justify="center",
-        #         ),
-        #         style = styles.box_news_style,
-        #         background_color=Color.CONTENT.value,
-        #         # border_radius="15px",
-        #         width="100%",
-        #         padding = Size.DEFAULT.value,
-        #     ),
-        #     width = "100%",
-        #     href=constants.SPACEXSTORM_URL,
-        #     is_external=True,
-            
-        # ),
+        rx.foreach(Nextlaunch.next_launch,lambda item: next_live(item)),
 
+        title("Secciones Keikodev"),
         linkbutton("Sección de recetas de cocina",
             "Sección Recetas Caseras y cocina internacional",
             "/img/utensils-solid.svg",
@@ -151,4 +106,5 @@ def index_links()-> rx.Component:
             "/img/dev.svg",
             Route.CONSTR.value,
             is_external=False),
+        on_mount=Nextlaunch.next_launch_select()
     )

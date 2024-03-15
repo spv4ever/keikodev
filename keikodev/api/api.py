@@ -7,8 +7,10 @@ from .db import Database
 from keikodev.models.live import Live
 from keikodev.data.info_interes import leerPost
 from keikodev.data.cuidados import leerPostCuidados
+from keikodev.data.next_launch import next_launch
 from keikodev.models.info_interes_models import InfoInteresCabecera
 from keikodev.models.cuidados_models import CuidadosDetalles
+from keikodev.models.launches import Launches
 
 #from .supabase import SupabaseApi
 
@@ -67,6 +69,12 @@ async def cargaInfo() -> InfoInteresCabecera:
 
 async def cargaCuidado() -> CuidadosDetalles:
     return leerPostCuidados()
+
+async def launches() -> Launches:
+    return next_launch()
+
+
+
 
 
 

@@ -85,10 +85,10 @@ box_news_style = {
         "color" : TextColor.HEADER.value,
         "background_color" : Color.CONTENT.value,
         "white_space" : "normal",
-        "_hover" : {
-            "background_color" : Color.SECONDARY.value,
-            "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value}",
-            }
+        # "_hover" : {
+        #     "background_color" : Color.SECONDARY.value,
+        #     "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value}",
+        #     }
     }
 
 container_style = {
