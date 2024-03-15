@@ -23,16 +23,35 @@ def galeria_starship_video_details()->rx.Component:
                 rx.heading("Videos de los lanzamientos de la Starship",
                     color = TextColor.PRIMARY.value),
                 rx.tablet_and_desktop(                
+                        rx.text("Primer Intento",
+                                color = TextColor.PRIMARY.value,
+                                width = "100%",
+                                align="center",
+                                size="5"),
+                        rx.video(url=const.STARSHIP_TERCER_TEST,
+                                ),
+                        rx.text("Segundo Intento",
+                                color = TextColor.PRIMARY.value,
+                                width = "100%"),
+                        rx.video(url=const.STARSHIP_SEGUNDO_TEST,
+                                ),
+                        rx.text("Tercer Intento",
+                                color = TextColor.PRIMARY.value,
+                                width = "100%"),
+                        rx.video(url=const.STARSHIP_PRIMER_TEXT,
+                                ),
+                ),
+                rx.mobile_only(                
                     rx.text("Primer Intento",
                             color = TextColor.PRIMARY.value,
                             width = "100%"),
                     
-                    rx.video(url=const.STARSHIP_PRIMER_TEXT,
+                    rx.video(url=const.STARSHIP_TERCER_TEST,
                             # style={
                             #     "width":["100%","50%","25%"]
                             # }
-                            # width="350px",
-                            # height="240px",                        
+                             width="350px",
+                             height="240px",                        
                             ),
                     rx.text("Segundo Intento",
                             color = TextColor.PRIMARY.value,
@@ -41,18 +60,18 @@ def galeria_starship_video_details()->rx.Component:
                             # style={
                             #     "width":["100%","50%","25%"]
                             # }
-                            # width="350px",
-                            # height="240px",                        
+                             width="350px",
+                             height="240px",                        
                             ),
                     rx.text("Tercer Intento",
                             color = TextColor.PRIMARY.value,
                             width = "100%"),
-                    rx.video(url=const.STARSHIP_TERCER_TEST,
+                    rx.video(url=const.STARSHIP_PRIMER_TEXT,
                             # style={
                             #     "width":["100%","50%","25%"]
                             # }
-                            # width="350px",
-                            # height="240px",
+                             width="350px",
+                             height="240px",
                             ),
                 ),
                 spacing="4",

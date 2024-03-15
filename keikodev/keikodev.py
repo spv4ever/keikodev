@@ -160,6 +160,15 @@ app = rx.App(
     stylesheets=styles.STYLESHEETS,
 )
 
+app.head_components.append(
+    rx.script(
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7920736444321179",
+        custom_attrs={"async": "", "crossorigin": "anonymous"}
+    )
+)
+
+
+
 # app.api.add_api_route("/hello",hello)
 # app.api.add_api_route("/db",consultaDB)
 # app.api.add_api_route("/repo", repo)

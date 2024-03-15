@@ -44,7 +44,7 @@ def next_live(next_launch: Launches)-> rx.Component:
                                 next_launch.url_live,
                                 rx.button("Directo",
                                         variant="soft",
-                                        on_click=rx.redirect(next_launch.channel, external=True),
+                                        on_click=rx.redirect(next_launch.url_live, external=True),
                                         _hover={"cursor": "pointer"},
                                         ),
                             ),
