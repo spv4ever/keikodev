@@ -98,7 +98,7 @@ class Database:
         # Consultar todos los registros de la tabla especificada
         self.connect()
         cursor = self.configdb.cursor()
-        sql = f"SELECT * FROM {table} where launch_date > NOW() order by launch_date desc limit 1"
+        sql = f"SELECT * FROM {table} where launch_date > NOW() order by launch_date asc limit 1"
         cursor.execute(sql)
         result = cursor.fetchall()
         cursor.close()
