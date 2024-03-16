@@ -24,6 +24,7 @@ def spacex_links()-> rx.Component:
                         "Recopilación de directos de SpaceXstorm relacionados con la StarShip",
                         "/img/rocket-solid.svg",
                         Route.SPACEX_STARSHIP.value,
+                        is_external=False,
                 ),
                 
                 linkbutton(is_external=False),

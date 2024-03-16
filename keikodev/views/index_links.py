@@ -55,7 +55,6 @@ def index_links()-> rx.Component:
             "Información y videos sobre la evolución de SpaceX. Gracias a SpaceXstorm", 
             "/img/rocket-solid.svg",
             Route.SPACEX.value,
-            "Noticias sobre intentos de estafa en internet",
             is_external=False),
 
         linkbutton('Ciberestafas', 

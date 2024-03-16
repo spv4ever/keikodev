@@ -43,8 +43,6 @@ def spacex() -> rx.Component:
             ),
         footer(),
         #style = styles.background_pattern_style,
-        background = "center / contain no-repeat url('/img/starship.svg')",
+        background = "top / contain no-repeat url('/img/starship.svg')",
         width = "100%",
-        #height = "100%",
-        #bg = Color.IMAGE_BOX.value,
     )
