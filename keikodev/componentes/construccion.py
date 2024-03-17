@@ -11,14 +11,18 @@ from keikodev.models.Nasalink import Nasalink
 from keikodev.data.data_galeria_nasa import Datagalerianasa
 #from keikodev.data.data_galeria_nasa import items_galeria
 from keikodev.componentes.card_galery import card_galery
+from keikodev.state.user_logged import Userlevel
+from keikodev.api.Users import Users
+from keikodev.pages.google_auth import StateLogin
 
 
 def construccion()->rx.Component:
     return rx.chakra.vstack(
         rx.chakra.heading(
-            "Todavía no estamos listos",
+            StateLogin.user_level,
             size = "lg",
             style=styles.title_center_style,
+            on_mount=Userlevel.set_user_level(StateLogin.user_level)
             ),
         rx.chakra.image(
             src="/en-construccion.webp.png",

@@ -11,7 +11,8 @@ from google.oauth2.id_token import verify_oauth2_token
 from keikodev.pages.react_oauth_google import GoogleOAuthProvider, GoogleLogin
 from keikodev.styles.colors import Color, TextColor
 from keikodev.styles.styles import Size
-from keikodev.api.Users import UsersState
+from keikodev.api.Users import Users
+from keikodev.state.user_logged import Userlevel
 
 
 
@@ -19,11 +20,13 @@ dotenv.load_dotenv()
 GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 
 
-
 #user = UsersState()
+
 
 class StateLogin(rx.State):
     id_token_json: str = rx.LocalStorage()
+    user_level: str
+    
 
     def on_success(self, id_token: dict):
         self.id_token_json = json.dumps(id_token)
@@ -36,8 +39,11 @@ class StateLogin(rx.State):
                 requests.Request(),
                 GOOGLE_CLIENT_ID,
             )
-            UsersState.check_user(var)
+            #self.user_level = UsersState.check_user(self,var)
+            #print(self.user_level)
+            #Userlevel.set_user_level(self.user_level)   
             return var 
+        
         except Exception as exc:
             if self.id_token_json:
                 print(f"Error verifying token: {exc}")
@@ -45,6 +51,7 @@ class StateLogin(rx.State):
 
     def logout(self):
         self.id_token_json = ""
+        Userlevel.set_user_level("")
 
     @rx.var
     def token_is_valid(self) -> bool:
@@ -101,6 +108,7 @@ def user_info(tokeninfo: dict) -> rx.Component:
     display = "flex",
     align_items="center",
     justify_content = "center",
+
 
     )
 

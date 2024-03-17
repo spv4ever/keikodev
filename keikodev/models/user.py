@@ -5,7 +5,7 @@ class User(rx.Base):
     name: str
     email: str
     password: str
-    user_type: int
+    user_type: str
 
 
 

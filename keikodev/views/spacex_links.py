@@ -26,6 +26,11 @@ def spacex_links()-> rx.Component:
                         Route.SPACEX_STARSHIP.value,
                         is_external=False,
                 ),
+                linkbutton("NSF Próximos lanzamientos",
+                        "Web para ver los próximos lanzamientos",
+                        "/img/rocket-solid.svg",
+                        constants.NEXT_LAUNCHS_URL,
+                ),
                 
                 linkbutton(is_external=False),
 

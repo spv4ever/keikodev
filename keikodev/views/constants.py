@@ -87,7 +87,10 @@ SPACEXSTORM_CHANNEL_URL = "https://www.youtube.com/@SpaceXStorm"
 #StarShip
 STARSHIP_TERCER_TEST = "https://www.youtube.com/watch?v=Zdse97c9plU"
 STARSHIP_SEGUNDO_TEST = "https://www.youtube.com/watch?v=LgEMTp7vLr4"
-STARSHIP_PRIMER_TEXT = "https://www.youtube.com/watch?v=phLF3WlGnec"
+STARSHIP_PRIMER_TEST = "https://www.youtube.com/watch?v=phLF3WlGnec"
+NEXT_LAUNCHS_URL = "https://www.nasaspaceflight.com/schedule/"
+SN15_TEST = "https://www.youtube.com/watch?v=XikSoND4ALY"
+SN11_TEST = "https://www.youtube.com/watch?v=SoVzbClDyxs"
 
 
 

@@ -11,27 +11,26 @@ from keikodev.data.next_launch import next_launch
 from keikodev.models.info_interes_models import InfoInteresCabecera
 from keikodev.models.cuidados_models import CuidadosDetalles
 from keikodev.models.launches import Launches
+from keikodev.api.Users import Users
 
 #from .supabase import SupabaseApi
 
 TWITCH_API = TwitchAPI()
 NASA_API = nasaApi()
 DB_API = Database()
+USERS = Users()
 
-
-#SUPABASE_API = SupabaseApi()
-
-def ejemploDB():
-    if __name__ == "__main__":
-        db = Database()
-        data = {
-            "column1": "value1",
-            "column2": "value2"
-        }
-        db.insert("nombre_tabla", data)
-        db.delete("nombre_tabla", "condicion")
-        result = db.select("nombre_tabla")
-        print(result)
+# def ejemploDB():
+#     if __name__ == "__main__":
+#         db = Database()
+#         data = {
+#             "column1": "value1",
+#             "column2": "value2"
+#         }
+#         db.insert("nombre_tabla", data)
+#         db.delete("nombre_tabla", "condicion")
+#         result = db.select("nombre_tabla")
+#         print(result)
 
 
 def hello() -> str:
@@ -44,7 +43,6 @@ async def repo() -> str:
 
 async def live(user: str) -> Live:
     return TWITCH_API.live(user)
-
 
 async def foto():
     return NASA_API.tomaFoto()
