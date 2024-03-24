@@ -53,7 +53,7 @@ class Database:
         self.connect()
         cursor = self.configdb.cursor()
         #sql = f"SELECT * FROM nasa_imagenes where copyright = '' and media_type = 'image' order by 2 desc"
-        sql = f"SELECT * FROM nasa_imagenes where copyright = '' and media_type = 'image' order by 2 desc limit 30"
+        sql = f"SELECT * FROM nasa_imagenes where media_type = 'image' order by 2 desc limit 30"
         cursor.execute(sql)
         result = cursor.fetchall()
         cursor.close()
@@ -65,7 +65,7 @@ class Database:
         self.connect()
         cursor = self.configdb.cursor()
         #sql = f"SELECT * FROM nasa_imagenes where copyright = '' and media_type = 'image' order by 2 desc"
-        sql = f"SELECT * FROM nasa_imagenes where copyright = '' and media_type = 'video' order by 2 desc"
+        sql = f"SELECT * FROM nasa_imagenes where media_type = 'video' order by 2 desc"
         cursor.execute(sql)
         result = cursor.fetchall()
         cursor.close()
