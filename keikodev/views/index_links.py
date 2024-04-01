@@ -19,6 +19,7 @@ def index_links()-> rx.Component:
         rx.foreach(Nextlaunch.next_launch,lambda item: next_live(item)),
 
         title("Secciones Keikodev"),
+        
         linkbutton("Sección de recetas de cocina",
             "Sección Recetas Caseras y cocina internacional",
             "/img/utensils-solid.svg",
@@ -69,6 +70,14 @@ def index_links()-> rx.Component:
             "/img/dev.svg",
             Route.DEV.value,
             "Aprende a programar",
+            is_external=False
+            ),
+
+        linkbutton("Cursos y formación",
+            "Enlaces a cursos y formaciones de herramientas en general.",
+            "/img/graduation-cap-solid.svg",
+            Route.CURSOS.value,
+            "Formación general",
             is_external=False
             ),
 

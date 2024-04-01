@@ -8,11 +8,23 @@ from keikodev.routes import Route
 
 def cursos_links()-> rx.Component:
         return rx.chakra.vstack(
-                title("Cursos "),
-                linkbutton("Primer listado",
-                "Tipología de primeros cursos",
+                title("Formaciones office"),
+                linkbutton("Curso de excel básico",
+                "Curso básico de excel, con ejemplos y ejercicios",
                 "/img/windows.svg",
-                Route.CONSTR.value,
+                constants.EXCEL_BASICO_URL,
+                is_external=True
+                ),
+                linkbutton("Curso de excel avanzado",
+                "Curso avanzado de excel, con ejemplos y ejercicios",
+                "/img/windows.svg",
+                constants.EXCEL_AVANZADO_URL,
+                is_external=True
+                ),
+                linkbutton("Curso de excel experto",
+                "Curso experto de excel, con ejemplos y ejercicios",
+                "/img/windows.svg",
+                constants.EXCEL_EXPERTO_URL,
                 is_external=True
                 ),
 

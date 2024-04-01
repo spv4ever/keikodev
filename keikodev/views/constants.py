@@ -92,6 +92,10 @@ NEXT_LAUNCHS_URL = "https://www.nasaspaceflight.com/schedule/"
 SN15_TEST = "https://www.youtube.com/watch?v=XikSoND4ALY"
 SN11_TEST = "https://www.youtube.com/watch?v=SoVzbClDyxs"
 
+#Cursos
+EXCEL_BASICO_URL = "https://learningstudioai.com/go/w3LEfeClfT1cblCXYAjn"
+EXCEL_AVANZADO_URL = "https://learningstudioai.com/go/eA8hjYRTTL53RTj9uh1i"
+EXCEL_EXPERTO_URL = "https://learningstudioai.com/go/0BvmU4QpXdWFJvfrcmrI"
 
 
 

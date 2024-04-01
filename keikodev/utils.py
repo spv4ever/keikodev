@@ -199,3 +199,12 @@ starship_video_meta = [
     {"name": "og:description", "content": starship_video_description},
 ]
 starship_video_meta.extend(_meta)
+
+#Sección login
+login_title = "Login"
+login_description = "Registrate para poder acceder a funciones de usuarios avanzados"
+login_meta = [
+    {"name": "og:title", "content": login_title},
+    {"name": "og:description", "content": login_description},
+]
+login_meta.extend(_meta)

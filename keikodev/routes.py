@@ -20,5 +20,6 @@ class Route(Enum):
     KEIKO_CUIDADOS = "/keiko/cuidados"
     SPACEX = "/SpaceX"
     SPACEX_STARSHIP = "/SpaceX/StarShip"
+    LOGIN = "/login"
     
     
