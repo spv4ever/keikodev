@@ -27,6 +27,12 @@ def cursos_links()-> rx.Component:
                 constants.EXCEL_EXPERTO_URL,
                 is_external=True
                 ),
+                linkbutton("Curso de Power Point Avanzado",
+                "Curso avanzado de Power Point, con ejemplos y ejercicios",
+                "/img/windows.svg",
+                constants.PP_AVANZADO_URL,
+                is_external=True
+                ),
 
 
 

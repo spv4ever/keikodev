@@ -35,6 +35,14 @@ def trucos_details()->rx.Component:
             justify="end",
         ),
 
+        card(url="https://yoump3.wf/", title="Web para extraer audios de youtube", 
+                lista_imagenes=[('/img/trucos/trucos-5-1.png')],
+                body="""Genial herramienta para extraer audios de tus vídeos favoritos de youtube, música, podcasts, etc """,
+                color=TextColor.PRIMARY, 
+                badge_text="Herramientas Web", 
+                featured=False, external=True
+                ),
+
         card(url="https://www.ilovepdf.com/es", title="Web para trabajar con documentos PDF", 
                 lista_imagenes=[('/img/trucos/trucos-4-1.png')],
                 body="""Herramienta web para hacer todo lo que necesites con documentos PDF, cambiar, transformar, firmar, pasar a otros formatos y todo gratis""",

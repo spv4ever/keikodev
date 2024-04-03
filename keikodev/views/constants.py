@@ -96,6 +96,9 @@ SN11_TEST = "https://www.youtube.com/watch?v=SoVzbClDyxs"
 EXCEL_BASICO_URL = "https://learningstudioai.com/go/w3LEfeClfT1cblCXYAjn"
 EXCEL_AVANZADO_URL = "https://learningstudioai.com/go/eA8hjYRTTL53RTj9uh1i"
 EXCEL_EXPERTO_URL = "https://learningstudioai.com/go/0BvmU4QpXdWFJvfrcmrI"
+PP_AVANZADO_URL = "https://learningstudioai.com/go/HlXUnUSbDqqC5y2joBWo"
+
+
 
 
 
