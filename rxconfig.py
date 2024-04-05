@@ -4,11 +4,15 @@ import os
 
 config = rx.Config(
     app_name="keikodev",
+    frontend_port=3000,
+    backend_port=8000,
     cors_allowed_origins=[
         "https://keikodev.es",
         "https://www.keikodev.es",
         "https://keikodev.vercel.app",
-        "http://localhost:3000"
+        "http://localhost:3000",
+        "http://localhost:8000"
+
     ],
 )
 

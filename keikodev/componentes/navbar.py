@@ -14,8 +14,7 @@ from keikodev.componentes.visualiza import visualiza_modal as visualiza_modal
 import keikodev.utils as utils
 from keikodev.componentes.tutiempo import tutiempo
 from keikodev.componentes.facebook import facebook_like_button,facebook_sdk_init
-
-from keikodev.pages.google_auth import protected
+from keikodev.pages.google_auth import protected, StateLogin
 
 
 
@@ -47,22 +46,15 @@ def navbar():
                                         ), 
                                         href=Route.INDEX.value,
                                 ),
-                                
                                 protected(),
+                                rx.cond(
+                                        StateLogin.users_rights == 999,
+                                        rx.chakra.text("Administrador de sistemas", color = TextColor.HEADER.value),
+                                ),
                                 
                                 
-                                #rx.button("Start Countdown", on_click=CountdownState.start_countdown),
-
-
-                                #rx.spacer(),
-                                #facebook_like_button(),
                                 
-                                # rx.button('clic me', on_click= Alllinks.increment),
-                                # rx.text(Alllinks.count),
-
                                 
-                        
-
 
                         rx.chakra.modal(
                                 rx.chakra.modal_overlay(

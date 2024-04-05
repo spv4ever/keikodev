@@ -12,6 +12,15 @@ reflex-first-r6nc-q971smeo6-alberts-projects-4765884a.vercel.app
 
 G-SMVVY1YF0J
 
+lsof -i :3000
+lsof -i :8000
+
+kill -9 [PID]
+
+./build_hostalia.sh
+
+
+
 https://www.mamedev.org/
 
 https://nostalgic-css.github.io/NES.css/

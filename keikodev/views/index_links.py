@@ -11,6 +11,7 @@ from keikodev.state.countdown import CountdownState
 import keikodev.styles.styles as styles
 from keikodev.componentes.next_live import next_live
 from keikodev.state.next_launch_state import Nextlaunch
+from keikodev.pages.google_auth import StateLogin
 
 
 
@@ -108,11 +109,16 @@ def index_links()-> rx.Component:
             "/img/images.svg",
             Route.GALERIA.value,
             is_external=False),
-
-        linkbutton('Servicios personalizados', 
+        rx.cond(
+            StateLogin.users_rights == 999,
+            linkbutton('Servicios personalizados', 
             "Servicios IT personalizados, macros, excel, python, web.", 
             "/img/dev.svg",
             Route.CONSTR.value,
             is_external=False),
+            ),
+                                
+        
+
         on_mount=Nextlaunch.next_launch_select()
     )

@@ -4,15 +4,15 @@ import json
 import os
 import time
 import dotenv
-
 from google.auth.transport import requests
 from google.oauth2.id_token import verify_oauth2_token
-
 from keikodev.pages.react_oauth_google import GoogleOAuthProvider, GoogleLogin
 from keikodev.styles.colors import Color, TextColor
 from keikodev.styles.styles import Size
 from keikodev.api.Users import Users
 from keikodev.state.user_logged import Userlevel
+from keikodev.data.user_service import select_user_by_email_service
+from keikodev.models.user import Usuarios
 
 
 
@@ -26,10 +26,28 @@ GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 class StateLogin(rx.State):
     id_token_json: str = rx.LocalStorage()
     user_level: str
-    
+    usuario_loggado: list[Usuarios]
+    user_type: int
+    email: str
+    users_rights:int = 0
 
     def on_success(self, id_token: dict):
         self.id_token_json = json.dumps(id_token)
+    
+    @rx.var
+    def users_rights(self):
+        if self.email != "":
+            self.usuario_loggado = select_user_by_email_service(self.email)
+        #print(self.usuario_loggado)
+        self.user_type = 0
+        if len(self.usuario_loggado) == 0:
+            self.user_type = 0
+        else:
+            #print("entrando a actualizar derechos")
+            self.user_type = self.usuario_loggado[0].user_type
+        #print(self.user_type)
+
+        return self.user_type
 
     @rx.cached_var
     def tokeninfo(self) -> dict[str, str]:
@@ -39,19 +57,21 @@ class StateLogin(rx.State):
                 requests.Request(),
                 GOOGLE_CLIENT_ID,
             )
-            #self.user_level = UsersState.check_user(self,var)
-            #print(self.user_level)
-            #Userlevel.set_user_level(self.user_level)   
+            self.email = var['email']
+            self.user_type=0
+            
             return var 
-        
         except Exception as exc:
             if self.id_token_json:
                 print(f"GAuth.py Error verifying token: {exc}")
         return {}
 
     def logout(self):
+        #print("cerrando sesión")
         self.id_token_json = ""
-        Userlevel.set_user_level("")
+        self.email = ""
+        self.usuario_loggado = []
+        #Userlevel.set_user_level("")
 
     @rx.var
     def token_is_valid(self) -> bool:
