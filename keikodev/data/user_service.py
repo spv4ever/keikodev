@@ -1,4 +1,4 @@
-from keikodev.api.userdb import select_all, select_user_by_email, create_user, delete_user
+from keikodev.api.userdb import select_all, select_user_by_email, create_user, delete_user, update_user
 from keikodev.models.user import Usuarios
 import datetime as datetime
 
@@ -26,6 +26,18 @@ def create_user_service(name: str, email: str, password: str):
 
 def delete_user_service(email:str):
     return delete_user(email=email)
+
+def update_user_service(name: str, email: str, password: str, active: int):
+        print(email)
+        user = select_user_by_email(email)
+        if len(user) != 0:
+            updated_user = Usuarios(name=name,email=user[0].email,password=password,user_type=user[0].user_type, active=active, dateregister = user[0].dateregister)
+            return update_user(email, updated_user)
+        else:
+            print("El usuario no existe para ser editado")
+            raise BaseException("El usuario no existe para ser editado")
+        
+
         
 
     # name: str

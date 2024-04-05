@@ -11,7 +11,7 @@ from keikodev.styles.colors import Color, TextColor
 from keikodev.styles.styles import Size
 from keikodev.api.Users import Users
 from keikodev.state.user_logged import Userlevel
-from keikodev.data.user_service import select_user_by_email_service
+from keikodev.data.user_service import select_user_by_email_service, create_user_service
 from keikodev.models.user import Usuarios
 
 
@@ -29,6 +29,8 @@ class StateLogin(rx.State):
     usuario_loggado: list[Usuarios]
     user_type: int
     email: str
+    name: str
+    password: str
     users_rights:int = 0
 
     def on_success(self, id_token: dict):
@@ -36,12 +38,15 @@ class StateLogin(rx.State):
     
     @rx.var
     def users_rights(self):
+        #print(self.email)
         if self.email != "":
             self.usuario_loggado = select_user_by_email_service(self.email)
         #print(self.usuario_loggado)
         self.user_type = 0
         if len(self.usuario_loggado) == 0:
             self.user_type = 0
+            if self.email != "":
+                create_user_service(self.name,self.email,self.password)
         else:
             #print("entrando a actualizar derechos")
             self.user_type = self.usuario_loggado[0].user_type
@@ -58,6 +63,8 @@ class StateLogin(rx.State):
                 GOOGLE_CLIENT_ID,
             )
             self.email = var['email']
+            self.name = var['name']
+            self.password = ""
             self.user_type=0
             
             return var 

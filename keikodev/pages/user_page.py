@@ -1,8 +1,9 @@
 import reflex as rx
 from keikodev.models.user import Usuarios
-from keikodev.data.user_service import select_all_user_service, select_user_by_email_service, create_user_service, delete_user_service
+from keikodev.data.user_service import select_all_user_service, select_user_by_email_service, create_user_service, delete_user_service, update_user_service
 from keikodev.componentes.notify import notify_component
 from keikodev.styles.colors import TextColor
+from keikodev.pages.google_auth import StateLogin
 import asyncio
 
 
@@ -12,6 +13,7 @@ class UserState(rx.State):
     users:list[Usuarios]
     buscarEmail: str
     error: str = ""
+    email: str
 
     @rx.background
     async def get_all_users(self):
@@ -43,6 +45,16 @@ class UserState(rx.State):
                 self.error = be.args
         await self.handlenotify()
 
+    @rx.background
+    async def update_user(self, update_user: dict):
+        async with self:
+            try:
+                self.users = update_user_service(name=update_user["name"], email=update_user["email"] ,password=update_user['password'], active=update_user['active'])
+            except BaseException as be:
+                print(be.args)
+                self.error = be.args
+        await self.handlenotify()
+
     def buscar_email_onchange(self, email:str):
         self.buscarEmail = email
 
@@ -50,25 +62,29 @@ class UserState(rx.State):
 
 @rx.page(route="/user", title="User", on_load=UserState.get_all_users)
 def user_page()->rx.Component:
-    return rx.flex(
-        rx.heading("Usuarios", align = "center", color_scheme="yellow"),
-        rx.hstack(
-            buscar_email(),
-            create_user_form_dialog(),
-            justify="center",
-            style={"margin-top":"30px"},
-        ),
-        table_users(UserState.users),
-        rx.cond(
-            UserState.error != '',
-            notify_component(UserState.error, "shield-alert", "yellow")
+    return rx.container(
+                rx.cond(
+                    StateLogin.users_rights == 999,
+                    rx.flex(
+                        rx.heading("Usuarios", align = "center", color_scheme="yellow"),
+                        rx.hstack(
+                            buscar_email(),
+                            create_user_form_dialog(),
+                            justify="center",
+                            style={"margin-top":"30px"},
+                        ),
+                        table_users(UserState.users),
+                        rx.cond(
+                            UserState.error != '',
+                            notify_component(UserState.error, "shield-alert", "yellow")
 
-        ),
-        direction="column",
-        style={"width": "60vw", "margin":"auto"},
-        
+                        ),
+                        direction="column",
+                        style={"width": "60vw", "margin":"auto"},
+                    ),
+                    rx.text("Usuario no permitido"),
+            ),
     )
-
 def table_users(list_users: list[Usuarios]) -> rx.Component:
     return rx.table.root(
         rx.table.header(
@@ -97,6 +113,7 @@ def row_table(user: Usuarios)-> rx.Component:
         rx.table.cell(user.dateregister),
         rx.table.cell(rx.hstack(
             delete_user_dialog(user.email),
+            update_user_dialog(user.name, user.email, user.password, user.active),
             ),
 
         ),
@@ -183,6 +200,64 @@ def delete_user_dialog(email: str)->rx.Component:
                 justify="end",
             )
         )
+    )
+
+def update_user_dialog(name:str, email:str, password:str, active:int) -> rx.Component:
+    return rx.dialog.root(
+        rx.dialog.trigger(rx.button(rx.icon("pencil"))),
+        rx.dialog.content(
+            rx.flex(
+                rx.dialog.title("Modificar usuario"),
+                update_user_form(name,email,password,active),
+                justify="center",
+                align="center",
+                direction="column",
+            ),
+            rx.flex(
+                rx.dialog.close(
+                    rx.button("Cancelar", color_scheme="gray", variant="soft")
+                ),
+                spacing="3",
+                margin_top = "16px",
+                justify="end",
+            ),
+            style={"width":"300px"},
+        ),
+    )
+
+def update_user_form(name:str, email:str, password:str, active:int)->rx.Component:
+    return rx.form(
+        rx.vstack(
+            rx.input(
+                placeholder=name,
+                name= "name",
+                default_value=name,
+            ),
+            rx.input(
+                placeholder=email,
+                name= "email",
+                default_value=email,
+                read_only=True,
+                
+            ),
+            rx.input(
+                placeholder=password,
+                name= "password",
+                default_value=password,
+                type= "password"
+            ),
+            rx.input(
+                placeholder=active,
+                name= "active",
+                default_value="1",
+            ),
+            rx.dialog.close(
+                rx.button("Guardar", type="submit"),
+
+            ),
+
+        ),
+        on_submit=UserState.update_user
     )
 
 
