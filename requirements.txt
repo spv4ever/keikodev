@@ -1,8 +1,9 @@
-reflex==0.4.4
+reflex==0.4.6
 python-dotenv
 mysql-connector-python
 paramiko
 google-auth[requests]
 gunicorn
+PyMySQL
 
 

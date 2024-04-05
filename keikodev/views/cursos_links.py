@@ -33,6 +33,7 @@ def cursos_links()-> rx.Component:
                 constants.PP_AVANZADO_URL,
                 is_external=True
                 ),
+                linkbutton(is_external=False),
 
 
 

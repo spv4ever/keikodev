@@ -46,7 +46,7 @@ class StateLogin(rx.State):
         
         except Exception as exc:
             if self.id_token_json:
-                print(f"Error verifying token: {exc}")
+                print(f"GAuth.py Error verifying token: {exc}")
         return {}
 
     def logout(self):
