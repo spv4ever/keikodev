@@ -28,21 +28,12 @@ def delete_user_service(email:str):
     return delete_user(email=email)
 
 def update_user_service(name: str, email: str, password: str, active: int):
-        print(email)
+        #print(email)
         user = select_user_by_email(email)
         if len(user) != 0:
-            updated_user = Usuarios(name=name,email=user[0].email,password=password,user_type=user[0].user_type, active=active, dateregister = user[0].dateregister)
+            #updated_user = Usuarios(name=name,email=user[0].email,password=password,user_type=user[0].user_type, active=active, dateregister = user[0].dateregister)
+            updated_user = Usuarios(name=name,password=password,active=active)
             return update_user(email, updated_user)
         else:
             print("El usuario no existe para ser editado")
             raise BaseException("El usuario no existe para ser editado")
-        
-
-        
-
-    # name: str
-    # email: str
-    # password: str
-    # user_type: str
-    # active: int
-    # dateregister: datetime

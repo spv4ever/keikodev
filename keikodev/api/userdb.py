@@ -48,9 +48,3 @@ def update_user(email:str, new_user:Usuarios):
 
 
 
-    
-
-
-    
-
-

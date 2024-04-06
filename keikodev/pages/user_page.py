@@ -6,9 +6,6 @@ from keikodev.styles.colors import TextColor
 from keikodev.pages.google_auth import StateLogin
 import asyncio
 
-
-
-
 class UserState(rx.State):
     users:list[Usuarios]
     buscarEmail: str
