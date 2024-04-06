@@ -29,12 +29,12 @@ class PageState(rx.State):
 
 
         async def check_live(self):
-                print("pidiendo estado")
+                #print("pidiendo estado")
                 self.live_status = await live(USER)
                 #print(self.live_status)
 
         async def tomaFoto(self):
-                print("Actualizando fotos")
+                #print("Actualizando fotos")
                 url = await foto()
 
         async def galeria_fotos_load(self):

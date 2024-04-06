@@ -37,7 +37,7 @@ class nasaApi():
         
 
         if not resultado:
-            print("Resultado ",resultado)
+            #print("Resultado ",resultado)
             fecha_str = fecha.strftime('%Y-%m-%d')
             try:
                 raw_response = requests.get(f'https://api.nasa.gov/planetary/apod?api_key={self.NASA_KEY}&date={fecha_str}').text
