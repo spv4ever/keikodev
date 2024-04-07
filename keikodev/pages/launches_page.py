@@ -24,6 +24,8 @@ class LaunchesState(rx.State):
             self.list_launches = select_all_launches_service()
             #print(self.list_launches)
 
+
+
 @rx.page(
     route=Route.LAUNCH_PAGE.value,
     title=utils.launches_title,
@@ -56,3 +58,5 @@ def launches_page() -> rx.Component:
         
         
     )
+
+

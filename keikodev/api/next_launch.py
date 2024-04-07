@@ -8,3 +8,11 @@ def select_all():
         query = select(Nextlaunches).order_by(desc(Nextlaunches.launch_date))
         return session.exec(query).all()
     
+def create_launch(launch:Nextlaunches):
+    engine = connect()
+    with Session(engine) as session:
+        session.add(launch)
+        session.commit()
+        query = select(Nextlaunches)
+        return session.exec(query).all()
+    

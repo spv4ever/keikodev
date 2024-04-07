@@ -22,7 +22,7 @@ class Nextlaunches(rx.Model, table = True):
     mission: str
     url_details: Optional[str]
     url_live: Optional[str]
-    launch_date: str
+    launch_date: datetime
     streamer: Optional[str]
     channel: Optional[str]
 

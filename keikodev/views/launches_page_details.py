@@ -7,6 +7,22 @@ from keikodev.styles.colors import Color as Color
 from keikodev.styles.fonts import Fuentes as Fuentes
 from keikodev.componentes.linkbutton import linkbutton
 from keikodev.models.launches import Nextlaunches
+from keikodev.data.launch_services import create_launch_service
+
+class Launch(rx.State):
+    launch: Nextlaunches = []
+    error = ""
+
+    @rx.background
+    async def create_launch(self, newlaunch: dict):
+        async with self:
+            try:
+                self.launch = create_launch_service(name=newuser["name"], email=newuser["email"], password=newuser['password'])
+            except BaseException as be:
+                print(be.args)
+                self.error = be.args
+
+
 
 
 def launches_page_details(list_launches: list[Nextlaunches])->rx.Component:
@@ -15,6 +31,10 @@ def launches_page_details(list_launches: list[Nextlaunches])->rx.Component:
                         align = "center",
                         style={"color":TextColor.HEADER.value},
                         ),
+                rx.hstack(
+                create_launch_form_dialog(),
+                    ),
+                
                 table_launches(list_launches),
                 spacing="3",
                 justify="start",
@@ -36,6 +56,8 @@ def table_launches(list_launches: list[Nextlaunches]) -> rx.Component:
                 rx.table.column_header_cell("Directo"),
                 rx.table.column_header_cell("Streamer"),
                 rx.table.column_header_cell("Canal"),
+                rx.table.column_header_cell("Eliminar"),
+                rx.table.column_header_cell("Editar"),
                 style = {"color": TextColor.HEADER.value, "background_color": Color.CONTENT.value},
                 ),
             ),
@@ -82,6 +104,55 @@ def row_table(launch: Nextlaunches)-> rx.Component:
         ),
         style = {"color": TextColor.HEADER.value, "background_color": Color.BACKGROUND.value},
     )
+
+def create_launch_form_dialog()->rx.Component:
+    return rx.dialog.root(
+        rx.dialog.trigger(rx.button("Crear Lanzamiento")),
+        rx.dialog.content(
+            rx.flex(
+                rx.dialog.title("Nuevo lanzamiento"),
+                create_launch_form(),
+                justify="center",
+                align="center",
+                direction="column",
+            ),
+            rx.flex(
+                rx.dialog.close(
+                    rx.button("Cancelar", color_scheme="gray", variant="soft")
+                ),
+                spacing="3",
+                margin_top = "16px",
+                justify="end",
+            ),
+            style={"width":"300px"},
+        ),
+    )
+
+def create_launch_form()->rx.Component:
+    return rx.form(
+        rx.vstack(
+            rx.input(
+                placeholder="Nombre",
+                name= "name"
+            ),
+            rx.input(
+                placeholder="eMail",
+                name= "email"
+            ),
+            rx.input(
+                placeholder="Password",
+                name= "password",
+                type= "password"
+
+            ),
+            rx.dialog.close(
+                rx.button("Guardar", type="submit"),
+
+            ),
+        ),
+        #on_submit=LaunchesState
+    )
+
 
 #     id: Optional[int] = Field(default=None, primary_key=True)
 #     company: str
