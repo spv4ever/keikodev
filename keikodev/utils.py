@@ -208,3 +208,12 @@ login_meta = [
     {"name": "og:description", "content": login_description},
 ]
 login_meta.extend(_meta)
+
+#Sección login
+launches_title = "Gestión de lanzamientos"
+launches_description = "Gestión de lanzamientos, editar, añadir, gestionar base de datos"
+launches_meta = [
+    {"name": "og:title", "content": launches_title},
+    {"name": "og:description", "content": launches_description},
+]
+launches_meta.extend(_meta)

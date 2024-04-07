@@ -21,5 +21,8 @@ class Route(Enum):
     SPACEX = "/SpaceX"
     SPACEX_STARSHIP = "/SpaceX/StarShip"
     LOGIN = "/login"
+    LAUNCH_PAGE = "/launches"
+    
+
     
     

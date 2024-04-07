@@ -38,7 +38,7 @@ class PageState(rx.State):
                 url = await foto()
 
         async def galeria_fotos_load(self):
-                print("entrando por galeria")
+                #print("entrando por galeria")
                 self.galeria_fotos_db = await galeria_load()
                 keys = ["id","date","url","title","explanation","hdurl","copyright", "media_type"]
                 galeria_json = []
@@ -60,7 +60,7 @@ class PageState(rx.State):
                 url = [item.url for item in self.galeria_fotos]
 
         async def galeria_fotos_load_video(self):
-                print("entrando por galeria")
+                #print("entrando por galeria")
                 self.galeria_videos_db = await galeria_load_video()
                 keys = ["id","date","url","title","explanation","hdurl","copyright", "media_type"]
                 galeria_json = []

@@ -104,8 +104,8 @@ class nasaApi():
                 json_tabla = json.dumps(foto_details)
                 print("Insertando nueva foto")
                 mysql_api.insert("nasa_imagenes",json.loads(json_tabla))
-        else:
-            print("Dia anterior no insertar")
+        # else:
+        #     print("Dia anterior no insertar")
         
 
     

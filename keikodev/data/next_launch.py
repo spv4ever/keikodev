@@ -3,7 +3,7 @@ from keikodev.api.db import Database
 from datetime import datetime
 import asyncio
 
-launches_table = "launches"
+launches_table = "nextlaunches"
 db = Database()
 
 def next_launch():

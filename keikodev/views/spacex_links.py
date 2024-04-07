@@ -4,6 +4,7 @@ from keikodev.componentes.title import title
 from keikodev.styles.styles import Size as Size
 import keikodev.views.constants as constants
 from keikodev.routes import Route
+from keikodev.pages.launches_page import launches_page
 
 
 def spacex_links()-> rx.Component:
@@ -30,6 +31,12 @@ def spacex_links()-> rx.Component:
                         "Web para ver los próximos lanzamientos",
                         "/img/rocket-solid.svg",
                         constants.NEXT_LAUNCHS_URL,
+                ),
+                linkbutton("Gestión de lanzamientos",
+                        "Gestión de base de datos de lanzamientos",
+                        "/img/rocket-solid.svg",
+                        Route.LAUNCH_PAGE.value,
+                        is_external=False,
                 ),
                 
                 linkbutton(is_external=False),

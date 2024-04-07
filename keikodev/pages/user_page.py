@@ -87,17 +87,20 @@ def table_users(list_users: list[Usuarios]) -> rx.Component:
         rx.table.header(
             rx.table.row(
                 rx.table.column_header_cell("Nombre"),
-                rx.table.column_header_cell("eMail"),
+                rx.table.column_header_cell("Correo electrónico"),
                 rx.table.column_header_cell("password"),
                 rx.table.column_header_cell("Tipo usuario"),
                 rx.table.column_header_cell("Activo"),
                 rx.table.column_header_cell("Fecha registro"),
-                style = {"color": TextColor.GREEN.value},
+                rx.table.column_header_cell("Eliminar"),
+                rx.table.column_header_cell("Editar"),
+                style = {"color": "Black"},
                 ),
             ),
         rx.table.body(
             rx.foreach(list_users, row_table)
         ),
+        variant="surface",
     )
 
 def row_table(user: Usuarios)-> rx.Component: 
@@ -105,16 +108,19 @@ def row_table(user: Usuarios)-> rx.Component:
         rx.table.cell(user.name),
         rx.table.cell(user.email),
         rx.table.cell(user.password),
-        rx.table.cell(user.user_type),
-        rx.table.cell(user.active),
+        rx.table.cell(user.user_type,align="end"),
+        rx.table.cell(user.active, align="end"),
         rx.table.cell(user.dateregister),
         rx.table.cell(rx.hstack(
             delete_user_dialog(user.email),
+            ),
+        ),
+        rx.table.cell(rx.hstack(
             update_user_dialog(user.name, user.email, user.password, user.active),
             ),
 
         ),
-        style = {"color": TextColor.GREEN.value},
+        style = {"color": "Black"},
     )
 
 def buscar_email()->rx.Component:

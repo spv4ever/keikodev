@@ -41,7 +41,7 @@ class TwitchAPI:
     def live(self, user: str)-> bool:
         #print(self.token_valid())
         if not self.token_valid():
-            print("token no válido")
+            #print("token no válido")
             self.generate_token()
 
         response = requests.get(
