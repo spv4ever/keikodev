@@ -13,6 +13,16 @@ def create_launch(launch:Nextlaunches):
     with Session(engine) as session:
         session.add(launch)
         session.commit()
-        query = select(Nextlaunches)
+        query = select(Nextlaunches).order_by(desc(Nextlaunches.launch_date))
         return session.exec(query).all()
+    
+
+
+    # def create_user(user:Usuarios):
+    # engine = connect()
+    # with Session(engine) as session:
+    #     session.add(user)
+    #     session.commit()
+    #     query = select(Usuarios)
+    #     return session.exec(query).all()
     

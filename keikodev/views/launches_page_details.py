@@ -7,7 +7,13 @@ from keikodev.styles.colors import Color as Color
 from keikodev.styles.fonts import Fuentes as Fuentes
 from keikodev.componentes.linkbutton import linkbutton
 from keikodev.models.launches import Nextlaunches
-from keikodev.data.launch_services import create_launch_service
+from keikodev.data.launch_services import create_launch_service,select_all_launches_service
+import datetime as datetime
+#import importlib
+
+#LaunchesState = importlib.import_module("keikodev.pages.launches_page").LaunchesState
+
+
 
 class Launch(rx.State):
     launch: Nextlaunches = []
@@ -17,7 +23,17 @@ class Launch(rx.State):
     async def create_launch(self, newlaunch: dict):
         async with self:
             try:
-                self.launch = create_launch_service(name=newuser["name"], email=newuser["email"], password=newuser['password'])
+                self.launch = create_launch_service(company=newlaunch["company"], 
+                                                    rocket=newlaunch["rocket"], 
+                                                    mission=newlaunch['mission'],
+                                                    url_details=newlaunch['url_details'],
+                                                    url_live=newlaunch['url_live'],
+                                                    launch_date=datetime.datetime.strptime(newlaunch['launch_date'], "%d/%m/%Y %H:%M"),
+                                                    streamer=newlaunch['streamer'],
+                                                    channel=newlaunch['channel'],
+                                                    )
+                
+                
             except BaseException as be:
                 print(be.args)
                 self.error = be.args
@@ -34,10 +50,9 @@ def launches_page_details(list_launches: list[Nextlaunches])->rx.Component:
                 rx.hstack(
                 create_launch_form_dialog(),
                     ),
-                
                 table_launches(list_launches),
                 spacing="3",
-                justify="start",
+                justify="start",    
                 direction="column",
                 style={"width": "100%"},
         )
@@ -132,25 +147,44 @@ def create_launch_form()->rx.Component:
     return rx.form(
         rx.vstack(
             rx.input(
-                placeholder="Nombre",
-                name= "name"
+                placeholder="Compañía",
+                name= "company"
             ),
             rx.input(
-                placeholder="eMail",
-                name= "email"
+                placeholder="Cohete",
+                name= "rocket"
             ),
             rx.input(
-                placeholder="Password",
-                name= "password",
-                type= "password"
+                placeholder="Mission",
+                name= "mission",
+            ),
+            rx.input(
+                placeholder="Url Detalles",
+                name= "url_details",
+            ),
+            rx.input(
+                placeholder="Url Directo",
+                name= "url_live",
+            ),
+            rx.input(
+                placeholder="Fecha de lanzamiento: %d/%m/%Y %H:%M",
+                name= "launch_date",
+            ),
+            rx.input(
+                placeholder="Streamer",
+                name= "streamer",
+            ),
+            rx.input(
+                placeholder="Canal del directo",
+                name= "channel",
+            ),
 
-            ),
             rx.dialog.close(
                 rx.button("Guardar", type="submit"),
-
             ),
+            
         ),
-        #on_submit=LaunchesState
+        on_submit=Launch.create_launch,
     )
 
 
