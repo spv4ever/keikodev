@@ -73,8 +73,9 @@ BASE_STYLE = {
         "text_decoration" : "none",
         "_hover" : {}   
     },
-
 }
+
+launch_input = {"width":"530px"}
 
 box_news_style = {
         "width" : "100%",

@@ -11,18 +11,9 @@ from keikodev.state.PageState import PageState
 from keikodev.views.launches_page_details import launches_page_details
 from keikodev.models.launches import Nextlaunches
 from keikodev.data.launch_services import select_all_launches_service
+#from keikodev.pages.launches_page import LaunchesState
 
-class LaunchesState(rx.State):
-    list_launches:list[Nextlaunches]
-    #buscarEmail: str
-    error: str = ""
-    #email: str
 
-    @rx.background
-    async def get_all_launches(self):
-        async with self:
-            self.list_launches = select_all_launches_service()
-            #print(self.list_launches)
 
 
 
@@ -32,7 +23,8 @@ class LaunchesState(rx.State):
     description=utils.launches_description,
     image= utils.preview,
     meta=utils.launches_meta,
-    on_load=LaunchesState.get_all_launches,
+    #on_load=LaunchesState.get_all_launches,
+    
 )
 def launches_page() -> rx.Component:
     return rx.chakra.box(
@@ -45,8 +37,9 @@ def launches_page() -> rx.Component:
             ),
         rx.chakra.center(
             rx.chakra.vstack(
-                launches_page_details(LaunchesState.list_launches),
-                max_width=styles.CONTENT_WIDTH,
+                launches_page_details(),
+                #launches_page_details(LaunchesState.list_launches),
+                max_width="1200px",
                 width="100%",
                 margin_y=Size.BIG.value,
                 min_height = "650px",

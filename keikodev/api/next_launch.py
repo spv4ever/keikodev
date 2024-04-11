@@ -8,6 +8,12 @@ def select_all():
         query = select(Nextlaunches).order_by(desc(Nextlaunches.launch_date))
         return session.exec(query).all()
     
+def select_launch_by_id(id: int):
+    engine = connect()
+    with Session(engine) as session:
+        query = select(Nextlaunches).where(Nextlaunches.id == id)
+        return session.exec(query).all()
+    
 def create_launch(launch:Nextlaunches):
     engine = connect()
     with Session(engine) as session:
@@ -15,6 +21,42 @@ def create_launch(launch:Nextlaunches):
         session.commit()
         query = select(Nextlaunches).order_by(desc(Nextlaunches.launch_date))
         return session.exec(query).all()
+    
+
+def delete_launch(id:int):
+    engine = connect()
+    with Session(engine) as session:
+        query = select(Nextlaunches).where(Nextlaunches.id == id)
+        launch_delete = session.exec(query).one()
+        session.delete(launch_delete)
+        session.commit()
+        query = select(Nextlaunches)
+        return session.exec(query).all()
+    
+
+def update_launch(id:int, new_launch:Nextlaunches):
+    engine = connect()
+    with Session(engine) as session:
+        query = select(Nextlaunches).where(Nextlaunches.id == id)
+        launch_update = session.exec(query).one()
+        launch_update.company = new_launch.company
+        launch_update.rocket = new_launch.rocket
+        launch_update.mission = new_launch.mission
+        launch_update.url_details = new_launch.url_details
+        launch_update.url_live = new_launch.url_live
+        launch_update.launch_date = new_launch.launch_date
+        launch_update.streamer = new_launch.streamer
+        launch_update.channel = new_launch.channel
+        session.add(launch_update)
+        session.commit()
+        session.refresh(launch_update)
+        query = select(Nextlaunches)
+        return session.exec(query).all()
+    
+
+
+    
+
     
 
 
