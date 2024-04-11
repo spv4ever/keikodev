@@ -30,6 +30,12 @@ class LaunchesState(rx.State):
 class Launch(rx.State):
     launch: Nextlaunches = []
     error = ""
+    id_aux = 0
+
+    def id_aux_value(self, id_aux):
+        #print(id_aux)
+        self.id_aux = id_aux
+        #print(self.id_aux)
 
     @rx.background
     async def create_launch(self, newlaunch: dict):
@@ -55,25 +61,29 @@ class Launch(rx.State):
             self.launch = delete_launch_service(id)
 
     @rx.background
-    async def update_user(self, update_user: dict):
+    async def update_launch(self, update_launch: dict):
+        #print(update_launch)
+        update_launch["id"]=self.id_aux
+        #print(update_launch)
         async with self:
             try:
-                self.launch = update_launch_service(self.launch.id,
-                                                company=update_user["company"], 
-                                                rocket=update_user["rocket"], 
-                                                mission=update_user['mission'],
-                                                url_details=update_user['url_details'],
-                                                url_live=update_user['url_live'],
-                                                launch_date=datetime.datetime.strptime(update_user['launch_date'], "%d/%m/%Y %H:%M"),
-                                                streamer=update_user['streamer'],
-                                                channel=update_user['channel'],)
+                self.launch = update_launch_service(id=update_launch["id"],
+                                                company=update_launch["company"], 
+                                                rocket=update_launch["rocket"], 
+                                                mission=update_launch['mission'],
+                                                url_details=update_launch['url_details'],
+                                                url_live=update_launch['url_live'],
+                                                launch_date=datetime.datetime.strptime(update_launch['launch_date'], "%Y-%m-%d %H:%M"),
+                                                streamer=update_launch['streamer'],
+                                                channel=update_launch['channel'],)
             except BaseException as be:
                 print(be.args)
                 self.error = be.args
-        await self.handlenotify()
+    
 
 
-#def launches_page_details(list_launches: list[Nextlaunches])->rx.Component:
+
+
 def launches_page_details()->rx.Component:
         return rx.flex(
                 rx.heading("Gestión de base de datos de lanzamientos",
@@ -90,6 +100,7 @@ def launches_page_details()->rx.Component:
                 style={"width": "100%"},
                 on_mount=LaunchesState.get_all_launches,
                 on_focus=LaunchesState.get_all_launches,
+                on_click=LaunchesState.get_all_launches,
         )
 
 def table_launches(list_launches: list[Nextlaunches]) -> rx.Component:
@@ -158,9 +169,10 @@ def row_table(launch: Nextlaunches)-> rx.Component:
         ),
         rx.table.cell(
                 rx.hstack(
-                    update_launch_dialog(launch.id,str(launch.launch_date),launch.mission,launch.rocket,launch.company,str(launch.url_details),str(launch.url_live),str(launch.streamer),str(launch.channel)),
+                    update_launch_dialog(launch),
             ),
         ),
+        on_focus=LaunchesState.get_all_launches,
         style = {"color": TextColor.HEADER.value, "background_color": Color.BACKGROUND.value},
     )
 
@@ -276,13 +288,18 @@ def delete_launch_dialog(id: str)->rx.Component:
         )
     )
 
-def update_launch_dialog(id:int,launch_date:str,mission:str,rocket:str,company:str,url_details:str,url_live:str,streamer:str,channel:str) -> rx.Component:
+def update_launch_dialog(launch) -> rx.Component:
     return rx.dialog.root(
-        rx.dialog.trigger(rx.button(rx.icon("pencil"))),
+        rx.dialog.trigger(
+            rx.button(
+                rx.icon("pencil"),
+                on_click=Launch.id_aux_value(launch.id)
+                )
+            ),
         rx.dialog.content(
             rx.flex(
                 rx.dialog.title("Modificar usuario"),
-                update_user_form(id,launch_date,mission,rocket,company,url_details,url_live,streamer,channel),
+                update_user_form(launch),
                 justify="center",
                 align="center",
                 direction="column",
@@ -297,70 +314,67 @@ def update_launch_dialog(id:int,launch_date:str,mission:str,rocket:str,company:s
             ),
             style={"width":"600px"},
         ),
-    )
-
-def update_user_form(id:int,launch_date:str,mission:str,rocket:str,company:str,url_live:str,streamer:str,channel:str,url_details:str="")->rx.Component:
-    return rx.form(
-        rx.vstack(
-
-            rx.input(
-                placeholder=company,
-                name= "company",
-                default_value=company,
-                style=styles.launch_input,
-            ),
-            rx.input(
-                placeholder=rocket,
-                name= "rocket",
-                default_value=rocket,
-                style=styles.launch_input,
-            ),
-            rx.input(
-                placeholder=mission,
-                name= "mission",
-                default_value=mission,
-                style=styles.launch_input,
-            ),
         
-            rx.input(
-                name= "url_details",
-                default_value=url_details,
-                style=styles.launch_input,
-            ),
-
-            rx.input(
-                name= "url_live",
-                default_value=url_live,
-                style=styles.launch_input,
-            ),
-            rx.input(
-                placeholder=launch_date,
-                name= "launch_date",
-                default_value=launch_date,
-                style=styles.launch_input,
-            ),
-            rx.input(
-                placeholder=streamer,
-                name= "streamer",
-                default_value=streamer,
-                style=styles.launch_input,
-            ),
-            rx.input(
-                placeholder=channel,
-                name= "channel",
-                default_value=channel,
-                style=styles.launch_input,
-            ),
-
-
-            rx.dialog.close(
-                rx.button("Guardar", type="submit"),
-
-            ),
-
-        ),
-        #on_submit=UserState.update_user
     )
+
+def update_user_form(launch)->rx.Component:
+    return rx.form(
+            rx.vstack(
+                rx.text(launch.id),
+                rx.input(
+                    name= "company",
+                    default_value=launch.company,
+                    style=styles.launch_input,
+                ),
+
+                rx.input(
+                    name= "rocket",
+                    default_value=launch.rocket,
+                    style=styles.launch_input,
+                ),
+
+                rx.input(
+                    name= "mission",
+                    default_value=launch.mission,
+                    style=styles.launch_input,
+                ),
+            
+                rx.input(
+                    name= "url_details",
+                    default_value=launch.url_details,
+                    style=styles.launch_input,
+                ),
+
+                rx.input(
+                    name= "url_live",
+                    default_value=launch.url_live,
+                    style=styles.launch_input,
+                ),
+                rx.input(
+                    #placeholder=launch_date,
+                    name= "launch_date",
+                    default_value=launch.launch_date.to_string()[1:17],
+                    style=styles.launch_input,
+                ),
+                rx.input(
+                    name= "streamer",
+                    default_value=launch.streamer,
+                    style=styles.launch_input,
+                ),
+                rx.input(
+                    name= "channel",
+                    default_value=launch.channel,
+                    style=styles.launch_input,
+                ),
+
+                rx.dialog.close(
+                    rx.button("Guardar", type="submit"),
+
+                ),
+
+            ),
+            on_submit=Launch.update_launch
+        )
 
 
 #     id: Optional[int] = Field(default=None, primary_key=True)

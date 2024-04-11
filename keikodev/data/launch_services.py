@@ -7,7 +7,7 @@ def select_all_launches_service():
     return launches
 
 def select_launch_by_id_service(id: int):
-    if (len(id)!=0):
+    if id!=0:
         return select_launch_by_id(id)
     else:
         return select_all()
@@ -20,7 +20,7 @@ def create_launch_service(company: str, rocket: str, mission: str, url_details:s
 def delete_launch_service(id:int):
     return delete_launch(id=id)
 
-def update_launch_service(id:int, company: str, rocket: str, mission: str, url_details:str,url_live:str,launch_date:datetime,streamer:str,channel:str):
+def update_launch_service(id: int, company: str, rocket: str, mission: str, url_details:str,url_live:str,launch_date:datetime,streamer:str,channel:str):
         launch = select_launch_by_id_service(id)
         if len(launch) != 0:
             updated_user = Nextlaunches(company=company,rocket=rocket,mission=mission, url_details=url_details,url_live=url_live,launch_date=launch_date,streamer=streamer,channel=channel)
@@ -28,6 +28,7 @@ def update_launch_service(id:int, company: str, rocket: str, mission: str, url_d
         else:
             print("El usuario no existe para ser editado")
             raise BaseException("El usuario no existe para ser editado")
+        
 
     # company: str
     # rocket: str

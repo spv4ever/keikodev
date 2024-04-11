@@ -20,11 +20,11 @@ class Nextlaunches(rx.Model, table = True):
     company: str
     rocket: str
     mission: str
-    url_details: Optional[str]
-    url_live: Optional[str]
+    url_details: Optional[str]=""
+    url_live: Optional[str]=""
     launch_date: datetime
-    streamer: Optional[str]
-    channel: Optional[str]
+    streamer: Optional[str]=""
+    channel: Optional[str]=""
 
 
 
