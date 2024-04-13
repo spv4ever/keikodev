@@ -1,11 +1,20 @@
+import datetime as datetime
 from keikodev.models.launches import Nextlaunches
 from keikodev.api.conectdb import connect
-from sqlmodel import Session, select, desc
+from sqlmodel import Session, select, desc, asc
+
 
 def select_all():
     engine = connect()
     with Session(engine) as session:
-        query = select(Nextlaunches).order_by(desc(Nextlaunches.launch_date))
+        query = select(Nextlaunches).order_by(asc(Nextlaunches.launch_date))
+        return session.exec(query).all()
+    
+def select_future():
+    fechaActual = datetime.datetime.now()
+    engine = connect()
+    with Session(engine) as session:
+        query = select(Nextlaunches).where(Nextlaunches.launch_date >= fechaActual).order_by(asc(Nextlaunches.launch_date))
         return session.exec(query).all()
     
 def select_launch_by_id(id: int):
@@ -19,7 +28,7 @@ def create_launch(launch:Nextlaunches):
     with Session(engine) as session:
         session.add(launch)
         session.commit()
-        query = select(Nextlaunches).order_by(desc(Nextlaunches.launch_date))
+        query = select(Nextlaunches).order_by(asc(Nextlaunches.launch_date))
         return session.exec(query).all()
     
 
@@ -51,6 +60,17 @@ def update_launch(id:int, new_launch:Nextlaunches):
         session.commit()
         session.refresh(launch_update)
         query = select(Nextlaunches)
+        return session.exec(query).all()
+    
+def select_launch_by_mision(mission: str):
+    fechaActual = datetime.datetime.now()
+    #print("Query base launch by mision")
+    #print(mission)
+    engine = connect()
+    with Session(engine) as session:
+        query = select(Nextlaunches).where((Nextlaunches.mission.startswith(mission))&(Nextlaunches.launch_date >=fechaActual)).order_by(asc(Nextlaunches.launch_date))
+        # resultado = session.exec(query).all()
+        # print(resultado)
         return session.exec(query).all()
     
 

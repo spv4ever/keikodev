@@ -5,5 +5,6 @@ paramiko
 google-auth[requests]
 gunicorn
 PyMySQL
+youtube_dl
 
 

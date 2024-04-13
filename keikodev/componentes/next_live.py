@@ -7,6 +7,21 @@ from keikodev.styles.colors import Color
 import keikodev.views.constants as constants
 from keikodev.state.next_launch_state import Nextlaunch
 from keikodev.models.launches import Launches
+from keikodev.data.youtube_services import links_youtube_service
+
+class NextLaunchState(rx.State):
+    links: list
+    mission: str
+    
+    @rx.background
+    async def get_youtube_links(self):
+        async with self:
+            self.links = links_youtube_service("Starlink")
+    
+    def toma_mision(self, mission:str):
+        self.mission = mission
+                
+        
 
 def next_live(next_launch: Launches)-> rx.Component:
     return rx.vstack(
@@ -23,6 +38,7 @@ def next_live(next_launch: Launches)-> rx.Component:
                                 width = "100%",
                                 align = "center",
                                 style=styles.title_news_style,
+                                
                                 ),
                         rx.text(f"Día: {next_launch.launch_date[8:10]}/{next_launch.launch_date[5:7]}/{next_launch.launch_date[:4]} - Hora: {next_launch.launch_date[11:16]}",
                             width="100%",
@@ -61,23 +77,6 @@ def next_live(next_launch: Launches)-> rx.Component:
                             width = "100%",
                             justify="center",
                         ),
-                    # rx.hstack(
-                    #     rx.text(
-                    #         f"Faltan {CountdownState.days} días y ", 
-                    #         size=SizeRx.MEDIUM.value,
-                            
-                    #         ),
-                    #     rx.text(
-                    #             f"{CountdownState.hour}:{CountdownState.minute}:{CountdownState.seconds}", 
-                    #             size=SizeRx.MEDIUM.value,
-                    #             on_mount=CountdownState.start_countdown,
-                    #         ),
-                    #     width = "100%",
-                    #     style=styles.title_news_style,
-                    #     justify="center",
-                    # ),
-                    
-                    
                     style=styles.title_news_style,
                     width = "100%",
                     justify="center",

@@ -8,7 +8,7 @@ from keikodev.styles.colors import Color as Color
 from keikodev.styles.fonts import Fuentes as Fuentes
 from keikodev.componentes.linkbutton import linkbutton
 from keikodev.models.launches import Nextlaunches
-from keikodev.data.launch_services import create_launch_service, delete_launch_service,select_all_launches_service,update_launch_service
+from keikodev.data.launch_services import create_launch_service, delete_launch_service,select_all_launches_service,update_launch_service, select_launch_by_mision_service
 from typing import Optional
 
 
@@ -20,6 +20,7 @@ class LaunchesState(rx.State):
     #buscarEmail: str
     error: str = ""
     #email: str
+    mission: str = ""
 
     @rx.background
     async def get_all_launches(self):
@@ -27,15 +28,27 @@ class LaunchesState(rx.State):
             self.list_launches = select_all_launches_service()
             #print(self.list_launches)
 
+    def buscar_mision_onchange(self, mission:str):
+        self.mission = mission
+
+    @rx.background
+    async def get_launch_by_mission(self):
+        async with self:
+            self.list_launches = select_launch_by_mision_service(self.mission)
+    
 class Launch(rx.State):
     launch: Nextlaunches = []
     error = ""
     id_aux = 0
+    
 
     def id_aux_value(self, id_aux):
         #print(id_aux)
         self.id_aux = id_aux
         #print(self.id_aux)
+
+    
+
 
     @rx.background
     async def create_launch(self, newlaunch: dict):
@@ -80,27 +93,39 @@ class Launch(rx.State):
                 print(be.args)
                 self.error = be.args
     
+    # @rx.background
+    # async def get_launch_by_mission(self):
+    #     async with self:
+    #         self.launch = select_launch_by_mision_service(self.mission)
+    
 
 
-
+def buscar_mission()->rx.Component:
+    return rx.hstack(
+        rx.input(placeholder="Indicar misión", on_change=LaunchesState.buscar_mision_onchange),
+        rx.button("Buscar", on_click=LaunchesState.get_launch_by_mission)
+    )
 
 def launches_page_details()->rx.Component:
         return rx.flex(
                 rx.heading("Gestión de base de datos de lanzamientos",
                         align = "center",
                         style={"color":TextColor.HEADER.value},
+                        size="6"
                         ),
                 rx.hstack(
-                create_launch_form_dialog(),
+                    create_launch_form_dialog(),
+                    buscar_mission(),
                     ),
+                
                 table_launches(LaunchesState.list_launches),
                 spacing="3",
                 justify="start",    
                 direction="column",
                 style={"width": "100%"},
                 on_mount=LaunchesState.get_all_launches,
-                on_focus=LaunchesState.get_all_launches,
-                on_click=LaunchesState.get_all_launches,
+                #on_focus=LaunchesState.get_all_launches,
+                #on_click=LaunchesState.get_all_launches,
         )
 
 def table_launches(list_launches: list[Nextlaunches]) -> rx.Component:
