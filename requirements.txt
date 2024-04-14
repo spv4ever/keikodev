@@ -5,6 +5,8 @@ paramiko
 google-auth[requests]
 gunicorn
 PyMySQL
-youtube_dl
+google-auth
+google-api-python-client
+google-auth-oauthlib
 
 

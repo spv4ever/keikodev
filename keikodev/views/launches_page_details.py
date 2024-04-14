@@ -10,7 +10,9 @@ from keikodev.componentes.linkbutton import linkbutton
 from keikodev.models.launches import Nextlaunches
 from keikodev.data.launch_services import create_launch_service, delete_launch_service,select_all_launches_service,update_launch_service, select_launch_by_mision_service
 from typing import Optional
+from keikodev.pages.google_auth import StateLogin
 
+#StateLogin.users_rights == 999,
 
 
 #LaunchesState = importlib.import_module("keikodev.pages.launches_page").LaunchesState
@@ -42,10 +44,10 @@ class Launch(rx.State):
     id_aux = 0
     
 
-    def id_aux_value(self, id_aux):
-        #print(id_aux)
-        self.id_aux = id_aux
-        #print(self.id_aux)
+    # def id_aux_value(self, id_aux):
+    #     #print(id_aux)
+    #     self.id_aux = id_aux
+    #     #print(self.id_aux)
 
     
 
@@ -142,13 +144,20 @@ def table_launches(list_launches: list[Nextlaunches]) -> rx.Component:
                 rx.table.column_header_cell("Directo"),
                 rx.table.column_header_cell("Streamer"),
                 rx.table.column_header_cell("Canal"),
-                rx.table.column_header_cell("Eliminar"),
-                rx.table.column_header_cell("Editar"),
+                rx.cond(
+                    StateLogin.users_rights == 999,
+                    rx.table.column_header_cell("Eliminar"),
+                    ),
+                rx.cond(
+                    StateLogin.users_rights == 999,
+                    rx.table.column_header_cell("Editar"),
+                    ),
                 style = {"color": TextColor.HEADER.value, "background_color": Color.CONTENT.value},
                 ),
+                
             ),
         rx.table.body(
-            rx.foreach(list_launches, row_table)
+            rx.foreach(list_launches, row_table),
         ),
         variant="surface",
     )
@@ -188,15 +197,22 @@ def row_table(launch: Nextlaunches)-> rx.Component:
                 ),
                 align="center",
         ),
-        rx.table.cell(rx.hstack(
-            delete_launch_dialog(launch.id),
+        rx.cond(
+            StateLogin.users_rights==999,
+            rx.table.cell(rx.hstack(
+                delete_launch_dialog(launch.id),
+                ),
             ),
         ),
-        rx.table.cell(
-                rx.hstack(
-                    update_launch_dialog(launch),
+        rx.cond(
+            StateLogin.users_rights==999,
+            rx.table.cell(
+                    rx.hstack(
+                        update_launch_dialog(launch),
+                ),
             ),
         ),
+
         on_focus=LaunchesState.get_all_launches,
         style = {"color": TextColor.HEADER.value, "background_color": Color.BACKGROUND.value},
     )
@@ -318,9 +334,9 @@ def update_launch_dialog(launch) -> rx.Component:
         rx.dialog.trigger(
             rx.button(
                 rx.icon("pencil"),
-                on_click=Launch.id_aux_value(launch.id)
                 )
             ),
+
         rx.dialog.content(
             rx.flex(
                 rx.dialog.title("Modificar usuario"),

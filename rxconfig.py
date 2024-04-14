@@ -12,10 +12,10 @@ config = rx.Config(
         "https://keikodev.vercel.app",
         "http://localhost:3000",
         "http://localhost:3001",
-        "http://localhost:3004",
+        "http://localhost:3003",
         "http://localhost:8000",
         "http://localhost:8001",
-        "http://localhost:8004"
+        "http://localhost:8003"
 
     ],
 )

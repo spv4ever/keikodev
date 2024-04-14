@@ -1,0 +1,79 @@
+from googleapiclient.discovery import build
+from googleapiclient.errors import HttpError
+from oauth2client.tools import argparser
+
+import dotenv
+import os
+
+dotenv.load_dotenv()
+YOUTUBE_KEY = os.environ.get("YOUTUBE_KEY")
+
+def search_videos(query):
+    # Inserta aquí tu clave de API
+    api_key = YOUTUBE_KEY
+
+    # Crea el servicio de la API de YouTube
+    youtube = build('youtube', 'v3', developerKey=api_key)
+
+    try:
+        # Realiza la búsqueda de videos por descripción
+        search_response = youtube.search().list(
+            q=query,
+            part='id,snippet',
+            maxResults=10
+        ).execute()
+
+        # Procesa los resultados de la búsqueda
+        for search_result in search_response.get('items', []):
+            if search_result['id']['kind'] == 'youtube#video':
+                print('%s (%s)' % (search_result['snippet']['title'],
+                                    search_result['id']['videoId']))
+    except HttpError as e:
+        print('An HTTP error %d occurred:\n%s' % (e.resp.status, e.content))
+
+    return search_response
+
+
+
+# import youtube_dl
+
+# STREAMER = "SpaceXStorm"
+
+# def get_starlink_videos(mission: str):
+#     # Configurar opciones para youtube_dl
+#     ydl_opts = {
+#         'extract_flat': True,  # Extraer solo metadatos básicos
+#         'quiet': True  # No mostrar mensajes de progreso en la consola
+#     }
+
+#     # Crear objeto youtube_dl
+#     ydl = youtube_dl.YoutubeDL(ydl_opts)
+
+#     # URL de búsqueda en YouTube
+#     search_query = f'ytsearchall:"{mission}"'
+
+#     # Extraer información de los videos de YouTube
+#     with ydl:
+#         result = ydl.extract_info(search_query, download=False)
+
+#     #print(result)
+
+#     for entry in result['entries']:
+#         if entry.get('uploader') == STREAMER:
+#             streamer = entry['uploader']
+#             url = 'https://www.youtube.com/watch?v='+entry['url']
+#         else:
+#             streamer = ""
+#             url=""
+#     # print(result)
+#     # print("mision",mission)
+#     # print(streamer)
+#     # print(url)
+
+#     video_dict = {"streamer": streamer, "url": url}
+
+#     print(video_dict)
+
+#     #print(video_results)
+
+#     return video_dict

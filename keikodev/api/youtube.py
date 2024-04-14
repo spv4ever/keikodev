@@ -1,8 +1,11 @@
 import youtube_dl
+from keikodev.api.youtube_new import search_videos
 
 STREAMER = "SpaceXStorm"
 
 def get_starlink_videos(mission: str):
+    alternativa = search_videos(mission)
+    print(alternativa)
     # Configurar opciones para youtube_dl
     ydl_opts = {
         'extract_flat': True,  # Extraer solo metadatos básicos
