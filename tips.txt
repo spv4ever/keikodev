@@ -19,7 +19,7 @@ kill -9 [PID]
 
 ./build_hostalia.sh
 
-
+https://www.youtube.com/watch?v=EldZCM5kiY8&pp=ygUNU3RhcmxpbmsgNi00OQ%3D%3D
 
 https://www.mamedev.org/
 
