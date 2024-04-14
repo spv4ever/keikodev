@@ -27,11 +27,11 @@ def next_launch():
     #nextLaunch[0].mission = "Starlink"
     links = links_youtube_service(nextLaunch[0].mission[:10])
     #print(links)
-
-    nextLaunch[0].url_live=links[0]["url"]
-    nextLaunch[0].streamer=links[0]["channel_title"]
-    if links[0]["channel_title"] != "":
-        nextLaunch[0].channel="https://www.youtube.com/@"+links[0]["channel_title"]
+    if len(links)!=0:
+        nextLaunch[0].url_live=links[0]["url"]
+        nextLaunch[0].streamer=links[0]["channel_title"]
+        if links[0]["channel_title"] != "":
+            nextLaunch[0].channel="https://www.youtube.com/@"+links[0]["channel_title"]
 
     
 
