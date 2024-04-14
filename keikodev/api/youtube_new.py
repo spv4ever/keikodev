@@ -11,7 +11,6 @@ YOUTUBE_KEY = os.environ.get("YOUTUBE_KEY")
 def search_videos(query):
     # Inserta aquí tu clave de API
     api_key = YOUTUBE_KEY
-    query = "Starlink 6-49"
 
     # Crea el servicio de la API de YouTube
     youtube = build('youtube', 'v3', developerKey=api_key)
