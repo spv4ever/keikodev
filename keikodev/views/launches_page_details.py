@@ -44,10 +44,10 @@ class Launch(rx.State):
     id_aux = 0
     
 
-    # def id_aux_value(self, id_aux):
-    #     #print(id_aux)
-    #     self.id_aux = id_aux
-    #     #print(self.id_aux)
+    def id_aux_value(self, id_aux):
+        #print(id_aux)
+        self.id_aux = id_aux
+        #print(self.id_aux)
 
     
 
@@ -334,6 +334,7 @@ def update_launch_dialog(launch) -> rx.Component:
         rx.dialog.trigger(
             rx.button(
                 rx.icon("pencil"),
+                on_click=Launch.id_aux_value(launch.id)
                 )
             ),
 
