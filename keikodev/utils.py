@@ -209,7 +209,7 @@ login_meta = [
 ]
 login_meta.extend(_meta)
 
-#Sección login
+#Sección Gestión lanzamientos
 launches_title = "Gestión de lanzamientos"
 launches_description = "Gestión de lanzamientos, editar, añadir, gestionar base de datos"
 launches_meta = [
@@ -217,3 +217,16 @@ launches_meta = [
     {"name": "og:description", "content": launches_description},
 ]
 launches_meta.extend(_meta)
+
+#Sección páginas IA
+iatools_title = "Sección dedicada a las herramientas IA"
+iatools_description = "Resumen de las principales herramientas de IA actuales en el mercado."
+iatools_meta = [
+    {"name": "og:title", "content": iatools_title},
+    {"name": "og:description", "content": iatools_description},
+]
+iatools_meta.extend(_meta)
+
+
+
+

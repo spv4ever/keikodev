@@ -22,6 +22,7 @@ class Route(Enum):
     SPACEX_STARSHIP = "/SpaceX/StarShip"
     LOGIN = "/login"
     LAUNCH_PAGE = "/launches"
+    IA_TOOLS = "/iatools"
     
 
     

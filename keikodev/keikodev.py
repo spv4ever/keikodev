@@ -26,6 +26,7 @@ from keikodev.data.info_interes import leerPost
 from keikodev.pages.spacex import spacex
 from keikodev.pages.galeria_starship_video import galeria_starship_video
 from keikodev.pages.user_page import user_page
+from keikodev.pages.iatools import ia_tools
 
 import dotenv
 

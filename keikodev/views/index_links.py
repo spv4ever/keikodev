@@ -58,6 +58,12 @@ def index_links()-> rx.Component:
             "/img/rocket-solid.svg",
             Route.SPACEX.value,
             is_external=False),
+        
+        linkbutton('Principales herramientas IA', 
+            "Biblioteca de herramientas IA organizadas y clasificadas.", 
+            "/img/dev.svg",
+            Route.IA_TOOLS.value,
+            is_external=False),
 
         linkbutton('Ciberestafas', 
             "Toda la actualidad de los intentos de fraude que recibamos", 

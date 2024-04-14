@@ -82,6 +82,7 @@ def user_page()->rx.Component:
                     rx.text("Usuario no permitido"),
             ),
     )
+
 def table_users(list_users: list[Usuarios]) -> rx.Component:
     return rx.table.root(
         rx.table.header(

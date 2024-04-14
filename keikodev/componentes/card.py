@@ -2,13 +2,16 @@ import reflex as rx
 import keikodev.styles.styles as styles
 
 from keikodev.styles.styles import Size
-from keikodev.styles.colors import TextColor
+from keikodev.styles.colors import Color,TextColor
 import keikodev.views.constants as const
 from keikodev.componentes.imagenes import unaimagen, dosimagenes, tresimagenes
 from keikodev.state.ModalState import ModalState as ModalState
 
 from .heading import heading
 from .badge import badge
+
+from keikodev.models.iatools_model import Iatools
+from keikodev.componentes.puntuacion import estrellas
 
 def card(url: str, title: str, lista_imagenes , body="", color=TextColor.PRIMARY, badge_text="", featured=False, external=False) -> rx.Component:
     return rx.chakra.link(
@@ -55,3 +58,65 @@ def card(url: str, title: str, lista_imagenes , body="", color=TextColor.PRIMARY
         is_external=external,
         width="100%"
     )
+
+def card_ia(iatool:Iatools) -> rx.Component:
+    return rx.link(
+                rx.flex(
+                    rx.cond(
+                        iatool.tipo != "",
+                        rx.chakra.box(
+                            badge(iatool.tipo),
+                            width="100%"
+                        )
+                    ),
+                    rx.hstack(
+                        rx.heading(iatool.herramientaAI,
+                            size="8",
+                            align = "center",
+                            style={"color":TextColor.HEADER.value}
+                        ),
+                        justify="center",
+                        ),
+                    rx.box(
+                        rx.text(iatool.descripcion,
+                                
+                                size="2",
+                                style={"color":TextColor.BODY.value,"text-align": "justify"},
+                                ),
+                        height = "140px",
+                    ),
+                    rx.hstack(
+                        rx.cond(
+                            iatool.planGratuito,
+                            rx.badge("Plan Gratuito",variant="soft",color_scheme="orange", size="2"),
+                            rx.badge("De pago",variant="soft",color_scheme="orange", size="2")
+                            ),
+                        estrellas(iatool.estrellas),
+                        align="center",
+                        justify="between",
+
+                    ),
+
+                    
+                    
+                    # rx.cond(
+                    #     body != "",
+                    #     rx.chakra.text(
+                    #         body,
+                    #         font_size=Size.DEFAULT.value,
+                    #         color=TextColor.SECONDARY.value,
+                    #         width="100%"
+                    #     ),
+                    # ),
+                    spacing="2",
+                    direction="column", 
+                    style=styles.cardia_style,
+                    max_width="400px",
+                    max_height="300px"
+                ),
+                href=iatool.url,
+                style={"text-decoration":"none"},
+                is_external=True,
+                # width="400px",
+                # height="300px"
+            )

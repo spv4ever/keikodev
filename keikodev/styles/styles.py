@@ -77,6 +77,11 @@ BASE_STYLE = {
 
 launch_input = {"width":"530px"}
 
+star_gold = {"color":"gold"}
+
+star_grey = {"color":"grey"}
+
+
 box_news_style = {
         "width" : "100%",
         "height" : "100%",
@@ -99,6 +104,17 @@ container_style = {
     "background": Color.CONTENT.value,
     "_hover": {
         "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.CONTENT.value}"
+    }
+}
+
+cardia_style = {
+    "width" : "100%",
+    "padding": Size.DEFAULT.value,
+    "border_radius": "1.5rem",
+    "background": Color.CONTENT.value,
+    "_hover": {
+        "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.PRIMARY.value}",
+        "background": Color.BACKGROUND.value,
     }
 }
 
