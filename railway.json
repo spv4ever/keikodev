@@ -5,13 +5,13 @@
     "dockerfilePath": "Dockerfile"
   },
   "deploy": {
-    "numReplicas": 4,
+    "numReplicas": 2,
     "sleepApplication": false,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 10,
-    "memory" : 2048,
+    "memory" : 1024,
     "concurrency": 2,
-    "workers": 5
+    "workers": 4
   }
 }
   
