@@ -9,3 +9,11 @@ def select_all():
         query = select(Iatools)
         return session.exec(query).all()
     
+def create_iatool(iatool:Iatools):
+    engine = connect()
+    with Session(engine) as session:
+        session.add(iatool)
+        session.commit()
+        query = select(Iatools)
+        return session.exec(query).all()
+    

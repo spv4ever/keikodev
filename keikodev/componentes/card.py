@@ -60,23 +60,35 @@ def card(url: str, title: str, lista_imagenes , body="", color=TextColor.PRIMARY
     )
 
 def card_ia(iatool:Iatools) -> rx.Component:
-    return rx.link(
+    return  rx.box(
                 rx.flex(
-                    rx.cond(
-                        iatool.tipo != "",
-                        rx.chakra.box(
-                            badge(iatool.tipo),
-                            width="100%"
-                        )
-                    ),
                     rx.hstack(
-                        rx.heading(iatool.herramientaAI,
-                            size="8",
-                            align = "center",
-                            style={"color":TextColor.HEADER.value}
+                        rx.cond(
+                            iatool.tipo != "",
+                            rx.chakra.box(
+                                badge(iatool.tipo),
+                                width="100%"
+                            )
                         ),
-                        justify="center",
-                        ),
+                            rx.cond(
+                                "/img/"+iatool.icon!="/img/null", 
+                                rx.avatar(src="/img/"+iatool.icon, size="4", radius="medium"),
+                            ),
+                        justify="between",
+                    ),
+                    rx.link(
+                        rx.hstack(
+                            rx.heading(iatool.herramientaAI,
+                                size="8",
+                                align = "center",
+                                style={"color":TextColor.HEADER.value}
+                                ),
+                            justify="center",
+                            ),
+                            href=iatool.url,
+                            style={"text-decoration":"none"},
+                            is_external=True,
+                    ),
                     rx.box(
                         rx.text(iatool.descripcion,
                                 
@@ -91,32 +103,25 @@ def card_ia(iatool:Iatools) -> rx.Component:
                             rx.badge("Plan Gratuito",variant="soft",color_scheme="orange", size="2"),
                             rx.badge("De pago",variant="soft",color_scheme="orange", size="2")
                             ),
+                        rx.cond(
+                            " "+iatool.url_formacion!=" null", 
+                            rx.link(rx.icon("graduation-cap",size=30,color="Green"),href=iatool.url_formacion,is_external=True)
+
+                        ),
                         estrellas(iatool.estrellas),
                         align="center",
                         justify="between",
 
                     ),
-
-                    
-                    
-                    # rx.cond(
-                    #     body != "",
-                    #     rx.chakra.text(
-                    #         body,
-                    #         font_size=Size.DEFAULT.value,
-                    #         color=TextColor.SECONDARY.value,
-                    #         width="100%"
-                    #     ),
-                    # ),
                     spacing="2",
                     direction="column", 
                     style=styles.cardia_style,
                     max_width="400px",
                     max_height="300px"
                 ),
-                href=iatool.url,
-                style={"text-decoration":"none"},
-                is_external=True,
+                # href=iatool.url,
+                # style={"text-decoration":"none"},
+                # is_external=True,
                 # width="400px",
                 # height="300px"
             )

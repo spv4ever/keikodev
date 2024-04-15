@@ -10,4 +10,5 @@ class Iatools(rx.Model, table=True):
     tipo: str
     planGratuito: bool
     estrellas: int
-    icon: str
+    icon: str = ""
+    url_formacion: str
