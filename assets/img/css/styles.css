@@ -54,3 +54,15 @@
     flex-direction: column;
   }
 }
+
+/* Default size for large screens */
+.heading-large-screen {
+  font-size: 34px;
+}
+
+/* Smaller size for screens less than 768px wide */
+@media (max-width: 768px) {
+  .heading-large-screen {
+    font-size: 16px;
+  }
+}

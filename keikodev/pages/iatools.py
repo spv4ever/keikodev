@@ -67,15 +67,15 @@ def ia_tools() -> rx.Component:
             rx.flex(
                 rx.heading("Biblioteca de recursos de Inteligencia Artificial",
                             align="center",
-                            style={"color":TextColor.HEADER.value,"margin":Size.DEFAULT.value,"padding":Size.DEFAULT.value},
-                            size="8",
+                            class_name="heading-large-screen",
+                            style={"color":TextColor.HEADER.value,"margin":Size.DEFAULT.value,"padding":Size.DEFAULT.value},    
                             ),
                 rx.divider(color_scheme="pink"),
                 rx.hstack(
-                    rx.cond(
-                        StateLogin.users_rights == 999,
-                        create_tool_form_dialog(),
-                    ),
+                    # rx.cond(
+                    #     StateLogin.users_rights == 999,
+                             create_tool_form_dialog(),
+                    # ),
                     justify="start",
                     style={"margin-top":"15px","margin-bottom":"15px"},
                         ),
@@ -85,8 +85,10 @@ def ia_tools() -> rx.Component:
                         rx.foreach(Iatoolstate.iatools,card_ia),
                         wrap="wrap",
                         direction="row",
+                        justify="center",
                         spacing="5",
                         style = {"margin":Size.DEFAULT.value}
+                        
                         ),
                 direction="column",
                 style={"width": "80vw", "margin":"auto"},
