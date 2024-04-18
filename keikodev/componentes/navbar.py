@@ -14,7 +14,7 @@ from keikodev.componentes.visualiza import visualiza_modal as visualiza_modal
 import keikodev.utils as utils
 from keikodev.componentes.tutiempo import tutiempo
 from keikodev.componentes.facebook import facebook_like_button,facebook_sdk_init
-from keikodev.pages.google_auth import protected, StateLogin
+from keikodev.pages.google_auth import protected, StateLogin, user_info
 
 
 
@@ -46,10 +46,14 @@ def navbar():
                                         ), 
                                         href=Route.INDEX.value,
                                 ),
-                                protected(),
                                 rx.cond(
                                         StateLogin.users_rights == 999,
-                                        rx.chakra.text("Administrador de sistemas", color = TextColor.HEADER.value),
+                                                rx.chakra.vstack(
+                                                        user_info(StateLogin.tokeninfo),
+                                                        rx.chakra.text(StateLogin.protected_content),
+                                                        rx.chakra.text("Administrador de sistemas", color = TextColor.HEADER.value),
+                                                ),
+                                        protected(),
                                 ),
                                 
                                 

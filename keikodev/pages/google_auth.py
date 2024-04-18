@@ -175,3 +175,4 @@ def protected() -> rx.Component:
         rx.chakra.text(StateLogin.protected_content),
         #rx.chakra.link("Home", href="/"),
     )
+
