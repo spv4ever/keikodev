@@ -4,6 +4,13 @@ https://fonts.google.com --> fuentes de texto
 https://fontawesome.com/ --> Miles de iconos.
 
 
+https://affiliates.fliki.ai/login admin@keikodev.es 
+https://www.seaart.ai/es admin@keikodev.es
+https://affiliates.leonardo.ai/ admin@keikodev.es
+
+
+
+
     prueba con Agbalumo-Regular
 reflex export --frontend-only > ejecutar proceso de exportación proyecto a zip
 reflex-first-r6nc-q971smeo6-alberts-projects-4765884a.vercel.app

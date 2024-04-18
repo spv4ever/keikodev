@@ -11,7 +11,7 @@ from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
 from keikodev.state.PageState import PageState
 #from keikodev.data.data_galeria_nasa import items_galeria
-from keikodev.componentes.adsscript import ads_script
+#from keikodev.componentes.adsscript import ads_script
 from keikodev.views.galeria_nasa_details import galeria_nasa_details
 
 @rx.page(

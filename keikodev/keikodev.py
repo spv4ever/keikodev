@@ -40,7 +40,7 @@ import json
 import os
 import time
 from .pages.react_oauth_google import GoogleOAuthProvider, GoogleLogin
-from keikodev.componentes.adsscript import ads_script
+#from keikodev.componentes.adsscript import ads_script
 
 
 dotenv.load_dotenv()
@@ -50,102 +50,102 @@ GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 
 
 
-class State(rx.State):
-    id_token_json: str = rx.LocalStorage()
+# class State(rx.State):
+#     id_token_json: str = rx.LocalStorage()
 
-    def on_success(self, id_token: dict):
-        self.id_token_json = json.dumps(id_token)
+#     def on_success(self, id_token: dict):
+#         self.id_token_json = json.dumps(id_token)
 
-    @rx.cached_var
-    def tokeninfo(self) -> dict[str, str]:
-        try:
-            return verify_oauth2_token(
-                json.loads(self.id_token_json)["credential"],
-                requests.Request(),
-                GOOGLE_CLIENT_ID,
-            )
-        except Exception as exc:
-            if self.id_token_json:
-                print(f"Error verifying token: {exc}")
-        return {}
+#     @rx.cached_var
+#     def tokeninfo(self) -> dict[str, str]:
+#         try:
+#             return verify_oauth2_token(
+#                 json.loads(self.id_token_json)["credential"],
+#                 requests.Request(),
+#                 GOOGLE_CLIENT_ID,
+#             )
+#         except Exception as exc:
+#             if self.id_token_json:
+#                 print(f"Error verifying token: {exc}")
+#         return {}
 
-    def logout(self):
-        self.id_token_json = ""
+#     def logout(self):
+#         self.id_token_json = ""
 
-    @rx.var
-    def token_is_valid(self) -> bool:
-        try:
-            return bool(
-                self.tokeninfo
-                and int(self.tokeninfo.get("exp", 0)) > time.time()
-            )
-        except Exception:
-            return False
+#     @rx.var
+#     def token_is_valid(self) -> bool:
+#         try:
+#             return bool(
+#                 self.tokeninfo
+#                 and int(self.tokeninfo.get("exp", 0)) > time.time()
+#             )
+#         except Exception:
+#             return False
 
-    @rx.cached_var
-    def protected_content(self) -> str:
-        if self.token_is_valid:
-            return f"This content can only be viewed by a logged in User. Nice to see you {self.tokeninfo['name']}"
-        return "Not logged in."
-
-
-def user_info(tokeninfo: dict) -> rx.Component:
-    return rx.chakra.hstack(
-        rx.chakra.avatar(
-            name=tokeninfo["name"],
-            src=tokeninfo["picture"],
-            size="lg",
-        ),
-        rx.chakra.vstack(
-            rx.chakra.heading(tokeninfo["name"], size="md"),
-            rx.chakra.text(tokeninfo["email"]),
-            align_items="flex-start",
-        ),
-        rx.chakra.button("Logout", on_click=State.logout),
-        padding="10px",
-    )
+#     @rx.cached_var
+#     def protected_content(self) -> str:
+#         if self.token_is_valid:
+#             return f"This content can only be viewed by a logged in User. Nice to see you {self.tokeninfo['name']}"
+#         return "Not logged in."
 
 
-def login() -> rx.Component:
-    return rx.chakra.vstack(
-        GoogleLogin.create(on_success=State.on_success),
-    )
+# def user_info(tokeninfo: dict) -> rx.Component:
+#     return rx.chakra.hstack(
+#         rx.chakra.avatar(
+#             name=tokeninfo["name"],
+#             src=tokeninfo["picture"],
+#             size="lg",
+#         ),
+#         rx.chakra.vstack(
+#             rx.chakra.heading(tokeninfo["name"], size="md"),
+#             rx.chakra.text(tokeninfo["email"]),
+#             align_items="flex-start",
+#         ),
+#         rx.chakra.button("Logout", on_click=State.logout),
+#         padding="10px",
+#     )
 
 
-def require_google_login(page) -> rx.Component:
-    @functools.wraps(page)
-    def _auth_wrapper() -> rx.Component:
-        return GoogleOAuthProvider.create(
-            rx.cond(
-                State.is_hydrated,
-                rx.cond(State.token_is_valid, page(), login()),
-                rx.chakra.spinner(),
-            ),
-            client_id=GOOGLE_CLIENT_ID,
-        )
-    return _auth_wrapper
+# def login() -> rx.Component:
+#     return rx.chakra.vstack(
+#         GoogleLogin.create(on_success=State.on_success),
+#     )
 
 
-def index():
-    return rx.chakra.vstack(
-        rx.chakra.heading("Google OAuth", size="lg"),
-        rx.chakra.link("Protected Page", href="/protected"),
-    )
+# def require_google_login(page) -> rx.Component:
+#     @functools.wraps(page)
+#     def _auth_wrapper() -> rx.Component:
+#         return GoogleOAuthProvider.create(
+#             rx.cond(
+#                 State.is_hydrated,
+#                 rx.cond(State.token_is_valid, page(), login()),
+#                 rx.chakra.spinner(),
+#             ),
+#             client_id=GOOGLE_CLIENT_ID,
+#         )
+#     return _auth_wrapper
 
 
-@rx.page(route="/protected")
-@require_google_login
-def protected() -> rx.Component:
-    return rx.chakra.vstack(
-        user_info(State.tokeninfo),
-        rx.chakra.text(State.protected_content),
-        rx.chakra.link("Home", href="/"),
-    )
+# def index():
+#     return rx.chakra.vstack(
+#         rx.chakra.heading("Google OAuth", size="lg"),
+#         rx.chakra.link("Protected Page", href="/protected"),
+#     )
+
+
+# @rx.page(route="/protected")
+# @require_google_login
+# def protected() -> rx.Component:
+#     return rx.chakra.vstack(
+#         user_info(State.tokeninfo),
+#         rx.chakra.text(State.protected_content),
+#         rx.chakra.link("Home", href="/"),
+#     )
 ##### Formación de backend
 
 
 app = rx.App(
-        head_components=[ads_script,
+        head_components=[
         rx.script(
             src=f"https://www.googletagmanager.com/gtag/js?id={const.G_TAG}"),
         rx.script(
@@ -162,12 +162,12 @@ app = rx.App(
     stylesheets=styles.STYLESHEETS,
 )
 
-app.head_components.append(
-    rx.script(
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7920736444321179",
-        custom_attrs={"async": "", "crossorigin": "anonymous"}
-    )
-)
+# app.head_components.append(
+#     rx.script(
+#         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7920736444321179",
+#         custom_attrs={"async": "", "crossorigin": "anonymous"}
+#     )
+# )
 
 
 

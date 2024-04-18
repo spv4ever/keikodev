@@ -37,6 +37,12 @@ class Iatoolstate(rx.State):
     async def create_iatool(self, new_iatool: dict):
         async with self:
             try:
+                #print(new_iatool)
+                if "planGratuito" not in new_iatool:
+                    new_iatool['planGratuito'] = False
+                #print(new_iatool)
+                #     new_ia_tool["planGratuito"]=False
+                # print(new_ia_tool)
                 self.iatools = create_iatool_service(
                     herramientaAI=new_iatool["herramientaAI"], 
                     descripcion=new_iatool["descripcion"], 
@@ -72,10 +78,10 @@ def ia_tools() -> rx.Component:
                             ),
                 rx.divider(color_scheme="pink"),
                 rx.hstack(
-                    # rx.cond(
-                    #     StateLogin.users_rights == 999,
-                             create_tool_form_dialog(),
-                    # ),
+                    rx.cond(
+                        StateLogin.users_rights == 999,
+                            create_tool_form_dialog(),
+                    ),
                     justify="start",
                     style={"margin-top":"15px","margin-bottom":"15px"},
                         ),
@@ -91,7 +97,7 @@ def ia_tools() -> rx.Component:
                         
                         ),
                 direction="column",
-                style={"width": "80vw", "margin":"auto"},
+                style={"width": "100vw", "margin":"auto"},
                 
             ),
             footer(),

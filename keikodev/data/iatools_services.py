@@ -6,8 +6,12 @@ def select_all_iatools_service():
     iatools = select_all()
     return iatools
 
-def create_iatool_service(herramientaAI: str, descripcion: str, url: str, tipo: str, planGratuito: bool, estrellas: int, icon: str, url_formacion: str):
-        pass
+def create_iatool_service(herramientaAI: str, descripcion: str, url: str, tipo: str, estrellas: int, icon: str, url_formacion: str, planGratuito: bool=False):
+        # if planGratuito == False:
+        #     new_ia_tool["planGratuito"]=False
+        # print(new_ia_tool)
+
+
         new_ia_tool = Iatools(herramientaAI=herramientaAI, descripcion=descripcion, url=url, tipo=tipo, planGratuito=planGratuito, estrellas=estrellas, icon=icon, url_formacion=url_formacion)
         return create_iatool(new_ia_tool)
 

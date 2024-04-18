@@ -16,7 +16,7 @@ from keikodev.state.fotoNasa import  fotoNasa as fotoNasa
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.models.Nasalink import Nasalink
 from keikodev.state.ModalState import modal_small
-from keikodev.componentes.adsscript import ads_script
+#from keikodev.componentes.adsscript import ads_script
 from keikodev.state.alllinks import Alllinks
 from keikodev.componentes.facebook import facebook_sdk
 from keikodev.data.recetas_json import recetas_andaluzas
