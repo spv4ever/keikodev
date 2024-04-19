@@ -18,10 +18,16 @@ def select_tipos_service():
             nombre=detalles[0],
             numero=detalles[1])
             for detalles in selected]
-    return tipos
+    tipos_nombre=[]
+    for n in selected:
+          tipos_nombre.append(n[0])
+
+    return tipos, tipos_nombre
 
 def select_type_service(type:str):
         return select_type(type)
+
+
 
 
 

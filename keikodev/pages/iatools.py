@@ -23,12 +23,17 @@ class Iatoolstate(rx.State):
     iatools:list[Iatools]
     error: str = ""
     tipos: list[Tipo]
+    total: int
+    tipo_edicion: list[str]
 
     @rx.background
     async def get_all_iatools(self):
         async with self:
             self.iatools = select_all_iatools_service()
-            self.tipos = select_tipos_service()
+            self.tipos, self.tipo_edicion = select_tipos_service()
+            self.total = len(self.iatools)
+            
+            
 
     @rx.background
     async def get_type_iatools(self, type:str):
@@ -96,12 +101,12 @@ def ia_tools() -> rx.Component:
 
 
                 rx.divider(color_scheme="pink"),
-                rx.hstack(
+                rx.flex(
                     rx.cond(
                         StateLogin.users_rights == 999,
                             create_tool_form_dialog(),
                     ),
-                    rx.badge("Todos",
+                    rx.badge(f"Todos ({Iatoolstate.total})",
                             variant="outline", 
                             color_scheme="pink", 
                             size="2",
@@ -111,7 +116,8 @@ def ia_tools() -> rx.Component:
                     
 
                     # *[rx.text("nombre") for item in Iatoolstate.tipos],
-
+                    wrap="wrap",
+                    direction="row",
                     justify="center",
                     style={"margin-top":"15px","margin-bottom":"15px"},
                 ),
@@ -155,11 +161,15 @@ def create_iatool_form()->rx.Component:
                 name= "url",
                 style=styles.launch_input
             ),
-            rx.input(
-                placeholder="Tipo de herramienta",
-                name= "tipo",
-                style=styles.launch_input
+            rx.hstack(
+                rx.text("Tipo de herramienta ", size="4", style={"color":TextColor.HEADER.value}),
+                rx.select(Iatoolstate.tipo_edicion,)
             ),
+            # rx.input(
+            #     placeholder="Tipo de herramienta",
+            #     name= "tipo",
+            #     style=styles.launch_input
+            # ),
             rx.flex(
                 rx.text("Plan gratuito", size="4", style={"color":TextColor.HEADER.value}),
                 rx.switch(size="1",default_checked=False,name="planGratuito"),
@@ -233,14 +243,7 @@ def create_tool_form_dialog()->rx.Component:
                 align="center",
                 direction="column",
             ),
-            # rx.flex(
-            #     rx.dialog.close(
-            #         rx.button("Cancelar", color_scheme="gray", variant="solid")
-            #     ),
-            #     spacing="3",
-            #     margin_top = "16px",
-            #     justify="end",
-            # ),
+            
             style={"width":"600px","background":Color.BACKGROUND.value},
         ),
     )

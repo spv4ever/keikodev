@@ -104,7 +104,7 @@ def card_ia(iatool:Iatools) -> rx.Component:
                             rx.badge("De pago",variant="soft",color_scheme="orange", size="2")
                             ),
                         rx.cond(
-                            " "+iatool.url_formacion!=" null", 
+                            iatool.url_formacion!="", 
                             rx.link(rx.icon("graduation-cap",size=30,color="Green"),href=iatool.url_formacion,is_external=True)
 
                         ),
