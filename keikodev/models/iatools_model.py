@@ -12,3 +12,7 @@ class Iatools(rx.Model, table=True):
     estrellas: int
     icon: str = ""
     url_formacion: str
+
+class Tipo(rx.Model):
+    nombre: str
+    numero: int
