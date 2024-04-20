@@ -207,14 +207,36 @@ title_center_style = dict(
     text_align = "center",    
 )
 
-main_menu_style = dict(
-    color = Color.SECONDARY.value,
-    font_family=Fuentes.LOGO.value,
-    bg=Color.CONTENT.value,
-    font_size = Size.LARGE_SMALL.value,
-    _hover = {
-            "color" : Color.PRIMARY.value}
-)
+main_menu_style = {
+    "color" : Color.PRIMARY.value,
+    "font_family":Fuentes.TITLE.value,
+    "background":Color.CONTENT.value,
+    "_hover": {
+            "color" : Color.SECONDARY.value,
+            "background" : Color.BACKGROUND.value,
+            }
+}
+
+main_menu_badge_style = {
+    "color" : Color.PRIMARY.value,
+    "font_family":Fuentes.TITLE.value,
+    "background":Color.BACKGROUND.value,
+    "_hover": {
+            "color" : Color.BACKGROUND.value,
+            "background" : Color.SECONDARY.value,
+            "cursor":"pointer"},
+}
+
+
+
+# main_menu_style = dict(
+#     color = Color.SECONDARY.value,
+#     font_family=Fuentes.LOGO.value,
+#     bg=Color.CONTENT.value,
+#     font_size = Size.LARGE_SMALL.value,
+#     _hover = {
+#             "color" : Color.PRIMARY.value}
+# )
 
 main_menu_list_style = dict(
     font_size = Size.DEFAULT.value,
@@ -234,4 +256,3 @@ steps_resaltar_style = dict(
     font_size = Size.DEFAULT.value,
     font_weight="bold",
     color=Color.PRIMARY.value)
-

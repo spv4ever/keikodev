@@ -3,7 +3,7 @@ from datetime import datetime as dt
 
 # Comun
 def lang() -> rx.Component:
-    return rx.script("document.documentElement.lang='es'")
+    return rx.script("document.documentElement.lang='es'"),
 
 def cookies() -> rx.Component:
     return rx.script(src="//cdn.cookie-script.com/s/badcfd79f77b344234eebfda9910dc62.js")

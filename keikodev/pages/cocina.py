@@ -15,21 +15,19 @@ from keikodev.componentes.menubar_cocina import menubar_cocina
     title=utils.cocina_title,
     description=utils.cocina_description,
     image= utils.preview,
-    meta=utils.cocina_meta,
-    
+    meta=utils.cocina_meta, 
 )
 
 def cocina()-> rx.Component:
     return rx.chakra.vstack(
-        utils.lang(),
-        navbar(),
-        rx.chakra.center(
-            cocina_details(),
-            max_width=styles.CONTENT_WIDTH,
-            ),
-        footer(),
-        style=styles.background_pattern_style,
-        #style = styles.background_pattern_style,
-    )
+            utils.lang(),
+            navbar(),
+            rx.chakra.center(
+                cocina_details(),
+                max_width=styles.CONTENT_WIDTH,
+                ),
+            footer(),
+            style = styles.background_pattern_style,
+        ),
 
 
