@@ -211,9 +211,11 @@ main_menu_style = {
     "color" : Color.PRIMARY.value,
     "font_family":Fuentes.TITLE.value,
     "background":Color.CONTENT.value,
+    "text-decoration":"none",
     "_hover": {
             "color" : Color.SECONDARY.value,
             "background" : Color.BACKGROUND.value,
+            "text-decoration":"none",
             }
 }
 

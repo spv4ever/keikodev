@@ -15,6 +15,7 @@ import keikodev.utils as utils
 from keikodev.componentes.tutiempo import tutiempo
 from keikodev.componentes.facebook import facebook_like_button,facebook_sdk_init
 from keikodev.pages.google_auth import protected, StateLogin, user_info
+from keikodev.data.items_menu import items_menu_keikodev,items_menu_tecnologia,items_menu_otros
 
 
 def navbar():
@@ -46,6 +47,7 @@ def navbar():
 						),
 					href=Route.INDEX.value,
 				),
+				
                 rx.tablet_and_desktop(
 					rx.hstack(
 						menu_keikodev(),
@@ -56,6 +58,7 @@ def navbar():
 						style={"color":TextColor.HEADER.value, "padding-left":Size.DEFAULT.value},
 						),
 					),
+                
 				align="center",
 				
 			),
@@ -67,12 +70,21 @@ def navbar():
                 rx.badge('Registrarse',size="2", 
 						color_scheme="pink", 
                         variant="outline",
-                        style=styles.main_menu_badge_style,),
+                        style=styles.main_menu_badge_style,
+                        padding_left=Size.DEFAULT.value,
+						),
+                rx.mobile_only(
+                        rx.container(
+							menu_general(),
+							style={"width": "100%"}),
+						),
+				
                 direction="row",
-                style={"color":TextColor.HEADER.value, "max-width":"100%","padding-right":Size.MEDIUM.value},
+                style={"color":TextColor.HEADER.value, "max-width":"100%"},
                 spacing="3",
-                justify="end",
+                justify="between",
                 align = "center",
+                
                 
 			),
 			# rx.cond(
@@ -109,17 +121,27 @@ def menu_keikodev()->rx.Component:
 					#style=styles.main_menu_badge_style,
 					),
 				rx.chakra.menu_list(
-					rx.chakra.menu_item("Recetas de cocina",style=styles.main_menu_style),
-					rx.chakra.menu_item("Canal Recetas",style=styles.main_menu_style),
-					rx.chakra.menu_item("Canal Novedades",style=styles.main_menu_style),
-					rx.chakra.menu_item("Rincón de keiko",style=styles.main_menu_style),
-					rx.chakra.menu_item("MG Nutrición",style=styles.main_menu_style),
+					*[
+                        main_menu_item(item[0],item[1],item[2])
+                        for item in items_menu_keikodev
+                        ],  
 					style={"color":"#000","background":Color.CONTENT.value,},
                     border_width = "5px",
                     border_color = Color.CONTENT.value,
 				),
             
 			)
+
+def main_menu_item(text: str, url: str, internal: bool=False)->rx.Component:
+        return rx.chakra.menu_item(
+							rx.link(
+									text,
+									href=url,
+                                    is_external=internal,
+									style=styles.main_menu_style
+							),
+                        style=styles.main_menu_style,
+					),
 
 def menu_tecnologia()->rx.Component:
         return rx.chakra.menu(
@@ -129,15 +151,12 @@ def menu_tecnologia()->rx.Component:
 						color_scheme="pink", 
                         variant="outline",
                         style=styles.main_menu_badge_style,)),
-                                                #{"font-family":Fuentes.TITLE.value, "color":Color.PRIMARY.value}
 				rx.chakra.menu_list(
-					rx.chakra.menu_item("SpaceX",style=styles.main_menu_style),
-					rx.chakra.menu_item("Herramientas AI",style=styles.main_menu_style),
-					rx.chakra.menu_item("Ciberestafas",style=styles.main_menu_style),
-					rx.chakra.menu_item("Programación",style=styles.main_menu_style),
-					rx.chakra.menu_item("Cursos",style=styles.main_menu_style),
-					rx.chakra.menu_item("Herramientas Gráficas",style=styles.main_menu_style),
-					rx.chakra.menu_item("Trucos",style=styles.main_menu_style),
+					*[
+                        main_menu_item(item[0],item[1],item[2])
+                        for item in items_menu_tecnologia
+                        ],
+                        
 					style={"color":"#000","background":Color.CONTENT.value,},
                     border_width = "5px",
                     border_color = Color.CONTENT.value,
@@ -153,18 +172,45 @@ def menu_otros()->rx.Component:
 						color_scheme="pink", 
                         variant="outline",
                         style=styles.main_menu_badge_style,)),
-                                                #{"font-family":Fuentes.TITLE.value, "color":Color.PRIMARY.value}
 				rx.chakra.menu_list(
-					rx.chakra.menu_item("Biblioteca de imágenes",style=styles.main_menu_style),
-					rx.chakra.menu_item(
-                            rx.link("Plantilla gastos hipoteca",href="/img/trucos/carta_modelo.pdf",is_external=True),
-                            style=styles.main_menu_style),
+					*[
+						main_menu_item(item[0],item[1],item[2])
+						for item in items_menu_otros
+					], 
 					style={"color":"#000","background":Color.CONTENT.value,},
                     border_width = "5px",
                     border_color = Color.CONTENT.value,
 				),
             
 			)
+
+def menu_general()->rx.Component:
+        return rx.menu.root(
+					rx.menu.trigger(
+						rx.badge(
+							"Menú",
+							size="2",
+                            color_scheme="pink",
+							variant="outline",
+							style=styles.main_menu_badge_style,
+						),
+							
+					),
+					rx.menu.content(
+						rx.menu.item("Edit", shortcut="⌘ E"),
+						rx.menu.item("Duplicate", shortcut="⌘ D"),
+						rx.menu.separator(),
+						rx.menu.sub(
+							rx.menu.sub_trigger("More"),
+							rx.menu.sub_content(
+								rx.menu.item("Option 1"),
+								rx.menu.item("Option 2")
+							)
+						),
+						rx.menu.separator(),
+						rx.menu.item("Delete", shortcut="⌘ ⌫", color="red"),
+					),
+				)
 
 
                         # rx.chakra.modal(
