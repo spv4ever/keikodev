@@ -3,7 +3,7 @@ import keikodev.utils as utils
 import keikodev.views.constants as const
 from keikodev.componentes.navbar import navbar
 from keikodev.views.header import header
-from keikodev.views.index_links import index_links
+from keikodev.views.index_links import index_links, index_links_desktop
 from keikodev.views.footer import footer
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
@@ -32,27 +32,32 @@ from keikodev.state.countdown import CountdownState
 )
 
 def index() -> rx.Component:
-    return rx.chakra.box(
+    return rx.box(
         utils.lang(),
         #utils.cookies(),
         #facebook_sdk(),
         navbar(),
-        rx.chakra.center(
-            rx.chakra.vstack(
-                header(live_status = PageState.live_status),
-                index_links(),
-                spacing=Size.DEFAULT.value,
-                max_width=styles.MAX_WIDTH,
-                width="100%",
-                margin_y=Size.BIG.value
+        rx.mobile_only(
+            rx.chakra.center(
+                rx.chakra.vstack(
+                    #header(live_status = PageState.live_status),
+                    index_links(),
+                    spacing=Size.DEFAULT.value,
+                    max_width=styles.MAX_WIDTH,
+                    width="100%",
+                    margin_y=Size.BIG.value
+                    ),
+                    style=styles.background_gradient_style,
+                    on_mount=CountdownState.start_countdown,
                 ),
-                style=styles.background_gradient_style,
-                on_mount=CountdownState.start_countdown,
-            ),
+        ),
+        rx.tablet_and_desktop(
+            index_links_desktop(),
+            style=styles.background_gradient_style,
+        ),
         footer(),
-        
-        
+        min_height = "650px",
         on_mount=PageState.check_live,
-        style = styles.background_pattern_style,
+        #style = styles.background_pattern_style,
     )
 

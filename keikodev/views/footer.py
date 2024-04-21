@@ -54,6 +54,7 @@ def footer()-> rx.Component:
                     iubenda_script(),
                     iubenda_external_scripts(),
                     iubenda_script_cookies(),
+                    background_color = "black"
 
                 ),
                 #margin_bottom=Size.BIG.value,

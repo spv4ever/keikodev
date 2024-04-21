@@ -20,19 +20,6 @@ NASA_API = nasaApi()
 DB_API = Database()
 USERS = Users()
 
-# def ejemploDB():
-#     if __name__ == "__main__":
-#         db = Database()
-#         data = {
-#             "column1": "value1",
-#             "column2": "value2"
-#         }
-#         db.insert("nombre_tabla", data)
-#         db.delete("nombre_tabla", "condicion")
-#         result = db.select("nombre_tabla")
-#         print(result)
-
-
 def hello() -> str:
     time.sleep(10)
     return "Albert!"

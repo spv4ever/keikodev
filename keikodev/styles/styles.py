@@ -27,6 +27,7 @@ class Size(Enum):
     ZERO = '0px !important'
     VERY_XS = "0.1em"
     VERY_SMALL = "0.2em"
+    SMALL_MEDIUM = "0.3em"
     SMALL = "0.5em"
     SMALL_LARGE = "0.7em"
     MEDIUM = "0.8em"
@@ -134,7 +135,7 @@ featured_container_style = {
 }
 
 background_gradient_style = {
-    "background": f"linear-gradient(to bottom, rgb(0, 0, 0, 0) 60%, {Color.IMAGE_BOX.value} 100%)"
+    "background": f"linear-gradient(to bottom, rgb(0, 0, 0, 0) 30%, {Color.IMAGE_BOX.value} 100%)"
 }
 
 background_pattern_style = {
@@ -239,6 +240,17 @@ main_menu_badge_style = {
 #     _hover = {
 #             "color" : Color.PRIMARY.value}
 # )
+
+main_menu_style_item=dict(font_family=Fuentes.TITLE.value,
+                    padding_y = Size.SMALL_MEDIUM.value,
+                    padding_x = Size.MEDIUM.value,
+                    font_size = "sm",
+                    border_radius = "5px",
+                    border_width = "1px",
+                    border_color = "#651249",
+					color=Color.PRIMARY.value,
+                    background = Color.BACKGROUND.value,
+                    _hover={"color":Color.BACKGROUND.value,"bg":Color.SECONDARY.value},)
 
 main_menu_list_style = dict(
     font_size = Size.DEFAULT.value,

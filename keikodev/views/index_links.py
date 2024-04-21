@@ -3,7 +3,7 @@ from keikodev.componentes.linkbutton import linkbutton
 from keikodev.componentes.title import title
 from keikodev.styles.styles import Size as Size
 from keikodev.styles.styles import SizeRx as SizeRx
-from keikodev.styles.colors import Color
+from keikodev.styles.colors import Color, TextColor
 from keikodev.styles.fonts import Fuentes
 import keikodev.views.constants as constants
 from keikodev.routes import Route
@@ -12,7 +12,20 @@ import keikodev.styles.styles as styles
 from keikodev.componentes.next_live import next_live
 from keikodev.state.next_launch_state import Nextlaunch
 from keikodev.pages.google_auth import StateLogin
+from keikodev.state.fotoNasa import fotoNasa
+from keikodev.models.Nasalink import Nasa_imagenes
+from keikodev.data.nasa_last_picture_service import nasa_last_picture_service
 
+class Lastpicturestate(rx.State):
+    lastPicture: list[Nasa_imagenes]
+    url:str
+
+    @rx.background
+    async def get_last_picture(self):
+        async with self:
+            self.lastPicture = nasa_last_picture_service()
+                #print(self.lastPicture.url)
+            self.url = self.lastPicture.url
 
 
 def index_links()-> rx.Component:
@@ -128,3 +141,42 @@ def index_links()-> rx.Component:
 
         on_mount=Nextlaunch.next_launch_select()
     )
+
+def index_links_desktop()-> rx.Component:
+    return rx.box(
+            rx.flex(
+                index_nasa(),
+                direction="row",
+                wrap="wrap",
+                spacing="5",
+            ),
+        margin = Size.BIG.value,
+        min_height = "700px",
+        on_mount=Lastpicturestate.get_last_picture,
+    )
+
+def index_nasa()->rx.Component:
+    return rx.card(
+            rx.vstack(
+                    rx.heading("Fotos de la Nasa",
+                            style={"color":TextColor.HEADER.value}),
+                    rx.text("Últimas fotos en alta resolución desde La Nasa",
+                            style={"color":TextColor.BODY.value}),
+                    rx.image(
+                        src=Lastpicturestate.url,
+                        width="200px", 
+                        height="auto",
+                    ),  
+                    rx.html('<button class="btn" type="button"><strong>SPACE</strong><div id="container-stars"><div id="stars"></div></div><div id="glow"><div class="circle"></div><div class="circle"></div></div></button>'),
+                width="100%",
+                direction="column",
+                align="center",
+                justify="center",
+                ),
+            width = "400px",
+            height = "400px",
+            border_color = "#651249",
+            border_width = "0px",
+            style={"bg":Color.CONTENT.value,}
+    ),
+

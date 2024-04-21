@@ -6,11 +6,9 @@ import requests
 import keikodev.views.constants as const
 import datetime as datetime
 from keikodev.api.db import Database
-from keikodev.models.Nasalink import Nasalink
-
-
-
-
+from keikodev.models.Nasalink import Nasalink, Nasa_imagenes
+from keikodev.api.conectdb import connect
+from sqlmodel import Session, select, desc, asc, func
 
 class nasaApi():
     dotenv.load_dotenv()
@@ -34,7 +32,10 @@ class nasaApi():
         mysql_api = Database()
         
         resultado = mysql_api.where("nasa_imagenes",f"fecha='{fecha}'")
-        
+        if resultado:
+            print("Revisión recurso nuevo")
+        else:
+            print("Sin respuesta NASA")
 
         if not resultado:
             #print("Resultado ",resultado)
@@ -107,7 +108,11 @@ class nasaApi():
         # else:
         #     print("Dia anterior no insertar")
         
-
+def select_last_picture():
+    engine = connect()
+    with Session(engine) as session:
+        query = select(Nasa_imagenes).where(Nasa_imagenes.media_type == "image").order_by(desc(Nasa_imagenes.fecha)).limit(1)
+        return session.exec(query).one()
     
     
     # def fotoFTP(self, fecha):

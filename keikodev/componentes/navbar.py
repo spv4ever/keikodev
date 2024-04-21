@@ -50,6 +50,10 @@ def navbar():
 				
                 rx.tablet_and_desktop(
 					rx.hstack(
+                        rx.badge('Inicio',size="2", 
+							color_scheme="pink", 
+							variant="outline",
+							style=styles.main_menu_badge_style,),                        
 						menu_keikodev(),
                         menu_tecnologia(),
                         menu_otros(),
@@ -63,6 +67,11 @@ def navbar():
 				
 			),
             rx.flex(
+                    rx.tablet_and_desktop(
+						rx.badge('Sobre mi...',size="2", 
+								color_scheme="pink", 
+								variant="outline",
+								style=styles.main_menu_badge_style,),),
                 rx.badge('Iniciar Sesión',size="2", 
 						color_scheme="pink", 
                         variant="outline",
@@ -112,13 +121,27 @@ def navbar():
 def menu_keikodev()->rx.Component:
         return rx.chakra.menu(
 				rx.chakra.menu_button(
-					rx.badge("Keikodev", 
-						size="2", 
-						color_scheme="pink", 
-                        variant="outline",
-                        style=styles.main_menu_badge_style,
-						),
-					#style=styles.main_menu_badge_style,
+						"keikodev",
+						style=styles.main_menu_style_item,
+                    
+					# rx.badge("Keikodev", 
+					# 	size="2", 
+					# 	color_scheme="pink", 
+                    #     variant="outline",
+                    #     style=styles.main_menu_badge_style,
+                        
+					# 	),
+					# font_family=Fuentes.TITLE.value,
+                    # padding_y = Size.SMALL_MEDIUM.value,
+                    # padding_x = Size.MEDIUM.value,
+                    # font_size = "sm",
+                    # border_radius = "5px",
+                    # border_width = "1px",
+                    # border_color = "#651249",
+					# color=Color.PRIMARY.value,
+                    # background = Color.BACKGROUND.value,
+                    # _hover={"color":Color.BACKGROUND.value,"bg":Color.SECONDARY.value},
+                    
 					),
 				rx.chakra.menu_list(
 					*[
@@ -129,28 +152,26 @@ def menu_keikodev()->rx.Component:
                     border_width = "5px",
                     border_color = Color.CONTENT.value,
 				),
-            
+            style=styles.main_menu_badge_style,
 			)
 
 def main_menu_item(text: str, url: str, internal: bool=False)->rx.Component:
-        return rx.chakra.menu_item(
-							rx.link(
-									text,
-									href=url,
-                                    is_external=internal,
-									style=styles.main_menu_style
-							),
-                        style=styles.main_menu_style,
+        return rx.link(
+                rx.chakra.menu_item(
+					text,
+					style=styles.main_menu_style
 					),
+				href=url,
+				is_external=internal,
+				style=styles.main_menu_style,
+			),
 
 def menu_tecnologia()->rx.Component:
         return rx.chakra.menu(
 				rx.chakra.menu_button(
-					rx.badge("Tecnología", 
-						size="2", 
-						color_scheme="pink", 
-                        variant="outline",
-                        style=styles.main_menu_badge_style,)),
+					"Tecnología",
+					style=styles.main_menu_style_item,),
+
 				rx.chakra.menu_list(
 					*[
                         main_menu_item(item[0],item[1],item[2])
@@ -167,11 +188,8 @@ def menu_tecnologia()->rx.Component:
 def menu_otros()->rx.Component:
         return rx.chakra.menu(
 				rx.chakra.menu_button(
-					rx.badge("Otros", 
-						size="2", 
-						color_scheme="pink", 
-                        variant="outline",
-                        style=styles.main_menu_badge_style,)),
+					"Otros",
+					style=styles.main_menu_style_item,),
 				rx.chakra.menu_list(
 					*[
 						main_menu_item(item[0],item[1],item[2])

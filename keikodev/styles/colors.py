@@ -4,8 +4,10 @@ from enum import Enum
 class Color(Enum):
     PRIMARY = "#F781D8"
     SECONDARY = "#FF0040"
-    BACKGROUND = "#2F0B3A"
-    CONTENT = "#220A29"
+    #BACKGROUND = "#2F0B3A"
+    BACKGROUND = "#161A36"
+    #CONTENT = "#220A29"
+    CONTENT = "#040822"
     IMAGE_BOX = "black"
     PURPLE =  "#9146FF"
     TERTIARY = "#0C1116"
