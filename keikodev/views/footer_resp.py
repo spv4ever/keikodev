@@ -6,7 +6,7 @@ from keikodev.styles.colors import TextColor as TextColor
 import keikodev.styles.styles as styles
 
 from keikodev.styles.fonts import Fuentes as Fuentes
-from keikodev.componentes.ant_components import Float_Button 
+#from keikodev.componentes.ant_components import Float_Button 
 import keikodev.utils as utils
 import keikodev.views.constants as const
 from keikodev.componentes.steps import steps as steps
@@ -25,12 +25,12 @@ def footer_resp()-> rx.Component:
                         href="https://github.com/spv4ever",
                         is_external=True,
                         font_size = Size.MEDIUM.value),
-                    Float_Button(
-                         icon = rx.chakra.Image (src="/img/bmc-logo.svg"),
-                         href = const.DONACIONES_URL,
-                         target='_blank',
-                        #disabled = False,
-                         ),
+                #     Float_Button(
+                #          icon = rx.chakra.Image (src="/img/bmc-logo.svg"),
+                #          href = const.DONACIONES_URL,
+                #          target='_blank',
+                #         #disabled = False,
+                #          ),
                                  rx.chakra.box(
                         rx.chakra.vstack(
                         

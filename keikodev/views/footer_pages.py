@@ -4,7 +4,7 @@ from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import Color as Color
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.fonts import Fuentes as Fuentes
-from keikodev.componentes.ant_components import Float_Button 
+# from keikodev.componentes.ant_components import Float_Button 
 import keikodev.views.constants as const
 
 def footer_pages()-> rx.Component:

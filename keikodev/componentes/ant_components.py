@@ -2,16 +2,16 @@ import reflex as rx
 from keikodev.styles.colors import Color as Color
 import json
 
-class FloatButton(rx.Component):
-        library = "antd"
-        tag = "FloatButton"
-        icon: rx.Var[rx.chakra.Image]
-        href:  rx.Var[str]
-        target: rx.Var[str]
+# class FloatButton(rx.Component):
+#         library = "antd"
+#         tag = "FloatButton"
+#         icon: rx.Var[rx.chakra.Image]
+#         href:  rx.Var[str]
+#         target: rx.Var[str]
         
-        #badge = {"dot": True, "color": Color.PRIMARY.value }
+#         #badge = {"dot": True, "color": Color.PRIMARY.value }
 
-Float_Button = FloatButton.create
+# Float_Button = FloatButton.create
 
 # class Carousel(rx.Component):
 #         library = "ant"

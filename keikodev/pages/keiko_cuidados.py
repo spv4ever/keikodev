@@ -6,8 +6,8 @@ from keikodev.views.footer import footer
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
 from keikodev.routes import Route
-from keikodev.componentes.ant_components import Float_Button
-from keikodev.componentes.ant_components import FloatButton
+# from keikodev.componentes.ant_components import Float_Button
+# from keikodev.componentes.ant_components import FloatButton
 from keikodev.state.PageState import PageState as PageState
 from keikodev.state.cuidados_state import CuidadosState
 
@@ -26,11 +26,11 @@ def keiko_cuidados() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
         navbar(),
-        Float_Button(
-                icon = rx.chakra.Image(src="/avatar.png"),
-                href = Route.INDEX.value,
-                target = "_top",
-                ),
+        # Float_Button(
+        #         icon = rx.chakra.Image(src="/avatar.png"),
+        #         href = Route.INDEX.value,
+        #         target = "_top",
+        #         ),
         rx.chakra.center(
             rx.chakra.vstack(
                 #header(False,live_status=PageState.live_status),

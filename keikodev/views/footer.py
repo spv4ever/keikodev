@@ -6,7 +6,7 @@ from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import Color as Color
 from keikodev.styles.colors import TextColor as TextColor
 from keikodev.styles.fonts import Fuentes as Fuentes
-from keikodev.componentes.ant_components import Float_Button 
+#from keikodev.componentes.ant_components import Float_Button 
 import keikodev.utils as utils
 import keikodev.views.constants as const
 from keikodev.componentes.temas_legales import privacy_policy_link, privacy_policy_script, cookie_policy_link, iubenda_script, iubenda_external_scripts, iubenda_script_cookies
@@ -41,12 +41,12 @@ def footer()-> rx.Component:
                     width="300px",
                     ),
 
-                    Float_Button(
-                         icon = rx.chakra.Image (src="/img/bmc-logo.svg",alt="Café"),
-                         href = const.DONACIONES_URL,
-                         target='_blank',
-                        #disabled = False,
-                         ),
+                    # Float_Button(
+                    #      icon = rx.chakra.Image (src="/img/bmc-logo.svg",alt="Café"),
+                    #      href = const.DONACIONES_URL,
+                    #      target='_blank',
+                    #     #disabled = False,
+                    #      ),
                 rx.chakra.vstack(
                     privacy_policy_link(),
                     privacy_policy_script(),
