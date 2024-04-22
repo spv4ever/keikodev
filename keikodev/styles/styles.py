@@ -14,6 +14,8 @@ STYLESHEETS = [
 
 BOUNCE = "animate__animated animate__bounce"
 ROTATE = "animate__animated animate__rotateIn"
+TITLE_INDEX = "animate__animated animate__flipInX animate__delay-1s animate__slow"
+TITLE_INDEX_BIS = "animate__animated animate__fadeIn animate__delay-2s animate__slower"
 
 # Constantes
 MAX_WIDTH = "560px"
@@ -81,6 +83,21 @@ launch_input = {"width":"530px"}
 star_gold = {"color":"gold"}
 
 star_grey = {"color":"grey"}
+
+index_cards = {"bg":Color.CONTENT.value,
+                "border": "2px solid #651249",
+                "width" : "400px",
+                "height" : "300px",
+                "text-decoration":"none",
+                    "_hover" : {
+                            "text-decoration":"none",
+                            "background_color" : Color.BACKGROUND.value,
+                            "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value},",
+                            "cursor":"pointer",
+                            }
+            }
+
+links_without_decoration = {"text-decoration":"none","_hover":{"text-decoration":"none"}}
 
 
 box_news_style = {

@@ -139,9 +139,6 @@ def index_links()-> rx.Component:
             Route.CONSTR.value,
             is_external=False),
             ),
-                                
-        
-
         on_mount=Nextlaunch.next_launch_select()
     )
 
@@ -149,21 +146,64 @@ def index_links_desktop()-> rx.Component:
     return rx.box(
             rx.flex(
                 index_nasa(),
+                index_lanzamientos(),
                 direction="row",
                 wrap="wrap",
                 spacing="5",
             ),
         margin = Size.BIG.value,
         min_height = "700px",
-        on_mount=Lastpicturestate.get_last_picture,
+        #on_mount=Lastpicturestate.get_last_picture,
+    )
+
+def index_lanzamientos()->rx.Component:
+    return rx.card(
+            rx.link(
+                rx.vstack(
+                    rx.heading("Próximos lanzamientos",
+                        style={"color":TextColor.HEADER.value}),
+                    rx.text(Nextlaunch.next_launche["mission"]),
+                    rx.text(f"{Nextlaunch.next_launche['company']} - {Nextlaunch.next_launche['rocket']}"),
+                    rx.text(f"{Nextlaunch.date[8:10]}/{Nextlaunch.date[5:7]}/{Nextlaunch.date[:4]} - {Nextlaunch.date[11:16]}"),
+                    rx.text(f"Sigue el lanzamiento con {Nextlaunch.next_launche['streamer']}"),
+                    rx.hstack(
+                        rx.badge('Detalles de misión',size="1", 
+                            color_scheme="pink", 
+                            variant="outline",
+                            style=styles.main_menu_badge_style,),
+                        rx.badge('Directo',size="1", 
+                            color_scheme="pink", 
+                            variant="outline",
+                            style=styles.main_menu_badge_style,),
+                        rx.badge('Canal',size="1", 
+                            color_scheme="pink", 
+                            variant="outline",
+                            style=styles.main_menu_badge_style,),
+                        width="100%",
+                        align="center",
+                        justify="center",
+                    ),
+                    
+                    width="100%",
+                    direction="column",
+                    align="center",
+                    justify="center",
+                ),
+                href=Route.SPACEX.value,
+                is_external=False,
+                style=styles.links_without_decoration,
+            ),
+            style=styles.index_cards,
+            class_name=styles.TITLE_INDEX_BIS,
+            on_mount=Nextlaunch.next_launch_select
     )
 
 def index_nasa()->rx.Component:
     return rx.card(
             rx.link(
                 rx.vstack(
-                        rx.heading("Fotos de la Nasa",
-                                style={"color":TextColor.HEADER.value}),
+                        rx.heading("Fotos desde la Nasa",
+                                style={"font-family":Fuentes.NASA.value,"color":TextColor.HEADER.value}),
                         rx.text("Últimas fotos en alta resolución desde La Nasa",
                                 style={"color":TextColor.BODY.value}),
                         rx.text(Lastpicturestate.date,
@@ -172,7 +212,7 @@ def index_nasa()->rx.Component:
                             rx.image(
                                 src=Lastpicturestate.url,
                                 margin_bottom = Size.SMALL.value,
-                                style={"width": "100%", "height": "100%","object-fit": "contain"}
+                                style={"width": "100%", "height": "100%","object-fit": "contain"},
                             ),
                             style={"width":"370px","height":"170px"},
                         ),
@@ -183,16 +223,10 @@ def index_nasa()->rx.Component:
                     ),
                 href=Route.GALERIA_NASA.value,
                 is_external=False,
+                style=styles.links_without_decoration,
                 ),      
-            width = "400px",
-            height = "300px",
-            style={"bg":Color.CONTENT.value,"border": "2px solid #651249",
-                    "_hover" : {
-                            "background_color" : Color.BACKGROUND.value,
-                            "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value},",
-                            "cursor":"pointer",
-                            }
-                }
-            
+            style=styles.index_cards,
+            class_name=styles.TITLE_INDEX,
+            on_mount=Lastpicturestate.get_last_picture
     ),
 

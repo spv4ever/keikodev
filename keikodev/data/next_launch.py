@@ -23,10 +23,12 @@ def next_launch():
         streamer = item[8],
         channel = item[9]) for item in registros
         ]
+    
     #print(nextLaunch[0].id)
     #nextLaunch[0].mission = "Starlink"
     #links = links_youtube_service(nextLaunch[0].mission)
     #print(links)
+
     links = ""
     if len(links)!=0:
         nextLaunch[0].url_live=links[0]["url"]
