@@ -1,4 +1,5 @@
 import reflex as rx
+import datetime as datetime
 from keikodev.componentes.linkbutton import linkbutton
 from keikodev.componentes.title import title
 from keikodev.styles.styles import Size as Size
@@ -19,6 +20,7 @@ from keikodev.data.nasa_last_picture_service import nasa_last_picture_service
 class Lastpicturestate(rx.State):
     lastPicture: list[Nasa_imagenes]
     url:str
+    date:str
 
     @rx.background
     async def get_last_picture(self):
@@ -26,6 +28,7 @@ class Lastpicturestate(rx.State):
             self.lastPicture = nasa_last_picture_service()
                 #print(self.lastPicture.url)
             self.url = self.lastPicture.url
+            self.date = datetime.datetime.strftime(self.lastPicture.fecha, "%d/%m/%Y")
 
 
 def index_links()-> rx.Component:
@@ -157,26 +160,39 @@ def index_links_desktop()-> rx.Component:
 
 def index_nasa()->rx.Component:
     return rx.card(
-            rx.vstack(
-                    rx.heading("Fotos de la Nasa",
-                            style={"color":TextColor.HEADER.value}),
-                    rx.text("Últimas fotos en alta resolución desde La Nasa",
-                            style={"color":TextColor.BODY.value}),
-                    rx.image(
-                        src=Lastpicturestate.url,
-                        width="200px", 
-                        height="auto",
-                    ),  
-                    rx.html('<button class="btn" type="button"><strong>SPACE</strong><div id="container-stars"><div id="stars"></div></div><div id="glow"><div class="circle"></div><div class="circle"></div></div></button>'),
-                width="100%",
-                direction="column",
-                align="center",
-                justify="center",
-                ),
+            rx.link(
+                rx.vstack(
+                        rx.heading("Fotos de la Nasa",
+                                style={"color":TextColor.HEADER.value}),
+                        rx.text("Últimas fotos en alta resolución desde La Nasa",
+                                style={"color":TextColor.BODY.value}),
+                        rx.text(Lastpicturestate.date,
+                                style={"color":TextColor.BODY.value}),
+                        rx.box(
+                            rx.image(
+                                src=Lastpicturestate.url,
+                                margin_bottom = Size.SMALL.value,
+                                style={"width": "100%", "height": "100%","object-fit": "contain"}
+                            ),
+                            style={"width":"370px","height":"170px"},
+                        ),
+                    width="100%",
+                    direction="column",
+                    align="center",
+                    justify="center",
+                    ),
+                href=Route.GALERIA_NASA.value,
+                is_external=False,
+                ),      
             width = "400px",
-            height = "400px",
-            border_color = "#651249",
-            border_width = "0px",
-            style={"bg":Color.CONTENT.value,}
+            height = "300px",
+            style={"bg":Color.CONTENT.value,"border": "2px solid #651249",
+                    "_hover" : {
+                            "background_color" : Color.BACKGROUND.value,
+                            "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value},",
+                            "cursor":"pointer",
+                            }
+                }
+            
     ),
 
