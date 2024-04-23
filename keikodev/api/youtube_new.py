@@ -11,7 +11,7 @@ YOUTUBE_KEY = os.environ.get("YOUTUBE_KEY")
 def search_videos(query):
     # Inserta aquí tu clave de API
     api_key = YOUTUBE_KEY
-
+    print(query)
     # Crea el servicio de la API de YouTube
     youtube = build('youtube', 'v3', developerKey=api_key)
     results = []
@@ -20,10 +20,9 @@ def search_videos(query):
         search_response = youtube.search().list(
             q=query,
             part='id,snippet',
-            maxResults=20,
+            maxResults=5,
             channelId='UCxjGXSXK3Ss-mkiZ-wYtjtg'
         ).execute()
-
         # Procesa los resultados de la búsqueda
         for search_result in search_response.get('items', []):
             if search_result['id']['kind'] == 'youtube#video':

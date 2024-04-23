@@ -16,6 +16,8 @@ from keikodev.pages.google_auth import StateLogin
 from keikodev.state.fotoNasa import fotoNasa
 from keikodev.models.Nasalink import Nasa_imagenes
 from keikodev.data.nasa_last_picture_service import nasa_last_picture_service
+from keikodev.pages.iatools import Iatoolstate
+from keikodev.models.iatools_model import Iatools, Tipo
 
 class Lastpicturestate(rx.State):
     lastPicture: list[Nasa_imagenes]
@@ -147,6 +149,7 @@ def index_links_desktop()-> rx.Component:
             rx.flex(
                 index_nasa(),
                 index_lanzamientos(),
+                index_iatools(),
                 direction="row",
                 wrap="wrap",
                 spacing="5",
@@ -156,42 +159,93 @@ def index_links_desktop()-> rx.Component:
         #on_mount=Lastpicturestate.get_last_picture,
     )
 
+def test(tipos)->rx.Component:
+    return rx.box(
+                rx.badge(f"{tipos.nombre} ({tipos.numero})"),
+            )
+
+def index_iatools()->rx.Component:
+    return rx.card(
+        rx.vstack(
+            rx.heading("Herramientas IA",
+                    style={"color":TextColor.HEADER.value},
+                    size="7"),
+            rx.text(Iatoolstate.total,style={"color":TextColor.HEADER.value}),
+            rx.flex(
+                rx.foreach(Iatoolstate.tipos,test),
+                width="100%",
+                direction="row",
+                wrap="wrap"
+                ),
+            height = "100%",
+            width="100%",
+            direction="column",
+            align="center",
+            justify="center",
+        ),
+        style=styles.index_cards,
+        class_name=styles.TITLE_INDEX,
+        on_mount=Iatoolstate.get_all_iatools
+    )
+
+
 def index_lanzamientos()->rx.Component:
     return rx.card(
-            rx.link(
                 rx.vstack(
-                    rx.heading("Próximos lanzamientos",
-                        style={"color":TextColor.HEADER.value}),
-                    rx.text(Nextlaunch.next_launche["mission"]),
-                    rx.text(f"{Nextlaunch.next_launche['company']} - {Nextlaunch.next_launche['rocket']}"),
-                    rx.text(f"{Nextlaunch.date[8:10]}/{Nextlaunch.date[5:7]}/{Nextlaunch.date[:4]} - {Nextlaunch.date[11:16]}"),
-                    rx.text(f"Sigue el lanzamiento con {Nextlaunch.next_launche['streamer']}"),
+                    rx.heading("Próximo lanzamiento",
+                        style={"color":TextColor.HEADER.value},
+                        size="7"),
+                    rx.heading(Nextlaunch.next_launche["mission"],
+                        style={"color":TextColor.HEADER.value},
+                        size="6"),
+                    rx.heading(f"{Nextlaunch.next_launche['company']} - {Nextlaunch.next_launche['rocket']}",
+                            style={"color":TextColor.HEADER.value},
+                            size="6"),
+                    rx.text(f"{Nextlaunch.date[8:10]}/{Nextlaunch.date[5:7]}/{Nextlaunch.date[:4]} - {Nextlaunch.date[11:16]}",
+                            style={"color":TextColor.HEADER.value}),
+                    rx.cond(Nextlaunch.next_launche['streamer']!="",
+                        rx.text(f"Sigue el lanzamiento con {Nextlaunch.next_launche['streamer']}",
+                            style={"color":TextColor.HEADER.value}),
+                    
+                    ),
+                    #rx.spacer(),
                     rx.hstack(
-                        rx.badge('Detalles de misión',size="1", 
-                            color_scheme="pink", 
-                            variant="outline",
-                            style=styles.main_menu_badge_style,),
-                        rx.badge('Directo',size="1", 
-                            color_scheme="pink", 
-                            variant="outline",
-                            style=styles.main_menu_badge_style,),
-                        rx.badge('Canal',size="1", 
-                            color_scheme="pink", 
-                            variant="outline",
-                            style=styles.main_menu_badge_style,),
+                        rx.link(
+                            rx.badge('Detalles de misión',size="2", 
+                                color_scheme="pink", 
+                                variant="outline",
+                                style=styles.main_menu_badge_style,),
+                            href=Nextlaunch.url_details,
+                            is_external=True,
+                            style=styles.links_without_decoration,),
+
+                        
+                        rx.link(
+                            rx.cond(Nextlaunch.next_launche['url_live']!="",
+                                rx.badge('Directo',size="2", 
+                                    color_scheme="pink", 
+                                    variant="outline",
+                                    style=styles.main_menu_badge_style,),
+                                ),
+                                href=Nextlaunch.url_live,
+                                is_external=True,
+                                style=styles.links_without_decoration,
+                        ),
+                        rx.cond(Nextlaunch.next_launche['channel']!="",
+                            rx.badge('Canal',size="2", 
+                                color_scheme="pink", 
+                                variant="outline",
+                                style=styles.main_menu_badge_style,),
+                        ),
                         width="100%",
                         align="center",
                         justify="center",
                     ),
-                    
+                    height = "100%",
                     width="100%",
                     direction="column",
                     align="center",
-                    justify="center",
-                ),
-                href=Route.SPACEX.value,
-                is_external=False,
-                style=styles.links_without_decoration,
+                    justify="between",
             ),
             style=styles.index_cards,
             class_name=styles.TITLE_INDEX_BIS,

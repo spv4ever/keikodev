@@ -145,11 +145,11 @@ def table_launches(list_launches: list[Nextlaunches]) -> rx.Component:
                 rx.table.column_header_cell("Streamer"),
                 rx.table.column_header_cell("Canal"),
                 rx.cond(
-                    StateLogin.users_rights == 999,
+                    StateLogin.users_rights == 0,
                     rx.table.column_header_cell("Eliminar"),
                     ),
                 rx.cond(
-                    StateLogin.users_rights == 999,
+                    StateLogin.users_rights == 0,
                     rx.table.column_header_cell("Editar"),
                     ),
                 style = {"color": TextColor.HEADER.value, "background_color": Color.CONTENT.value},
@@ -198,14 +198,14 @@ def row_table(launch: Nextlaunches)-> rx.Component:
                 align="center",
         ),
         rx.cond(
-            StateLogin.users_rights==999,
+            StateLogin.users_rights==0,
             rx.table.cell(rx.hstack(
                 delete_launch_dialog(launch.id),
                 ),
             ),
         ),
         rx.cond(
-            StateLogin.users_rights==999,
+            StateLogin.users_rights==0,
             rx.table.cell(
                     rx.hstack(
                         update_launch_dialog(launch),
@@ -388,22 +388,25 @@ def update_user_form(launch)->rx.Component:
                 ),
 
                 rx.input(
+                    placeholder="Url Live",
                     name= "url_live",
                     default_value=launch.url_live,
                     style=styles.launch_input,
                 ),
                 rx.input(
-                    #placeholder=launch_date,
+                    placeholder="Fecha Lanzamiento",
                     name= "launch_date",
                     default_value=launch.launch_date.to_string()[1:17],
                     style=styles.launch_input,
                 ),
                 rx.input(
+                    placeholder="Streamer",
                     name= "streamer",
                     default_value=launch.streamer,
                     style=styles.launch_input,
                 ),
                 rx.input(
+                    placeholder="Canal",
                     name= "channel",
                     default_value=launch.channel,
                     style=styles.launch_input,

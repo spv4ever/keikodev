@@ -32,7 +32,8 @@ class Iatoolstate(rx.State):
             self.iatools = select_all_iatools_service()
             self.tipos, self.tipo_edicion = select_tipos_service()
             self.total = len(self.iatools)
-            
+            print(self.tipos)
+            print(self.tipo_edicion)
             
 
     @rx.background
