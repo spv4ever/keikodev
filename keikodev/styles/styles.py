@@ -16,6 +16,7 @@ BOUNCE = "animate__animated animate__bounce"
 ROTATE = "animate__animated animate__rotateIn"
 TITLE_INDEX = "animate__animated animate__flipInX animate__delay-1s animate__slow"
 TITLE_INDEX_BIS = "animate__animated animate__fadeIn animate__delay-2s animate__slower"
+TITLE_INDEX_TRES = "animate__animated animate__fadeInUp animate__delay-3s animate__slower" 
 
 # Constantes
 MAX_WIDTH = "560px"
@@ -245,6 +246,16 @@ main_menu_badge_style = {
             "color" : Color.BACKGROUND.value,
             "background" : Color.SECONDARY.value,
             "cursor":"pointer"},
+}
+
+badge_title = {
+    "color" : Color.PRIMARY.value,
+    "font_family":Fuentes.TITLE.value,
+    "background":Color.BACKGROUND.value,
+    # "_hover": {
+    #         "color" : Color.BACKGROUND.value,
+    #         "background" : Color.SECONDARY.value,
+    #         "cursor":"pointer"},
 }
 
 

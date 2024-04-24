@@ -9,6 +9,16 @@ def select_all():
         query = select(Iatools)
         return session.exec(query).all()
     
+def select_last():
+    engine = connect()
+    with Session(engine) as session:
+        query = select(Iatools).order_by(desc(Iatools.id)).limit(1)
+
+    return session.exec(query).all()
+
+
+
+
 def select_type(type:str):
     engine = connect()
     with Session(engine) as session:

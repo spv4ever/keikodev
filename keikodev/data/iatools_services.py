@@ -1,6 +1,11 @@
-from keikodev.api.iatoolsdb import select_all, create_iatool, select_tipos, select_type
+from keikodev.api.iatoolsdb import select_all, create_iatool, select_tipos, select_type, select_last
 from keikodev.models.iatools_model import Iatools, Tipo
 import datetime as datetime
+
+
+def select_last_iatool_added_service():
+    iatool = select_last()
+    return iatool
 
 def select_all_iatools_service():
     iatools = select_all()
@@ -20,7 +25,7 @@ def select_tipos_service():
             for detalles in selected]
     tipos_nombre=[]
     for n in selected:
-          tipos_nombre.append(n[0])
+        tipos_nombre.append(n[0])
 
     return tipos, tipos_nombre
 

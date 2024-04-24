@@ -16,7 +16,7 @@ import asyncio
 #imports para página
 from keikodev.models.iatools_model import Iatools, Tipo
 
-from keikodev.data.iatools_services import select_all_iatools_service, create_iatool_service, select_tipos_service, select_type_service
+from keikodev.data.iatools_services import select_all_iatools_service, create_iatool_service, select_tipos_service, select_type_service, select_last_iatool_added_service
 from keikodev.componentes.card import card_ia
 
 class Iatoolstate(rx.State):
@@ -25,15 +25,21 @@ class Iatoolstate(rx.State):
     tipos: list[Tipo]
     total: int
     tipo_edicion: list[str]
+    iatool_name: str
+    iatool_description: str
 
     @rx.background
     async def get_all_iatools(self):
         async with self:
             self.iatools = select_all_iatools_service()
             self.tipos, self.tipo_edicion = select_tipos_service()
+            iatool = select_last_iatool_added_service()
+            self.iatool_name = iatool[0].herramientaAI
+            self.iatool_description = iatool[0].descripcion
             self.total = len(self.iatools)
-            print(self.tipos)
-            print(self.tipo_edicion)
+            
+            # print(self.tipos)
+            # print(self.tipo_edicion)
             
 
     @rx.background
@@ -104,7 +110,7 @@ def ia_tools() -> rx.Component:
                 rx.divider(color_scheme="pink"),
                 rx.flex(
                     rx.cond(
-                        StateLogin.users_rights == 999,
+                        StateLogin.users_rights == 0,
                             create_tool_form_dialog(),
                     ),
                     rx.badge(f"Todos ({Iatoolstate.total})",
@@ -162,15 +168,15 @@ def create_iatool_form()->rx.Component:
                 name= "url",
                 style=styles.launch_input
             ),
-            rx.hstack(
-                rx.text("Tipo de herramienta ", size="4", style={"color":TextColor.HEADER.value}),
-                rx.select(Iatoolstate.tipo_edicion,)
-            ),
-            # rx.input(
-            #     placeholder="Tipo de herramienta",
-            #     name= "tipo",
-            #     style=styles.launch_input
+            # rx.hstack(
+            #     rx.text("Tipo de herramienta ", size="4", style={"color":TextColor.HEADER.value}),
+            #     rx.select(Iatoolstate.tipo_edicion,)
             # ),
+            rx.input(
+                placeholder="Tipo de herramienta",
+                name= "tipo",
+                style=styles.launch_input
+            ),
             rx.flex(
                 rx.text("Plan gratuito", size="4", style={"color":TextColor.HEADER.value}),
                 rx.switch(size="1",default_checked=False,name="planGratuito"),

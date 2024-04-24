@@ -18,6 +18,7 @@ from keikodev.pages.google_auth import protected, StateLogin, user_info
 from keikodev.data.items_menu import items_menu_keikodev,items_menu_tecnologia,items_menu_otros
 
 
+
 def navbar():
         return rx.flex(
 			utils.lang(),

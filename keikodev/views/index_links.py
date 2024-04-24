@@ -28,7 +28,6 @@ class Lastpicturestate(rx.State):
     async def get_last_picture(self):
         async with self:
             self.lastPicture = nasa_last_picture_service()
-                #print(self.lastPicture.url)
             self.url = self.lastPicture.url
             self.date = datetime.datetime.strftime(self.lastPicture.fecha, "%d/%m/%Y")
 
@@ -150,6 +149,7 @@ def index_links_desktop()-> rx.Component:
                 index_nasa(),
                 index_lanzamientos(),
                 index_iatools(),
+                index_recetas(),
                 direction="row",
                 wrap="wrap",
                 spacing="5",
@@ -159,39 +159,107 @@ def index_links_desktop()-> rx.Component:
         #on_mount=Lastpicturestate.get_last_picture,
     )
 
-def test(tipos)->rx.Component:
-    return rx.box(
-                rx.badge(f"{tipos.nombre} ({tipos.numero})"),
-            )
+def index_recetas()->rx.Component:
+    return rx.card(   
+                rx.link(     
+                    rx.vstack(
+                        rx.heading("Recetas Keikodev",
+                                style={"color":Color.SECONDARY.value},
+                                size="7"),
+                        rx.text("""¡Bienvenido a nuestra vibrante comunidad culinaria! Desde recetas familiares que han 
+                                resistido el paso del tiempo hasta nuevas y emocionantes creaciones, nuestro canal de YouTube y 
+                                TikTok es tu destino para inspiración culinaria. Explora cientos de recetas detalladas en nuestro 
+                                canal de YouTube, donde te llevamos paso a paso a través de sabores deliciosos y técnicas culinarias. 
+                                Además, en TikTok, disfruta de momentos culinarios rápidos y entretenidos que te inspirarán en segundos. 
+                                Únete a nosotros en este viaje gastronómico y descubre el placer de cocinar de manera fácil y divertida""",
+                                size="1",
+                                style={"color":TextColor.PRIMARY.value,
+                                "text-align":"justify",
+                                "font-weight": "bold"},
+                            ),
+                        rx.grid(
+                            rx.icon("youtube",size=30,color="red"),
+                            rx.image(src="/img/tiktok_red.svg", width="25px",height="25px"),
+                            columns="2",
+                            width = "100%"
+                        ),
+                        height = "100%",
+                        width="100%",
+                        direction="column",
+                        align="center",
+                        justify="start",
+                    ),
+                    href=Route.COCINA.value,
+                    style=styles.links_without_decoration,
+                ),
+                style=styles.index_cards,
+                class_name=styles.TITLE_INDEX,
+    )
 
 def index_iatools()->rx.Component:
     return rx.card(
+        rx.link(
         rx.vstack(
             rx.heading("Herramientas IA",
-                    style={"color":TextColor.HEADER.value},
+                    style={"color":Color.SECONDARY.value},
                     size="7"),
-            rx.text(Iatoolstate.total,style={"color":TextColor.HEADER.value}),
             rx.flex(
-                rx.foreach(Iatoolstate.tipos,test),
+                rx.badge(f"Total ({Iatoolstate.total})",
+                        size="1", 
+						color_scheme="pink", 
+                        variant="outline",
+                        style=styles.badge_title),
+                rx.foreach(Iatoolstate.tipos,badge_title),
                 width="100%",
                 direction="row",
-                wrap="wrap"
+                wrap="wrap",
+                spacing="2",
+                align="center",
+                justify="between",
                 ),
+            rx.text(f"Última IA añadida: {Iatoolstate.iatool_name}",
+                    size="3",
+                    style={"color":Color.SECONDARY.value}),
+
+            rx.text(Iatoolstate.iatool_description, 
+                    size="1",
+                    style={"color":TextColor.PRIMARY.value,
+                        "text-align":"justify",
+                        "font-weight": "bold"},
+                    ),
             height = "100%",
             width="100%",
             direction="column",
             align="center",
-            justify="center",
+            justify="start",
+            ),
+        href=Route.IA_TOOLS.value,
+        style=styles.links_without_decoration,
         ),
-        style=styles.index_cards,
-        class_name=styles.TITLE_INDEX,
-        on_mount=Iatoolstate.get_all_iatools
+    style=styles.index_cards,
+    class_name=styles.TITLE_INDEX_BIS,
+    on_mount=Iatoolstate.get_all_iatools,
     )
+
+def badge_title(tipos)->rx.Component:
+    return rx.box(
+                rx.badge(f"{tipos.nombre} ({tipos.numero})",size="1", 
+						color_scheme="pink", 
+                        variant="outline",
+                        style=styles.badge_title,),
+            )
 
 
 def index_lanzamientos()->rx.Component:
     return rx.card(
                 rx.vstack(
+                    rx.link(    
+                        rx.heading("Rumbo a Marte",
+                            style={"color":Color.SECONDARY.value},
+                            size="7"),
+                        href=Route.SPACEX.value,
+                        style=styles.links_without_decoration,
+                    ),
                     rx.heading("Próximo lanzamiento",
                         style={"color":TextColor.HEADER.value},
                         size="7"),
@@ -200,7 +268,8 @@ def index_lanzamientos()->rx.Component:
                         size="6"),
                     rx.heading(f"{Nextlaunch.next_launche['company']} - {Nextlaunch.next_launche['rocket']}",
                             style={"color":TextColor.HEADER.value},
-                            size="6"),
+                            size="4",
+                            align="center"),
                     rx.text(f"{Nextlaunch.date[8:10]}/{Nextlaunch.date[5:7]}/{Nextlaunch.date[:4]} - {Nextlaunch.date[11:16]}",
                             style={"color":TextColor.HEADER.value}),
                     rx.cond(Nextlaunch.next_launche['streamer']!="",
@@ -245,7 +314,7 @@ def index_lanzamientos()->rx.Component:
                     width="100%",
                     direction="column",
                     align="center",
-                    justify="between",
+                    justify="start",
             ),
             style=styles.index_cards,
             class_name=styles.TITLE_INDEX_BIS,
@@ -257,7 +326,9 @@ def index_nasa()->rx.Component:
             rx.link(
                 rx.vstack(
                         rx.heading("Fotos desde la Nasa",
-                                style={"font-family":Fuentes.NASA.value,"color":TextColor.HEADER.value}),
+                                style={"font-family":Fuentes.NASA.value,
+                                "color":Color.SECONDARY.value}
+                                ),
                         rx.text("Últimas fotos en alta resolución desde La Nasa",
                                 style={"color":TextColor.BODY.value}),
                         rx.text(Lastpicturestate.date,
