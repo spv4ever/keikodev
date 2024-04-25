@@ -153,6 +153,7 @@ def index_links_desktop()-> rx.Component:
                 direction="row",
                 wrap="wrap",
                 spacing="5",
+                justify="between",
             ),
         margin = Size.BIG.value,
         min_height = "700px",
@@ -161,36 +162,65 @@ def index_links_desktop()-> rx.Component:
 
 def index_recetas()->rx.Component:
     return rx.card(   
-                rx.link(     
+                # rx.link(     
                     rx.vstack(
-                        rx.heading("Recetas Keikodev",
-                                style={"color":Color.SECONDARY.value},
-                                size="7"),
-                        rx.text("""¡Bienvenido a nuestra vibrante comunidad culinaria! Desde recetas familiares que han 
-                                resistido el paso del tiempo hasta nuevas y emocionantes creaciones, nuestro canal de YouTube y 
-                                TikTok es tu destino para inspiración culinaria. Explora cientos de recetas detalladas en nuestro 
-                                canal de YouTube, donde te llevamos paso a paso a través de sabores deliciosos y técnicas culinarias. 
-                                Además, en TikTok, disfruta de momentos culinarios rápidos y entretenidos que te inspirarán en segundos. 
-                                Únete a nosotros en este viaje gastronómico y descubre el placer de cocinar de manera fácil y divertida""",
-                                size="1",
-                                style={"color":TextColor.PRIMARY.value,
-                                "text-align":"justify",
-                                "font-weight": "bold"},
-                            ),
+                        rx.link(
+                            rx.heading("Recetas Keikodev",
+                                    style={"color":Color.SECONDARY.value},
+                                    size="7"),
+                            href=Route.COCINA.value,
+                            style=styles.links_without_decoration,
+                        ),
+                        rx.link(
+                            rx.text("""¡Bienvenido a nuestra vibrante comunidad culinaria! Desde recetas familiares que han 
+                                    resistido el paso del tiempo hasta nuevas y emocionantes creaciones, nuestro canal de YouTube y 
+                                    TikTok es tu destino para inspiración culinaria. Explora cientos de recetas detalladas en nuestro 
+                                    canal de YouTube, donde te llevamos paso a paso a través de sabores deliciosos y técnicas culinarias. 
+                                    Además, en TikTok, disfruta de momentos culinarios rápidos y entretenidos que te inspirarán en segundos. 
+                                    Únete a nosotros en este viaje gastronómico y descubre el placer de cocinar de manera fácil y divertida""",
+                                    size="1",
+                                    style={"color":TextColor.PRIMARY.value,
+                                    "text-align":"justify",
+                                    "font-weight": "bold"},
+                                ),
+                            href=Route.COCINA.value,
+                            style=styles.links_without_decoration,
+                        ),
                         rx.grid(
-                            rx.icon("youtube",size=30,color="red"),
-                            rx.image(src="/img/tiktok_red.svg", width="25px",height="25px"),
+                             rx.link(
+                                rx.hstack(
+                                    rx.icon("youtube",size=30,color="red"),
+                                    rx.heading("Keikodev Recetas",size="3"),
+                                    justify="center",
+                                    align="center",
+                                    #style={"margin-top":Size.MEDIUM.value},
+                                    ),
+                                href=constants.YOUTUBE_URL,
+                                style=styles.links_without_decoration,
+                            ),
+                            rx.link(
+                                rx.hstack(
+                                    rx.image(src="/img/tiktok_red.svg", width="25px",height="25px"),
+                                    rx.heading("@Keikodev.recetas",size="3"),
+                                    justify="center",
+                                    align="center",
+                                    #style={"margin-top":Size.MEDIUM.value},
+                                ),
+                                href=constants.TIKTOK_RECETAS,
+                                style=styles.links_without_decoration,
+                            ),
                             columns="2",
-                            width = "100%"
+                            width = "100%",
+                            style={"margin-top":Size.MEDIUM.value},
                         ),
                         height = "100%",
                         width="100%",
                         direction="column",
                         align="center",
                         justify="start",
-                    ),
-                    href=Route.COCINA.value,
-                    style=styles.links_without_decoration,
+                    # ),
+                    # href=Route.COCINA.value,
+                    # style=styles.links_without_decoration,
                 ),
                 style=styles.index_cards,
                 class_name=styles.TITLE_INDEX,

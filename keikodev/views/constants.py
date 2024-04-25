@@ -73,7 +73,8 @@ MG_URL = "https://manugarciachacon.com/"
 YOUTUBE_URL = "http://www.youtube.com/@keikodevrecetas"
 YOUTUBE_URL_CANAL = "https://www.youtube.com/@keikodevnovedades"
 
-
+#tiktok
+TIKTOK_RECETAS = "https://www.tiktok.com/@keikodev.recetas?lang=es"
 #prueba constantes.
 NASA_URL = ""
 
