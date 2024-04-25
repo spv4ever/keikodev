@@ -110,9 +110,12 @@ class nasaApi():
         
 def select_last_picture():
     engine = connect()
-    with Session(engine) as session:
-        query = select(Nasa_imagenes).where(Nasa_imagenes.media_type == "image").order_by(desc(Nasa_imagenes.fecha)).limit(1)
-        return session.exec(query).one()
+    try:
+        with Session(engine) as session:
+            query = select(Nasa_imagenes).where(Nasa_imagenes.media_type == "image").order_by(desc(Nasa_imagenes.fecha)).limit(1)
+            return session.exec(query).one()
+    finally:
+        engine.dispose
     
     
     # def fotoFTP(self, fecha):
