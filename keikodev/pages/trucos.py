@@ -43,7 +43,7 @@ def trucos() -> rx.Component:
             style=styles.background_gradient_style,
             ),
         footer(),
-        style = styles.background_pattern_style,
+        #style = styles.background_pattern_style,
         
         
     )

@@ -25,11 +25,6 @@ def keiko_interes() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
         navbar(),
-        # Float_Button(
-        #         icon = rx.chakra.Image(src="/avatar.png"),
-        #         href = Route.INDEX.value,
-        #         target = "_top",
-        #         ),
         rx.chakra.center(
             rx.chakra.vstack(
                 #header(False,live_status=PageState.live_status),
@@ -41,7 +36,7 @@ def keiko_interes() -> rx.Component:
             style=styles.background_gradient_style,
             ),
         footer(),
-        style = styles.background_pattern_style,
-        #on_mount=InfoInteresState.leepostinteres,
+        #style = styles.background_pattern_style,
+        on_mount=InfoInteresState.leepostinteres,
         
     )

@@ -29,9 +29,9 @@ def constr() -> rx.Component:
         navbar(),
         rx.chakra.center(
             rx.chakra.vstack(
-                rx.chakra.center(
-                header(False),
-                ),
+                # rx.chakra.center(
+                # header(False),
+                # ),
                 construccion(),
                 max_width=styles.CONTENT_GALERY,
                 width="100%",

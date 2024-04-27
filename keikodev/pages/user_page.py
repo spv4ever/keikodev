@@ -134,7 +134,7 @@ def table_users(list_users: list[Usuarios]) -> rx.Component:
             rx.table.row(
                 rx.table.column_header_cell("Nombre"),
                 rx.table.column_header_cell("Correo electrónico"),
-                rx.table.column_header_cell("password"),
+                #rx.table.column_header_cell("password"),
                 rx.table.column_header_cell("Tipo usuario"),
                 rx.table.column_header_cell("Activo"),
                 rx.table.column_header_cell("Fecha registro"),
@@ -153,7 +153,7 @@ def row_table(user: Usuarios)-> rx.Component:
     return rx.table.row(
         rx.table.cell(user.name),
         rx.table.cell(user.email),
-        rx.table.cell(user.password),
+        #rx.table.cell(user.password),
         rx.table.cell(user.user_type,align="end"),
         rx.table.cell(user.active, align="end"),
         rx.table.cell(user.dateregister),

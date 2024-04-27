@@ -5,6 +5,9 @@ from keikodev.componentes.title import title
 from keikodev.styles.styles import Size as Size
 import keikodev.views.constants as constants
 from keikodev.routes import Route
+from keikodev.pages.kodi_addons import kodi_addons
+from keikodev.pages.kodi_trucos import kodi_trucos
+from keikodev.pages.kodi_luar import kodi_luar
 from keikodev.pages.kodi_kodivertido import kodi_kodivertido
 from keikodev.pages.kodi_cristalazul import kodi_cristalazul
 from keikodev.pages.kodi_tvchopo import kodi_tvchopo

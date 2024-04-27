@@ -22,6 +22,6 @@ items_menu_tecnologia = [
 items_menu_otros = [
     ("Biblioteca de imágenes",Route.GALERIA.value,False),
     ("Plantilla gastos hipoteca","/img/trucos/carta_modelo.pdf",True),
-    ("Kodi",Route.KODI.value,False)
+    ("Keikodev Kodi Tutoriales",Route.KODI.value,False)
 ]
 

@@ -31,11 +31,7 @@ def galeria_starship_video() -> rx.Component:
     return rx.box(
         utils.lang(),
         navbar(),
-        # Float_Button(
-        #     icon = rx.chakra.Image(src="/avatar.png"),
-        #     href = Route.INDEX.value,
-        #     target = "_top",
-        #     ),
+        
         rx.chakra.center(
             rx.chakra.vstack(
                 galeria_starship_video_details(),
@@ -45,12 +41,13 @@ def galeria_starship_video() -> rx.Component:
                 min_height = "650px",
                 
                 ),
-                #style=styles.background_gradient_style,
+                style=styles.background_gradient_style,
 
             ),
         footer(),
         min_height = "650px",
-        background = "center / contain no-repeat url('/img/starship.svg')",
+        #background = "center / contain no-repeat url('/img/starship.svg')",
+        style = {"background-image":"url('/img/starship.svg')","background-position":"top left","background-attachment":"fixed"},
         width = "100%",
         
         #style = styles.background_pattern_style,

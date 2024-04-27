@@ -45,7 +45,8 @@ def keiko() -> rx.Component:
             on_mount=CuidadosState.leepostcuidados,
             ),
         footer(),
-        style = styles.background_pattern_style,
+        #style = styles.background_pattern_style,
+        
         
         
     )

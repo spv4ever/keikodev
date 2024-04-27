@@ -26,11 +26,7 @@ def keiko_cuidados() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
         navbar(),
-        # Float_Button(
-        #         icon = rx.chakra.Image(src="/avatar.png"),
-        #         href = Route.INDEX.value,
-        #         target = "_top",
-        #         ),
+        
         rx.chakra.center(
             rx.chakra.vstack(
                 #header(False,live_status=PageState.live_status),
@@ -39,9 +35,10 @@ def keiko_cuidados() -> rx.Component:
                 width="100%",
                 margin_y=Size.BIG.value
                 ),
-            style=styles.background_gradient_style,
+            
             ),
         footer(),
-        style = styles.background_pattern_style,
+        style=styles.background_gradient_style,
+        #style = styles.background_pattern_style,
         #on_mount=CuidadosState.leepostcuidados,
-    )
+    )   

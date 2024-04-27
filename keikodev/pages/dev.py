@@ -24,16 +24,9 @@ from keikodev.state.PageState import PageState as PageState
 def dev() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
-        navbar(),
-        #Float_Button(disabled=False),
-        # Float_Button(
-        #         icon = rx.chakra.Image(src="/avatar.png"),
-        #         href = Route.INDEX.value,
-        #         target = "_top",
-        #         ),
+        navbar(),   
         rx.chakra.center(
             rx.chakra.vstack(
-                #header(False,live_status=PageState.live_status),
                 dev_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",
@@ -42,5 +35,5 @@ def dev() -> rx.Component:
             style=styles.background_gradient_style,
             ),
         footer(),
-        style = styles.background_pattern_style,
+        #style = styles.background_pattern_style,
     )

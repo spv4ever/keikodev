@@ -26,8 +26,10 @@ def cocina()-> rx.Component:
                 cocina_details(),
                 max_width=styles.CONTENT_WIDTH,
                 ),
+                
             footer(),
-            style = styles.background_pattern_style,
+            style = styles.background_gradient_style,
+            
         ),
 
 

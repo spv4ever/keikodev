@@ -39,10 +39,10 @@ def spacex() -> rx.Component:
                 width="100%",
                 margin_y=Size.BIG.value
                 ),
-            #style=styles.background_gradient_style,
+            style=styles.background_gradient_style,
             ),
         footer(),
         #style = styles.background_pattern_style,
-        background = "top / contain no-repeat url('/img/starship.svg')",
+        style = {"background-image":"url('/img/starship.svg')","background-position":"top left","background-attachment":"fixed"},
         width = "100%",
     )
