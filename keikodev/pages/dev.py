@@ -33,7 +33,7 @@ def dev() -> rx.Component:
         #         ),
         rx.chakra.center(
             rx.chakra.vstack(
-                header(False,live_status=PageState.live_status),
+                #header(False,live_status=PageState.live_status),
                 dev_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",

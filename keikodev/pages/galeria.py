@@ -36,7 +36,7 @@ def galeria() -> rx.Component:
         #     ),
         rx.chakra.center(
             rx.chakra.vstack(
-                header(False),
+                #header(False),
                 galeria_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",

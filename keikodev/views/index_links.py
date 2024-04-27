@@ -155,7 +155,8 @@ def index_links_desktop()-> rx.Component:
                 spacing="5",
                 justify="between",
             ),
-        margin = Size.BIG.value,
+        margin_top = Size.BIG.value,
+        margin_x = Size.MEDIUM_BIG.value,
         min_height = "700px",
         #on_mount=Lastpicturestate.get_last_picture,
     )

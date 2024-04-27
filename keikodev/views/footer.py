@@ -24,7 +24,7 @@ def footer()-> rx.Component:
             border="4px",
             border_color = Color.PRIMARY.value,
             ),
-        rx.chakra.link(f'© 1991-{datetime.date.today().year} Blog personal de Albert García.',
+        rx.chakra.link(f'© 1991-{datetime.date.today().year} Keikodev.es. Proyecto personal, desarrollo y aprendizaje',
                 href="https://github.com/spv4ever",
                 is_external=True,
                 font_size = Size.MEDIUM.value),
@@ -34,7 +34,6 @@ def footer()-> rx.Component:
                         font_size = Size.MEDIUM.value,
                         width = "100%",
                         class_name="marquee-content",
-                        
                         ),
                     margin_top=Size.ZERO.value,
                     class_name="marquee-container",

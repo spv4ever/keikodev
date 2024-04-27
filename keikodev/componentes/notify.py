@@ -6,7 +6,10 @@ def notify_component(message: str, icon_notify: str, color: str)-> rx.Component:
         message,
         icon=icon_notify,
         style=style_notify,
-        color_scheme=color
+        color_scheme=color,
+        variant="surface",
+        size="3",
+        role="alert",
     )
 
 style_notify= {

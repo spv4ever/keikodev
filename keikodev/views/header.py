@@ -13,20 +13,10 @@ from keikodev.state.PageState import PageState
 import keikodev.views.constants as const
 
 
-def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
+def header(details=False, live_status=Live(live=False, title=""))-> rx.Component:
     return rx.chakra.vstack(
                 rx.chakra.hstack(
                     rx.chakra.avatar(
-                        rx.cond(
-                                live_status.live,
-                                rx.chakra.avatar_badge(
-                                    rx.chakra.image(src="/img/twitch.svg",alt="Logo twitch"),
-                                    box_size = Size.MEDIUM.value,
-                                    bg = Color.PURPLE.value,
-                                    border_color = Color.PURPLE.value,
-                                    class_name="blink",
-                                ),
-                            ),
                             name="Albert García Sabadell",
                             size="xl", 
                             src = "/avatar3.png",
@@ -35,7 +25,7 @@ def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
                             border="4px",
                             border_color = Color.PRIMARY.value,
                             box_shadow = f"0px 0px 20px {Color.PRIMARY.value}",
-                            class_name=styles.ROTATE,
+                            #class_name=styles.ROTATE,
                             ),
                     rx.chakra.vstack(
                         rx.chakra.heading(
@@ -89,26 +79,10 @@ def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
                     font_family = Fuentes.DEFAULT.value,
                     align_items="start",
                     padding_x=Size.MEDIUM.value,
-                    class_name=styles.BOUNCE,
+                    #class_name=styles.BOUNCE,
                     
                 
                     ),
-        rx.cond(
-            details,
-            rx.chakra.accordion(
-                rx.chakra.accordion_item(
-                    rx.chakra.accordion_button(
-                        rx.chakra.box(
-                        rx.chakra.heading("Descubre más sobre mí",size="md",
-                                    color=Color.PRIMARY.value,
-                                    font_family = Fuentes.LOGO.value,
-                                    #class_name="texto",
-                                    ),
-                                    #width = "250px"
-                                    ),
-                        rx.chakra.accordion_icon(),
-                    ),
-                    rx.chakra.accordion_panel(
                     rx.chakra.vstack(
                         rx.chakra.flex(
                             info_text("+30","años de experiencia"),
@@ -144,22 +118,10 @@ def header(details=True, live_status=Live(live=False, title=""))-> rx.Component:
                                 
                                 
                         ),
-            #spacing=Size.BIG.value,
                     padding_x=Size.MEDIUM.value,
                     width="100%",
-            
-            ),
-            ),
-            ),
-            allow_toggle=True,
-            variant = "ghost",
-            color="white",
-            border_color = Color.BACKGROUND.value,
-            width="100%",
-            ),
-
-        ),
-        on_mount=PageState.tomaFoto,
+        #on_mount=PageState.tomaFoto,
+                    ),
         width = "100%",
         font_family = Fuentes.DEFAULT.value,
         spacing=Size.BIG.value,

@@ -30,15 +30,9 @@ def launches_page() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
         navbar(),
-        # Float_Button(
-        #     icon = rx.chakra.Image(src="/avatar.png"),
-        #     href = Route.INDEX.value,
-        #     target = "_top",
-        #     ),
         rx.chakra.center(
             rx.chakra.vstack(
                 launches_page_details(),
-                #launches_page_details(LaunchesState.list_launches),
                 max_width="1200px",
                 width="100%",
                 margin_y=Size.BIG.value,

@@ -23,6 +23,17 @@ class Route(Enum):
     LOGIN = "/login"
     LAUNCH_PAGE = "/launches"
     IA_TOOLS = "/iatools"
+    ABOUT = "/about"
+    KODI = "/kodi"
+    KODI_PC = "/kodi_pc"
+    KODI_LUAR = "/luar"
+    KODI_ADDONS = "/addons"
+    KODI_TRUCOS = "/koditrucos"
+    KODI_KODIVERTIDO = "/kodi/kodivertido"
+    KODI_CRISTALAZUL = "/kodi/cristalazul"
+    KODI_TVCHOPO = "/kodi/tvchopo"
+    KODI_BALANDRO = "/kodi/balandro"
+    KODI_ARROWNEGRA = "/kodi/arrownegra"
     
 
     

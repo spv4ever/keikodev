@@ -16,7 +16,13 @@ from keikodev.componentes.tutiempo import tutiempo
 from keikodev.componentes.facebook import facebook_like_button,facebook_sdk_init
 from keikodev.pages.google_auth import protected, StateLogin, user_info
 from keikodev.data.items_menu import items_menu_keikodev,items_menu_tecnologia,items_menu_otros
+from keikodev.pages.user_page import create_user_form_dialog as new_user
+from keikodev.pages.user_page import login_user_form_dialog as login_user
+from keikodev.pages.user_page import logout_user_form
+from keikodev.componentes.notify import notify_component
 
+
+from keikodev.pages.user_page import UserState
 
 
 def navbar():
@@ -51,10 +57,15 @@ def navbar():
 				
                 rx.tablet_and_desktop(
 					rx.hstack(
-                        rx.badge('Inicio',size="2", 
-							color_scheme="pink", 
-							variant="outline",
-							style=styles.main_menu_badge_style,),                        
+                        rx.link(
+							rx.badge('Inicio',size="2", 
+								color_scheme="pink", 
+								variant="outline",
+								style=styles.main_menu_badge_style),
+                            href=Route.INDEX.value,
+                            is_external=False,
+                            style=styles.links_without_decoration,
+						),
 						menu_keikodev(),
                         menu_tecnologia(),
                         menu_otros(),
@@ -68,21 +79,51 @@ def navbar():
 				
 			),
             rx.flex(
+                rx.cond(
+                    UserState.user_name!="",
+                	rx.text(f"Bienvenido: {UserState.user_name}", style={"color":TextColor.HEADER.value}),
+				),
                     rx.tablet_and_desktop(
-						rx.badge('Sobre mi...',size="2", 
-								color_scheme="pink", 
-								variant="outline",
-								style=styles.main_menu_badge_style,),),
-                rx.badge('Iniciar Sesión',size="2", 
-						color_scheme="pink", 
-                        variant="outline",
-                        style=styles.main_menu_badge_style,),
-                rx.badge('Registrarse',size="2", 
-						color_scheme="pink", 
-                        variant="outline",
-                        style=styles.main_menu_badge_style,
-                        padding_left=Size.DEFAULT.value,
+						rx.link(		
+							rx.badge('Sobre mi...',size="2", 
+									color_scheme="pink", 
+									variant="outline",
+									style=styles.main_menu_badge_style,),
+                            href=Route.ABOUT.value,
+                            is_external=False,
+                            style=styles.links_without_decoration,
 						),
+                    ),
+                                                                
+                
+                # rx.badge('Iniciar Sesión',size="2", 
+				# 		color_scheme="pink", 
+                #         variant="outline",
+                #         style=styles.main_menu_badge_style,),
+                # rx.link(
+				# 	rx.badge('Registrarse',size="2", 
+				# 			color_scheme="pink", 
+				# 			variant="outline",
+				# 			style=styles.main_menu_badge_style,
+				# 			padding_left=Size.DEFAULT.value,
+				# 			),
+				# ),
+    			rx.cond(
+						UserState.error != '',
+						notify_component(UserState.error, "shield-alert", "yellow")
+                        ),
+				rx.cond(
+                    UserState.user_type == 0,
+    				login_user()
+				),
+                rx.cond(
+                    UserState.user_type == 0,
+					new_user()
+				),
+                rx.cond(
+                    UserState.user_type != 0,
+                    logout_user_form()
+				),
                 rx.mobile_only(
                         rx.container(
 							menu_general(),
@@ -90,7 +131,7 @@ def navbar():
 						),
 				
                 direction="row",
-                style={"color":TextColor.HEADER.value, "max-width":"100%"},
+                style={"color":TextColor.HEADER.value, "max-width":"100%","margin-right":Size.MEDIUM.value},
                 spacing="3",
                 justify="between",
                 align = "center",
@@ -124,25 +165,6 @@ def menu_keikodev()->rx.Component:
 				rx.chakra.menu_button(
 						"keikodev",
 						style=styles.main_menu_style_item,
-                    
-					# rx.badge("Keikodev", 
-					# 	size="2", 
-					# 	color_scheme="pink", 
-                    #     variant="outline",
-                    #     style=styles.main_menu_badge_style,
-                        
-					# 	),
-					# font_family=Fuentes.TITLE.value,
-                    # padding_y = Size.SMALL_MEDIUM.value,
-                    # padding_x = Size.MEDIUM.value,
-                    # font_size = "sm",
-                    # border_radius = "5px",
-                    # border_width = "1px",
-                    # border_color = "#651249",
-					# color=Color.PRIMARY.value,
-                    # background = Color.BACKGROUND.value,
-                    # _hover={"color":Color.BACKGROUND.value,"bg":Color.SECONDARY.value},
-                    
 					),
 				rx.chakra.menu_list(
 					*[
@@ -212,23 +234,24 @@ def menu_general()->rx.Component:
                             color_scheme="pink",
 							variant="outline",
 							style=styles.main_menu_badge_style,
+                            
 						),
-							
+						
 					),
-					rx.menu.content(
-						rx.menu.item("Edit", shortcut="⌘ E"),
-						rx.menu.item("Duplicate", shortcut="⌘ D"),
-						rx.menu.separator(),
-						rx.menu.sub(
-							rx.menu.sub_trigger("More"),
-							rx.menu.sub_content(
-								rx.menu.item("Option 1"),
-								rx.menu.item("Option 2")
-							)
-						),
-						rx.menu.separator(),
-						rx.menu.item("Delete", shortcut="⌘ ⌫", color="red"),
-					),
+					# rx.menu.content(
+					# 	rx.menu.item("Edit", shortcut="⌘ E"),
+					# 	rx.menu.item("Duplicate", shortcut="⌘ D"),
+					# 	rx.menu.separator(),
+					# 	rx.menu.sub(
+					# 		rx.menu.sub_trigger("More"),
+					# 		rx.menu.sub_content(
+					# 			rx.menu.item("Option 1"),
+					# 			rx.menu.item("Option 2")
+					# 		)
+					# 	),
+					# 	rx.menu.separator(),
+					# 	rx.menu.item("Delete", shortcut="⌘ ⌫", color="red"),
+					# ),
 				)
 
 

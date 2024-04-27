@@ -137,6 +137,19 @@ cardia_style = {
     }
 }
 
+form_login_user = {
+    "width":"300px",
+    "padding": Size.DEFAULT.value,
+    "border_radius": "1.5rem",
+    "background": Color.CONTENT.value,
+    "_hover": {
+        "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.PRIMARY.value}",
+        "background": Color.BACKGROUND.value,
+    }
+}
+
+
+
 post_style = {
     "height": 400, 
     "color": TextColor.BODY.value, 

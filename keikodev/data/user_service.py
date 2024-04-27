@@ -15,10 +15,15 @@ def select_user_by_email_service(email: str):
     else:
         return select_all()
     
+def login_user_by_email_service(email: str):
+    if (len(email)!=0):
+        return select_user_by_email(email)
+
+    
 def create_user_service(name: str, email: str, password: str):
         user = select_user_by_email(email)
         if len(user) == 0:
-            new_user = Usuarios(name=name,email=email,password=password,user_type=0,active = 1, dateregister = datetime.datetime.now())
+            new_user = Usuarios(name=name,email=email,password=password,user_type=1,active = 1, dateregister = datetime.datetime.now())
             return create_user(new_user)
         else:
             print("El usuario ya existe")

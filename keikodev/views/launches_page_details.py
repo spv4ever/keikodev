@@ -11,6 +11,7 @@ from keikodev.models.launches import Nextlaunches
 from keikodev.data.launch_services import create_launch_service, delete_launch_service,select_all_launches_service,update_launch_service, select_launch_by_mision_service
 from typing import Optional
 from keikodev.pages.google_auth import StateLogin
+from keikodev.pages.user_page import UserState
 
 #StateLogin.users_rights == 999,
 
@@ -145,11 +146,11 @@ def table_launches(list_launches: list[Nextlaunches]) -> rx.Component:
                 rx.table.column_header_cell("Streamer"),
                 rx.table.column_header_cell("Canal"),
                 rx.cond(
-                    StateLogin.users_rights == 0,
+                    UserState.user_type == 999,
                     rx.table.column_header_cell("Eliminar"),
                     ),
                 rx.cond(
-                    StateLogin.users_rights == 0,
+                    UserState.user_type == 999,
                     rx.table.column_header_cell("Editar"),
                     ),
                 style = {"color": TextColor.HEADER.value, "background_color": Color.CONTENT.value},
@@ -198,14 +199,14 @@ def row_table(launch: Nextlaunches)-> rx.Component:
                 align="center",
         ),
         rx.cond(
-            StateLogin.users_rights==0,
+            UserState.user_type==999,
             rx.table.cell(rx.hstack(
                 delete_launch_dialog(launch.id),
                 ),
             ),
         ),
         rx.cond(
-            StateLogin.users_rights==0,
+            UserState.user_type==999,
             rx.table.cell(
                     rx.hstack(
                         update_launch_dialog(launch),

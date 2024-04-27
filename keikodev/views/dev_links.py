@@ -79,6 +79,11 @@ def dev_links()-> rx.Component:
                         "/img/css3.svg",
                         constants.ANIMATECSS_URL,
                 ),
+                linkbutton("UI Colors",
+                        "Página que nos ayuda a crear la paleta de colores para tu web",
+                        "/img/css3.svg",
+                        constants.UICOLORS_URL,
+                ),
                 linkbutton(is_external=False),
 
         width = "100%",

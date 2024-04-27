@@ -36,6 +36,7 @@ PIXVERSEAI_URL = "https://pixverse.ai/"
 CANVA_URL = "https://www.canva.com/"
 CAPCUT_URL = "https://www.capcut.com/"
 LEIAPIX_URL = "https://www.leiapix.com/"
+UICOLORS_URL = "https://uicolors.app/create"
 
 #Default
 DEFAULT_URL = "http://localhost:3000/"
@@ -98,6 +99,14 @@ EXCEL_BASICO_URL = "https://learningstudioai.com/go/w3LEfeClfT1cblCXYAjn"
 EXCEL_AVANZADO_URL = "https://learningstudioai.com/go/eA8hjYRTTL53RTj9uh1i"
 EXCEL_EXPERTO_URL = "https://learningstudioai.com/go/0BvmU4QpXdWFJvfrcmrI"
 PP_AVANZADO_URL = "https://learningstudioai.com/go/HlXUnUSbDqqC5y2joBWo"
+
+#Enlaces KODI
+KODI_URL = "https://kodi.tv/"
+KODI_DESCARGAS_URL = "https://kodi.tv/download/"
+KODI_WINDOWS_URL = "https://kodi.tv/download/windows/"
+
+#Librerías de imagenes.
+KODI_IMAGES = "/img/kodi_images/"
 
 
 

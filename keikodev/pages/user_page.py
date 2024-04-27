@@ -1,16 +1,23 @@
 import reflex as rx
 from keikodev.models.user import Usuarios
-from keikodev.data.user_service import select_all_user_service, select_user_by_email_service, create_user_service, delete_user_service, update_user_service
+from keikodev.data.user_service import select_all_user_service, select_user_by_email_service, create_user_service, delete_user_service, update_user_service,login_user_by_email_service
 from keikodev.componentes.notify import notify_component
 from keikodev.styles.colors import TextColor
+from keikodev.styles.fonts import Fuentes
 from keikodev.pages.google_auth import StateLogin
+import keikodev.styles.styles as styles
 import asyncio
+import bcrypt
+import keikodev.api.crypto as crypto
 
 class UserState(rx.State):
     users:list[Usuarios]
     buscarEmail: str
     error: str = ""
     email: str
+    user_type:int
+    user_name:str
+    user_email:str
 
     @rx.background
     async def get_all_users(self):
@@ -21,6 +28,33 @@ class UserState(rx.State):
     async def get_user_by_email(self):
         async with self:
             self.users = select_user_by_email_service(self.buscarEmail)
+    
+    @rx.background
+    async def get_login(self, login_user: dict):
+        async with self:
+            if login_user['email'] != "":
+                self.users = login_user_by_email_service(login_user['email'])
+                #password_ingresada = bytes(login_user['password'], 'utf-8')
+                #password_almacenada = bytes(self.users[0].password, 'utf-8')
+                if len(self.users) != 0:
+                    if self.users[0].active == 1 and crypto.verificar_contraseña(bytes(login_user['password'], 'utf-8'),bytes(self.users[0].password, 'utf-8')):
+                        self.user_name = self.users[0].name
+                        self.user_email = self.users[0].email
+                        self.user_type = self.users[0].user_type
+                        #print("Login ok, password correcta, usuario activo")
+                    else:
+                        self.error="Usuario inactivo o combinación usuario / contraseña no válida"
+                else:
+                    self.error="No existe ningún usuario"
+
+        await self.handlenotify()
+
+
+    def logout_user(self):
+        self.user_type = 0
+        self.user_name = ""
+        self.user_email = ""
+
 
     @rx.background
     async def delete_user_by_email(self, email: str):
@@ -34,9 +68,14 @@ class UserState(rx.State):
     
     @rx.background
     async def create_user(self, newuser: dict):
+        password_hash = crypto.encriptar_contraseña(newuser['password'])
+        # print(password_hash)
+        # print(len(password_hash))
+        # print(newuser['password'])
+        #print(crypto.verificar_contraseña(newuser['password'],password_hash))
         async with self:
             try:
-                self.users = create_user_service(name=newuser["name"], email=newuser["email"], password=newuser['password'])
+                self.users = create_user_service(name=newuser["name"], email=newuser["email"], password=password_hash)
             except BaseException as be:
                 print(be.args)
                 self.error = be.args
@@ -56,12 +95,18 @@ class UserState(rx.State):
         self.buscarEmail = email
 
 
+@rx.page(route="/register", title="Registro de usuario")
+def user_register() -> rx.Component:
+    return rx.box(
+        create_user_form_dialog(),
+    )
+
 
 @rx.page(route="/user", title="User", on_load=UserState.get_all_users)
 def user_page()->rx.Component:
     return rx.container(
                 rx.cond(
-                    StateLogin.users_rights == 999,
+                    UserState.user_type == 999,
                     rx.flex(
                         rx.heading("Usuarios", align = "center", color_scheme="yellow"),
                         rx.hstack(
@@ -147,32 +192,87 @@ def create_user_form()->rx.Component:
                 type= "password"
 
             ),
-            rx.dialog.close(
-                rx.button("Guardar", type="submit"),
+            rx.flex(
+                rx.dialog.close(
+                    rx.button("Guardar", type="submit"),
 
+                ),
+            
+                rx.dialog.close(
+                    rx.button("Cancelar", color_scheme="gray", variant="soft")
+                ),
+                direction="row",
+                spacing="3",
+                margin_top = "16px",
+                justify="between",
             ),
         ),
         on_submit=UserState.create_user
     )
 
-def create_user_form_dialog()->rx.Component:
+def login_user_form()->rx.Component:
+    return rx.form(
+                rx.vstack(
+                    rx.input(
+                        placeholder="eMail",
+                        name= "email",
+                        auto_complete=False,
+                        
+                    ),
+                    rx.input(
+                        placeholder="Password",
+                        name= "password",
+                        type= "password"
+
+                    ),
+                    rx.flex(
+                        rx.dialog.close(
+                            rx.button("Acepar", type="submit", color_scheme="pink", style=styles.main_menu_badge_style),
+                        ),
+                    
+                        rx.dialog.close(
+                            rx.button("Cancelar", color_scheme="pink", style=styles.main_menu_badge_style)
+                        ),
+                        direction="row",
+                        spacing="3",
+                        margin_top = "16px",
+                        width = "100%",
+                        justify="between",
+                    ),
+                ),
+                
+                on_submit=UserState.get_login
+    )
+
+def logout_user_form()->rx.Component:
+    return rx.button("Cerrar sesión",variant="outline",color_scheme="pink",style=styles.main_menu_badge_style,on_click=UserState.logout_user)
+
+def login_user_form_dialog()->rx.Component:
     return rx.dialog.root(
-        rx.dialog.trigger(rx.button("Crear Usuario")),
+        rx.dialog.trigger(rx.button("Iniciar sesión",variant="outline",color_scheme="pink",style=styles.main_menu_badge_style,)),
         rx.dialog.content(
             rx.flex(
-                rx.dialog.title("Crear usuario"),
-                create_user_form(),
+                rx.dialog.title("Iniciar sesión",
+                    style={"color":TextColor.HEADER.value,"font-family":Fuentes.TITLE.value}),
+                login_user_form(),
                 justify="center",
                 align="center",
                 direction="column",
             ),
+            style=styles.form_login_user,
+        ),
+    )
+
+def create_user_form_dialog()->rx.Component:
+    return rx.dialog.root(
+        rx.dialog.trigger(rx.button("Registrarse",variant="outline",color_scheme="pink",style=styles.main_menu_badge_style,)),
+        rx.dialog.content(
             rx.flex(
-                rx.dialog.close(
-                    rx.button("Cancelar", color_scheme="gray", variant="soft")
-                ),
-                spacing="3",
-                margin_top = "16px",
-                justify="end",
+                rx.dialog.title("Registrarse"),
+                create_user_form(),
+                justify="center",
+                align="center",
+                direction="column",
             ),
             style={"width":"300px"},
         ),
@@ -257,9 +357,7 @@ def update_user_form(name:str, email:str, password:str, active:int)->rx.Componen
             ),
             rx.dialog.close(
                 rx.button("Guardar", type="submit"),
-
             ),
-
         ),
         on_submit=UserState.update_user
     )

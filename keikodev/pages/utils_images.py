@@ -26,14 +26,9 @@ def utils_images() -> rx.Component:
     return rx.chakra.box(
         utils.lang(),
         navbar(),
-        # Float_Button(
-        #         icon = rx.chakra.Image(src="/avatar.png"),
-        #         href = Route.INDEX.value,
-        #         target = "_top",
-        #         ),
         rx.chakra.center(
             rx.chakra.vstack(
-                header(False),
+                #header(False),
                 utils_images_links(),
                 max_width=styles.MAX_WIDTH,
                 width="100%",

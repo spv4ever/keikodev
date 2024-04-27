@@ -11,6 +11,7 @@ from keikodev.styles.styles import Size as Size
 from keikodev.styles.colors import Color, TextColor
 from keikodev.pages.google_auth import StateLogin
 from keikodev.componentes.notify import notify_component
+from keikodev.pages.user_page import UserState
 import asyncio
 
 #imports para página
@@ -110,7 +111,7 @@ def ia_tools() -> rx.Component:
                 rx.divider(color_scheme="pink"),
                 rx.flex(
                     rx.cond(
-                        StateLogin.users_rights == 0,
+                        UserState.user_type == 999,
                             create_tool_form_dialog(),
                     ),
                     rx.badge(f"Todos ({Iatoolstate.total})",

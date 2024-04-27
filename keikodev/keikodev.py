@@ -27,6 +27,9 @@ from keikodev.pages.spacex import spacex
 from keikodev.pages.galeria_starship_video import galeria_starship_video
 from keikodev.pages.user_page import user_page
 from keikodev.pages.iatools import ia_tools
+from keikodev.pages.about import about
+from keikodev.pages.kodi import kodi
+from keikodev.pages.kodi_pc import kodi_pc
 
 import dotenv
 
