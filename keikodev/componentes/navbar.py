@@ -147,6 +147,49 @@ def navbar():
 			# 		),
 			# 		#protected(),
 			# ),
+			rx.chakra.modal(
+                                rx.chakra.modal_overlay(
+                                        rx.chakra.modal_content(
+                                                rx.chakra.modal_body(
+                                                        rx.chakra.center(
+                                                                rx.chakra.vstack(
+                                                                        rx.chakra.button(
+                                                                        "Cerrar ventana",
+                                                                        size = "md",
+                                                                        variant= "outline",
+                                                                        border_width = "3px",
+                                                                        width="30%",
+                                                                        border_color = Color.PRIMARY.value,
+                                                                        on_click=ModalStateFull.change("","",""),                                                                      
+                                                                        ),
+                                                                        rx.chakra.image(
+                                                                                src=ModalStateFull.hdurl,
+                                                                                alt="Imagen pantalla completa",
+                                                                                width="100%",
+                                                                                height="auto",
+                                                                        ),
+                                                                        rx.chakra.text(ModalStateFull.title,
+                                                                                color = TextColor.PRIMARY.value),
+                                                                        rx.chakra.text("Copyright: ", ModalStateFull.copyright,
+                                                                                color = TextColor.PRIMARY.value),
+                                                                        rx.chakra.text(ModalStateFull.explanation,
+                                                                                color = TextColor.PRIMARY.value),
+
+                                                                        max_width = styles.CONTENT_WIDTH,
+                                                                ),
+
+                                                        ),
+
+                                                        style = styles.background_pattern_style,
+                                                        
+                                                ),
+                                                bg = Color.BACKGROUND.value,
+                                        ),
+                                        
+                                ),
+                                is_open=ModalStateFull.show,
+                                size="full",
+                        ),
 			direction = "row",
 			justify="between",
 			align = "center",
@@ -255,50 +298,4 @@ def menu_general()->rx.Component:
 				)
 
 
-                        # rx.chakra.modal(
-                        #         rx.chakra.modal_overlay(
-                        #                 rx.chakra.modal_content(
-                        #                         rx.chakra.modal_body(
-                        #                                 rx.chakra.center(
-                        #                                         rx.chakra.vstack(
-                        #                                                 rx.chakra.button(
-                        #                                                 "Cerrar ventana",
-                        #                                                 size = "md",
-                        #                                                 variant= "outline",
-                        #                                                 border_width = "3px",
-                        #                                                 width="30%",
-                        #                                                 border_color = Color.PRIMARY.value,
-                        #                                                 on_click=ModalStateFull.change("","",""),                                                                      
-                        #                                                 ),
-                        #                                                 rx.chakra.image(
-                        #                                                         src=ModalStateFull.hdurl,
-                        #                                                         alt="Imagen pantalla completa",
-                        #                                                         width="100%",
-                        #                                                         height="auto",
-                        #                                                 ),
-                        #                                                 rx.chakra.text(ModalStateFull.title,
-                        #                                                         color = TextColor.PRIMARY.value),
-                        #                                                 rx.chakra.text("Copyright: ", ModalStateFull.copyright,
-                        #                                                         color = TextColor.PRIMARY.value),
-                        #                                                 rx.chakra.text(ModalStateFull.explanation,
-                        #                                                         color = TextColor.PRIMARY.value),
-
-                        #                                                 max_width = styles.CONTENT_WIDTH,
-                        #                                         ),
-
-                        #                                 ),
-
-                        #                                 style = styles.background_pattern_style,
-                                                        
-                        #                         ),
-                        #                         bg = Color.BACKGROUND.value,
-                        #                 ),
-                                        
-                        #         ),
-                        #         is_open=ModalStateFull.show,
-                        #         size="full",
-                        # ),
-                        #width = "100%",
-                        # display = "flex",
-                        # align_items = "right",
-                        # justify_content = "right",
+                        
