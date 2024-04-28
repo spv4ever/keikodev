@@ -2,6 +2,7 @@ import reflex as rx
 from keikodev.models.user import Usuarios
 from keikodev.data.user_service import select_all_user_service, select_user_by_email_service, create_user_service, delete_user_service, update_user_service,login_user_by_email_service
 from keikodev.componentes.notify import notify_component
+from keikodev.data.email_services import enviar_correo_services
 from keikodev.styles.colors import TextColor
 from keikodev.styles.fonts import Fuentes
 from keikodev.pages.google_auth import StateLogin
@@ -76,9 +77,12 @@ class UserState(rx.State):
         async with self:
             try:
                 self.users = create_user_service(name=newuser["name"], email=newuser["email"], password=password_hash)
+                print("usuario creado")
+                enviar_correo_services(newuser["email"],newuser["name"])
             except BaseException as be:
                 print(be.args)
                 self.error = be.args
+
         await self.handlenotify()
 
     @rx.background
