@@ -58,6 +58,12 @@ def utils_images_links()-> rx.Component:
                         "/img/pen-to-square-regular.svg",
                         constants.PIXLR_URL,
                         ),
+                linkbutton("DGB.LOL",
+                        "Re escalar imágenes gratuíta y sin límites, sin registro",
+                        "/img/pen-to-square-regular.svg",
+                        constants.DGBLOL_URL,
+                        ),
+
                 title("Gifs Animados"),
                 linkbutton("Librería de recursos GIFs",
                         "Fantástica librería de recursos Gifs gratuitos para link y descarga",

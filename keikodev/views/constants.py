@@ -37,6 +37,7 @@ CANVA_URL = "https://www.canva.com/"
 CAPCUT_URL = "https://www.capcut.com/"
 LEIAPIX_URL = "https://www.leiapix.com/"
 UICOLORS_URL = "https://uicolors.app/create"
+DGBLOL_URL = "https://dgb.lol/"
 
 #Default
 DEFAULT_URL = "http://localhost:3000/"
