@@ -9,3 +9,4 @@
 .web
 __pycache__/
 paramiko.log
+.tips.txt
