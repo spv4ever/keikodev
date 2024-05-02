@@ -13,7 +13,7 @@ from keikodev.api.api import repo
 from keikodev.api.api import foto
 from keikodev.state.PageState import PageState as PageState
 from keikodev.state.fotoNasa import  fotoNasa as fotoNasa
-from keikodev.styles.colors import TextColor as TextColor
+from keikodev.styles.colors import TextColor, Color
 from keikodev.models.Nasalink import Nasalink
 from keikodev.state.ModalState import modal_small
 #from keikodev.componentes.adsscript import ads_script
@@ -57,6 +57,17 @@ def index() -> rx.Component:
         rx.tablet_and_desktop(
             rx.cond(Iatoolstate.total!=0,
                     index_links_desktop(),
+                    rx.center(
+                        rx.hstack(
+                            rx.chakra.spinner(color="pink", size="xl",style={"margin":Size.DEFAULT.value}),
+                            rx.heading("Loading...",
+                                size="9",
+                                style={"color":Color.PRIMARY.value,"magin":Size.VERY_BIG.value,}
+                                ),
+                            direction="row",
+
+                        )
+                    )
             ),
             style=styles.background_gradient_style,
         ),
