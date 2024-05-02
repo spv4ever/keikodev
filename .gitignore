@@ -5,8 +5,8 @@
 .envi
 .github
 .github/
+.tips.txt
 .venv/
 .web
 __pycache__/
 paramiko.log
-.tips.txt

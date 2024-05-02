@@ -3,7 +3,7 @@ import keikodev.utils as utils
 import keikodev.views.constants as const
 from keikodev.componentes.navbar import navbar
 from keikodev.views.header import header
-from keikodev.views.index_links import index_links, index_links_desktop
+from keikodev.views.index_links import index_links, index_links_desktop, Lastpicturestate
 from keikodev.views.footer import footer
 import keikodev.styles.styles as styles
 from keikodev.styles.styles import Size as Size
@@ -21,6 +21,7 @@ from keikodev.state.alllinks import Alllinks
 from keikodev.componentes.facebook import facebook_sdk
 from keikodev.data.recetas_json import recetas_andaluzas
 from keikodev.state.countdown import CountdownState
+from keikodev.pages.iatools import Iatoolstate
 
 
 @rx.page(
@@ -29,6 +30,8 @@ from keikodev.state.countdown import CountdownState
     description=utils.index_description,
     image=utils.preview,
     meta=utils.index_meta,
+    on_load=Iatoolstate.get_all_iatools,
+
 )
 
 def index() -> rx.Component:
@@ -52,7 +55,9 @@ def index() -> rx.Component:
                 ),
         ),
         rx.tablet_and_desktop(
-            index_links_desktop(),
+            rx.cond(Iatoolstate.total!=0,
+                    index_links_desktop(),
+            ),
             style=styles.background_gradient_style,
         ),
         footer(),
