@@ -34,7 +34,7 @@ class Iatoolstate(rx.State):
         async with self:
             self.iatools = select_all_iatools_service()
             self.tipos, self.tipo_edicion = select_tipos_service()
-            iatool = select_last_iatool_added_service()
+            iatool = select_last_iatool_added_service() 
             self.iatool_name = iatool[0].herramientaAI
             self.iatool_description = iatool[0].descripcion
             self.total = len(self.iatools)

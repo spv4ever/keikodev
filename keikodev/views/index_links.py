@@ -145,8 +145,8 @@ def index_links()-> rx.Component:
 
 def index_links_desktop()-> rx.Component:
     return rx.box(
+        index_colabora(),
             rx.flex(
-                index_colabora(),
                 index_nasa(),
                 index_lanzamientos(),
                 index_iatools(),
@@ -165,11 +165,20 @@ def index_links_desktop()-> rx.Component:
         #on_mount=Lastpicturestate.get_last_picture,
     )
 def index_colabora()-> rx.Component:
-    return rx.box(
-        rx.center(
-            rx.heading("Estoy buscando financiación para mejorar el rendimiento del servidor. Se agredece cualquier tipo de apoyo. Puedes ayudarme"),
-            rx.script('data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="keikodev" data-description="Support me on Buy me a coffee!" data-message="Gracias por tu colaboración con el proyecto" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>'),
-        )
+    return rx.hstack(
+            rx.heading("Estoy buscando financiación para mejorar el rendimiento del servidor. Se agredece cualquier tipo de apoyo. Puedes ayudarme en...",
+                    style={"color":Color.SECONDARY.value},
+                    size="4"),
+            rx.link(
+                rx.image(src="/img/bmc-button.png",width="100px",height="auto"),
+                href=constants.DONACIONES_URL,
+                is_external=True,
+                style=styles.links_without_decoration,
+            ),
+        direction="row",
+        spacing="3",
+        justify="center",
+        style={"width":"100%","margin-bottom":Size.DEFAULT.value},
     )
 
 def index_recetas()->rx.Component:
@@ -327,7 +336,7 @@ def index_keiko()->rx.Component:
     return rx.card(
         rx.link(
         rx.vstack(
-            rx.heading("El rincón de Keiko",
+            rx.heading("Colaboradores Keikodev",
                     style={"color":Color.SECONDARY.value},
                     size="7"),
             

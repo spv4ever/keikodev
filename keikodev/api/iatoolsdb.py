@@ -16,7 +16,7 @@ def select_last():
     engine = connect()
     try:
         with Session(engine) as session:
-            query = select(Iatools).order_by(desc(Iatools.id)).limit(1)
+            query = select(Iatools).order_by(desc(Iatools.fecha_alta)).limit(1)
         return session.exec(query).all()
     finally:
         engine.dispose
