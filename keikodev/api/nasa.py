@@ -22,7 +22,7 @@ class nasaApi():
     
 
     def tomaFoto(self, fecha=""):
-        #fecha = "2024-02-12"
+        #fecha = "2024-04-28"
         if fecha == "":
             fecha = datetime.datetime.now().date()
         else:

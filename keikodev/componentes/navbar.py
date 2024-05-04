@@ -51,6 +51,7 @@ def navbar():
 								),
                                 align="center",
 								style=styles.navbar_title_style,
+								on_mount=PageState.tomaFoto,
 						),
 					href=Route.INDEX.value,
 				),

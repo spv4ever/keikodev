@@ -150,6 +150,9 @@ def index_links_desktop()-> rx.Component:
                 index_lanzamientos(),
                 index_iatools(),
                 index_recetas(),
+                index_kodi(),
+                index_store(),
+                index_keiko(),
                 direction="row",
                 wrap="wrap",
                 spacing="5",
@@ -226,6 +229,114 @@ def index_recetas()->rx.Component:
                 style=styles.index_cards,
                 class_name=styles.TITLE_INDEX,
     )
+
+def index_kodi()->rx.Component:
+    return rx.card(
+        rx.link(
+        rx.vstack(
+            rx.heading("Keikodev Kodi",
+                    style={"color":Color.SECONDARY.value},
+                    size="7"),
+            rx.text("""Tutoriales completos sobre KODI: aprende a instalar, configurar y mantener este potente centro multimedia en tu dispositivo. 
+                    Descubre los mejores addons y cómo instalarlos paso a paso. Mantente al día con las últimas actualizaciones y 
+                    optimiza tu experiencia de entretenimiento digital con nuestra guía detallada.""",
+                                    size="1",
+                                    style={"color":TextColor.PRIMARY.value,
+                                    "text-align":"justify",
+                                    "font-weight": "bold"},
+                                ),
+            rx.box(
+                rx.image(
+                src="/img/kodi_images/kodi_tutorial4.png",
+                margin_bottom = Size.SMALL.value,
+                style={"width": "100%", "height": "100%","object-fit": "contain"},
+                        ),
+                    style={"width":"250px","height":"100px"},
+                    ),
+            
+            
+            height = "100%",
+            width="100%",
+            direction="column",
+            align="center",
+            justify="start",
+            ),
+        href=Route.KODI.value,
+        style=styles.links_without_decoration,
+        ),
+    style=styles.index_cards,
+    class_name=styles.TITLE_INDEX_BIS,
+    )
+
+def index_store()->rx.Component:
+    return rx.card(
+        rx.link(
+        rx.vstack(
+            rx.heading("Keikodev Store",
+                    style={"color":Color.SECONDARY.value},
+                    size="7"),
+            rx.text("Todas las novedades, arte digital, camisetas de diseño, en Keikodev Store. Diseños exclusivos y personalizados.",
+                                    size="1",
+                                    style={"color":TextColor.PRIMARY.value,
+                                    "text-align":"justify",
+                                    "font-weight": "bold"},
+                                ),
+            
+                rx.box(
+                    rx.hstack(
+                        rx.image(
+                            src="/img/keiko_store.gif",
+                            margin_bottom = Size.SMALL.value,
+                            style={"width": "50%", "height": "50%","object-fit": "contain","padding":Size.MEDIUM.value},
+                        ),
+                        rx.image(
+                            src="/img/keiko_store2.gif",
+                            margin_bottom = Size.SMALL.value,
+                            style={"width": "50%", "height": "50%","object-fit": "contain","padding":Size.MEDIUM.value},
+                        ),
+                        direction="row",
+                        justify="between",
+                    ),
+                    style={"width":"250px","height":"100px"},
+                    ),
+                
+
+            height = "100%",
+            width="100%",
+            direction="column",
+            align="center",
+            justify="start",
+            ),
+        href=constants.KEIKODEV_STORE_URL,
+        is_external=True,
+        style=styles.links_without_decoration,
+        ),
+    style=styles.index_cards,
+    class_name=styles.TITLE_INDEX_BIS,
+    )
+
+def index_keiko()->rx.Component:
+    return rx.card(
+        rx.link(
+        rx.vstack(
+            rx.heading("El rincón de Keiko",
+                    style={"color":Color.SECONDARY.value},
+                    size="7"),
+            
+            
+            height = "100%",
+            width="100%",
+            direction="column",
+            align="center",
+            justify="start",
+            ),
+        href=Route.KEIKO.value,
+        style=styles.links_without_decoration,
+        ),
+    style=styles.index_cards,
+    class_name=styles.TITLE_INDEX_BIS,
+    )
+
 
 def index_iatools()->rx.Component:
     return rx.card(
@@ -331,11 +442,16 @@ def index_lanzamientos()->rx.Component:
                                 is_external=True,
                                 style=styles.links_without_decoration,
                         ),
-                        rx.cond(Nextlaunch.next_launche['channel']!="",
-                            rx.badge('Canal',size="2", 
-                                color_scheme="pink", 
-                                variant="outline",
-                                style=styles.main_menu_badge_style,),
+                        rx.link(
+                            rx.cond(Nextlaunch.next_launche['channel']!="",
+                                rx.badge('Canal',size="2", 
+                                    color_scheme="pink", 
+                                    variant="outline",
+                                    style=styles.main_menu_badge_style,),
+                                ),
+                                href=Nextlaunch.channel,
+                                is_external=True,
+                                style=styles.links_without_decoration,
                         ),
                         width="100%",
                         align="center",

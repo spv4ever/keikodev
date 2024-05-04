@@ -120,7 +120,7 @@ def header(details=False, live_status=Live(live=False, title=""))-> rx.Component
                         ),
                     padding_x=Size.MEDIUM.value,
                     width="100%",
-        #on_mount=PageState.tomaFoto,
+        on_mount=PageState.tomaFoto,
                     ),
         width = "100%",
         font_family = Fuentes.DEFAULT.value,
