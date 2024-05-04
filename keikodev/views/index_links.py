@@ -146,6 +146,7 @@ def index_links()-> rx.Component:
 def index_links_desktop()-> rx.Component:
     return rx.box(
             rx.flex(
+                index_colabora(),
                 index_nasa(),
                 index_lanzamientos(),
                 index_iatools(),
@@ -162,6 +163,13 @@ def index_links_desktop()-> rx.Component:
         margin_x = Size.MEDIUM_BIG.value,
         min_height = "700px",
         #on_mount=Lastpicturestate.get_last_picture,
+    )
+def index_colabora()-> rx.Component:
+    return rx.box(
+        rx.center(
+            rx.heading("Estoy buscando financiación para mejorar el rendimiento del servidor. Se agredece cualquier tipo de apoyo. Puedes ayudarme"),
+            rx.script('data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="keikodev" data-description="Support me on Buy me a coffee!" data-message="Gracias por tu colaboración con el proyecto" data-color="#FF813F" data-position="Right" data-x_margin="18" data-y_margin="18"></script>'),
+        )
     )
 
 def index_recetas()->rx.Component:

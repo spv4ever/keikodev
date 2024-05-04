@@ -68,6 +68,9 @@ G_TAG = "G-SMVVY1YF0J"
 #Donaciones
 DONACIONES_URL = "https://www.buymeacoffee.com/keikodev?l=es"
 
+
+
+
 #Cursos
 CURSO_PSEIN_URL = "https://go.hotmart.com/Y90265742M?dp=1"
 
