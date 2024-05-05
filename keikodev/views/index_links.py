@@ -153,7 +153,8 @@ def index_links_desktop()-> rx.Component:
                 index_recetas(),
                 index_kodi(),
                 index_store(),
-                index_keiko(),
+                index_mg(),
+                index_colaboradores(),
                 direction="row",
                 wrap="wrap",
                 spacing="5",
@@ -167,7 +168,7 @@ def index_links_desktop()-> rx.Component:
 def index_colabora()-> rx.Component:
     return rx.hstack(
             rx.heading("Estoy buscando financiación para mejorar el rendimiento del servidor. Se agredece cualquier tipo de apoyo. Puedes ayudarme en...",
-                    style={"color":Color.SECONDARY.value},
+                    style={"color":"yellow"},
                     size="4"),
             rx.link(
                 rx.image(src="/img/bmc-button.png",width="100px",height="auto"),
@@ -332,27 +333,89 @@ def index_store()->rx.Component:
     class_name=styles.TITLE_INDEX_BIS,
     )
 
-def index_keiko()->rx.Component:
+def index_colaboradores()->rx.Component:
     return rx.card(
-        rx.link(
         rx.vstack(
             rx.heading("Colaboradores Keikodev",
                     style={"color":Color.SECONDARY.value},
                     size="7"),
-            
-            
+            rx.text("Gracias por la colaboración",
+                    align="center",
+                    style={"color":TextColor.HEADER.value}),
+            rx.text("@iron4ever",
+                    align="center",
+                    style={"color":TextColor.HEADER.value}),
+
             height = "100%",
             width="100%",
             direction="column",
             align="center",
             justify="start",
             ),
-        href=Route.KEIKO.value,
-        style=styles.links_without_decoration,
-        ),
     style=styles.index_cards,
     class_name=styles.TITLE_INDEX_BIS,
     )
+
+def index_mg()->rx.Component:
+    return rx.card(
+            rx.link(
+                rx.vstack(
+                    rx.heading("MG Training y Nutrición",
+                            style={"color":Color.SECONDARY.value},
+                            size="6"),
+
+                    rx.text("""Manu Chacón, un apasionado del fitness de Tarragona, comparte su historia de transformación 
+                            y dedicación al ejercicio. A pesar de los desafíos, su determinación lo llevó a sumergirse en 
+                            el mundo del fitness. Ahora, está listo para guiar a otros, mostrándoles que con determinación 
+                            y esfuerzo, es posible superar metas y transformar vidas.""",
+                            size="3",
+                            style={"color":TextColor.HEADER.value,"text-align":"justify"},
+                            ),
+                    
+                    #height = "100%",
+                    width="100%",
+                    direction="column",
+                    align="center",
+                    justify="start",
+                    ),
+                href=constants.MG_URL,
+                is_external=True,
+                style=styles.links_without_decoration,
+            ),
+            rx.hstack(
+                rx.link(
+                    rx.icon("instagram", 
+                            color="red",
+                            size=28),
+                href="https://instagram.com/manugarciachacon?utm_source=qr",
+                is_external=True,
+                style=styles.links_without_decoration,
+                ),
+                rx.link(    
+                        rx.icon("youtube", 
+                                size=36, 
+                                color="red",
+                                style={"padding-bottom":Size.SMALL.value}),
+                    href="https://www.youtube.com/@manugarciachacon",
+                    is_external=True,
+                    style=styles.links_without_decoration,
+                    ),
+                rx.link(
+                    rx.image(src="/img/tiktok_red.svg", width="23px",height="23px"),
+                    href="https://www.tiktok.com/@manugarciachacon",
+                    is_external=True,
+                    style=styles.links_without_decoration,
+                ),
+                direction="row",
+                justify="between",
+                style={"padding-left":Size.MEDIUM_BIG.value, "padding-right":Size.MEDIUM_BIG.value}
+                
+            ),
+
+    style=styles.index_cards,
+    class_name=styles.TITLE_INDEX_BIS,
+    )
+
 
 
 def index_iatools()->rx.Component:
@@ -518,4 +581,26 @@ def index_nasa()->rx.Component:
             class_name=styles.TITLE_INDEX,
             on_mount=Lastpicturestate.get_last_picture
     ),
+
+
+# Plantilla nuevos marcos
+# def index_colaboradores()->rx.Component:
+#     return rx.card(
+#         rx.link(
+#         rx.vstack(
+#             rx.heading("Colaboradores Keikodev",
+#                     style={"color":Color.SECONDARY.value},
+#                     size="7"),
+#             height = "100%",
+#             width="100%",
+#             direction="column",
+#             align="center",
+#             justify="start",
+#             ),
+#         href=Route.KEIKO.value,
+#         style=styles.links_without_decoration,
+#         ),
+#     style=styles.index_cards,
+#     class_name=styles.TITLE_INDEX_BIS,
+#     )
 
