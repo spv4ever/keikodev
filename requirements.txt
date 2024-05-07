@@ -10,5 +10,6 @@ google-api-python-client
 google-auth-oauthlib
 oauth2client
 reflex-local-auth
+reflex-webcam
 
 

@@ -1,4 +1,5 @@
 import reflex as rx
+import reflex_webcam as webcam
 import datetime as datetime
 from keikodev.componentes.linkbutton import linkbutton
 from keikodev.componentes.title import title
@@ -360,11 +361,12 @@ def index_mg()->rx.Component:
     return rx.card(
             rx.link(
                 rx.vstack(
+                    webcam.webcam(),
                     rx.heading("MG Training y Nutrición",
                             style={"color":Color.SECONDARY.value},
                             size="6"),
 
-                    rx.text("""Manu Chacón, un apasionado del fitness de Tarragona, comparte su historia de transformación 
+                    rx.text("""Manu, un apasionado del fitness de Tarragona, comparte su historia de transformación 
                             y dedicación al ejercicio. A pesar de los desafíos, su determinación lo llevó a sumergirse en 
                             el mundo del fitness. Ahora, está listo para guiar a otros, mostrándoles que con determinación 
                             y esfuerzo, es posible superar metas y transformar vidas.""",
