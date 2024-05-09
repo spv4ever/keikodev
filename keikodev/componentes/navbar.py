@@ -15,7 +15,7 @@ import keikodev.utils as utils
 from keikodev.componentes.tutiempo import tutiempo
 from keikodev.componentes.facebook import facebook_like_button,facebook_sdk_init
 from keikodev.pages.google_auth import protected, StateLogin, user_info
-from keikodev.data.items_menu import items_menu_keikodev,items_menu_tecnologia,items_menu_otros
+from keikodev.data.items_menu import items_menu_keikodev,items_menu_tecnologia,items_menu_otros, items_menu_personal
 from keikodev.pages.user_page import create_user_form_dialog as new_user
 from keikodev.pages.user_page import login_user_form_dialog as login_user
 from keikodev.pages.user_page import logout_user_form
@@ -70,6 +70,11 @@ def navbar():
 						menu_keikodev(),
                         menu_tecnologia(),
                         menu_otros(),
+                        rx.cond(
+                    		UserState.user_type > 0,
+    						menu_personal(),
+						),
+                        
 						spacing="5",
 						wrap="wrap",
 						style={"color":TextColor.HEADER.value, "padding-left":Size.DEFAULT.value},
@@ -249,7 +254,6 @@ def menu_tecnologia()->rx.Component:
                     border_width = "5px",
                     border_color = Color.CONTENT.value,
 				),
-            
 			)
 
 def menu_otros()->rx.Component:
@@ -266,7 +270,22 @@ def menu_otros()->rx.Component:
                     border_width = "5px",
                     border_color = Color.CONTENT.value,
 				),
-            
+			)
+
+def menu_personal()->rx.Component:
+        return rx.chakra.menu(
+				rx.chakra.menu_button(
+					"Registrado",
+					style=styles.main_menu_style_item,),
+				rx.chakra.menu_list(
+					*[
+						main_menu_item(item[0],item[1],item[2])
+						for item in items_menu_personal
+					], 
+					style={"color":"#000","background":Color.CONTENT.value,},
+                    border_width = "5px",
+                    border_color = Color.CONTENT.value,
+				),
 			)
 
 def menu_general()->rx.Component:

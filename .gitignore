@@ -1,10 +1,12 @@
 *.db
 *.py[cod]
 *.yml
+.def_bd
 .env
 .envi
 .github
 .github/
+.gitignore
 .tips.txt
 .venv/
 .web

@@ -18,7 +18,7 @@ class Users():
         db = Database()
         self.email = token['email']
         self.name = token['name']
-        existe = db.where("usuarios",f"email='{self.email}'")
+        existe = db.where("Usuarios",f"email='{self.email}'")
         
         if not existe:
             user_temp = {
@@ -30,7 +30,7 @@ class Users():
                 "dateRegister": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             }
             json_user = json.dumps(user_temp)
-            db.insert("usuarios", json.loads(json_user))
+            db.insert("Usuarios", json.loads(json_user))
         else:
             print(f"El usuario ya existe: {existe[0][2]} tipo: {existe[0][4]}")
             self.name = existe[0][1]

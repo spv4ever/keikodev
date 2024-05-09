@@ -361,7 +361,6 @@ def index_mg()->rx.Component:
     return rx.card(
             rx.link(
                 rx.vstack(
-                    webcam.webcam(),
                     rx.heading("MG Training y Nutrición",
                             style={"color":Color.SECONDARY.value},
                             size="6"),

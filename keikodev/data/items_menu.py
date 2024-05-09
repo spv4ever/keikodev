@@ -25,3 +25,7 @@ items_menu_otros = [
     ("Keikodev Kodi Tutoriales",Route.KODI.value,False)
 ]
 
+items_menu_personal = [
+    ("Menú Personal", "", False)
+]
+

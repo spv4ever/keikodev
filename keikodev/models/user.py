@@ -2,7 +2,7 @@ import reflex as rx
 from typing import Optional
 from sqlmodel import Field
 from datetime import datetime
-
+import uuid
 
 class User(rx.Base):
     id: int
@@ -12,7 +12,7 @@ class User(rx.Base):
     user_type: str
 
 class Usuarios(rx.Model, table = True):
-    id: Optional[int] = Field(default=None, primary_key=True)
+    user_id: str = Field(default_factory=lambda: str(uuid.uuid4()), primary_key=True, index=True)
     name: str
     email: str
     password: str
