@@ -19,6 +19,7 @@ from keikodev.models.Nasalink import Nasa_imagenes
 from keikodev.data.nasa_last_picture_service import nasa_last_picture_service
 from keikodev.pages.iatools import Iatoolstate
 from keikodev.models.iatools_model import Iatools, Tipo
+from keikodev.data.email_services import enviar_correo_services
 
 class Lastpicturestate(rx.State):
     lastPicture: list[Nasa_imagenes]
@@ -31,6 +32,7 @@ class Lastpicturestate(rx.State):
             self.lastPicture = nasa_last_picture_service()
             self.url = self.lastPicture.url
             self.date = datetime.datetime.strftime(self.lastPicture.fecha, "%d/%m/%Y")
+            enviar_correo_services("info@keikodev.es","Test")
 
 
 def index_links()-> rx.Component:
