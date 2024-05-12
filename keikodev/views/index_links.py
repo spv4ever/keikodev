@@ -32,7 +32,7 @@ class Lastpicturestate(rx.State):
             self.lastPicture = nasa_last_picture_service()
             self.url = self.lastPicture.url
             self.date = datetime.datetime.strftime(self.lastPicture.fecha, "%d/%m/%Y")
-            enviar_correo_services("info@keikodev.es","Test")
+            #enviar_correo_services("info@keikodev.es","Test")
 
 
 def index_links()-> rx.Component:
