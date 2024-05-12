@@ -80,7 +80,7 @@ class UserState(rx.State):
             try:
                 self.users = create_user_service(name=newuser["name"], email=newuser["email"], password=password_hash)
                 print("usuario creado")
-                enviar_correo_services(newuser["email"],newuser["name"])
+                #enviar_correo_services(newuser["email"],newuser["name"])
             except BaseException as be:
                 print(be.args)
                 self.error = be.args

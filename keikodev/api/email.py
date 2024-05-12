@@ -32,7 +32,7 @@ def enviar_correo(destinatario, asunto, cuerpo):
     servidor = smtplib.SMTP(host=servidor_smtp, port=puerto_smtp)
     servidor.starttls()  # Iniciar TLS (seguridad de transporte de capa)
     servidor.login(remitente, contraseña)
-
+    
     # Enviar el correo electrónico
     servidor.sendmail(remitente, destinatario, mensaje.as_string())
 
