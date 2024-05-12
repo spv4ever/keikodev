@@ -38,6 +38,13 @@ def index_links()-> rx.Component:
         rx.foreach(Nextlaunch.next_launch,lambda item: next_live(item)),
 
         title("Secciones Keikodev"),
+
+        linkbutton("Keikodev Store",
+            "Puerta de la nuestra tienda de personalización y Arte Digital",
+            "/img/store-solid.svg",
+            constants.KEIKODEV_STORE_URL,
+            is_external=True),
+
         
         linkbutton("Sección de recetas de cocina",
             "Sección Recetas Caseras y cocina internacional",

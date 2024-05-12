@@ -51,8 +51,6 @@ GOOGLE_CLIENT_ID = os.environ.get("GOOGLE_CLIENT_ID", "")
 
 #leerPost()
 
-
-
 # class State(rx.State):
 #     id_token_json: str = rx.LocalStorage()
 
