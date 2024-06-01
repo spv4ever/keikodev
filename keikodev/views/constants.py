@@ -38,7 +38,7 @@ CAPCUT_URL = "https://www.capcut.com/"
 LEIAPIX_URL = "https://www.leiapix.com/"
 UICOLORS_URL = "https://uicolors.app/create"
 DGBLOL_URL = "https://dgb.lol/"
-KEIKODEV_STORE_URL = "https://keikodev.etsy.com"
+KEIKODEV_STORE_URL = "https://keikodev.es/store"
 
 #Default
 DEFAULT_URL = "http://localhost:3000/"

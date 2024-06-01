@@ -11,14 +11,16 @@ class Database:
         self.DBUSER = os.environ.get("DBUSER")
         self.DBPASS = os.environ.get("DBPASS")
         self.configdb = None
+        #print(self.DBUSER)
+
 
     def connect(self):
         # Conectar a la base de datos
         self.configdb = mysql.connector.connect(
-            host="PMYSQL101.dns-servicio.com",
+            host="keikodev.es",
             user=self.DBUSER,
             password=self.DBPASS,
-            database="10252826_keikodeves"
+            database="db3egsikbjodij"
         )
 
     def close(self):
