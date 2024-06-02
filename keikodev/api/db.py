@@ -30,15 +30,25 @@ class Database:
 
     def insert(self, table, data):
         # Insertar datos en la tabla especificada
-        self.connect()
-        cursor = self.configdb.cursor()
-        columns = ', '.join(data.keys())
-        values = ', '.join(['%s'] * len(data))
-        sql = f"INSERT INTO {table} ({columns}) VALUES ({values})"
-        cursor.execute(sql, list(data.values()))
-        self.configdb.commit()
-        cursor.close()
-        self.close()
+        try:
+            self.connect()
+
+            cursor = self.configdb.cursor()
+            columns = ', '.join(data.keys())
+            values = ', '.join(['%s'] * len(data))
+
+            print(table)
+            print(data)
+            print("Intento justo antes de insertar de la nasa error de datos")
+
+            sql = f"INSERT INTO {table} ({columns}) VALUES ({values})"
+            cursor.execute(sql, list(data.values()))
+            self.configdb.commit()
+        finally:
+            cursor.close()
+            self.close()
+        
+
 
     def delete(self, table, condition):
         # Eliminar registros de la tabla especificada con la condición dada
