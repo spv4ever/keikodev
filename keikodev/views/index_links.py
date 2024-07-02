@@ -158,7 +158,7 @@ def index_links_desktop()-> rx.Component:
         index_colabora(),
             rx.flex(
                 index_nasa(),
-                index_lanzamientos(),
+                #index_lanzamientos(),
                 index_iatools(),
                 index_recetas(),
                 index_kodi(),
