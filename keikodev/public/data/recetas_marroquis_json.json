@@ -1,0 +1,441 @@
+{
+    "recetas_marroquies": [
+      {
+        "numero": 1,
+        "nombre": "Couscous con Verduras",
+        "ingredientes": [
+          "Couscous",
+          "Calabacín",
+          "Zanahorias",
+          "Garbanzos",
+          "Cebolla",
+          "Pasas",
+          "Aceite de oliva",
+          "Comino",
+          "Cúrcuma",
+          "Canela",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Cuece el couscous según las instrucciones del paquete.",
+          "Saltea cebolla, calabacín y zanahorias en aceite de oliva.",
+          "Añade garbanzos cocidos, pasas, comino, cúrcuma, canela, sal y pimienta."
+        ]
+      },
+      {
+        "numero": 2,
+        "nombre": "Tagine de Cordero con Ciruelas",
+        "ingredientes": [
+          "Cordero",
+          "Ciruelas secas",
+          "Cebolla",
+          "Ajo",
+          "Jengibre",
+          "Cúrcuma",
+          "Canela",
+          "Comino",
+          "Aceite de oliva",
+          "Cilantro fresco",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Dora el cordero en aceite de oliva en una cazuela o tagine.",
+          "Añade cebolla, ajo, jengibre, cúrcuma, canela, comino, sal y pimienta.",
+          "Incorpora ciruelas secas y cocina a fuego lento hasta que la carne esté tierna.",
+          "Decora con cilantro fresco antes de servir."
+        ]
+      },
+      {
+        "numero": 3,
+        "nombre": "Hummus de Garbanzos",
+        "ingredientes": [
+          "Garbanzos cocidos",
+          "Tahini",
+          "Ajo",
+          "Limón (zumo)",
+          "Aceite de oliva",
+          "Comino",
+          "Sal",
+          "Pimentón",
+          "Perejil (opcional)"
+        ],
+        "instrucciones": [
+          "Tritura garbanzos cocidos, tahini, ajo, zumo de limón, comino y sal.",
+          "Añade aceite de oliva mientras mezclas hasta obtener una consistencia suave.",
+          "Espolvorea con pimentón y decora con perejil si lo deseas."
+        ]
+      },
+      {
+        "numero": 4,
+        "nombre": "Pastela de Pollo",
+        "ingredientes": [
+          "Pechuga de pollo",
+          "Almendras",
+          "Cebolla",
+          "Azafrán",
+          "Canela",
+          "Azúcar",
+          "Huevos",
+          "Masa filo",
+          "Mantequilla",
+          "Cilantro fresco",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Cocina pechuga de pollo con cebolla, azafrán, canela, azúcar, sal y pimienta.",
+          "Añade almendras tostadas y huevos batidos. Cocina hasta que los huevos estén cuajados.",
+          "Forra un molde con masa filo, agrega el relleno y dobla la masa. Hornea hasta que esté dorado.",
+          "Espolvorea con azúcar glas y decora con cilantro fresco."
+        ]
+      },
+      {
+        "numero": 5,
+        "nombre": "Ensalada Marroquí de Zanahoria",
+        "ingredientes": [
+          "Zanahorias ralladas",
+          "Aceitunas negras",
+          "Pasas",
+          "Cilantro fresco",
+          "Comino",
+          "Paprika",
+          "Limón (zumo)",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Mezcla zanahorias ralladas con aceitunas negras y pasas.",
+          "Aliña con cilantro fresco picado, comino, paprika, zumo de limón, aceite de oliva, sal y pimienta."
+        ]
+      },
+      {
+        "numero": 6,
+        "nombre": "Khobz",
+        "ingredientes": [
+          "Harina de trigo",
+          "Agua",
+          "Levadura",
+          "Sal",
+          "Aceite de oliva",
+          "Semillas de sésamo (opcional)"
+        ],
+        "instrucciones": [
+          "Mezcla harina, agua, levadura, sal y aceite de oliva para hacer la masa.",
+          "Amasa y deja reposar hasta que la masa duplique su tamaño.",
+          "Forma panecillos y hornea. Opcionalmente, espolvorea con semillas de sésamo."
+        ]
+      },
+      {
+        "numero": 7,
+        "nombre": "Tajín de Pescado con Verduras",
+        "ingredientes": [
+          "Filetes de pescado",
+          "Patatas",
+          "Zanahorias",
+          "Calabacín",
+          "Cebolla",
+          "Ajo",
+          "Perejil",
+          "Jengibre",
+          "Cúrcuma",
+          "Comino",
+          "Paprika",
+          "Aceite de oliva",
+          "Limón (zumo)",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Marina el pescado con ajo, perejil, jengibre, cúrcuma, comino, paprika, limón, sal y pimienta.",
+          "En una cazuela o tajín, coloca capas de patatas, zanahorias, calabacín y cebolla.",
+          "Coloca los filetes de pescado sobre las verduras y cocina a fuego lento hasta que estén hechos."
+        ]
+      },
+      {
+        "numero": 8,
+        "nombre": "Cuscús con Pasas y Almendras",
+        "ingredientes": [
+          "Cuscús",
+          "Pasas",
+          "Almendras tostadas",
+          "Canela",
+          "Azúcar",
+          "Aceite de oliva",
+          "Sal"
+        ],
+        "instrucciones": [
+          "Cuece el cuscús según las instrucciones del paquete.",
+          "Incorpora pasas, almendras tostadas, canela, azúcar, aceite de oliva y sal."
+        ]
+      },
+      {
+        "numero": 9,
+        "nombre": "Harira",
+        "ingredientes": [
+          "Lentejas",
+          "Garbanzos",
+          "Tomates",
+          "Cebolla",
+          "Apio",
+          "Cilantro fresco",
+          "Perejil",
+          "Fideos finos",
+          "Harina",
+          "Huevo",
+          "Limón (zumo)",
+          "Aceite de oliva",
+          "Cúrcuma",
+          "Pimentón",
+          "Canela",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Cocina lentejas y garbanzos en una cazuela con tomates, cebolla, apio, cilantro, perejil y agua.",
+          "Añade fideos finos y cocina hasta que estén tiernos.",
+          "Prepara una mezcla de harina, huevo, limón, aceite de oliva, cúrcuma, pimentón, canela, sal y pimienta.",
+          "Añade la mezcla a la cazuela y cocina hasta que espese."
+        ]
+      },
+      {
+        "numero": 10,
+        "nombre": "Msemmen",
+        "ingredientes": [
+          "Harina de trigo",
+          "Sémola",
+          "Levadura",
+          "Sal",
+          "Agua tibia",
+          "Aceite de oliva"
+        ],
+        "instrucciones": [
+          "Mezcla harina, sémola, levadura y sal.",
+          "Añade agua tibia gradualmente y amasa hasta obtener una masa suave.",
+          "Divide la masa en bolas, estira cada bola y cepilla con aceite de oliva.",
+          "Dobla la masa y cocina en una sartén hasta que esté dorada."
+        ]
+      },
+      {
+        "numero": 11,
+        "nombre": "Bastela de Marisco",
+        "ingredientes": [
+          "Mejillones",
+          "Camarones",
+          "Calamares",
+          "Cebolla",
+          "Ajo",
+          "Perejil",
+          "Huevos",
+          "Almendras",
+          "Azafrán",
+          "Canela",
+          "Azúcar",
+          "Masa filo",
+          "Mantequilla",
+          "Azúcar glas",
+          "Canela (para decorar)"
+        ],
+        "instrucciones": [
+          "Saltea cebolla, ajo y perejil en aceite. Añade mariscos, huevos, almendras, azafrán, canela y azúcar.",
+          "Forra un molde con masa filo, agrega el relleno y dobla la masa. Hornea hasta que esté dorado.",
+          "Espolvorea con azúcar glas y canela antes de servir."
+        ]
+      },
+      {
+        "numero": 12,
+        "nombre": "Chermoula",
+        "ingredientes": [
+          "Cilantro fresco",
+          "Perejil",
+          "Ajo",
+          "Comino",
+          "Pimentón",
+          "Cúrcuma",
+          "Jengibre",
+          "Aceite de oliva",
+          "Limón (zumo)",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Mezcla cilantro, perejil, ajo, comino, pimentón, cúrcuma, jengibre, aceite de oliva, limón, sal y pimienta.",
+          "Utiliza la chermoula como marinada para pescado, carne o verduras antes de cocinar."
+        ]
+      },
+      {
+        "numero": 13,
+        "nombre": "Zaalouk",
+        "ingredientes": [
+          "Berenjenas",
+          "Tomates",
+          "Ajo",
+          "Comino",
+          "Pimentón",
+          "Aceite de oliva",
+          "Cilantro fresco",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Asa berenjenas y tomates. Pela y pica finamente.",
+          "Saltea ajo en aceite de oliva, añade berenjenas y tomates.",
+          "Añade comino, pimentón, sal y pimienta. Cocina hasta que los ingredientes estén bien integrados.",
+          "Decora con cilantro fresco antes de servir."
+        ]
+      },
+      {
+        "numero": 14,
+        "nombre": "Makrout",
+        "ingredientes": [
+          "Sémola",
+          "Dátiles",
+          "Agua de azahar",
+          "Miel",
+          "Aceite de girasol",
+          "Aceite de oliva"
+        ],
+        "instrucciones": [
+          "Mezcla sémola con agua de azahar y aceite de oliva hasta obtener una masa suave.",
+          "Forma cilindros rellenos de dátiles.",
+          "Corta en porciones y hornea hasta que estén dorados. Baña en miel antes de servir."
+        ]
+      },
+      {
+        "numero": 15,
+        "nombre": "Maakouda",
+        "ingredientes": [
+          "Papas",
+          "Cilantro fresco",
+          "Ajo",
+          "Comino",
+          "Cúrcuma",
+          "Pimienta roja",
+          "Huevos",
+          "Harina",
+          "Aceite de oliva",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Cocina papas y haz un puré.",
+          "Añade cilantro, ajo, comino, cúrcuma, pimienta roja, huevos y harina.",
+          "Forma bolas, aplasta y fríe en aceite de oliva hasta que estén doradas."
+        ]
+      },
+      {
+        "numero": 16,
+        "nombre": "Briouats de Pollo y Almendras",
+        "ingredientes": [
+          "Pechuga de pollo",
+          "Almendras",
+          "Cebolla",
+          "Azafrán",
+          "Canela",
+          "Azúcar",
+          "Masa filo",
+          "Mantequilla",
+          "Huevo (para pincelar)",
+          "Azúcar glas (para decorar)"
+        ],
+        "instrucciones": [
+          "Cocina pechuga de pollo con cebolla, azafrán, canela, azúcar y almendras.",
+          "Forra un molde con masa filo, agrega el relleno y dobla la masa en triángulos. Hornea hasta que estén dorados.",
+          "Pincela con huevo y decora con azúcar glas antes de servir."
+        ]
+      },
+      {
+        "numero": 17,
+        "nombre": "Sopa Harira",
+        "ingredientes": [
+          "Lentejas",
+          "Garbanzos",
+          "Tomates",
+          "Cebolla",
+          "Apio",
+          "Cilantro fresco",
+          "Perejil",
+          "Fideos finos",
+          "Harina",
+          "Huevo",
+          "Limón (zumo)",
+          "Aceite de oliva",
+          "Cúrcuma",
+          "Pimentón",
+          "Canela",
+          "Sal",
+          "Pimienta"
+        ],
+        "instrucciones": [
+          "Cocina lentejas y garbanzos en una cazuela con tomates, cebolla, apio, cilantro, perejil y agua.",
+          "Añade fideos finos y cocina hasta que estén tiernos.",
+          "Prepara una mezcla de harina, huevo, limón, aceite de oliva, cúrcuma, pimentón, canela, sal y pimienta.",
+          "Añade la mezcla a la cazuela y cocina hasta que espese."
+        ]
+      },
+      {
+        "numero": 18,
+        "nombre": "Pastela de Pescado",
+        "ingredientes": [
+          "Filetes de pescado",
+          "Almendras",
+          "Cebolla",
+          "Ajo",
+          "Perejil",
+          "Huevos",
+          "Azafrán",
+          "Canela",
+          "Azúcar",
+          "Masa filo",
+          "Mantequilla",
+          "Azúcar glas",
+          "Canela (para decorar)"
+        ],
+        "instrucciones": [
+          "Saltea cebolla, ajo y perejil en aceite. Añade filetes de pescado, almendras, azafrán, canela y azúcar.",
+          "Forra un molde con masa filo, agrega el relleno y dobla la masa. Hornea hasta que esté dorado.",
+          "Espolvorea con azúcar glas y canela antes de servir."
+        ]
+      },
+      {
+        "numero": 19,
+        "nombre": "Rghaif",
+        "ingredientes": [
+          "Harina de trigo",
+          "Sémola",
+          "Levadura",
+          "Sal",
+          "Agua tibia",
+          "Aceite de oliva"
+        ],
+        "instrucciones": [
+          "Mezcla harina, sémola, levadura y sal.",
+          "Añade agua tibia gradualmente y amasa hasta obtener una masa suave.",
+          "Divide la masa en bolas, estira cada bola y cepilla con aceite de oliva.",
+          "Dobla la masa y cocina en una sartén hasta que esté dorada."
+        ]
+      },
+      {
+        "numero": 20,
+        "nombre": "Briwat de Almendras",
+        "ingredientes": [
+          "Almendras",
+          "Azúcar",
+          "Agua de azahar",
+          "Mantequilla",
+          "Miel",
+          "Masa filo",
+          "Azúcar glas",
+          "Canela (para decorar)"
+        ],
+        "instrucciones": [
+          "Mezcla almendras trituradas con azúcar, agua de azahar, mantequilla y miel.",
+          "Forra un molde con masa filo, agrega el relleno y dobla la masa en triángulos. Hornea hasta que estén dorados.",
+          "Espolvorea con azúcar glas y canela antes de servir."
+        ]
+      }
+    ]
+  }
+  
