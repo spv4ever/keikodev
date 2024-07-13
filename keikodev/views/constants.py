@@ -39,6 +39,7 @@ LEIAPIX_URL = "https://www.leiapix.com/"
 UICOLORS_URL = "https://uicolors.app/create"
 DGBLOL_URL = "https://dgb.lol/"
 KEIKODEV_STORE_URL = "https://keikodev.es/store"
+RINCON_DE_KEIKO_URL = "https://elrincondekeiko.es"
 
 #Default
 DEFAULT_URL = "http://localhost:3000/"

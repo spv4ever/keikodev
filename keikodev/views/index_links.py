@@ -41,10 +41,16 @@ def index_links()-> rx.Component:
 
         title("Secciones Keikodev"),
 
-        linkbutton("Keikodev Store",
+        linkbutton("KeikoStore",
             "Puerta de la nuestra tienda de personalización y Arte Digital",
             "/img/store-solid.svg",
             constants.KEIKODEV_STORE_URL,
+            is_external=True),
+
+        linkbutton("El Rincón de Keiko",
+            "Es la entrada a nuestro rincón de las mejores ofertas",
+            "/img/store-solid.svg",
+            constants.RINCON_DE_KEIKO_URL,
             is_external=True),
 
         
@@ -157,12 +163,12 @@ def index_links_desktop()-> rx.Component:
     return rx.box(
         index_colabora(),
             rx.flex(
+                index_store(),
                 index_nasa(),
                 #index_lanzamientos(),
                 index_iatools(),
                 index_recetas(),
                 index_kodi(),
-                index_store(),
                 index_mg(),
                 index_colaboradores(),
                 direction="row",

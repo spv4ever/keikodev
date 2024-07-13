@@ -55,20 +55,20 @@ def index() -> rx.Component:
                 ),
         ),
         rx.tablet_and_desktop(
-            #rx.cond(Iatoolstate.total!=0,
+            rx.cond(Iatoolstate.total!=0,
                     index_links_desktop(),
-                    # rx.center(
-                    #     rx.hstack(
-                    #         rx.chakra.spinner(color="pink", size="xl",style={"margin":Size.DEFAULT.value}),
-                    #         rx.heading("Loading...",
-                    #             size="9",
-                    #             style={"color":Color.PRIMARY.value,"magin":Size.VERY_BIG.value,}
-                    #             ),
-                    #         direction="row",
+                    rx.center(
+                        rx.hstack(
+                            rx.chakra.spinner(color="pink", size="xl",style={"margin":Size.DEFAULT.value}),
+                            rx.heading("Loading...",
+                             size="9",
+                                style={"color":Color.PRIMARY.value,"magin":Size.VERY_BIG.value,}
+                                ),
+                            direction="row",
 
-                    #     )
-                    # )
-            #),
+                        )
+                    )
+            ),
             style=styles.background_gradient_style,
         ),
         footer(),
