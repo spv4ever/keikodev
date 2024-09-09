@@ -157,6 +157,7 @@ app = rx.App(
                 gtag('config', '{const.G_TAG}');
             """
         ),
+        rx.script(src="//pl24323741.cpmrevenuegate.com/e4/7e/18/e47e1813972e741ec861ab5eb1be6ae5.js"),
         
     ],
     style = styles.BASE_STYLE,
