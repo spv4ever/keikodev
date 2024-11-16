@@ -9,9 +9,9 @@
     "sleepApplication": false,
     "restartPolicyType": "ON_FAILURE",
     "restartPolicyMaxRetries": 5,
-    "memory" : 1025,
-    "concurrency": 1,
-    "workers": 2
+    "memory" : 2048,
+    "concurrency": 5,
+    "workers": 4
   }
 }
   
