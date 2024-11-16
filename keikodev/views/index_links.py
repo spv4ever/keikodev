@@ -201,7 +201,7 @@ def index_colabora()-> rx.Component:
     )
 
 def index_recetas()->rx.Component:
-    return rx.card(   
+    return rx.box(   
                 # rx.link(     
                     rx.vstack(
                         rx.link(
@@ -267,7 +267,7 @@ def index_recetas()->rx.Component:
     )
 
 def index_kodi()->rx.Component:
-    return rx.card(
+    return rx.box(
         rx.link(
         rx.vstack(
             rx.heading("Keikodev Kodi",
@@ -305,7 +305,7 @@ def index_kodi()->rx.Component:
     )
 
 def index_store()->rx.Component:
-    return rx.card(
+    return rx.box(
         rx.link(
         rx.vstack(
             rx.heading("Keikodev Store",
@@ -352,7 +352,7 @@ def index_store()->rx.Component:
     )
 
 def index_colaboradores()->rx.Component:
-    return rx.card(
+    return rx.box(
         rx.vstack(
             rx.heading("Colaboradores Keikodev",
                     style={"color":Color.SECONDARY.value},
@@ -375,7 +375,7 @@ def index_colaboradores()->rx.Component:
     )
 
 def index_mg()->rx.Component:
-    return rx.card(
+    return rx.box(
             rx.link(
                 rx.vstack(
                     rx.heading("MG Training y Nutrición",
@@ -437,7 +437,7 @@ def index_mg()->rx.Component:
 
 
 def index_iatools()->rx.Component:
-    return rx.card(
+    return rx.box(
         rx.link(
         rx.vstack(
             rx.heading("Herramientas IA",
@@ -491,7 +491,7 @@ def badge_title(tipos)->rx.Component:
 
 
 def index_lanzamientos()->rx.Component:
-    return rx.card(
+    return rx.box(
                 rx.vstack(
                     rx.link(    
                         rx.heading("Rumbo a Marte",
@@ -567,7 +567,7 @@ def index_lanzamientos()->rx.Component:
     )
 
 def index_nasa()->rx.Component:
-    return rx.card(
+    return rx.box(
             rx.link(
                 rx.vstack(
                         rx.heading("Fotos desde la Nasa",
