@@ -109,6 +109,7 @@ class nasaApi():
         #     print("Dia anterior no insertar")
         
 def select_last_picture():
+    print('Intento conectar')
     engine = connect()
     try:
         with Session(engine) as session:

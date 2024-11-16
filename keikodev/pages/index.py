@@ -55,7 +55,7 @@ def index() -> rx.Component:
                 ),
         ),
         rx.tablet_and_desktop(
-            rx.cond(Iatoolstate.total!=0,
+            rx.cond(Iatoolstate.total != 0,
                     index_links_desktop(),
                     rx.center(
                         rx.hstack(
@@ -67,7 +67,7 @@ def index() -> rx.Component:
                             direction="row",
 
                         )
-                    )
+                    ),
             ),
             style=styles.background_gradient_style,
         ),

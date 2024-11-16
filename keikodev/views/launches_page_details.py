@@ -13,7 +13,7 @@ from typing import Optional
 from keikodev.pages.google_auth import StateLogin
 from keikodev.pages.user_page import UserState
 
-#StateLogin.users_rights == 999,
+#StateLogin.state_users_rights == 999,
 
 
 #LaunchesState = importlib.import_module("keikodev.pages.launches_page").LaunchesState

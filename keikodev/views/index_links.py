@@ -149,7 +149,7 @@ def index_links()-> rx.Component:
             Route.GALERIA.value,
             is_external=False),
         rx.cond(
-            StateLogin.users_rights == 999,
+            StateLogin.state_users_rights == 999,
             linkbutton('Servicios personalizados', 
             "Servicios IT personalizados, macros, excel, python, web.", 
             "/img/dev.svg",
@@ -596,6 +596,7 @@ def index_nasa()->rx.Component:
                 style=styles.links_without_decoration,
                 ),      
             style=styles.index_cards,
+            #background_color=rx.color("black", 7),
             class_name=styles.TITLE_INDEX,
             on_mount=Lastpicturestate.get_last_picture
     ),

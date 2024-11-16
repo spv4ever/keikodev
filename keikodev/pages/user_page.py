@@ -359,7 +359,7 @@ def update_user_form(name:str, email:str, password:str, active:int)->rx.Componen
                 type= "password"
             ),
             rx.input(
-                placeholder=active,
+                placeholder=str(active),
                 name= "active",
                 default_value="1",
             ),

@@ -11,17 +11,26 @@ class Database:
         self.DBUSER = os.environ.get("DBUSER")
         self.DBPASS = os.environ.get("DBPASS")
         self.configdb = None
-        #print(self.DBUSER)
+        print(self.DBUSER)
+        #DBUSER = "ubv9kn85bcohp"
+        #DBPASS = "Gasaal1972--"
 
 
     def connect(self):
         # Conectar a la base de datos
-        self.configdb = mysql.connector.connect(
-            host="keikodev.es",
-            user=self.DBUSER,
-            password=self.DBPASS,
-            database="db3egsikbjodij"
-        )
+        print('Intento de conexión')
+        print(self.DBUSER)
+        try:
+            self.configdb = mysql.connector.connect(
+                host="gmadm1037.siteground.biz",
+                user=self.DBUSER,
+                password=self.DBPASS,
+                database="db3egsikbjodij"
+            )
+            print('Conexión OK')
+        except mysql.connector.Error as err:
+            print(f'Error en modulo connect de db.py: {err} ')
+
 
     def close(self):
         # Cerrar la conexión con la base de datos

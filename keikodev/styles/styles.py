@@ -85,14 +85,14 @@ star_gold = {"color":"gold"}
 
 star_grey = {"color":"grey"}
 
-index_cards = {"bg":Color.CONTENT.value,
+index_cards = {"background-color":Color.CONTENT.value,
                 "border": "2px solid #651249",
                 "width" : "400px",
                 "height" : "300px",
                 "text-decoration":"none",
                     "_hover" : {
                             "text-decoration":"none",
-                            "background_color" : Color.BACKGROUND.value,
+                            "background-color" : Color.BACKGROUND.value,
                             "box-shadow": f"0 0 {Size.DEFAULT.value} {Color.SECONDARY.value},",
                             "cursor":"pointer",
                             }

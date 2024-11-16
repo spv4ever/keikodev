@@ -145,7 +145,7 @@ def navbar():
                 
 			),
 			# rx.cond(
-			# 	StateLogin.users_rights == 999,
+			# 	StateLogin.state_users_rights == 999,
 			# 		rx.chakra.vstack(
 			# 			user_info(StateLogin.tokeninfo),
 			# 			rx.chakra.text(StateLogin.protected_content),

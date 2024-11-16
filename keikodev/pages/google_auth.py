@@ -31,7 +31,7 @@ class StateLogin(rx.State):
     email: str
     name: str
     password: str
-    users_rights: int = 0
+    state_users_rights: str = "default_value"
 
     def on_success(self, id_token: dict):
         self.id_token_json = json.dumps(id_token)
