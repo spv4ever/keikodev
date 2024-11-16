@@ -171,6 +171,7 @@ def index_links_desktop()-> rx.Component:
                 index_kodi(),
                 index_mg(),
                 index_colaboradores(),
+                
                 direction="row",
                 wrap="wrap",
                 spacing="5",
@@ -192,6 +193,7 @@ def index_colabora()-> rx.Component:
                 is_external=True,
                 style=styles.links_without_decoration,
             ),
+            
         direction="row",
         spacing="3",
         justify="center",
