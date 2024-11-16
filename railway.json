@@ -5,7 +5,7 @@
     "dockerfilePath": "Dockerfile"
   },
   "deploy": {
-    "runtime": "python",
+    "runtime": "UNSPECIFIED",
     "numReplicas": 1,
     "maxReplicas": 3,
     "minReplicas": 1,
