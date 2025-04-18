@@ -1,4 +1,4 @@
-reflex==0.5.0
+reflex==0.7.2
 python-dotenv
 mysql-connector-python
 paramiko
